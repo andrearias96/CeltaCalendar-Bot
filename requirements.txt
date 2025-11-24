@@ -1,0 +1,9 @@
+google-api-python-client
+google-auth-oauthlib
+google-auth-httplib2
+requests
+beautifulsoup4
+lxml
+selenium
+webdriver-manager
+python-dotenv

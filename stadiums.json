@@ -1,0 +1,6067 @@
+{
+    "Athletic": {
+        "stadium": "San Mamés",
+        "location": "Estadio San Mamés, Bilbao, España",
+        "aliases": [
+            "Athletic Club",
+            "Athletic Bilbao",
+            "Athletic de Bilbao"
+        ]
+    },
+    "Atlético de Madrid": {
+        "stadium": "Riyadh Air Metropolitano",
+        "location": "Estadio Riyadh Air Metropolitano, Madrid, España",
+        "aliases": [
+            "Atletico de Madrid",
+            "Atlético",
+            "Atleti",
+            "Atletico Madrid",
+            "Wanda Metropolitano",
+            "Cívitas Metropolitano"
+        ]
+    },
+    "Osasuna": {
+        "stadium": "El Sadar",
+        "location": "Estadio El Sadar, Pamplona, España",
+        "aliases": [
+            "C.A. Osasuna",
+            "CA Osasuna",
+            "Osasuna B"
+        ]
+    },
+    "Alavés": {
+        "stadium": "Mendizorroza",
+        "location": "Estadio de Mendizorroza, Vitoria-Gasteiz, España",
+        "aliases": [
+            "Deportivo Alavés",
+            "Dep. Alavés",
+            "D. Alavés"
+        ]
+    },
+    "Elche": {
+        "stadium": "Martínez Valero",
+        "location": "Estadio Martínez Valero, Elche, España",
+        "aliases": [
+            "Elche C.F.",
+            "Elche CF"
+        ]
+    },
+    "Barcelona": {
+        "stadium": "Spotify Camp Nou",
+        "location": "Spotify Camp Nou, Barcelona, España",
+        "aliases": [
+            "F.C. Barcelona",
+            "FC Barcelona",
+            "Barça"
+        ]
+    },
+    "Getafe": {
+        "stadium": "Coliseum",
+        "location": "Coliseum, Getafe, España",
+        "aliases": [
+            "Getafe C.F.",
+            "Getafe CF"
+        ]
+    },
+    "Girona": {
+        "stadium": "Montilivi",
+        "location": "Estadi Municipal de Montilivi, Girona, España",
+        "aliases": [
+            "Girona F.C.",
+            "Girona FC"
+        ]
+    },
+    "Levante": {
+        "stadium": "Ciutat de València",
+        "location": "Estadi Ciutat de València, Valencia, España",
+        "aliases": [
+            "Levante U.D.",
+            "Levante UD"
+        ]
+    },
+    "Rayo Vallecano": {
+        "stadium": "Estadio de Vallecas",
+        "location": "Estadio de Vallecas, Madrid, España",
+        "aliases": [
+            "Rayo",
+            "R. Vallecano"
+        ]
+    },
+    "Celta": {
+        "stadium": "Abanca-Balaídos",
+        "location": "Estadio Abanca-Balaídos, Vigo, España",
+        "aliases": [
+            "R.C. Celta de Vigo",
+            "Celta de Vigo",
+            "Celta Vigo",
+            "RC Celta"
+        ]
+    },
+    "Espanyol": {
+        "stadium": "RCDE Stadium",
+        "location": "RCDE Stadium, Cornellà de Llobregat, España",
+        "aliases": [
+            "R.C.D. Espanyol",
+            "Espanyol de Barcelona",
+            "RCD Espanyol",
+            "Stage Front Stadium"
+        ]
+    },
+    "Mallorca": {
+        "stadium": "Estadi Mallorca Son Moix",
+        "location": "Estadi Mallorca Son Moix, Palma, España",
+        "aliases": [
+            "R.C.D. Mallorca",
+            "RCD Mallorca",
+            "Real Mallorca"
+        ]
+    },
+    "Betis": {
+        "stadium": "Estadio de La Cartuja",
+        "location": "Estadio de La Cartuja, Sevilla, España",
+        "aliases": [
+            "Real Betis Balompié",
+            "Real Betis"
+        ]
+    },
+    "Real Madrid": {
+        "stadium": "Santiago Bernabéu",
+        "location": "Estadio Santiago Bernabéu, Madrid, España",
+        "aliases": [
+            "Real Madrid C.F.",
+            "R. Madrid",
+            "Real Madrid CF"
+        ]
+    },
+    "Oviedo": {
+        "stadium": "Carlos Tartiere",
+        "location": "Estadio Carlos Tartiere, Oviedo, España",
+        "aliases": [
+            "Real Oviedo",
+            "R. Oviedo"
+        ]
+    },
+    "Real Sociedad": {
+        "stadium": "Reale Arena",
+        "location": "Reale Arena, San Sebastián, España",
+        "aliases": [
+            "R. Sociedad",
+            "La Real",
+            "Anoeta"
+        ]
+    },
+    "Sevilla": {
+        "stadium": "Ramón Sánchez-Pizjuán",
+        "location": "Estadio Ramón Sánchez-Pizjuán, Sevilla, España",
+        "aliases": [
+            "Sevilla F.C.",
+            "Sevilla FC"
+        ]
+    },
+    "Valencia": {
+        "stadium": "Mestalla",
+        "location": "Estadio de Mestalla, Valencia, España",
+        "aliases": [
+            "Valencia C.F.",
+            "Valencia CF"
+        ]
+    },
+    "Villarreal": {
+        "stadium": "Estadio de la Cerámica",
+        "location": "Estadio de la Cerámica, Villarreal, España",
+        "aliases": [
+            "Villarreal C.F.",
+            "Villarreal CF"
+        ]
+    },
+    "Albacete": {
+        "stadium": "Carlos Belmonte",
+        "location": "Estadio Carlos Belmonte, Albacete, España",
+        "aliases": [
+            "Albacete Balompié",
+            "Alba"
+        ]
+    },
+    "Burgos": {
+        "stadium": "El Plantío",
+        "location": "Estadio El Plantío, Burgos, España",
+        "aliases": [
+            "Burgos C.F.",
+            "Burgos CF"
+        ]
+    },
+    "Cádiz": {
+        "stadium": "Nuevo Mirandilla",
+        "location": "Estadio Nuevo Mirandilla, Cádiz, España",
+        "aliases": [
+            "Cádiz C.F.",
+            "Cádiz CF",
+            "Cadiz"
+        ]
+    },
+    "Castellón": {
+        "stadium": "Nou Castalia",
+        "location": "Estadio Municipal de Castalia, Castellón, España",
+        "aliases": [
+            "C.D. Castellón",
+            "CD Castellón",
+            "CD Castellon"
+        ]
+    },
+    "Leganés": {
+        "stadium": "Butarque",
+        "location": "Estadio Municipal de Butarque, Leganés, España",
+        "aliases": [
+            "C.D. Leganés",
+            "CD Leganés",
+            "Lega"
+        ]
+    },
+    "Mirandés": {
+        "stadium": "Anduva",
+        "location": "Estadio Municipal de Anduva, Miranda de Ebro, España",
+        "aliases": [
+            "C.D. Mirandés",
+            "CD Mirandés"
+        ]
+    },
+    "Córdoba": {
+        "stadium": "Nuevo Arcángel",
+        "location": "Estadio Municipal Nuevo Arcángel, Córdoba, España",
+        "aliases": [
+            "Córdoba C.F.",
+            "Cordoba",
+            "Córdoba CF"
+        ]
+    },
+    "Cultural Leonesa": {
+        "stadium": "Reino de León",
+        "location": "Estadio Reino de León, León, España",
+        "aliases": [
+            "Cultural y Deportiva Leonesa",
+            "Cultural",
+            "La Cultu"
+        ]
+    },
+    "Andorra": {
+        "stadium": "Estadi Nacional",
+        "location": "Estadi Nacional d'Andorra, Andorra la Vella, Andorra",
+        "aliases": [
+            "F.C. Andorra",
+            "FC Andorra"
+        ]
+    },
+    "Cartagena": {
+        "stadium": "Cartagonova",
+        "location": "Estadio Municipal Cartagonova, Cartagena, España",
+        "aliases": [
+            "F.C. Cartagena",
+            "FC Cartagena",
+            "Efesé"
+        ]
+    },
+    "Granada": {
+        "stadium": "Nuevo Los Cármenes",
+        "location": "Estadio Nuevo Los Cármenes, Granada, España",
+        "aliases": [
+            "Granada C.F.",
+            "Granada CF"
+        ]
+    },
+    "Málaga": {
+        "stadium": "La Rosaleda",
+        "location": "Estadio La Rosaleda, Málaga, España",
+        "aliases": [
+            "Málaga C.F.",
+            "Malaga CF",
+            "Málaga CF"
+        ]
+    },
+    "Racing de Santander": {
+        "stadium": "El Sardinero",
+        "location": "Campos de Sport de El Sardinero, Santander, España",
+        "aliases": [
+            "Racing",
+            "Real Racing Club"
+        ]
+    },
+    "Real Club Deportivo": {
+        "stadium": "Abanca-Riazor",
+        "location": "Estadio Abanca-Riazor, A Coruña, España",
+        "aliases": [
+            "R.C. Deportivo de La Coruña",
+            "Deportivo de La Coruña",
+            "Dépor",
+            "RC Deportivo"
+        ]
+    },
+    "Sporting de Gijón": {
+        "stadium": "El Molinón - Enrique Castro Quini",
+        "location": "Estadio El Molinón, Gijón, España",
+        "aliases": [
+            "Real Sporting de Gijón",
+            "Sporting",
+            "Real Sporting"
+        ]
+    },
+    "Valladolid": {
+        "stadium": "José Zorrilla",
+        "location": "Estadio José Zorrilla, Valladolid, España",
+        "aliases": [
+            "Real Valladolid C.F.",
+            "Real Valladolid",
+            "Pucela"
+        ]
+    },
+    "Zaragoza": {
+        "stadium": "Ibercaja Estadio",
+        "location": "Ibercaja Estadio, Zaragoza, España",
+        "aliases": [
+            "Real Zaragoza",
+            "R. Zaragoza"
+        ]
+    },
+    "Eibar": {
+        "stadium": "Ipurua",
+        "location": "Estadio Municipal de Ipurua, Eibar, España",
+        "aliases": [
+            "S.D. Eibar",
+            "SD Eibar"
+        ]
+    },
+    "Huesca": {
+        "stadium": "El Alcoraz",
+        "location": "Estadio El Alcoraz, Huesca, España",
+        "aliases": [
+            "S.D. Huesca",
+            "SD Huesca"
+        ]
+    },
+    "Almería": {
+        "stadium": "UD Almería Stadium",
+        "location": "UD Almería Stadium, Almería, España",
+        "aliases": [
+            "U.D. Almería",
+            "UD Almería",
+            "Power Horse Stadium",
+            "Juegos Mediterráneos"
+        ]
+    },
+    "Las Palmas": {
+        "stadium": "Estadio de Gran Canaria",
+        "location": "Estadio de Gran Canaria, Las Palmas de Gran Canaria, España",
+        "aliases": [
+            "U.D. Las Palmas",
+            "UD Las Palmas"
+        ]
+    },
+    "Alcorcón": {
+        "stadium": "Santo Domingo",
+        "location": "Estadio Santo Domingo, Alcorcón, España",
+        "aliases": [
+            "A.D. Alcorcón",
+            "AD Alcorcón"
+        ]
+    },
+    "Ceuta": {
+        "stadium": "Alfonso Murube",
+        "location": "Estadio Alfonso Murube, Ceuta, España",
+        "aliases": [
+            "A.D. Ceuta F.C.",
+            "AD Ceuta",
+            "AD Ceuta FC"
+        ]
+    },
+    "Mérida": {
+        "stadium": "Estadio Romano José Fouto",
+        "location": "Estadio Romano José Fouto, Mérida, España",
+        "aliases": [
+            "A.D. Mérida",
+            "AD Mérida",
+            "Mérida AD"
+        ]
+    },
+    "Algeciras": {
+        "stadium": "Nuevo Mirador",
+        "location": "Estadio Nuevo Mirador, Algeciras, España",
+        "aliases": [
+            "Algeciras C.F.",
+            "Algeciras CF"
+        ]
+    },
+    "Antequera": {
+        "stadium": "El Maulí",
+        "location": "Estadio El Maulí, Antequera, España",
+        "aliases": [
+            "Antequera C.F.",
+            "Antequera CF"
+        ]
+    },
+    "Arenas de Getxo": {
+        "stadium": "Gobela",
+        "location": "Campo Municipal de Gobela, Getxo, España",
+        "aliases": [
+            "Arenas Club de Getxo",
+            "Arenas Club",
+            "Arenas"
+        ]
+    },
+    "Atlético Sanluqueño": {
+        "stadium": "El Palmar",
+        "location": "Estadio El Palmar, Sanlúcar de Barrameda, España",
+        "aliases": [
+            "Atlético Sanluqueño C.F.",
+            "At. Sanluqueño"
+        ]
+    },
+    "Barakaldo": {
+        "stadium": "Lasesarre",
+        "location": "Estadio de Lasesarre, Barakaldo, España",
+        "aliases": [
+            "Barakaldo C.F.",
+            "Barakaldo CF"
+        ]
+    },
+    "Arenteiro": {
+        "stadium": "Espiñedo",
+        "location": "Estadio Municipal de Espiñedo, O Carballiño, España",
+        "aliases": [
+            "C.D. Arenteiro",
+            "CD Arenteiro"
+        ]
+    },
+    "Eldense": {
+        "stadium": "Nuevo Pepico Amat",
+        "location": "Estadio Nuevo Pepico Amat, Elda, España",
+        "aliases": [
+            "C.D. Eldense",
+            "CD Eldense"
+        ]
+    },
+    "Guadalajara": {
+        "stadium": "Pedro Escartín",
+        "location": "Estadio Pedro Escartín, Guadalajara, España",
+        "aliases": [
+            "C.D. Guadalajara",
+            "CD Guadalajara",
+            "Dépor Guadalajara"
+        ]
+    },
+    "Lugo": {
+        "stadium": "Anxo Carro",
+        "location": "Estadio Anxo Carro, Lugo, España",
+        "aliases": [
+            "C.D. Lugo",
+            "CD Lugo"
+        ]
+    },
+    "Tenerife": {
+        "stadium": "Heliodoro Rodríguez López",
+        "location": "Estadio Heliodoro Rodríguez López, Santa Cruz de Tenerife, España",
+        "aliases": [
+            "C.D. Tenerife",
+            "CD Tenerife"
+        ]
+    },
+    "Teruel": {
+        "stadium": "Pinilla",
+        "location": "Campo de Pinilla, Teruel, España",
+        "aliases": [
+            "C.D. Teruel",
+            "CD Teruel"
+        ]
+    },
+    "Europa": {
+        "stadium": "Nou Sardenya",
+        "location": "Camp Municipal Nou Sardenya, Barcelona, España",
+        "aliases": [
+            "C.E. Europa",
+            "CE Europa"
+        ]
+    },
+    "Talavera": {
+        "stadium": "El Prado",
+        "location": "Estadio Municipal El Prado, Talavera de la Reina, España",
+        "aliases": [
+            "C.F. Talavera de la Reina",
+            "CF Talavera",
+            "Talavera de la Reina"
+        ]
+    },
+    "Cacereño": {
+        "stadium": "Príncipe Felipe",
+        "location": "Estadio Príncipe Felipe, Cáceres, España",
+        "aliases": [
+            "C.P. Cacereño",
+            "CP Cacereño"
+        ]
+    },
+    "Gimnàstic": {
+        "stadium": "Nou Estadi Costa Daurada",
+        "location": "Nou Estadi Costa Daurada, Tarragona, España",
+        "aliases": [
+            "Gimnàstic de Tarragona",
+            "Nàstic",
+            "Nastic"
+        ]
+    },
+    "Hércules": {
+        "stadium": "José Rico Pérez",
+        "location": "Estadio José Rico Pérez, Alicante, España",
+        "aliases": [
+            "Hércules de Alicante C.F.",
+            "Hercules",
+            "Hércules CF"
+        ]
+    },
+    "Torremolinos": {
+        "stadium": "El Pozuelo",
+        "location": "Estadio Municipal El Pozuelo, Torremolinos, España",
+        "aliases": [
+            "Juventud Torremolinos C.F.",
+            "J. Torremolinos"
+        ]
+    },
+    "Unión Adarve": {
+        "stadium": "Vicente del Bosque",
+        "location": "Polideportivo Municipal Vicente del Bosque, Madrid, España",
+        "aliases": [
+            "Adarve",
+            "Union Adarve"
+        ]
+    },
+    "Marbella": {
+        "stadium": "Dama de Noche",
+        "location": "Marbella Football Center (Dama de Noche), Marbella, España",
+        "aliases": [
+            "Marbella F.C.",
+            "Marbella FC"
+        ]
+    },
+    "Ourense CF": {
+        "stadium": "O Couto",
+        "location": "Estadio de O Couto, Ourense, España",
+        "aliases": [
+            "Ourense C.F.",
+            "Ourense"
+        ]
+    },
+    "Pontevedra": {
+        "stadium": "Pasarón",
+        "location": "Estadio Municipal de Pasarón, Pontevedra, España",
+        "aliases": [
+            "Pontevedra C.F.",
+            "Pontevedra CF"
+        ]
+    },
+    "Racing de Ferrol": {
+        "stadium": "A Malata",
+        "location": "Estadio A Malata, Ferrol, España",
+        "aliases": [
+            "Racing Club de Ferrol",
+            "R. Ferrol"
+        ]
+    },
+    "Real Avilés": {
+        "stadium": "Román Suárez Puerta",
+        "location": "Estadio Román Suárez Puerta, Avilés, España",
+        "aliases": [
+            "Real Avilés Industrial",
+            "R. Avilés"
+        ]
+    },
+    "Real Murcia": {
+        "stadium": "Enrique Roca",
+        "location": "Estadio Enrique Roca de Murcia, Murcia, España",
+        "aliases": [
+            "Real Murcia C.F.",
+            "R. Murcia",
+            "Nueva Condomina"
+        ]
+    },
+    "Recreativo": {
+        "stadium": "Nuevo Colombino",
+        "location": "Estadio Nuevo Colombino, Huelva, España",
+        "aliases": [
+            "Recreativo de Huelva",
+            "Recre"
+        ]
+    },
+    "Ponferradina": {
+        "stadium": "El Toralín",
+        "location": "Estadio El Toralín, Ponferrada, España",
+        "aliases": [
+            "S.D. Ponferradina",
+            "SD Ponferradina",
+            "La Ponfe"
+        ]
+    },
+    "Tarazona": {
+        "stadium": "Municipal de Tarazona",
+        "location": "Estadio Municipal de Tarazona, Tarazona, España",
+        "aliases": [
+            "S.D. Tarazona",
+            "SD Tarazona"
+        ]
+    },
+    "Ibiza": {
+        "stadium": "Can Misses",
+        "location": "Estadio Can Misses, Ibiza, España",
+        "aliases": [
+            "U.D. Ibiza",
+            "UD Ibiza"
+        ]
+    },
+    "Unionistas": {
+        "stadium": "Reina Sofía",
+        "location": "Estadio Municipal Reina Sofía, Salamanca, España",
+        "aliases": [
+            "Unionistas de Salamanca C.F.",
+            "Unionistas CF",
+            "Unionistas Salamanca"
+        ]
+    },
+    "Zamora": {
+        "stadium": "Ruta de la Plata",
+        "location": "Estadio Ruta de la Plata, Zamora, España",
+        "aliases": [
+            "Zamora C.F.",
+            "Zamora CF"
+        ]
+    },
+    "Águilas": {
+        "stadium": "El Rubial",
+        "location": "Estadio El Rubial, Águilas, España",
+        "aliases": [
+            "Águilas F.C.",
+            "Aguilas FC"
+        ]
+    },
+    "Astorga": {
+        "stadium": "La Eragudina",
+        "location": "Estadio La Eragudina, Astorga, España",
+        "aliases": [
+            "Atlético Astorga F.C.",
+            "At. Astorga"
+        ]
+    },
+    "Antoniano": {
+        "stadium": "Municipal de Lebrija",
+        "location": "Estadio Municipal de Lebrija, Lebrija, España",
+        "aliases": [
+            "Atlético Antoniano",
+            "CA Antoniano"
+        ]
+    },
+    "Bergantiños": {
+        "stadium": "As Eiroas",
+        "location": "Campo Municipal As Eiroas, Carballo, España",
+        "aliases": [
+            "Bergantiños F.C.",
+            "Bergantiños FC"
+        ]
+    },
+    "Alcoyano": {
+        "stadium": "El Collao",
+        "location": "Estadio El Collao, Alcoy, España",
+        "aliases": [
+            "C.D. Alcoyano",
+            "CD Alcoyano"
+        ]
+    },
+    "Alfaro": {
+        "stadium": "La Molineta",
+        "location": "Estadio La Molineta, Alfaro, España",
+        "aliases": [
+            "C.D. Alfaro",
+            "CD Alfaro"
+        ]
+    },
+    "Atlético Baleares": {
+        "stadium": "Estadi Balear",
+        "location": "Estadi Balear, Palma, España",
+        "aliases": [
+            "C.D. Atlético Baleares",
+            "At. Baleares",
+            "Atletico Baleares"
+        ]
+    },
+    "Badajoz": {
+        "stadium": "Nuevo Vivero",
+        "location": "Estadio Nuevo Vivero, Badajoz, España",
+        "aliases": [
+            "C.D. Badajoz",
+            "CD Badajoz"
+        ]
+    },
+    "Calahorra": {
+        "stadium": "La Planilla",
+        "location": "Estadio La Planilla, Calahorra, España",
+        "aliases": [
+            "C.D. Calahorra",
+            "CD Calahorra"
+        ]
+    },
+    "Moscardó": {
+        "stadium": "Román Valero",
+        "location": "Estadio Román Valero, Madrid, España",
+        "aliases": [
+            "C.D. Colonia Moscardó",
+            "CD Moscardó",
+            "Colonia Moscardo"
+        ]
+    },
+    "Coria": {
+        "stadium": "La Isla",
+        "location": "Estadio La Isla, Coria, España",
+        "aliases": [
+            "C.D. Coria",
+            "CD Coria"
+        ]
+    },
+    "Don Benito": {
+        "stadium": "Vicente Sanz",
+        "location": "Estadio Municipal Vicente Sanz, Don Benito, España",
+        "aliases": [
+            "C.D. Don Benito",
+            "CD Don Benito"
+        ]
+    },
+    "Estepona": {
+        "stadium": "Francisco Muñoz Pérez",
+        "location": "Estadio Municipal Francisco Muñoz Pérez, Estepona, España",
+        "aliases": [
+            "C.D. Estepona",
+            "CD Estepona"
+        ]
+    },
+    "Celta Fortuna": {
+        "stadium": "Campo de Barreiro",
+        "location": "Campo Municipal de Barreiro, Vigo, España",
+        "aliases": [
+            "Celta B",
+            "Celta de Vigo B",
+            "RC Celta B"
+        ]
+    },
+    "Guijuelo": {
+        "stadium": "Municipal de Guijuelo",
+        "location": "Estadio Municipal Luis Ramos, Guijuelo, España",
+        "aliases": [
+            "C.D. Guijuelo",
+            "CD Guijuelo"
+        ]
+    },
+    "Illescas": {
+        "stadium": "Municipal de Illescas",
+        "location": "Estadio Municipal de Illescas, Illescas, España",
+        "aliases": [
+            "C.D. Illescas",
+            "CD Illescas"
+        ]
+    },
+    "Izarra": {
+        "stadium": "Merkatondoa",
+        "location": "Estadio Merkatondoa, Estella, España",
+        "aliases": [
+            "C.D. Izarra",
+            "CD Izarra"
+        ]
+    },
+    "Laredo": {
+        "stadium": "San Lorenzo",
+        "location": "Campo de San Lorenzo, Laredo, España",
+        "aliases": [
+            "C.D. Laredo",
+            "CD Laredo",
+            "Charles"
+        ]
+    },
+    "Lealtad": {
+        "stadium": "Las Callejas",
+        "location": "Estadio Las Callejas, Villaviciosa, España",
+        "aliases": [
+            "C.D. Lealtad",
+            "CD Lealtad",
+            "Lealtad de Villaviciosa"
+        ]
+    },
+    "Manchego": {
+        "stadium": "Rey Juan Carlos I",
+        "location": "Polideportivo Rey Juan Carlos I, Ciudad Real, España",
+        "aliases": [
+            "C.D. Manchego Ciudad Real",
+            "Manchego Ciudad Real",
+            "CD Manchego"
+        ]
+    },
+    "Mensajero": {
+        "stadium": "Silvestre Carrillo",
+        "location": "Estadio Silvestre Carrillo, Santa Cruz de La Palma, España",
+        "aliases": [
+            "C.D. Mensajero",
+            "CD Mensajero"
+        ]
+    },
+    "Minera": {
+        "stadium": "Ángel Celdrán",
+        "location": "Estadio Municipal Ángel Celdrán, Llano del Beal, España",
+        "aliases": [
+            "C.D. Minera",
+            "CD Minera",
+            "Deportiva Minera"
+        ]
+    },
+    "Móstoles": {
+        "stadium": "El Soto",
+        "location": "Estadio Municipal El Soto, Móstoles, España",
+        "aliases": [
+            "C.D. Móstoles URJC",
+            "CD Mostoles",
+            "Móstoles URJC"
+        ]
+    },
+    "Navalcarnero": {
+        "stadium": "Mariano González",
+        "location": "Estadio Mariano González, Navalcarnero, España",
+        "aliases": [
+            "C.D. Navalcarnero",
+            "CD Navalcarnero",
+            "Artístico Navalcarnero"
+        ]
+    },
+    "Numancia": {
+        "stadium": "Los Pajaritos",
+        "location": "Nuevo Estadio Los Pajaritos, Soria, España",
+        "aliases": [
+            "C.D. Numancia de Soria",
+            "CD Numancia"
+        ]
+    },
+    "Betis Deportivo": {
+        "stadium": "Ciudad Deportiva Luis del Sol",
+        "location": "Ciudad Deportiva Luis del Sol, Sevilla, España",
+        "aliases": [
+            "Betis B",
+            "Real Betis B"
+        ]
+    },
+    "Tudelano": {
+        "stadium": "Ciudad de Tudela",
+        "location": "Estadio Ciudad de Tudela, Tudela, España",
+        "aliases": [
+            "C.D. Tudelano",
+            "CD Tudelano"
+        ]
+    },
+    "Yaiza": {
+        "stadium": "Municipal de Yaiza",
+        "location": "Campo Municipal de Yaiza, Yaiza, España",
+        "aliases": [
+            "C.D. Unión Sur Yaiza",
+            "US Yaiza",
+            "Unión Sur Yaiza"
+        ]
+    },
+    "Andratx": {
+        "stadium": "Sa Plana",
+        "location": "Camp Municipal Sa Plana, Andratx, España",
+        "aliases": [
+            "C.E. Andratx",
+            "CE Andratx"
+        ]
+    },
+    "Manresa": {
+        "stadium": "El Congost",
+        "location": "Estadi Municipal del Congost, Manresa, España",
+        "aliases": [
+            "C.E. Manresa",
+            "CE Manresa"
+        ]
+    },
+    "Sabadell": {
+        "stadium": "Nova Creu Alta",
+        "location": "Estadi de la Nova Creu Alta, Sabadell, España",
+        "aliases": [
+            "C.E. Sabadell F.C.",
+            "CE Sabadell",
+            "Sabadell FC"
+        ]
+    },
+    "Terrassa": {
+        "stadium": "Olímpic de Terrassa",
+        "location": "Estadi Olímpic de Terrassa, Terrassa, España",
+        "aliases": [
+            "C.E. Terrassa F.C.",
+            "CE Terrassa",
+            "Terrassa FC"
+        ]
+    },
+    "Badalona Futur": {
+        "stadium": "Estadi Municipal de Badalona",
+        "location": "Estadi Municipal de Badalona, Badalona, España",
+        "aliases": [
+            "C.F. Badalona Futur",
+            "CF Badalona Futur"
+        ]
+    },
+    "Fuenlabrada": {
+        "stadium": "Fernando Torres",
+        "location": "Estadio Fernando Torres, Fuenlabrada, España",
+        "aliases": [
+            "C.F. Fuenlabrada",
+            "CF Fuenlabrada",
+            "Fuenla"
+        ]
+    },
+    "Intercity": {
+        "stadium": "Antonio Solana",
+        "location": "Estadio Antonio Solana, Alicante, España",
+        "aliases": [
+            "C.F. Intercity",
+            "CF Intercity"
+        ]
+    },
+    "La Nucía": {
+        "stadium": "Camilo Cano",
+        "location": "Estadi Olímpic Camilo Cano, La Nucía, España",
+        "aliases": [
+            "C.F. La Nucía",
+            "CF La Nucía"
+        ]
+    },
+    "Rayo Majadahonda": {
+        "stadium": "Cerro del Espino",
+        "location": "Ciudad Deportiva Wanda Cerro del Espino, Majadahonda, España",
+        "aliases": [
+            "C.F. Rayo Majadahonda",
+            "CF Rayo Majadahonda"
+        ]
+    },
+    "Villanovense": {
+        "stadium": "Municipal Villanovense",
+        "location": "Estadio Municipal Villanovense, Villanueva de la Serena, España",
+        "aliases": [
+            "C.F. Villanovense",
+            "CF Villanovense"
+        ]
+    },
+    "Lleida": {
+        "stadium": "Camp d'Esports",
+        "location": "Camp d'Esports, Lleida, España",
+        "aliases": [
+            "Club Lleida Esportiu",
+            "Lleida Esportiu"
+        ]
+    },
+    "Marino de Luanco": {
+        "stadium": "Miramar",
+        "location": "Estadio Municipal de Miramar, Luanco, España",
+        "aliases": [
+            "Club Marino de Luanco",
+            "Marino Luanco"
+        ]
+    },
+    "Coruxo": {
+        "stadium": "O Vao",
+        "location": "Campo do Vao, Vigo, España",
+        "aliases": [
+            "Coruxo F.C.",
+            "Coruxo FC"
+        ]
+    },
+    "Gernika": {
+        "stadium": "Urbieta",
+        "location": "Estadio Urbieta, Gernika, España",
+        "aliases": [
+            "Gernika Club",
+            "SD Gernika"
+        ]
+    },
+    "Torrelavega": {
+        "stadium": "El Malecón",
+        "location": "Estadio El Malecón, Torrelavega, España",
+        "aliases": [
+            "Gimnástica de Torrelavega",
+            "RS Gimnástica"
+        ]
+    },
+    "Segoviana": {
+        "stadium": "La Albuera",
+        "location": "Estadio Municipal de La Albuera, Segovia, España",
+        "aliases": [
+            "Gimnástica Segoviana C.F.",
+            "Gimnástica Segoviana",
+            "Segoviana"
+        ]
+    },
+    "Linares": {
+        "stadium": "Linarejos",
+        "location": "Estadio Municipal de Linarejos, Linares, España",
+        "aliases": [
+            "Linares Deportivo",
+            "Linares"
+        ]
+    },
+    "Orihuela": {
+        "stadium": "Los Arcos",
+        "location": "Estadio Municipal Los Arcos, Orihuela, España",
+        "aliases": [
+            "Orihuela C.F.",
+            "Orihuela CF"
+        ]
+    },
+    "Ávila": {
+        "stadium": "Adolfo Suárez",
+        "location": "Estadio Adolfo Suárez, Ávila, España",
+        "aliases": [
+            "Real Ávila C.F.",
+            "Real Ávila"
+        ]
+    },
+    "Linense": {
+        "stadium": "Municipal de La Línea",
+        "location": "Estadio Municipal de La Línea, La Línea de la Concepción, España",
+        "aliases": [
+            "Real Balompédica Linense",
+            "Balona"
+        ]
+    },
+    "Jaén": {
+        "stadium": "Nuevo La Victoria",
+        "location": "Nuevo Estadio de La Victoria, Jaén, España",
+        "aliases": [
+            "Real Jaén C.F.",
+            "Real Jaén"
+        ]
+    },
+    "Real Unión": {
+        "stadium": "Stadium Gal",
+        "location": "Stadium Gal, Irún, España",
+        "aliases": [
+            "Real Unión Club",
+            "Real Union"
+        ]
+    },
+    "Salamanca UDS": {
+        "stadium": "Helmántico",
+        "location": "Estadio Helmántico, Salamanca, España",
+        "aliases": [
+            "Salamanca C.F. UDS",
+            "Salamanca CF UDS"
+        ]
+    },
+    "San Fernando CD": {
+        "stadium": "Iberoamericano 2010",
+        "location": "Estadio Iberoamericano 2010, San Fernando, España",
+        "aliases": [
+            "San Fernando C.D.",
+            "San Fernando CD"
+        ]
+    },
+    "Amorebieta": {
+        "stadium": "Urritxe",
+        "location": "Campo Municipal de Urritxe, Amorebieta, España",
+        "aliases": [
+            "S.D. Amorebieta",
+            "SD Amorebieta"
+        ]
+    },
+    "Compostela": {
+        "stadium": "Verónica Boquete",
+        "location": "Estadio Verónica Boquete de San Lázaro, Santiago, España",
+        "aliases": [
+            "S.D. Compostela",
+            "SD Compostela",
+            "Compos"
+        ]
+    },
+    "Formentera": {
+        "stadium": "Municipal de Sant Francesc",
+        "location": "Estadio Municipal de Sant Francesc, Formentera, España",
+        "aliases": [
+            "S.D. Formentera",
+            "SD Formentera"
+        ]
+    },
+    "SD Logroñés": {
+        "stadium": "Las Gaunas",
+        "location": "Estadio Las Gaunas, Logroño, España",
+        "aliases": [
+            "S.D. Logroñés",
+            "SDL"
+        ]
+    },
+    "Sestao": {
+        "stadium": "Las Llanas",
+        "location": "Campo Municipal de Las Llanas, Sestao, España",
+        "aliases": [
+            "Sestao River Club",
+            "Sestao River"
+        ]
+    },
+    "Conquense": {
+        "stadium": "La Fuensanta",
+        "location": "Estadio La Fuensanta, Cuenca, España",
+        "aliases": [
+            "U.B. Conquense",
+            "UB Conquense"
+        ]
+    },
+    "UCAM Murcia": {
+        "stadium": "La Condomina",
+        "location": "Estadio La Condomina, Murcia, España",
+        "aliases": [
+            "U.C.A.M. Murcia C.F.",
+            "UCAM Murcia CF",
+            "UCAM"
+        ]
+    },
+    "Alzira": {
+        "stadium": "Luis Suñer Picó",
+        "location": "Estadio Luis Suñer Picó, Alzira, España",
+        "aliases": [
+            "U.D. Alzira",
+            "UD Alzira"
+        ]
+    },
+    "Barbastro": {
+        "stadium": "Municipal de Deportes",
+        "location": "Estadio Municipal de Deportes, Barbastro, España",
+        "aliases": [
+            "U.D. Barbastro",
+            "UD Barbastro"
+        ]
+    },
+    "Llanera": {
+        "stadium": "Pepe Quimarán",
+        "location": "Campo Pepe Quimarán, Posada de Llanera, España",
+        "aliases": [
+            "U.D. Llanera",
+            "UD Llanera"
+        ]
+    },
+    "UD Logroñés": {
+        "stadium": "Las Gaunas",
+        "location": "Estadio Las Gaunas, Logroño, España",
+        "aliases": [
+            "U.D. Logroñés",
+            "UDL",
+            "Logroñés"
+        ]
+    },
+    "Melilla": {
+        "stadium": "Álvarez Claro",
+        "location": "Estadio Álvarez Claro, Melilla, España",
+        "aliases": [
+            "U.D. Melilla",
+            "UD Melilla"
+        ]
+    },
+    "Montijo": {
+        "stadium": "Emilio Macarro",
+        "location": "Estadio Emilio Macarro, Montijo, España",
+        "aliases": [
+            "U.D. Montijo",
+            "UD Montijo"
+        ]
+    },
+    "UD Ourense": {
+        "stadium": "O Couto",
+        "location": "Estadio de O Couto, Ourense, España",
+        "aliases": [
+            "U.D. Ourense",
+            "UDO"
+        ]
+    },
+    "San Sebastián de los Reyes": {
+        "stadium": "Matapiñonera",
+        "location": "Estadio Matapiñonera, San Sebastián de los Reyes, España",
+        "aliases": [
+            "U.D. San Sebastián de los Reyes",
+            "San Sebastián de los Reyes",
+            "UD Sanse"
+        ]
+    },
+    "Socuéllamos": {
+        "stadium": "Paquito Giménez",
+        "location": "Estadio Paquito Giménez, Socuéllamos, España",
+        "aliases": [
+            "U.D. Socuéllamos",
+            "UD Socuéllamos"
+        ]
+    },
+    "Cornellà": {
+        "stadium": "Nou Municipal de Cornellà",
+        "location": "Nou Municipal de Cornellà, Cornellà de Llobregat, España",
+        "aliases": [
+            "U.E. Cornellà",
+            "UE Cornellà"
+        ]
+    },
+    "Olot": {
+        "stadium": "Municipal d'Olot",
+        "location": "Estadi Municipal d'Olot, Olot, España",
+        "aliases": [
+            "U.E. Olot",
+            "UE Olot"
+        ]
+    },
+    "Sant Andreu": {
+        "stadium": "Narcís Sala",
+        "location": "Camp Municipal Narcís Sala, Barcelona, España",
+        "aliases": [
+            "U.E. Sant Andreu",
+            "UE Sant Andreu"
+        ]
+    },
+    "Langreo": {
+        "stadium": "Ganzábal",
+        "location": "Estadio Nuevo Ganzábal, Langreo, España",
+        "aliases": [
+            "U.P. Langreo",
+            "UP Langreo"
+        ]
+    },
+    "Utebo": {
+        "stadium": "Santa Ana",
+        "location": "Campo Santa Ana, Utebo, España",
+        "aliases": [
+            "Utebo F.C.",
+            "Utebo FC"
+        ]
+    },
+    "Xerez CD": {
+        "stadium": "Chapín",
+        "location": "Estadio Municipal de Chapín, Jerez de la Frontera, España",
+        "aliases": [
+            "Xerez C.D."
+        ]
+    },
+    "Xerez DFC": {
+        "stadium": "Chapín",
+        "location": "Estadio Municipal de Chapín, Jerez de la Frontera, España",
+        "aliases": [
+            "Xerez Deportivo F.C.",
+            "Xerez Deportivo FC"
+        ]
+    },
+    "Yeclano": {
+        "stadium": "La Constitución",
+        "location": "Estadio La Constitución, Yecla, España",
+        "aliases": [
+            "Yeclano Deportivo"
+        ]
+    },
+    "Alondras": {
+        "stadium": "O Morrazo",
+        "location": "Campo do Morrazo, Cangas, España",
+        "aliases": [
+            "Alondras C.F.",
+            "Alondras CF"
+        ]
+    },
+    "Arosa": {
+        "stadium": "A Lomba",
+        "location": "Estadio A Lomba, Vilagarcía de Arousa, España",
+        "aliases": [
+            "Arosa S.C.",
+            "Arosa SC"
+        ]
+    },
+    "Arteixo": {
+        "stadium": "Ponte dos Brozos",
+        "location": "Campo Ponte dos Brozos, Arteixo, España",
+        "aliases": [
+            "Atlético Arteixo",
+            "At. Arteixo"
+        ]
+    },
+    "Barbadás": {
+        "stadium": "Os Carrís",
+        "location": "Campo Municipal Os Carrís, Barbadás, España",
+        "aliases": [
+            "U.D. Barbadás",
+            "UD Barbadás"
+        ]
+    },
+    "Betanzos": {
+        "stadium": "García Hermanos",
+        "location": "Estadio García Hermanos, Betanzos, España",
+        "aliases": [
+            "Betanzos C.F.",
+            "Betanzos CF"
+        ]
+    },
+    "Boiro": {
+        "stadium": "Barraña",
+        "location": "Campo Municipal de Barraña, Boiro, España",
+        "aliases": [
+            "C.D. Boiro",
+            "CD Boiro"
+        ]
+    },
+    "Estradense": {
+        "stadium": "Novo Municipal",
+        "location": "Novo Campo Municipal da Estrada, A Estrada, España",
+        "aliases": [
+            "C.D. Estradense",
+            "CD Estradense"
+        ]
+    },
+    "Noia": {
+        "stadium": "Julio Mato",
+        "location": "Campo Julio Mato 'Matito', Noia, España",
+        "aliases": [
+            "C.F. Noia",
+            "CF Noia"
+        ]
+    },
+    "Sarriana": {
+        "stadium": "A Ribela",
+        "location": "Estadio Municipal A Ribela, Sarria, España",
+        "aliases": [
+            "S.D. Sarriana",
+            "SD Sarriana"
+        ]
+    },
+    "Silva": {
+        "stadium": "A Grela",
+        "location": "Campo de Fútbol A Grela 1, A Coruña, España",
+        "aliases": [
+            "Silva S.D.",
+            "Silva SD"
+        ]
+    },
+    "Somozas": {
+        "stadium": "Alcalde Manuel Candocia",
+        "location": "Campo Municipal Alcalde Manuel Candocia, As Somozas, España",
+        "aliases": [
+            "U.D. Somozas",
+            "UD Somozas"
+        ]
+    },
+    "Valladares": {
+        "stadium": "A Gándara",
+        "location": "Campo da Gándara, Vigo, España",
+        "aliases": [
+            "C.D. Valladares",
+            "CD Valladares"
+        ]
+    },
+    "Villalonga": {
+        "stadium": "San Pedro",
+        "location": "Campo Municipal de San Pedro, Sanxenxo, España",
+        "aliases": [
+            "Villalonga F.C.",
+            "Villalonga FC"
+        ]
+    },
+    "Viveiro": {
+        "stadium": "Cantarrana",
+        "location": "Estadio Municipal de Cantarrana, Viveiro, España",
+        "aliases": [
+            "Viveiro C.F.",
+            "Viveiro CF"
+        ]
+    },
+    "Avilés Stadium": {
+        "stadium": "Muro de Zaro",
+        "location": "Estadio Juan Muro de Zaro, Avilés, España",
+        "aliases": [
+            "Avilés Stadium C.F.",
+            "Avilés Stadium CF"
+        ]
+    },
+    "Caudal": {
+        "stadium": "Hermanos Antuña",
+        "location": "Estadio Hermanos Antuña, Mieres, España",
+        "aliases": [
+            "Caudal Deportivo"
+        ]
+    },
+    "Colunga": {
+        "stadium": "Santianes",
+        "location": "Campo de Fútbol Santianes, Colunga, España",
+        "aliases": [
+            "C.D. Colunga",
+            "CD Colunga"
+        ]
+    },
+    "Covadonga": {
+        "stadium": "Álvarez Rabanal",
+        "location": "Estadio Juan Antonio Álvarez Rabanal, Oviedo, España",
+        "aliases": [
+            "C.D. Covadonga",
+            "CD Covadonga"
+        ]
+    },
+    "Llanes": {
+        "stadium": "San José",
+        "location": "Campo Municipal de San José, Llanes, España",
+        "aliases": [
+            "C.D. Llanes",
+            "CD Llanes"
+        ]
+    },
+    "Mosconia": {
+        "stadium": "Marqués de la Vega de Anzo",
+        "location": "Estadio Marqués de la Vega de Anzo, Grado, España",
+        "aliases": [
+            "C.D. Mosconia",
+            "CD Mosconia"
+        ]
+    },
+    "Praviano": {
+        "stadium": "Santa Catalina",
+        "location": "Campo de Santa Catalina, Pravia, España",
+        "aliases": [
+            "C.D. Praviano",
+            "CD Praviano"
+        ]
+    },
+    "Tuilla": {
+        "stadium": "El Candín",
+        "location": "Campo de El Candín, Tuilla, España",
+        "aliases": [
+            "C.D. Tuilla",
+            "CD Tuilla"
+        ]
+    },
+    "Condal": {
+        "stadium": "Alejandro Ortea",
+        "location": "Estadio Alejandro Ortea, Noreña, España",
+        "aliases": [
+            "Condal Club"
+        ]
+    },
+    "San Martín": {
+        "stadium": "El Florán",
+        "location": "Campo Municipal El Florán, Sotrondio, España",
+        "aliases": [
+            "E.I. San Martín",
+            "EI San Martín"
+        ]
+    },
+    "L'Entregu": {
+        "stadium": "Nuevo Nalón",
+        "location": "Estadio Nuevo Nalón, El Entrego, España",
+        "aliases": [
+            "L'Entregu C.F.",
+            "L'Entregu CF"
+        ]
+    },
+    "Titánico": {
+        "stadium": "Las Tolvas",
+        "location": "Campo de Las Tolvas, Pola de Laviana, España",
+        "aliases": [
+            "Real Titánico"
+        ]
+    },
+    "Ceares": {
+        "stadium": "La Cruz",
+        "location": "Campo de La Cruz, Gijón, España",
+        "aliases": [
+            "U.C. Ceares",
+            "UC Ceares"
+        ]
+    },
+    "Gijón Industrial": {
+        "stadium": "Santa Cruz",
+        "location": "Campo Municipal de Santa Cruz, Gijón, España",
+        "aliases": [
+            "U.D. Gijón Industrial",
+            "UD Gijón Industrial"
+        ]
+    },
+    "Urraca": {
+        "stadium": "La Corredoria",
+        "location": "Campo de La Corredoria, Posada de Llanes, España",
+        "aliases": [
+            "Urraca C.F.",
+            "Urraca CF"
+        ]
+    },
+    "Albericia": {
+        "stadium": "Juan Hormaechea",
+        "location": "Estadio Juan Hormaechea, Santander, España",
+        "aliases": [
+            "Atlético Albericia",
+            "At. Albericia"
+        ]
+    },
+    "Barquereño": {
+        "stadium": "El Castañar",
+        "location": "Campo Municipal El Castañar, San Vicente de la Barquera, España",
+        "aliases": [
+            "C.D. Barquereño",
+            "CD Barquereño"
+        ]
+    },
+    "Bezana": {
+        "stadium": "Municipal de Bezana",
+        "location": "Campo Municipal de Bezana, Santa Cruz de Bezana, España",
+        "aliases": [
+            "C.D. Bezana",
+            "CD Bezana"
+        ]
+    },
+    "Cayón": {
+        "stadium": "Fernando Astobiza",
+        "location": "Estadio Fernando Astobiza, Sarón, España",
+        "aliases": [
+            "C.D. Cayón",
+            "CD Cayón"
+        ]
+    },
+    "Colindres": {
+        "stadium": "El Carmen",
+        "location": "Campo El Carmen, Colindres, España",
+        "aliases": [
+            "C.D. Colindres",
+            "CD Colindres"
+        ]
+    },
+    "Guarnizo": {
+        "stadium": "El Pilar",
+        "location": "Campo de El Pilar, Guarnizo, España",
+        "aliases": [
+            "C.D. Guarnizo",
+            "CD Guarnizo"
+        ]
+    },
+    "Naval": {
+        "stadium": "San Francisco",
+        "location": "Campo San Francisco, Reinosa, España",
+        "aliases": [
+            "C.D. Naval",
+            "CD Naval"
+        ]
+    },
+    "Revilla": {
+        "stadium": "El Crucero",
+        "location": "Campo Municipal El Crucero, Revilla de Camargo, España",
+        "aliases": [
+            "C.D. Revilla",
+            "CD Revilla"
+        ]
+    },
+    "Tropezón": {
+        "stadium": "Santa Ana",
+        "location": "Campo Municipal Santa Ana, Tanos, España",
+        "aliases": [
+            "C.D. Tropezón",
+            "CD Tropezón",
+            "Trope"
+        ]
+    },
+    "Castro": {
+        "stadium": "Riomar",
+        "location": "Estadio Riomar, Castro Urdiales, España",
+        "aliases": [
+            "Castro FC",
+            "Castro F.C."
+        ]
+    },
+    "Cultural Guarnizo": {
+        "stadium": "El Pilar",
+        "location": "Campo El Pilar, Guarnizo, España",
+        "aliases": [
+            "C. Guarnizo",
+            "Cultural de Guarnizo"
+        ]
+    },
+    "Barreda": {
+        "stadium": "Solvay",
+        "location": "Campo de Solvay, Barreda, España",
+        "aliases": [
+            "SD Barreda",
+            "Barreda Balompié"
+        ]
+    },
+    "Gama": {
+        "stadium": "Santa María",
+        "location": "Campo de Santa María, Gama, España",
+        "aliases": [
+            "SD Gama"
+        ]
+    },
+    "Solares": {
+        "stadium": "La Estación",
+        "location": "Campo La Estación, Solares, España",
+        "aliases": [
+            "SD Solares",
+            "Solares-Medio Cudeyo"
+        ]
+    },
+    "Torina": {
+        "stadium": "El Alpedre",
+        "location": "Campo Municipal El Alpedre, Bárcena de Pie de Concha, España",
+        "aliases": [
+            "SD Torina"
+        ]
+    },
+    "Vimenor": {
+        "stadium": "La Vidriera",
+        "location": "Campo de La Vidriera, Vioño de Piélagos, España",
+        "aliases": [
+            "SD Vimenor",
+            "CF Vimenor"
+        ]
+    },
+    "Sámano": {
+        "stadium": "Vallegón",
+        "location": "Campo de Vallegón, Sámano, España",
+        "aliases": [
+            "UD Sámano"
+        ]
+    },
+    "Velarde": {
+        "stadium": "La Maruca",
+        "location": "Campo Municipal La Maruca, Muriedas, España",
+        "aliases": [
+            "Velarde CF"
+        ]
+    },
+    "Anaitasuna": {
+        "stadium": "Txerloia",
+        "location": "Estadio Txerloia, Azkoitia, España",
+        "aliases": [
+            "CD Anaitasuna",
+            "Anaitasuna FT"
+        ]
+    },
+    "Ariznabarra": {
+        "stadium": "Municipal Ariznabarra",
+        "location": "Campo Municipal Ariznabarra, Vitoria-Gasteiz, España",
+        "aliases": [
+            "CD Ariznabarra"
+        ]
+    },
+    "Derio": {
+        "stadium": "Ibaiondo",
+        "location": "Campo Ibaiondo, Derio, España",
+        "aliases": [
+            "CD Derio"
+        ]
+    },
+    "Lagun Onak": {
+        "stadium": "Garmendipe",
+        "location": "Estadio Garmendipe, Azpeitia, España",
+        "aliases": [
+            "CD Lagun Onak"
+        ]
+    },
+    "Padura": {
+        "stadium": "Santo Cristo",
+        "location": "Campo Santo Cristo, Arrigorriaga, España",
+        "aliases": [
+            "CD Padura"
+        ]
+    },
+    "Pasaia": {
+        "stadium": "Don Bosco",
+        "location": "Campo Don Bosco, Pasaia, España",
+        "aliases": [
+            "CD Pasajes",
+            "Pasajes",
+            "Pasaia KE"
+        ]
+    },
+    "San Ignacio": {
+        "stadium": "Adurtzabal",
+        "location": "Campo Adurtzabal, Vitoria-Gasteiz, España",
+        "aliases": [
+            "CD San Ignacio",
+            "San Ignacio CD"
+        ]
+    },
+    "Santurtzi": {
+        "stadium": "San Jorge",
+        "location": "Campo Municipal San Jorge, Santurtzi, España",
+        "aliases": [
+            "CD Santurtzi"
+        ]
+    },
+    "Portugalete": {
+        "stadium": "La Florida",
+        "location": "Estadio La Florida, Portugalete, España",
+        "aliases": [
+            "Club Portugalete"
+        ]
+    },
+    "Cultural Durango": {
+        "stadium": "Tabira",
+        "location": "Estadio Tabira, Durango, España",
+        "aliases": [
+            "SCD Durango",
+            "Cultural de Durango",
+            "Durango"
+        ]
+    },
+    "Beasain": {
+        "stadium": "Loinaz",
+        "location": "Estadio Municipal de Loinaz, Beasain, España",
+        "aliases": [
+            "SD Beasain"
+        ]
+    },
+    "Deusto": {
+        "stadium": "Etxezuri",
+        "location": "Campo de Etxezuri, Bilbao, España",
+        "aliases": [
+            "SD Deusto"
+        ]
+    },
+    "Leioa": {
+        "stadium": "Sarriena",
+        "location": "Instalaciones de Sarriena, Leioa, España",
+        "aliases": [
+            "SD Leioa"
+        ]
+    },
+    "Aretxabaleta": {
+        "stadium": "Ibarra",
+        "location": "Campo Municipal de Ibarra, Aretxabaleta, España",
+        "aliases": [
+            "UD Aretxabaleta"
+        ]
+    },
+    "Urduliz": {
+        "stadium": "Iparralde",
+        "location": "Estadio Iparralde, Urduliz, España",
+        "aliases": [
+            "Urduliz FT"
+        ]
+    },
+    "L'Hospitalet": {
+        "stadium": "Estadi Municipal",
+        "location": "Estadi Municipal de L'Hospitalet, L'Hospitalet de Llobregat, España",
+        "aliases": [
+            "CE L'Hospitalet",
+            "Hospitalet"
+        ]
+    },
+    "Montañesa": {
+        "stadium": "Nou Barris",
+        "location": "Camp Municipal de Nou Barris, Barcelona, España",
+        "aliases": [
+            "CF Montañesa"
+        ]
+    },
+    "Peralada": {
+        "stadium": "Municipal de Peralada",
+        "location": "Camp Municipal de Peralada, Peralada, España",
+        "aliases": [
+            "CF Peralada"
+        ]
+    },
+    "San Cristóbal": {
+        "stadium": "Ca n'Anglada",
+        "location": "Camp Municipal Ca n'Anglada, Terrassa, España",
+        "aliases": [
+            "CP San Cristóbal",
+            "San Cristobal"
+        ]
+    },
+    "Vilafranca": {
+        "stadium": "Municipal de Vilafranca",
+        "location": "Camp Municipal de Vilafranca, Vilafranca del Penedès, España",
+        "aliases": [
+            "FC Vilafranca"
+        ]
+    },
+    "Grama": {
+        "stadium": "Nou Municipal",
+        "location": "Nou Municipal de Santa Coloma, Santa Coloma de Gramenet, España",
+        "aliases": [
+            "FE Grama",
+            "Fundació Grama"
+        ]
+    },
+    "Reus Reddis": {
+        "stadium": "Estadi Municipal",
+        "location": "Estadi Municipal de Reus, Reus, España",
+        "aliases": [
+            "Reus FC Reddis",
+            "Reus Reddis"
+        ]
+    },
+    "Castelldefels": {
+        "stadium": "Els Canyars",
+        "location": "Camp Municipal Els Canyars, Castelldefels, España",
+        "aliases": [
+            "UE Castelldefels"
+        ]
+    },
+    "Rapitenca": {
+        "stadium": "La Devesa",
+        "location": "Estadi Municipal La Devesa, Sant Carles de la Ràpita, España",
+        "aliases": [
+            "UE Rapitenca"
+        ]
+    },
+    "Sants": {
+        "stadium": "L'Energia",
+        "location": "Camp de Futbol de l'Energia, Barcelona, España",
+        "aliases": [
+            "UE Sants"
+        ]
+    },
+    "Tona": {
+        "stadium": "Municipal de Tona",
+        "location": "Camp Municipal de Tona, Tona, España",
+        "aliases": [
+            "UE Tona"
+        ]
+    },
+    "Vilassar de Mar": {
+        "stadium": "Xevi Ramón",
+        "location": "Camp Municipal Xevi Ramón, Vilassar de Mar, España",
+        "aliases": [
+            "UE Vilassar de Mar",
+            "Vilassar"
+        ]
+    },
+    "Atzeneta": {
+        "stadium": "El Regit",
+        "location": "Camp El Regit, Atzeneta d'Albaida, España",
+        "aliases": [
+            "Atzeneta UE"
+        ]
+    },
+    "Acero": {
+        "stadium": "El Fornás",
+        "location": "Estadio El Fornás, Puerto de Sagunto, España",
+        "aliases": [
+            "CD Acero"
+        ]
+    },
+    "Burriana": {
+        "stadium": "Joan Planelles",
+        "location": "Estadio Municipal Joan Planelles, Burriana, España",
+        "aliases": [
+            "CD Burriana"
+        ]
+    },
+    "Castellonense": {
+        "stadium": "L'Almenà",
+        "location": "Poliesportiu Municipal L'Almenà, Villanueva de Castellón, España",
+        "aliases": [
+            "CD Castellonense"
+        ]
+    },
+    "Roda": {
+        "stadium": "Pamesa Cerámica",
+        "location": "Ciudad Deportiva Pamesa Cerámica, Vila-real, España",
+        "aliases": [
+            "CD Roda"
+        ]
+    },
+    "Soneja": {
+        "stadium": "El Arco",
+        "location": "Campo Municipal El Arco, Soneja, España",
+        "aliases": [
+            "CD Soneja"
+        ]
+    },
+    "Utiel": {
+        "stadium": "La Celadilla",
+        "location": "Estadio La Celadilla, Utiel, España",
+        "aliases": [
+            "CD Utiel"
+        ]
+    },
+    "CF Benidorm": {
+        "stadium": "Guillermo Amor",
+        "location": "Estadio Guillermo Amor, Benidorm, España",
+        "aliases": [
+            "Benidorm CF"
+        ]
+    },
+    "Gandía": {
+        "stadium": "Guillermo Olagüe",
+        "location": "Estadio Guillermo Olagüe, Gandía, España",
+        "aliases": [
+            "CF Gandía"
+        ]
+    },
+    "Crevillente": {
+        "stadium": "Enrique Miralles",
+        "location": "Estadio Enrique Miralles, Crevillent, España",
+        "aliases": [
+            "Crevillente Deportivo"
+        ]
+    },
+    "Jove Español": {
+        "stadium": "Ciudad Deportiva",
+        "location": "Ciudad Deportiva San Vicente, San Vicente del Raspeig, España",
+        "aliases": [
+            "FC Jove Español",
+            "Jove Español San Vicente"
+        ]
+    },
+    "Ontinyent 1931": {
+        "stadium": "El Clariano",
+        "location": "Estadi El Clariano, Ontinyent, España",
+        "aliases": [
+            "Ontinyent 1931 CF",
+            "Ontinyent"
+        ]
+    },
+    "Patacona": {
+        "stadium": "Municipal Patacona",
+        "location": "Campo Municipal Patacona, Alboraya, España",
+        "aliases": [
+            "Patacona CF"
+        ]
+    },
+    "Sueca": {
+        "stadium": "L'Infantil",
+        "location": "Camp L'Infantil, Sueca, España",
+        "aliases": [
+            "SD Sueca"
+        ]
+    },
+    "Torrent": {
+        "stadium": "San Gregorio",
+        "location": "Estadio San Gregorio, Torrent, España",
+        "aliases": [
+            "Torrent CF"
+        ]
+    },
+    "Rayo Ibense": {
+        "stadium": "Francisco Vilaplana",
+        "location": "Estadio Francisco Vilaplana Mariel, Ibi, España",
+        "aliases": [
+            "UD Rayo Ibense"
+        ]
+    },
+    "Cala Pozuelo": {
+        "stadium": "Valle de las Cañas",
+        "location": "Ciudad Deportiva Valle de las Cañas, Pozuelo de Alarcón, España",
+        "aliases": [
+            "AD Cala Pozuelo",
+            "Pozuelo"
+        ]
+    },
+    "Parla": {
+        "stadium": "Los Prados",
+        "location": "Estadio Municipal Los Prados, Parla, España",
+        "aliases": [
+            "AD Parla"
+        ]
+    },
+    "Torrejón": {
+        "stadium": "Las Veredillas",
+        "location": "Campo Municipal Las Veredillas, Torrejón de Ardoz, España",
+        "aliases": [
+            "AD Torrejón CF",
+            "AD Torrejón"
+        ]
+    },
+    "Canillas": {
+        "stadium": "Canillas",
+        "location": "Instalaciones Deportivas Canillas, Madrid, España",
+        "aliases": [
+            "CD Canillas"
+        ]
+    },
+    "Galapagar": {
+        "stadium": "El Chopo",
+        "location": "Campo Municipal El Chopo, Galapagar, España",
+        "aliases": [
+            "CD Galapagar"
+        ]
+    },
+    "Collado Villalba": {
+        "stadium": "Ciudad Deportiva",
+        "location": "Ciudad Deportiva de Collado Villalba, Collado Villalba, España",
+        "aliases": [
+            "CU Collado Villalba",
+            "CUC Villalba"
+        ]
+    },
+    "Villanueva del Pardillo": {
+        "stadium": "Los Pinos",
+        "location": "Campo Municipal Los Pinos, Villanueva del Pardillo, España",
+        "aliases": [
+            "FC Villanueva del Pardillo",
+            "Villanueva Pardillo"
+        ]
+    },
+    "Las Rozas": {
+        "stadium": "Navalcarbón",
+        "location": "Polideportivo Dehesa de Navalcarbón, Las Rozas, España",
+        "aliases": [
+            "Las Rozas CF"
+        ]
+    },
+    "Carabanchel": {
+        "stadium": "La Mina",
+        "location": "Campo de La Mina, Madrid, España",
+        "aliases": [
+            "Real Carabanchel",
+            "R.C.D. Carabanchel",
+            "RCD Carabanchel"
+        ]
+    },
+    "Alcalá": {
+        "stadium": "El Val",
+        "location": "Estadio Municipal del Val, Alcalá de Henares, España",
+        "aliases": [
+            "RSD Alcalá"
+        ]
+    },
+    "Aranjuez": {
+        "stadium": "El Deleite",
+        "location": "Estadio El Deleite, Aranjuez, España",
+        "aliases": [
+            "Real Aranjuez CF",
+            "Real Aranjuez"
+        ]
+    },
+    "Trival Valderas": {
+        "stadium": "La Canaleja",
+        "location": "Campo La Canaleja, Alcorcón, España",
+        "aliases": [
+            "Trival Valderas Alcorcón",
+            "Trival"
+        ]
+    },
+    "Tres Cantos": {
+        "stadium": "Jaime Mata",
+        "location": "Campo de Fútbol Jaime Mata, Tres Cantos, España",
+        "aliases": [
+            "Tres Cantos CDF"
+        ]
+    },
+    "Villaverde San Andrés": {
+        "stadium": "Boetticher",
+        "location": "Centro Deportivo Municipal Boetticher, Madrid, España",
+        "aliases": [
+            "Villaverde",
+            "S.R. Villaverde Boetticher"
+        ]
+    },
+    "Atlético Bembibre": {
+        "stadium": "La Devesa",
+        "location": "Estadio La Devesa, Bembibre, España",
+        "aliases": [
+            "At. Bembibre"
+        ]
+    },
+    "Atlético Tordesillas": {
+        "stadium": "Las Salinas",
+        "location": "Campo Municipal Las Salinas, Tordesillas, España",
+        "aliases": [
+            "At. Tordesillas"
+        ]
+    },
+    "Becerril": {
+        "stadium": "Mariano Haro",
+        "location": "Campo Mariano Haro, Becerril de Campos, España",
+        "aliases": [
+            "CD Becerril"
+        ]
+    },
+    "Cristo Atlético": {
+        "stadium": "La Balastera",
+        "location": "Estadio Nueva Balastera, Palencia, España",
+        "aliases": [
+            "CD Palencia Cristo Atlético",
+            "Palencia Cristo"
+        ]
+    },
+    "Laguna": {
+        "stadium": "La Laguna",
+        "location": "Estadio Municipal La Laguna, Laguna de Duero, España",
+        "aliases": [
+            "CD Laguna"
+        ]
+    },
+    "Virgen del Camino": {
+        "stadium": "Los Dominicos",
+        "location": "Instalaciones Deportivas Los Dominicos, La Virgen del Camino, España",
+        "aliases": [
+            "CD La Virgen del Camino",
+            "La Virgen"
+        ]
+    },
+    "Ciudad Rodrigo": {
+        "stadium": "Francisco Mateos",
+        "location": "Estadio Francisco Mateos, Ciudad Rodrigo, España",
+        "aliases": [
+            "Ciudad Rodrigo CF"
+        ]
+    },
+    "Palencia CF": {
+        "stadium": "La Balastera",
+        "location": "Estadio Nueva Balastera, Palencia, España",
+        "aliases": [
+            "Palencia"
+        ]
+    },
+    "Almazán": {
+        "stadium": "La Arboleda",
+        "location": "Campo Municipal La Arboleda, Almazán, España",
+        "aliases": [
+            "SD Almazán"
+        ]
+    },
+    "Unami": {
+        "stadium": "La Albuera",
+        "location": "Estadio Municipal de La Albuera, Segovia, España",
+        "aliases": [
+            "Unami CP"
+        ]
+    },
+    "Arenas de Armilla": {
+        "stadium": "Municipal de Armilla",
+        "location": "Estadio Municipal de Armilla, Armilla, España",
+        "aliases": [
+            "Arenas Armilla",
+            "Arenas CyD"
+        ]
+    },
+    "Mancha Real": {
+        "stadium": "La Juventud",
+        "location": "Estadio La Juventud, Mancha Real, España",
+        "aliases": [
+            "Atlético Mancha Real",
+            "At. Mancha Real"
+        ]
+    },
+    "Huétor Tájar": {
+        "stadium": "Miguel Moranto",
+        "location": "Estadio Miguel Moranto, Huétor-Tájar, España",
+        "aliases": [
+            "CD Huétor Tájar"
+        ]
+    },
+    "Huétor Vega": {
+        "stadium": "Las Viñas",
+        "location": "Polideportivo Municipal Las Viñas, Huétor Vega, España",
+        "aliases": [
+            "CD Huétor Vega"
+        ]
+    },
+    "Torreperogil": {
+        "stadium": "Abdón Martínez",
+        "location": "Estadio Abdón Martínez Fariñas, Torreperogil, España",
+        "aliases": [
+            "CD Torreperogil"
+        ]
+    },
+    "Motril": {
+        "stadium": "Escribano Castilla",
+        "location": "Estadio Escribano Castilla, Motril, España",
+        "aliases": [
+            "CF Motril"
+        ]
+    },
+    "Poli Almería": {
+        "stadium": "Ciudad Deportiva de Los Ángeles",
+        "location": "Ciudad Deportiva de Los Ángeles, Almería, España",
+        "aliases": [
+            "CP Almería",
+            "Club Polideportivo Almería"
+        ]
+    },
+    "El Palo": {
+        "stadium": "San Ignacio",
+        "location": "Estadio San Ignacio, Málaga, España",
+        "aliases": [
+            "El Palo FC"
+        ]
+    },
+    "Málaga City": {
+        "stadium": "Pepe Luis Bobadilla",
+        "location": "Estadio Municipal Pepe Luis Bobadilla, Nerja, España",
+        "aliases": [
+            "FC Málaga City"
+        ]
+    },
+    "Torredonjimeno": {
+        "stadium": "Matías Prats",
+        "location": "Estadio Municipal Matías Prats, Torredonjimeno, España",
+        "aliases": [
+            "UD Ciudad de Torredonjimeno",
+            "Ciudad Torredonjimeno"
+        ]
+    },
+    "Maracena": {
+        "stadium": "Ciudad Deportiva",
+        "location": "Ciudad Deportiva de Maracena, Maracena, España",
+        "aliases": [
+            "UD Maracena"
+        ]
+    },
+    "Torre del Mar": {
+        "stadium": "Juan Manuel Azuaga",
+        "location": "Estadio Juan Manuel Azuaga, Torre del Mar, España",
+        "aliases": [
+            "UD Torre del Mar"
+        ]
+    },
+    "Cartaya": {
+        "stadium": "Luis Rodríguez Salvador",
+        "location": "Estadio Luis Rodríguez Salvador, Cartaya, España",
+        "aliases": [
+            "AD Cartaya"
+        ]
+    },
+    "Atlético Central": {
+        "stadium": "Vega de Triana",
+        "location": "Instalaciones Vega de Triana, Sevilla, España",
+        "aliases": [
+            "At. Central"
+        ]
+    },
+    "Atlético Espeleño": {
+        "stadium": "Municipal de Espiel",
+        "location": "Campo Municipal de Espiel, Espiel, España",
+        "aliases": [
+            "At. Espeleño",
+            "Espeleño"
+        ]
+    },
+    "Bollullos": {
+        "stadium": "Eloy Ávila Cano",
+        "location": "Estadio Eloy Ávila Cano, Bollullos Par del Condado, España",
+        "aliases": [
+            "Bollullos CF"
+        ]
+    },
+    "Ciudad de Lucena": {
+        "stadium": "Ciudad de Lucena",
+        "location": "Estadio Ciudad de Lucena, Lucena, España",
+        "aliases": [
+            "CD Ciudad de Lucena",
+            "Lucena"
+        ]
+    },
+    "Gerena": {
+        "stadium": "Leonardo Ramos",
+        "location": "Estadio Leonardo Ramos, Gerena, España",
+        "aliases": [
+            "CD Gerena"
+        ]
+    },
+    "Pozoblanco": {
+        "stadium": "Municipal Pozoblanco",
+        "location": "Polideportivo Municipal, Pozoblanco, España",
+        "aliases": [
+            "CD Pozoblanco"
+        ]
+    },
+    "Utrera": {
+        "stadium": "San Juan Bosco",
+        "location": "Estadio Municipal San Juan Bosco, Utrera, España",
+        "aliases": [
+            "CD Utrera"
+        ]
+    },
+    "Conil": {
+        "stadium": "José Antonio Pérez Ureba",
+        "location": "Campo José Antonio Pérez Ureba, Conil de la Frontera, España",
+        "aliases": [
+            "Conil CF"
+        ]
+    },
+    "Coria CF": {
+        "stadium": "Guadalquivir",
+        "location": "Estadio Guadalquivir, Coria del Río, España",
+        "aliases": [
+            "Coria",
+            "Coria C.F."
+        ]
+    },
+    "La Palma": {
+        "stadium": "Municipal La Palma",
+        "location": "Polideportivo Municipal, La Palma del Condado, España",
+        "aliases": [
+            "La Palma CF"
+        ]
+    },
+    "Puente Genil": {
+        "stadium": "Manuel Polinario",
+        "location": "Estadio Manuel Polinario, Puente Genil, España",
+        "aliases": [
+            "Salerm Puente Genil",
+            "Salerm Puente Genil FC"
+        ]
+    },
+    "Constància": {
+        "stadium": "Nou Camp d'Inca",
+        "location": "Nou Camp d'Inca, Inca, España",
+        "aliases": [
+            "CD Constància",
+            "Constancia"
+        ]
+    },
+    "Felanitx": {
+        "stadium": "Es Torrentó",
+        "location": "Estadi Es Torrentó, Felanitx, España",
+        "aliases": [
+            "CD Felanitx"
+        ]
+    },
+    "Llosetense": {
+        "stadium": "Es Puig",
+        "location": "Camp Municipal Es Puig, Lloseta, España",
+        "aliases": [
+            "CD Llosetense"
+        ]
+    },
+    "Manacor": {
+        "stadium": "Na Capellera",
+        "location": "Estadi Na Capellera, Manacor, España",
+        "aliases": [
+            "CD Manacor"
+        ]
+    },
+    "Migjorn": {
+        "stadium": "Los Nogales",
+        "location": "Camp Los Nogales, Es Migjorn Gran, España",
+        "aliases": [
+            "CD Migjorn"
+        ]
+    },
+    "Alaior": {
+        "stadium": "Los Pinos",
+        "location": "Estadi Los Pinos, Alaior, España",
+        "aliases": [
+            "CE Alaior"
+        ]
+    },
+    "Mercadal": {
+        "stadium": "Sant Martí",
+        "location": "Camp Municipal Sant Martí, Es Mercadal, España",
+        "aliases": [
+            "CE Mercadal"
+        ]
+    },
+    "Sóller": {
+        "stadium": "Camp d'en Maiol",
+        "location": "Camp d'en Maiol, Sóller, España",
+        "aliases": [
+            "CF Sóller"
+        ]
+    },
+    "Sant Jordi": {
+        "stadium": "Kiko Serra",
+        "location": "Estadi Municipal Kiko Serra, Sant Jordi de ses Salines, España",
+        "aliases": [
+            "PE Sant Jordi"
+        ]
+    },
+    "Penya Independent": {
+        "stadium": "Sant Miquel",
+        "location": "Camp Municipal de Sant Miquel, Sant Miquel de Balansat, España",
+        "aliases": [
+            "Penya Indep.",
+            "SE Penya Independent"
+        ]
+    },
+    "Poblense": {
+        "stadium": "Sa Pobla",
+        "location": "Estadi Municipal de Sa Pobla, Sa Pobla, España",
+        "aliases": [
+            "UD Poblense"
+        ]
+    },
+    "Portmany": {
+        "stadium": "Sant Antoni",
+        "location": "Camp Municipal de Sant Antoni, Sant Antoni de Portmany, España",
+        "aliases": [
+            "SD Portmany"
+        ]
+    },
+    "Collerense": {
+        "stadium": "Ca Na Paulina",
+        "location": "Camp Municipal Ca Na Paulina, Palma, España",
+        "aliases": [
+            "UD Collerense"
+        ]
+    },
+    "Arucas": {
+        "stadium": "Tonono",
+        "location": "Estadio Manuel Pablo (Tonono), Arucas, España",
+        "aliases": [
+            "Arucas CF"
+        ]
+    },
+    "Buzanada": {
+        "stadium": "Clementina de Bello",
+        "location": "Campo Clementina de Bello, Buzanada, España",
+        "aliases": [
+            "CD Buzanada"
+        ]
+    },
+    "Herbania": {
+        "stadium": "Los Pozos",
+        "location": "Estadio Municipal Los Pozos, Puerto del Rosario, España",
+        "aliases": [
+            "CD Herbania"
+        ]
+    },
+    "Marino": {
+        "stadium": "Antonio Domínguez",
+        "location": "Estadio Antonio Domínguez, Arona, España",
+        "aliases": [
+            "CD Marino"
+        ]
+    },
+    "Santa Úrsula": {
+        "stadium": "Argelio Tabares",
+        "location": "Estadio Argelio Tabares, Santa Úrsula, España",
+        "aliases": [
+            "CD Santa Úrsula"
+        ]
+    },
+    "Panadería Pulido": {
+        "stadium": "San Mateo",
+        "location": "Campo Municipal de San Mateo, Vega de San Mateo, España",
+        "aliases": [
+            "CF Panadería Pulido San Mateo",
+            "Panadería Pulido San Mateo"
+        ]
+    },
+    "Ibarra": {
+        "stadium": "Villa Isabel",
+        "location": "Campo Villa Isabel, El Fraile, España",
+        "aliases": [
+            "UD Ibarra"
+        ]
+    },
+    "Lanzarote": {
+        "stadium": "Ciudad Deportiva",
+        "location": "Ciudad Deportiva Lanzarote, Arrecife, España",
+        "aliases": [
+            "UD Lanzarote"
+        ]
+    },
+    "San Fernando GC": {
+        "stadium": "Maspalomas",
+        "location": "Ciudad Deportiva Maspalomas, San Bartolomé de Tirajana, España",
+        "aliases": [
+            "UD San Fernando",
+            "San Fernando"
+        ]
+    },
+    "Tamaraceite": {
+        "stadium": "Juan Guedes",
+        "location": "Campo de Fútbol Juan Guedes, Las Palmas, España",
+        "aliases": [
+            "UD Tamaraceite"
+        ]
+    },
+    "Teror": {
+        "stadium": "El Pino",
+        "location": "Estadio El Pino, Teror, España",
+        "aliases": [
+            "UD Teror"
+        ]
+    },
+    "Villa Santa Brígida": {
+        "stadium": "Los Olivos",
+        "location": "Campo Municipal Los Olivos, Santa Brígida, España",
+        "aliases": [
+            "UD Villa de Santa Brígida",
+            "Villa Sta Brígida"
+        ]
+    },
+    "Alcantarilla": {
+        "stadium": "Ángel Sornichero",
+        "location": "Estadio Ángel Sornichero, Alcantarilla, España",
+        "aliases": [
+            "Alcantarilla FC"
+        ]
+    },
+    "Pulpileño": {
+        "stadium": "San Miguel",
+        "location": "Estadio San Miguel, Pulpí, España",
+        "aliases": [
+            "Atlético Pulpileño",
+            "At. Pulpileño"
+        ]
+    },
+    "Bullense": {
+        "stadium": "Nicolás de las Peñas",
+        "location": "Estadio Nicolás de las Peñas, Bullas, España",
+        "aliases": [
+            "CD Bullense"
+        ]
+    },
+    "Cieza": {
+        "stadium": "La Arboleja",
+        "location": "Estadio La Arboleja, Cieza, España",
+        "aliases": [
+            "CD Cieza"
+        ]
+    },
+    "Plus Ultra": {
+        "stadium": "Llano de Brujas",
+        "location": "Campo Municipal de Llano de Brujas, Llano de Brujas, España",
+        "aliases": [
+            "CD Plus Ultra"
+        ]
+    },
+    "Ciudad de Murcia": {
+        "stadium": "José Barnés",
+        "location": "Campo Municipal José Barnés, Murcia, España",
+        "aliases": [
+            "CAP Ciudad de Murcia"
+        ]
+    },
+    "Caravaca": {
+        "stadium": "El Morao",
+        "location": "Estadio El Morao, Caravaca de la Cruz, España",
+        "aliases": [
+            "UD Caravaca"
+        ]
+    },
+    "Deportivo Marítimo": {
+        "stadium": "Gómez Meseguer",
+        "location": "Polígono Gómez Meseguer, Cartagena, España",
+        "aliases": [
+            "Deportivo Marítimo"
+        ]
+    },
+    "Molinense": {
+        "stadium": "Sánchez Cánovas",
+        "location": "Estadio Sánchez Cánovas, Molina de Segura, España",
+        "aliases": [
+            "Unión Molinense"
+        ]
+    },
+    "Muleño": {
+        "stadium": "Municipal de Mula",
+        "location": "Campo Municipal de Deportes, Mula, España",
+        "aliases": [
+            "Muleño CF"
+        ]
+    },
+    "Racing Murcia": {
+        "stadium": "Campus Universitario",
+        "location": "Estadio Campus Universitario, Murcia, España",
+        "aliases": [
+            "Racing Murcia FC"
+        ]
+    },
+    "Llerenense": {
+        "stadium": "Fernando Robina",
+        "location": "Estadio Fernando Robina, Llerena, España",
+        "aliases": [
+            "AD Llerenense"
+        ]
+    },
+    "Arroyo": {
+        "stadium": "Municipal de Arroyo",
+        "location": "Estadio Municipal de Arroyo de la Luz, Arroyo de la Luz, España",
+        "aliases": [
+            "Arroyo CP"
+        ]
+    },
+    "Pueblonuevo": {
+        "stadium": "Antonio Amaya",
+        "location": "Estadio Antonio Amaya, Pueblonuevo del Guadiana, España",
+        "aliases": [
+            "At. Pueblonuevo",
+            "Atlético Pueblonuevo"
+        ]
+    },
+    "Azuaga": {
+        "stadium": "Municipal de Azuaga",
+        "location": "Estadio Municipal de Deportes, Azuaga, España",
+        "aliases": [
+            "CD Azuaga"
+        ]
+    },
+    "Castuera": {
+        "stadium": "Manuel Ruiz",
+        "location": "Estadio Manuel Ruiz, Castuera, España",
+        "aliases": [
+            "CD Castuera"
+        ]
+    },
+    "Diocesano": {
+        "stadium": "Campos de la Federación",
+        "location": "Campos de la Federación, Cáceres, España",
+        "aliases": [
+            "CD Diocesano"
+        ]
+    },
+    "Jaraíz": {
+        "stadium": "Municipal de Jaraíz",
+        "location": "Polideportivo Municipal, Jaraíz de la Vera, España",
+        "aliases": [
+            "CF Jaraíz"
+        ]
+    },
+    "Trujillo": {
+        "stadium": "Julián García de Guadiana",
+        "location": "Estadio Julián García de Guadiana, Trujillo, España",
+        "aliases": [
+            "CF Trujillo"
+        ]
+    },
+    "Montehermoso": {
+        "stadium": "Municipal de Montehermoso",
+        "location": "Campo Municipal, Montehermoso, España",
+        "aliases": [
+            "CP Montehermoso"
+        ]
+    },
+    "Jerez CF": {
+        "stadium": "Manuel Calzado",
+        "location": "Estadio Manuel Calzado Galván, Jerez de los Caballeros, España",
+        "aliases": [
+            "Jerez",
+            "Jerez C.F."
+        ]
+    },
+    "Moralo": {
+        "stadium": "Municipal de Navalmoral",
+        "location": "Campo Municipal de Deportes, Navalmoral de la Mata, España",
+        "aliases": [
+            "Moralo CP"
+        ]
+    },
+    "Olivenza": {
+        "stadium": "Ciudad Deportiva Olivenza",
+        "location": "Ciudad Deportiva de Olivenza, Olivenza, España",
+        "aliases": [
+            "Olivenza FC"
+        ]
+    },
+    "SP Villafranca": {
+        "stadium": "Municipal de Villafranca",
+        "location": "Campo Municipal de Villafranca, Villafranca de los Barros, España",
+        "aliases": [
+            "Villafranca"
+        ]
+    },
+    "Fuente de Cantos": {
+        "stadium": "Francisco de Zurbarán",
+        "location": "Estadio Francisco de Zurbarán, Fuente de Cantos, España",
+        "aliases": [
+            "UD Fuente de Cantos"
+        ]
+    },
+    "Betigorri": {
+        "stadium": "Hermanos Induráin",
+        "location": "Polideportivo Hermanos Induráin, Villava, España",
+        "aliases": [
+            "Betigorri KE"
+        ]
+    },
+    "Cirbonero": {
+        "stadium": "San Juan",
+        "location": "Campo San Juan, Cintruénigo, España",
+        "aliases": [
+            "CA Cirbonero"
+        ]
+    },
+    "Ardoi": {
+        "stadium": "El Pinar",
+        "location": "Campo El Pinar, Zizur Mayor, España",
+        "aliases": [
+            "CD Ardoi"
+        ]
+    },
+    "Beti Onak": {
+        "stadium": "Lorenzo Goikoa",
+        "location": "Campo Lorenzo Goikoa, Villava, España",
+        "aliases": [
+            "CD Beti Onak"
+        ]
+    },
+    "Cantolagua": {
+        "stadium": "Municipal de Sangüesa",
+        "location": "Campo Municipal de Sangüesa, Sangüesa, España",
+        "aliases": [
+            "CD Cantolagua"
+        ]
+    },
+    "Cortes": {
+        "stadium": "San Francisco Javier",
+        "location": "Campo San Francisco Javier, Cortes, España",
+        "aliases": [
+            "CD Cortes"
+        ]
+    },
+    "Huarte": {
+        "stadium": "Areta",
+        "location": "Campo Nuevo Areta, Huarte, España",
+        "aliases": [
+            "CD Huarte"
+        ]
+    },
+    "Oberena": {
+        "stadium": "Oberena",
+        "location": "Instalaciones Oberena, Pamplona, España",
+        "aliases": [
+            "CD Oberena"
+        ]
+    },
+    "Pamplona": {
+        "stadium": "Beitikuntzea",
+        "location": "Instalaciones Beitikuntzea, Pamplona, España",
+        "aliases": [
+            "CD Pamplona"
+        ]
+    },
+    "Valle de Egüés": {
+        "stadium": "Sarriguren",
+        "location": "Ciudad Deportiva Sarriguren, Egüés, España",
+        "aliases": [
+            "CD Valle de Egüés"
+        ]
+    },
+    "Peña Sport": {
+        "stadium": "San Francisco",
+        "location": "Campo San Francisco, Tafalla, España",
+        "aliases": [
+            "Peña Sport FC"
+        ]
+    },
+    "Mutilvera": {
+        "stadium": "Mutilnova",
+        "location": "Estadio Mutilnova, Mutilva, España",
+        "aliases": [
+            "UD Mutilvera"
+        ]
+    },
+    "River Ebro": {
+        "stadium": "San Miguel",
+        "location": "Campo San Miguel, Rincón de Soto, España",
+        "aliases": [
+            "CA River Ebro"
+        ]
+    },
+    "Vianés": {
+        "stadium": "Príncipe de Viana",
+        "location": "Campo Príncipe de Viana, Viana, España",
+        "aliases": [
+            "CA Vianés"
+        ]
+    },
+    "Agoncillo": {
+        "stadium": "San Roque",
+        "location": "Campo San Roque, Agoncillo, España",
+        "aliases": [
+            "CD Agoncillo"
+        ]
+    },
+    "Arnedo": {
+        "stadium": "Sendero",
+        "location": "Campo Municipal Sendero, Arnedo, España",
+        "aliases": [
+            "CD Arnedo"
+        ]
+    },
+    "Berceo": {
+        "stadium": "La Isla",
+        "location": "Instalaciones La Isla, Logroño, España",
+        "aliases": [
+            "CD Berceo"
+        ]
+    },
+    "Tedeón": {
+        "stadium": "San Miguel",
+        "location": "Campo San Miguel, Navarrete, España",
+        "aliases": [
+            "CD Tedeón"
+        ]
+    },
+    "Varea": {
+        "stadium": "Municipal de Varea",
+        "location": "Campo Municipal de Varea, Logroño, España",
+        "aliases": [
+            "CD Varea"
+        ]
+    },
+    "Casalarreina": {
+        "stadium": "El Soto",
+        "location": "Campo El Soto, Casalarreina, España",
+        "aliases": [
+            "Casalarreina CF"
+        ]
+    },
+    "Haro Deportivo": {
+        "stadium": "El Mazo",
+        "location": "Estadio Municipal El Mazo, Haro, España",
+        "aliases": [
+            "Haro"
+        ]
+    },
+    "La Calzada": {
+        "stadium": "El Rollo",
+        "location": "Campo El Rollo, Santo Domingo de la Calzada, España",
+        "aliases": [
+            "FC La Calzada"
+        ]
+    },
+    "Náxara": {
+        "stadium": "La Salera",
+        "location": "Estadio La Salera, Nájera, España",
+        "aliases": [
+            "Náxara CD"
+        ]
+    },
+    "Peña Balsamaiso": {
+        "stadium": "La Estrella",
+        "location": "Campo La Estrella, Logroño, España",
+        "aliases": [
+            "SD Peña Balsamaiso"
+        ]
+    },
+    "Racing Rioja": {
+        "stadium": "Mundial 82",
+        "location": "Estadio Mundial 82, Logroño, España",
+        "aliases": [
+            "Racing Rioja CF"
+        ]
+    },
+    "Oyonesa": {
+        "stadium": "El Espinar",
+        "location": "Campo El Espinar, Oyón, España",
+        "aliases": [
+            "SD Oyonesa"
+        ]
+    },
+    "Almudévar": {
+        "stadium": "La Corona",
+        "location": "Campo La Corona, Almudévar, España",
+        "aliases": [
+            "AD Almudévar"
+        ]
+    },
+    "Monzón": {
+        "stadium": "Isidro Calderón",
+        "location": "Estadio Isidro Calderón, Monzón, España",
+        "aliases": [
+            "Atlético Monzón",
+            "At. Monzón"
+        ]
+    },
+    "Belchite 97": {
+        "stadium": "El Tejar",
+        "location": "Campo El Tejar, Belchite, España",
+        "aliases": [
+            "CD Belchite 97"
+        ]
+    },
+    "Binéfar": {
+        "stadium": "Los Olmos",
+        "location": "Estadio Los Olmos, Binéfar, España",
+        "aliases": [
+            "CD Binéfar"
+        ]
+    },
+    "Caspe": {
+        "stadium": "Rosales",
+        "location": "Campo Municipal Rosales, Caspe, España",
+        "aliases": [
+            "CD Caspe"
+        ]
+    },
+    "Cuarte": {
+        "stadium": "Municipal de Cuarte",
+        "location": "Campo Municipal de Cuarte de Huerva, Cuarte de Huerva, España",
+        "aliases": [
+            "CD Cuarte"
+        ]
+    },
+    "CD Ebro": {
+        "stadium": "La Almozara",
+        "location": "Campo Municipal La Almozara, Zaragoza, España",
+        "aliases": [
+            "Ebro"
+        ]
+    },
+    "Fuentes": {
+        "stadium": "San Miguel",
+        "location": "Campo San Miguel, Fuentes de Ebro, España",
+        "aliases": [
+            "CD Fuentes"
+        ]
+    },
+    "Utrillas": {
+        "stadium": "La Vega",
+        "location": "Campo La Vega, Utrillas, España",
+        "aliases": [
+            "CD Utrillas"
+        ]
+    },
+    "Calamocha": {
+        "stadium": "Jumaya",
+        "location": "Campo Jumaya, Calamocha, España",
+        "aliases": [
+            "CF Calamocha"
+        ]
+    },
+    "Epila": {
+        "stadium": "La Huerta",
+        "location": "Campo La Huerta, Épila, España",
+        "aliases": [
+            "CF Epila"
+        ]
+    },
+    "Illueca": {
+        "stadium": "Papa Luna",
+        "location": "Estadio Papa Luna, Illueca, España",
+        "aliases": [
+            "CF Illueca"
+        ]
+    },
+    "Borja": {
+        "stadium": "Manuel Meler",
+        "location": "Estadio Manuel Meler, Borja, España",
+        "aliases": [
+            "SD Borja"
+        ]
+    },
+    "Fraga": {
+        "stadium": "La Estacada",
+        "location": "La Estacada, Fraga, España",
+        "aliases": [
+            "UD Fraga"
+        ]
+    },
+    "Azuqueca": {
+        "stadium": "San Miguel",
+        "location": "Estadio San Miguel, Azuqueca de Henares, España",
+        "aliases": [
+            "CD Azuqueca"
+        ]
+    },
+    "Cazalegas": {
+        "stadium": "Ebora Formación",
+        "location": "Ciudad Deportiva Ebora Formación, Cazalegas, España",
+        "aliases": [
+            "CD Cazalegas"
+        ]
+    },
+    "Huracán de Balazote": {
+        "stadium": "Municipal de Balazote",
+        "location": "Campo Municipal de Balazote, Balazote, España",
+        "aliases": [
+            "CD Huracán de Balazote",
+            "Huracán Balazote"
+        ]
+    },
+    "Marchamalo": {
+        "stadium": "La Solana",
+        "location": "Complejo Deportivo La Solana, Marchamalo, España",
+        "aliases": [
+            "C.D. Marchamalo",
+            "CD Marchamalo"
+        ]
+    },
+    "Noblejas": {
+        "stadium": "Ángel Luengo",
+        "location": "Campo Municipal Ángel Luengo, Noblejas, España",
+        "aliases": [
+            "C.D. Noblejas",
+            "CD Noblejas"
+        ]
+    },
+    "Quintanar del Rey": {
+        "stadium": "San Marcos",
+        "location": "Estadio San Marcos, Quintanar del Rey, España",
+        "aliases": [
+            "C.D. Quintanar del Rey",
+            "CD Quintanar del Rey",
+            "Quintanar"
+        ]
+    },
+    "Tarancón": {
+        "stadium": "Estadio Municipal",
+        "location": "Estadio Municipal de Tarancón, Tarancón, España",
+        "aliases": [
+            "C.D. Tarancón",
+            "CD Tarancón"
+        ]
+    },
+    "Toledo": {
+        "stadium": "Salto del Caballo",
+        "location": "Estadio Salto del Caballo, Toledo, España",
+        "aliases": [
+            "C.D. Toledo",
+            "CD Toledo"
+        ]
+    },
+    "Villacañas": {
+        "stadium": "Las Pirámides",
+        "location": "Campo Municipal Las Pirámides, Villacañas, España",
+        "aliases": [
+            "C.D. Villacañas",
+            "CD Villacañas"
+        ]
+    },
+    "Villarrubia": {
+        "stadium": "Nuevo Campo",
+        "location": "Nuevo Campo Municipal, Villarrubia de los Ojos, España",
+        "aliases": [
+            "C.D. Villarrubia",
+            "CD Villarrubia"
+        ]
+    },
+    "Calvo Sotelo": {
+        "stadium": "El Cerrú",
+        "location": "Estadio Ciudad de Puertollano, Puertollano, España",
+        "aliases": [
+            "Calvo Sotelo Puertollano C.F.",
+            "CS Puertollano",
+            "Puertollano"
+        ]
+    },
+    "Manzanares": {
+        "stadium": "José Camacho",
+        "location": "Campo Municipal José Camacho, Manzanares, España",
+        "aliases": [
+            "Manzanares C.F.",
+            "Manzanares CF"
+        ]
+    },
+    "Puerto Vega": {
+        "stadium": "El Campón",
+        "location": "Campo El Campón, Puerto de Vega, España",
+        "aliases": [
+            "Puerto de Vega C.F.",
+            "Puerto de Vega CF"
+        ]
+    },
+    "Luarca": {
+        "stadium": "La Veigona",
+        "location": "Estadio La Veigona, Luarca, España",
+        "aliases": [
+            "Luarca C.F.",
+            "Luarca CF"
+        ]
+    },
+    "Astur": {
+        "stadium": "Hermanos Llana",
+        "location": "Estadio Hermanos Llana, Oviedo, España",
+        "aliases": [
+            "Astur C.F.",
+            "Astur CF"
+        ]
+    },
+    "Andés": {
+        "stadium": "San Pedro",
+        "location": "Campo de San Pedro, Andés, España",
+        "aliases": [
+            "Andés C.F.",
+            "Andes CF",
+            "Andes"
+        ]
+    },
+    "Barcia": {
+        "stadium": "San Sebastián",
+        "location": "Campo de San Sebastián, Barcia, España",
+        "aliases": [
+            "Barcia C.F.",
+            "Barcia CF"
+        ]
+    },
+    "Candás": {
+        "stadium": "La Mata",
+        "location": "Campo de La Mata, Candás, España",
+        "aliases": [
+            "Candás C.F.",
+            "Candas CF",
+            "Candas"
+        ]
+    },
+    "Muros": {
+        "stadium": "Municipal de Muros",
+        "location": "Campo Municipal de Muros, Muros de Nalón, España",
+        "aliases": [
+            "C.D. Muros Balompié",
+            "Muros Balompié",
+            "CD Muros"
+        ]
+    },
+    "Roces": {
+        "stadium": "Covadonga",
+        "location": "Campo Municipal de Covadonga, Gijón, España",
+        "aliases": [
+            "C.D. Roces",
+            "CD Roces"
+        ]
+    },
+    "Tineo": {
+        "stadium": "Municipal de Tineo",
+        "location": "Campo Municipal de Tineo, Tineo, España",
+        "aliases": [
+            "C.D. Tineo",
+            "CD Tineo"
+        ]
+    },
+    "Universidad de Oviedo": {
+        "stadium": "San Gregorio",
+        "location": "Estadio Universitario San Gregorio, Oviedo, España",
+        "aliases": [
+            "C.D. Universidad de Oviedo",
+            "Uni Oviedo",
+            "Universidad Oviedo"
+        ]
+    },
+    "Vallobín": {
+        "stadium": "Vallobín",
+        "location": "Campo de Fútbol de Vallobín, Oviedo, España",
+        "aliases": [
+            "C.D. Vallobín",
+            "CD Vallobín"
+        ]
+    },
+    "Hispano": {
+        "stadium": "Ferrota",
+        "location": "Campo Municipal de Ferrota, Piedras Blancas, España",
+        "aliases": [
+            "Club Hispano de Castrillón",
+            "Hispano de Castrillón"
+        ]
+    },
+    "Gozón": {
+        "stadium": "Balbín",
+        "location": "Campo de Balbín, Luanco, España",
+        "aliases": [
+            "Gozón C.F.",
+            "Gozon CF",
+            "Gozon"
+        ]
+    },
+    "Navia": {
+        "stadium": "El Pardo",
+        "location": "Campo El Pardo, Navia, España",
+        "aliases": [
+            "Navia C.F.",
+            "Navia CF"
+        ]
+    },
+    "Podes": {
+        "stadium": "Builla",
+        "location": "Campo de Builla, Gozón, España",
+        "aliases": [
+            "Podes C.F.",
+            "Podes CF"
+        ]
+    },
+    "Ribadesella": {
+        "stadium": "Oreyana",
+        "location": "Campo Municipal Oreyana, Ribadesella, España",
+        "aliases": [
+            "Ribadesella C.F.",
+            "Ribadesella CF"
+        ]
+    },
+    "Atlético Camocha": {
+        "stadium": "Vega",
+        "location": "Campo Municipal de Vega, Gijón, España",
+        "aliases": [
+            "S.D. Atlético Camocha",
+            "Atlético Camocha",
+            "At. Camocha"
+        ]
+    },
+    "San Claudio": {
+        "stadium": "José Ramón Suárez Fernández",
+        "location": "Campo Municipal José Ramón Suárez Fernández, San Claudio, España",
+        "aliases": [
+            "U.D. San Claudio",
+            "UD San Claudio"
+        ]
+    },
+    "Valdesoto": {
+        "stadium": "Villarea",
+        "location": "Campo de Villarea, Valdesoto, España",
+        "aliases": [
+            "Valdesoto C.F.",
+            "Valdesoto CF"
+        ]
+    },
+    "Vegadeo": {
+        "stadium": "El Soutón",
+        "location": "Campo Municipal El Soutón, Vegadeo, España",
+        "aliases": [
+            "Vegadeo C.F.",
+            "Vegadeo CF"
+        ]
+    },
+    "Atlético Arnoia": {
+        "stadium": "A Queixeira",
+        "location": "Campo Municipal A Queixeira, Arnoia, España",
+        "aliases": [
+            "At. Arnoia",
+            "Arnoia"
+        ]
+    },
+    "Lalín": {
+        "stadium": "Manuel Anxo Cortizo",
+        "location": "Estadio Manuel Anxo Cortizo, Lalín, España",
+        "aliases": [
+            "C.D. Lalín",
+            "CD Lalín"
+        ]
+    },
+    "Céltiga": {
+        "stadium": "Salvador Otero",
+        "location": "Campo Salvador Otero, A Illa de Arousa, España",
+        "aliases": [
+            "Céltiga F.C.",
+            "Celtiga FC",
+            "Celtiga"
+        ]
+    },
+    "Lemos": {
+        "stadium": "A Pinguela",
+        "location": "Campo Municipal A Pinguela, Monforte de Lemos, España",
+        "aliases": [
+            "Club Lemos",
+            "C. Lemos"
+        ]
+    },
+    "Dubra": {
+        "stadium": "Juan Baleato",
+        "location": "Campo Municipal Juan Baleato, Val do Dubra, España",
+        "aliases": [
+            "Dubra S.D.",
+            "Dubra SD"
+        ]
+    },
+    "Galicia de Mugardos": {
+        "stadium": "A Pedreira",
+        "location": "Campo da Pedreira, Mugardos, España",
+        "aliases": [
+            "Mugardos",
+            "Galicia Mugardos"
+        ]
+    },
+    "Portonovo": {
+        "stadium": "Baltar",
+        "location": "Campo de Baltar, Portonovo, España",
+        "aliases": [
+            "Portonovo S.D.",
+            "Portonovo SD"
+        ]
+    },
+    "Ribadeo": {
+        "stadium": "Pepe Barrera",
+        "location": "Estadio Pepe Barrera, Ribadeo, España",
+        "aliases": [
+            "Ribadeo F.C.",
+            "Ribadeo FC"
+        ]
+    },
+    "Sofán": {
+        "stadium": "O Carral",
+        "location": "Campo O Carral, Sofán, España",
+        "aliases": [
+            "S.D. Sofán",
+            "SD Sofán",
+            "Sofan"
+        ]
+    },
+    "Victoria": {
+        "stadium": "A Grela",
+        "location": "Campo Municipal de A Grela, A Coruña, España",
+        "aliases": [
+            "Victoria C.F.",
+            "Victoria CF",
+            "Victoria Coruña"
+        ]
+    },
+    "Vic": {
+        "stadium": "Hipòlit Planàs",
+        "location": "Estadi Hipòlit Planàs, Vic, España",
+        "aliases": [
+            "U.E. Vic",
+            "UE Vic",
+            "Unió Esportiva Vic"
+        ]
+    },
+    "Horta": {
+        "stadium": "Feliu i Codina",
+        "location": "Camp Municipal Feliu i Codina, Barcelona, España",
+        "aliases": [
+            "U.A. Horta",
+            "UA Horta"
+        ]
+    },
+    "Palamós": {
+        "stadium": "Palamós - Costa Brava",
+        "location": "Estadi Municipal Palamós - Costa Brava, Palamós, España",
+        "aliases": [
+            "Palamós C.F.",
+            "Palamos CF",
+            "Palamos"
+        ]
+    },
+    "Figueres": {
+        "stadium": "Vilatenim",
+        "location": "Estadi Municipal de Vilatenim, Figueres, España",
+        "aliases": [
+            "U.E. Figueres",
+            "UE Figueres"
+        ]
+    },
+    "Granollers": {
+        "stadium": "Carrer Girona",
+        "location": "Camp Municipal Carrer Girona, Granollers, España",
+        "aliases": [
+            "E.C. Granollers",
+            "EC Granollers"
+        ]
+    },
+    "Valls": {
+        "stadium": "El Vilar",
+        "location": "Camp del Vilar, Valls, España",
+        "aliases": [
+            "U.E. Valls",
+            "UE Valls"
+        ]
+    },
+    "Santboià": {
+        "stadium": "Joan Baptista Milà",
+        "location": "Estadi Municipal Joan Baptista Milà, Sant Boi de Llobregat, España",
+        "aliases": [
+            "F.C. Santboià",
+            "FC Santboià",
+            "Santboia"
+        ]
+    },
+    "Lloret": {
+        "stadium": "Municipal de Lloret",
+        "location": "Camp Municipal de Lloret de Mar, Lloret de Mar, España",
+        "aliases": [
+            "C.F. Lloret",
+            "CF Lloret"
+        ]
+    },
+    "Can Vidalet": {
+        "stadium": "El Molí",
+        "location": "Camp Municipal El Molí, Esplugues de Llobregat, España",
+        "aliases": [
+            "C.F. Can Vidalet",
+            "CF Can Vidalet"
+        ]
+    },
+    "Buñol": {
+        "stadium": "Beltrán Báguena",
+        "location": "Campo Beltrán Báguena, Buñol, España",
+        "aliases": [
+            "C.D. Buñol",
+            "CD Buñol"
+        ]
+    },
+    "Almazora": {
+        "stadium": "José Manuel Pesudo",
+        "location": "Campo Municipal José Manuel Pesudo, Almassora, España",
+        "aliases": [
+            "C.D. Almazora",
+            "CD Almazora",
+            "Almassora"
+        ]
+    },
+    "Recambios Colón": {
+        "stadium": "El Perdiguer",
+        "location": "Campo Municipal El Perdiguer, Aldaia, España",
+        "aliases": [
+            "C.F. Recambios Colón",
+            "CF Recambios Colón",
+            "Recambios Colon"
+        ]
+    },
+    "Ribarroja": {
+        "stadium": "Roberto Gil",
+        "location": "Estadio Municipal Roberto Gil, Riba-roja de Túria, España",
+        "aliases": [
+            "Ribarroja C.F.",
+            "Ribarroja CF"
+        ]
+    },
+    "Manises": {
+        "stadium": "Municipal de Manises",
+        "location": "Polideportivo Municipal de Manises, Manises, España",
+        "aliases": [
+            "Manises C.F.",
+            "Manises CF"
+        ]
+    },
+    "Onda": {
+        "stadium": "La Serratella",
+        "location": "Campo Municipal La Serratella, Onda, España",
+        "aliases": [
+            "C.D. Onda",
+            "CD Onda"
+        ]
+    },
+    "Silla": {
+        "stadium": "Vicente Morera",
+        "location": "Polideportivo Municipal Vicente Morera, Silla, España",
+        "aliases": [
+            "Silla C.F.",
+            "Silla CF"
+        ]
+    },
+    "Callosa Deportiva": {
+        "stadium": "El Palmeral",
+        "location": "Estadio El Palmeral, Callosa de Segura, España",
+        "aliases": [
+            "Callosa",
+            "Callosa Dpva"
+        ]
+    },
+    "L'Olleria": {
+        "stadium": "La Solana",
+        "location": "Polideportivo Municipal La Solana, L'Olleria, España",
+        "aliases": [
+            "L'Olleria C.F.",
+            "L'Olleria CF",
+            "Olleria"
+        ]
+    },
+    "Ayamonte": {
+        "stadium": "Ciudad de Ayamonte",
+        "location": "Estadio Ciudad de Ayamonte, Ayamonte, España",
+        "aliases": [
+            "Ayamonte C.F.",
+            "Ayamonte CF"
+        ]
+    },
+    "Isla Cristina": {
+        "stadium": "Municipal",
+        "location": "Estadio Municipal de Isla Cristina, Isla Cristina, España",
+        "aliases": [
+            "Isla Cristina F.C.",
+            "Isla Cristina FC"
+        ]
+    },
+    "Rociana": {
+        "stadium": "Manuel Macario",
+        "location": "Estadio Manuel Macario, Rociana del Condado, España",
+        "aliases": [
+            "Rociana C.F.",
+            "Club Deportivo Rociana"
+        ]
+    },
+    "Churriana": {
+        "stadium": "El Frascuelo",
+        "location": "Campo Municipal El Frascuelo, Churriana de la Vega, España",
+        "aliases": [
+            "Churriana C.F.",
+            "Churriana CF",
+            "Churriana de la Vega"
+        ]
+    },
+    "Loja": {
+        "stadium": "Medina Lauxa",
+        "location": "Estadio Medina Lauxa, Loja, España",
+        "aliases": [
+            "Loja C.D.",
+            "Loja CD"
+        ]
+    },
+    "Atarfe Industrial": {
+        "stadium": "Municipal de Atarfe",
+        "location": "Estadio Municipal de Atarfe, Atarfe, España",
+        "aliases": [
+            "Atarfe",
+            "C.D. Atarfe Industrial"
+        ]
+    },
+    "Cantoria": {
+        "stadium": "Los Olivos",
+        "location": "Campo Municipal Los Olivos, Cantoria, España",
+        "aliases": [
+            "C.D. Cantoria",
+            "CD Cantoria"
+        ]
+    },
+    "San Pedro": {
+        "stadium": "Municipal San Pedro",
+        "location": "Estadio Municipal San Pedro Alcántara, Marbella, España",
+        "aliases": [
+            "U.D. San Pedro",
+            "UD San Pedro"
+        ]
+    },
+    "Castilleja": {
+        "stadium": "Antonio Almendro",
+        "location": "Estadio Antonio Almendro, Castilleja de la Cuesta, España",
+        "aliases": [
+            "Castilleja C.F.",
+            "Castilleja CF"
+        ]
+    },
+    "Aravaca": {
+        "stadium": "Antonio Sanfiz",
+        "location": "Campo de Fútbol Antonio Sanfiz, Madrid, España",
+        "aliases": [
+            "Aravaca C.F.",
+            "Aravaca CF"
+        ]
+    },
+    "Colmenar Viejo": {
+        "stadium": "Alberto Ruiz",
+        "location": "Campo Municipal Alberto Ruiz, Colmenar Viejo, España",
+        "aliases": [
+            "A.D. Colmenar Viejo",
+            "AD Colmenar Viejo",
+            "Colmenar"
+        ]
+    },
+    "El Álamo": {
+        "stadium": "Facundo Rivas",
+        "location": "Estadio Facundo Rivas, El Álamo, España",
+        "aliases": [
+            "C.D. El Álamo",
+            "CD El Álamo"
+        ]
+    },
+    "San Fernando de Henares": {
+        "stadium": "Santiago del Pino",
+        "location": "Estadio Santiago del Pino, San Fernando de Henares, España",
+        "aliases": [
+            "C.D. San Fernando",
+            "CD San Fernando",
+            "San Fernando de Henares"
+        ]
+    },
+    "Vicálvaro": {
+        "stadium": "Municipal de Vicálvaro",
+        "location": "Estadio Municipal de Vicálvaro, Madrid, España",
+        "aliases": [
+            "C.D. Vicálvaro",
+            "CD Vicálvaro"
+        ]
+    },
+    "Moratalaz": {
+        "stadium": "Dehesa de Moratalaz",
+        "location": "Campo Dehesa de Moratalaz, Madrid, España",
+        "aliases": [
+            "E.D. Moratalaz",
+            "ED Moratalaz"
+        ]
+    },
+    "Atlético Mineros": {
+        "stadium": "Pepín Cadelo",
+        "location": "Campo Pepín Cadelo, Puente San Miguel, España",
+        "aliases": [
+            "C.D.E. Atlético Mineros",
+            "Atlético Mineros Reocín"
+        ]
+    },
+    "Textil Escudo": {
+        "stadium": "Juan María Parés",
+        "location": "Campo Juan María Parés Serra, Cabezón de la Sal, España",
+        "aliases": [
+            "S.D. Textil Escudo",
+            "SD Textil Escudo"
+        ]
+    },
+    "Selaya": {
+        "stadium": "El Castañal",
+        "location": "Campo El Castañal, Selaya, España",
+        "aliases": [
+            "Selaya F.C.",
+            "Selaya FC"
+        ]
+    },
+    "Aurrera de Vitoria": {
+        "stadium": "Olaranbe",
+        "location": "Instalaciones de Olaranbe, Vitoria-Gasteiz, España",
+        "aliases": [
+            "C.D. Aurrera de Vitoria",
+            "Aurrera Vitoria",
+            "Aurrera"
+        ]
+    },
+    "Elgoibar": {
+        "stadium": "Mintxeta",
+        "location": "Campo de Fútbol Mintxeta, Elgoibar, España",
+        "aliases": [
+            "C.D. Elgoibar",
+            "CD Elgoibar"
+        ]
+    },
+    "Tolosa": {
+        "stadium": "Berazubi",
+        "location": "Estadio de Berazubi, Tolosa, España",
+        "aliases": [
+            "Tolosa C.F.",
+            "Tolosa CF"
+        ]
+    },
+    "Zamudio": {
+        "stadium": "Gazituaga",
+        "location": "Estadio Gazituaga, Zamudio, España",
+        "aliases": [
+            "S.D. Zamudio",
+            "SD Zamudio"
+        ]
+    },
+    "Bermeo": {
+        "stadium": "Itxas Gane",
+        "location": "Campo de Fútbol Itxas Gane, Bermeo, España",
+        "aliases": [
+            "Bermeo F.T.",
+            "Bermeo FT"
+        ]
+    },
+    "Sodinara": {
+        "stadium": "Municipal",
+        "location": "Campo Municipal, España",
+        "aliases": [
+            "Sodinara",
+            "C.D. Sodinara"
+        ]
+    },
+    "Benavente": {
+        "stadium": "Luciano Rubio",
+        "location": "Estadio Luciano Rubio, Benavente, España",
+        "aliases": [
+            "C.D. Benavente",
+            "CD Benavente"
+        ]
+    },
+    "Mojados": {
+        "stadium": "Municipal de Mojados",
+        "location": "Polideportivo Municipal de Mojados, Mojados, España",
+        "aliases": [
+            "C.D. Mojados",
+            "CD Mojados"
+        ]
+    },
+    "Briviesca": {
+        "stadium": "Diego Dávila Álvarez",
+        "location": "Campo Municipal Diego Dávila Álvarez, Briviesca, España",
+        "aliases": [
+            "C.F. Briviesca",
+            "CF Briviesca"
+        ]
+    },
+    "Villaralbo": {
+        "stadium": "Los Barreros",
+        "location": "Campo Municipal Los Barreros, Villaralbo, España",
+        "aliases": [
+            "G.C.E. Villaralbo",
+            "GCE Villaralbo",
+            "CD Villaralbo"
+        ]
+    },
+    "Racing Lermeño": {
+        "stadium": "Arlanza",
+        "location": "Campo Municipal del Arlanza, Lerma, España",
+        "aliases": [
+            "Racing Lermeño C.F.",
+            "Lermeño"
+        ]
+    },
+    "Sporting Uxama": {
+        "stadium": "Municipal de El Burgo",
+        "location": "Campo Municipal de El Burgo de Osma, El Burgo de Osma, España",
+        "aliases": [
+            "Sporting Club Uxama",
+            "SC Uxama"
+        ]
+    },
+    "Robres": {
+        "stadium": "San Blas",
+        "location": "Campo Municipal de San Blas, Robres, España",
+        "aliases": [
+            "C.D. Robres",
+            "CD Robres"
+        ]
+    },
+    "Santa Anastasia": {
+        "stadium": "Fontananzas",
+        "location": "Campo de Fútbol Fontananzas, Santa Anastasia, España",
+        "aliases": [
+            "C.F. Santa Anastasia",
+            "Santa Anastasia CF"
+        ]
+    },
+    "Ferriolense": {
+        "stadium": "Municipal de Son Ferriol",
+        "location": "Camp Municipal de Son Ferriol, Palma, España",
+        "aliases": [
+            "C.D. Ferriolense",
+            "CD Ferriolense"
+        ]
+    },
+    "Rotlet Molinar": {
+        "stadium": "Municipal del Molinar",
+        "location": "Camp Municipal del Molinar, Palma, España",
+        "aliases": [
+            "U.D. Rotlet Molinar",
+            "UD Rotlet Molinar"
+        ]
+    },
+    "Guía": {
+        "stadium": "Octavio Estévez",
+        "location": "Estadio Octavio Estévez, Santa María de Guía, España",
+        "aliases": [
+            "U.D. Guía",
+            "UD Guía"
+        ]
+    },
+    "Maspalomas": {
+        "stadium": "Ciudad Deportiva Maspalomas",
+        "location": "Ciudad Deportiva Maspalomas, San Bartolomé de Tirajana, España",
+        "aliases": [
+            "C.D. Maspalomas",
+            "CD Maspalomas"
+        ]
+    },
+    "Chinato": {
+        "stadium": "Era de las Matas",
+        "location": "Campo Municipal Era de las Matas, Malpartida de Plasencia, España",
+        "aliases": [
+            "C.P. Chinato",
+            "CP Chinato"
+        ]
+    },
+    "Algar": {
+        "stadium": "Sánchez Luengo",
+        "location": "Campo Sánchez Luengo, El Algar, España",
+        "aliases": [
+            "C.D. Algar",
+            "CD Algar"
+        ]
+    },
+    "Churra": {
+        "stadium": "Municipal de Churra",
+        "location": "Campo Municipal de Churra, Churra, España",
+        "aliases": [
+            "E.D.M.F. Churra",
+            "EDMF Churra",
+            "Churra"
+        ]
+    },
+    "Iruña": {
+        "stadium": "Tajonar",
+        "location": "Instalaciones de Tajonar, Pamplona, España",
+        "aliases": [
+            "C.D. Iruña",
+            "CD Iruña"
+        ]
+    },
+    "Avance Ezcabarte": {
+        "stadium": "Igeldea",
+        "location": "Campo de Igeldea, Arre, España",
+        "aliases": [
+            "C.D. Avance Ezcabarte",
+            "CD Avance Ezcabarte"
+        ]
+    },
+    "Pradejón": {
+        "stadium": "Municipal de Pradejón",
+        "location": "Campo Municipal de Pradejón, Pradejón, España",
+        "aliases": [
+            "C.D. Pradejón",
+            "CD Pradejón"
+        ]
+    },
+    "Calasancio": {
+        "stadium": "La Estrella",
+        "location": "Campo de Fútbol La Estrella, Logroño, España",
+        "aliases": [
+            "C.P. Calasancio",
+            "CP Calasancio"
+        ]
+    },
+    "Pedroñeras": {
+        "stadium": "Municipal de Las Pedroñeras",
+        "location": "Campo Municipal de Las Pedroñeras, Las Pedroñeras, España",
+        "aliases": [
+            "C.D. Pedroñeras",
+            "CD Pedroñeras"
+        ]
+    },
+    "Madridejos": {
+        "stadium": "Nuevo Campo",
+        "location": "Nuevo Campo de Madridejos, Madridejos, España",
+        "aliases": [
+            "C.D. Madridejos",
+            "CD Madridejos"
+        ]
+    },
+    "Sporting de Alcázar": {
+        "stadium": "Delgado Meco",
+        "location": "Estadio Municipal Manuel Delgado Meco, Alcázar de San Juan, España",
+        "aliases": [
+            "Sporting Alcázar",
+            "Alcázar"
+        ]
+    },
+    "Manchester City": {
+        "stadium": "Etihad Stadium",
+        "location": "Etihad Stadium, Manchester, Reino Unido",
+        "aliases": [
+            "Man. City",
+            "Man City",
+            "Manchester City FC"
+        ]
+    },
+    "Arsenal": {
+        "stadium": "Emirates Stadium",
+        "location": "Emirates Stadium, Londres, Reino Unido",
+        "aliases": [
+            "Arsenal FC"
+        ]
+    },
+    "Liverpool": {
+        "stadium": "Anfield",
+        "location": "Anfield, Liverpool, Reino Unido",
+        "aliases": [
+            "Liverpool FC"
+        ]
+    },
+    "Aston Villa": {
+        "stadium": "Villa Park",
+        "location": "Villa Park, Birmingham, Reino Unido",
+        "aliases": [
+            "Aston Villa FC"
+        ]
+    },
+    "Tottenham": {
+        "stadium": "Tottenham Hotspur Stadium",
+        "location": "Tottenham Hotspur Stadium, Londres, Reino Unido",
+        "aliases": [
+            "Tottenham Hotspur",
+            "Spurs",
+            "Tottenham Hotspur FC"
+        ]
+    },
+    "Chelsea": {
+        "stadium": "Stamford Bridge",
+        "location": "Stamford Bridge, Londres, Reino Unido",
+        "aliases": [
+            "Chelsea FC"
+        ]
+    },
+    "Newcastle": {
+        "stadium": "St. James' Park",
+        "location": "St. James' Park, Newcastle, Reino Unido",
+        "aliases": [
+            "Newcastle United",
+            "Newcastle United FC"
+        ]
+    },
+    "Manchester United": {
+        "stadium": "Old Trafford",
+        "location": "Old Trafford, Manchester, Reino Unido",
+        "aliases": [
+            "Man. Utd",
+            "Man Utd",
+            "Man. United",
+            "Manchester United FC"
+        ]
+    },
+    "West Ham": {
+        "stadium": "London Stadium",
+        "location": "London Stadium, Londres, Reino Unido",
+        "aliases": [
+            "West Ham United",
+            "West Ham Utd",
+            "West Ham United FC"
+        ]
+    },
+    "Crystal Palace": {
+        "stadium": "Selhurst Park",
+        "location": "Selhurst Park, Londres, Reino Unido",
+        "aliases": [
+            "Crystal Palace FC",
+            "C. Palace"
+        ]
+    },
+    "Brighton": {
+        "stadium": "The Amex",
+        "location": "American Express Stadium, Brighton, Reino Unido",
+        "aliases": [
+            "Brighton & Hove Albion",
+            "Brighton & Hove",
+            "Brighton FC"
+        ]
+    },
+    "Bournemouth": {
+        "stadium": "Vitality Stadium",
+        "location": "Vitality Stadium, Bournemouth, Reino Unido",
+        "aliases": [
+            "AFC Bournemouth"
+        ]
+    },
+    "Fulham": {
+        "stadium": "Craven Cottage",
+        "location": "Craven Cottage, Londres, Reino Unido",
+        "aliases": [
+            "Fulham FC"
+        ]
+    },
+    "Wolves": {
+        "stadium": "Molineux",
+        "location": "Molineux Stadium, Wolverhampton, Reino Unido",
+        "aliases": [
+            "Wolverhampton Wanderers",
+            "Wolverhampton"
+        ]
+    },
+    "Everton": {
+        "stadium": "Everton Stadium",
+        "location": "Everton Stadium, Bramley-Moore Dock, Liverpool, Reino Unido",
+        "aliases": [
+            "Everton FC"
+        ]
+    },
+    "Brentford": {
+        "stadium": "Gtech Community Stadium",
+        "location": "Gtech Community Stadium, Londres, Reino Unido",
+        "aliases": [
+            "Brentford FC"
+        ]
+    },
+    "Nottingham Forest": {
+        "stadium": "City Ground",
+        "location": "The City Ground, Nottingham, Reino Unido",
+        "aliases": [
+            "Nottm Forest",
+            "Nottingham",
+            "Forest"
+        ]
+    },
+    "Leicester": {
+        "stadium": "King Power Stadium",
+        "location": "King Power Stadium, Leicester, Reino Unido",
+        "aliases": [
+            "Leicester City",
+            "Leicester City FC"
+        ]
+    },
+    "Ipswich": {
+        "stadium": "Portman Road",
+        "location": "Portman Road, Ipswich, Reino Unido",
+        "aliases": [
+            "Ipswich Town",
+            "Ipswich Town FC"
+        ]
+    },
+    "Southampton": {
+        "stadium": "St Mary's",
+        "location": "St Mary's Stadium, Southampton, Reino Unido",
+        "aliases": [
+            "Southampton FC"
+        ]
+    },
+    "Inter": {
+        "stadium": "Giuseppe Meazza",
+        "location": "Stadio Giuseppe Meazza, Milán, Italia",
+        "aliases": [
+            "Inter de Milán",
+            "Inter Milan",
+            "Internazionale"
+        ]
+    },
+    "Milan": {
+        "stadium": "San Siro",
+        "location": "San Siro, Milán, Italia",
+        "aliases": [
+            "AC Milan",
+            "A.C. Milan"
+        ]
+    },
+    "Juventus": {
+        "stadium": "Allianz Stadium",
+        "location": "Allianz Stadium, Turín, Italia",
+        "aliases": [
+            "Juventus FC",
+            "Juve"
+        ]
+    },
+    "Atalanta": {
+        "stadium": "Gewiss Stadium",
+        "location": "Gewiss Stadium, Bérgamo, Italia",
+        "aliases": [
+            "Atalanta BC"
+        ]
+    },
+    "Bologna": {
+        "stadium": "Renato Dall'Ara",
+        "location": "Stadio Renato Dall'Ara, Bolonia, Italia",
+        "aliases": [
+            "Bolonia",
+            "Bologna FC"
+        ]
+    },
+    "Roma": {
+        "stadium": "Olímpico de Roma",
+        "location": "Stadio Olimpico, Roma, Italia",
+        "aliases": [
+            "AS Roma",
+            "A.S. Roma"
+        ]
+    },
+    "Lazio": {
+        "stadium": "Olímpico de Roma",
+        "location": "Stadio Olimpico, Roma, Italia",
+        "aliases": [
+            "SS Lazio",
+            "S.S. Lazio"
+        ]
+    },
+    "Fiorentina": {
+        "stadium": "Artemio Franchi",
+        "location": "Stadio Artemio Franchi, Florencia, Italia",
+        "aliases": [
+            "ACF Fiorentina"
+        ]
+    },
+    "Napoli": {
+        "stadium": "Diego Armando Maradona",
+        "location": "Stadio Diego Armando Maradona, Nápoles, Italia",
+        "aliases": [
+            "Nápoles",
+            "SSC Napoli"
+        ]
+    },
+    "Torino": {
+        "stadium": "Olímpico Grande Torino",
+        "location": "Stadio Olimpico Grande Torino, Turín, Italia",
+        "aliases": [
+            "Torino FC"
+        ]
+    },
+    "Genoa": {
+        "stadium": "Luigi Ferraris",
+        "location": "Stadio Luigi Ferraris, Génova, Italia",
+        "aliases": [
+            "Génova",
+            "Genoa CFC"
+        ]
+    },
+    "Monza": {
+        "stadium": "U-Power Stadium",
+        "location": "U-Power Stadium, Monza, Italia",
+        "aliases": [
+            "AC Monza"
+        ]
+    },
+    "Hellas Verona": {
+        "stadium": "Marcantonio Bentegodi",
+        "location": "Stadio Marcantonio Bentegodi, Verona, Italia",
+        "aliases": [
+            "Verona",
+            "Hellas"
+        ]
+    },
+    "Lecce": {
+        "stadium": "Via del Mare",
+        "location": "Stadio Via del Mare, Lecce, Italia",
+        "aliases": [
+            "US Lecce"
+        ]
+    },
+    "Udinese": {
+        "stadium": "Bluenergy Stadium",
+        "location": "Stadio Friuli, Udine, Italia",
+        "aliases": [
+            "Udinese Calcio"
+        ]
+    },
+    "Cagliari": {
+        "stadium": "Unipol Domus",
+        "location": "Unipol Domus, Cagliari, Italia",
+        "aliases": [
+            "Cagliari Calcio"
+        ]
+    },
+    "Empoli": {
+        "stadium": "Carlo Castellani",
+        "location": "Stadio Carlo Castellani, Empoli, Italia",
+        "aliases": [
+            "Empoli FC"
+        ]
+    },
+    "Parma": {
+        "stadium": "Ennio Tardini",
+        "location": "Stadio Ennio Tardini, Parma, Italia",
+        "aliases": [
+            "Parma Calcio 1913",
+            "Parma Calcio"
+        ]
+    },
+    "Como": {
+        "stadium": "Giuseppe Sinigaglia",
+        "location": "Stadio Giuseppe Sinigaglia, Como, Italia",
+        "aliases": [
+            "Como 1907"
+        ]
+    },
+    "Venezia": {
+        "stadium": "Pier Luigi Penzo",
+        "location": "Stadio Pier Luigi Penzo, Venecia, Italia",
+        "aliases": [
+            "Venecia",
+            "Venezia FC"
+        ]
+    },
+    "Bayer Leverkusen": {
+        "stadium": "BayArena",
+        "location": "BayArena, Leverkusen, Alemania",
+        "aliases": [
+            "Bayer 04 Leverkusen",
+            "Leverkusen"
+        ]
+    },
+    "Stuttgart": {
+        "stadium": "MHPArena",
+        "location": "MHPArena, Stuttgart, Alemania",
+        "aliases": [
+            "VfB Stuttgart"
+        ]
+    },
+    "Bayern Múnich": {
+        "stadium": "Allianz Arena",
+        "location": "Allianz Arena, Múnich, Alemania",
+        "aliases": [
+            "Bayern Munich",
+            "FC Bayern München",
+            "Bayern"
+        ]
+    },
+    "RB Leipzig": {
+        "stadium": "Red Bull Arena",
+        "location": "Red Bull Arena, Leipzig, Alemania",
+        "aliases": [
+            "Leipzig",
+            "RasenBallsport Leipzig"
+        ]
+    },
+    "Borussia Dortmund": {
+        "stadium": "Signal Iduna Park",
+        "location": "Signal Iduna Park, Dortmund, Alemania",
+        "aliases": [
+            "Dortmund",
+            "BVB",
+            "B. Dortmund"
+        ]
+    },
+    "Eintracht Frankfurt": {
+        "stadium": "Deutsche Bank Park",
+        "location": "Deutsche Bank Park, Frankfurt, Alemania",
+        "aliases": [
+            "Frankfurt",
+            "Eintracht",
+            "SGE"
+        ]
+    },
+    "Hoffenheim": {
+        "stadium": "PreZero Arena",
+        "location": "PreZero Arena, Sinsheim, Alemania",
+        "aliases": [
+            "TSG Hoffenheim",
+            "TSG 1899 Hoffenheim"
+        ]
+    },
+    "Heidenheim": {
+        "stadium": "Voith-Arena",
+        "location": "Voith-Arena, Heidenheim, Alemania",
+        "aliases": [
+            "1. FC Heidenheim",
+            "Heidenheim 1846"
+        ]
+    },
+    "Werder Bremen": {
+        "stadium": "Weserstadion",
+        "location": "Weserstadion, Bremen, Alemania",
+        "aliases": [
+            "Bremen",
+            "SV Werder Bremen"
+        ]
+    },
+    "Friburgo": {
+        "stadium": "Europa-Park Stadion",
+        "location": "Europa-Park Stadion, Friburgo, Alemania",
+        "aliases": [
+            "Freiburg",
+            "SC Freiburg"
+        ]
+    },
+    "Augsburgo": {
+        "stadium": "WWK Arena",
+        "location": "WWK Arena, Augsburgo, Alemania",
+        "aliases": [
+            "Augsburg",
+            "FC Augsburg"
+        ]
+    },
+    "Wolfsburgo": {
+        "stadium": "Volkswagen Arena",
+        "location": "Volkswagen Arena, Wolfsburgo, Alemania",
+        "aliases": [
+            "Wolfsburg",
+            "VfL Wolfsburg"
+        ]
+    },
+    "Mainz 05": {
+        "stadium": "Mewa Arena",
+        "location": "Mewa Arena, Maguncia, Alemania",
+        "aliases": [
+            "Mainz",
+            "1. FSV Mainz 05"
+        ]
+    },
+    "Borussia Mönchengladbach": {
+        "stadium": "Borussia-Park",
+        "location": "Stadion im Borussia-Park, Mönchengladbach, Alemania",
+        "aliases": [
+            "Mönchengladbach",
+            "M'gladbach",
+            "Gladbach",
+            "Borussia M'gladbach"
+        ]
+    },
+    "Unión Berlín": {
+        "stadium": "An der Alten Försterei",
+        "location": "Stadion An der Alten Försterei, Berlín, Alemania",
+        "aliases": [
+            "Union Berlin",
+            "1. FC Union Berlin",
+            "U. Berlin"
+        ]
+    },
+    "Bochum": {
+        "stadium": "Vonovia Ruhrstadion",
+        "location": "Vonovia Ruhrstadion, Bochum, Alemania",
+        "aliases": [
+            "VfL Bochum"
+        ]
+    },
+    "St. Pauli": {
+        "stadium": "Millerntor-Stadion",
+        "location": "Millerntor-Stadion, Hamburgo, Alemania",
+        "aliases": [
+            "FC St. Pauli",
+            "Sankt Pauli"
+        ]
+    },
+    "Holstein Kiel": {
+        "stadium": "Holstein-Stadion",
+        "location": "Holstein-Stadion, Kiel, Alemania",
+        "aliases": [
+            "Kiel",
+            "KSV Holstein"
+        ]
+    },
+    "PSG": {
+        "stadium": "Parque de los Príncipes",
+        "location": "Parc des Princes, París, Francia",
+        "aliases": [
+            "Paris Saint-Germain",
+            "Paris SG",
+            "Paris"
+        ]
+    },
+    "AS Mónaco": {
+        "stadium": "Stade Louis II",
+        "location": "Stade Louis II, Mónaco",
+        "aliases": [
+            "Monaco",
+            "AS Monaco"
+        ]
+    },
+    "Brest": {
+        "stadium": "Stade Francis-Le Blé",
+        "location": "Stade Francis-Le Blé, Brest, Francia",
+        "aliases": [
+            "Stade Brestois",
+            "Stade Brestois 29"
+        ]
+    },
+    "Lille": {
+        "stadium": "Pierre-Mauroy",
+        "location": "Decathlon Arena - Stade Pierre-Mauroy, Villeneuve-d'Ascq, Francia",
+        "aliases": [
+            "LOSC",
+            "Lille OSC"
+        ]
+    },
+    "Niza": {
+        "stadium": "Allianz Riviera",
+        "location": "Allianz Riviera, Niza, Francia",
+        "aliases": [
+            "Nice",
+            "OGC Nice",
+            "OGC Niza"
+        ]
+    },
+    "Lyon": {
+        "stadium": "Groupama Stadium",
+        "location": "Groupama Stadium, Décines-Charpieu, Francia",
+        "aliases": [
+            "Olympique Lyonnais",
+            "OL"
+        ]
+    },
+    "Lens": {
+        "stadium": "Bollaert-Delelis",
+        "location": "Stade Bollaert-Delelis, Lens, Francia",
+        "aliases": [
+            "RC Lens"
+        ]
+    },
+    "Marsella": {
+        "stadium": "Vélodrome",
+        "location": "Orange Vélodrome, Marsella, Francia",
+        "aliases": [
+            "Marseille",
+            "Olympique de Marseille",
+            "OM"
+        ]
+    },
+    "Reims": {
+        "stadium": "Auguste-Delaune",
+        "location": "Stade Auguste-Delaune, Reims, Francia",
+        "aliases": [
+            "Stade de Reims"
+        ]
+    },
+    "Rennes": {
+        "stadium": "Roazhon Park",
+        "location": "Roazhon Park, Rennes, Francia",
+        "aliases": [
+            "Stade Rennais"
+        ]
+    },
+    "Toulouse": {
+        "stadium": "Stadium de Toulouse",
+        "location": "Stadium de Toulouse, Toulouse, Francia",
+        "aliases": [
+            "Toulouse FC",
+            "TFC"
+        ]
+    },
+    "Montpellier": {
+        "stadium": "Stade de la Mosson",
+        "location": "Stade de la Mosson, Montpellier, Francia",
+        "aliases": [
+            "Montpellier HSC",
+            "MHSC"
+        ]
+    },
+    "Estrasburgo": {
+        "stadium": "Stade de la Meinau",
+        "location": "Stade de la Meinau, Estrasburgo, Francia",
+        "aliases": [
+            "Strasbourg",
+            "RC Strasbourg"
+        ]
+    },
+    "Nantes": {
+        "stadium": "Stade de la Beaujoire",
+        "location": "Stade de la Beaujoire, Nantes, Francia",
+        "aliases": [
+            "FC Nantes"
+        ]
+    },
+    "Le Havre": {
+        "stadium": "Stade Océane",
+        "location": "Stade Océane, Le Havre, Francia",
+        "aliases": [
+            "Le Havre AC",
+            "HAC"
+        ]
+    },
+    "Auxerre": {
+        "stadium": "Abbé-Deschamps",
+        "location": "Stade de l'Abbé-Deschamps, Auxerre, Francia",
+        "aliases": [
+            "AJ Auxerre",
+            "AJA"
+        ]
+    },
+    "Angers": {
+        "stadium": "Raymond Kopa",
+        "location": "Stade Raymond Kopa, Angers, Francia",
+        "aliases": [
+            "Angers SCO"
+        ]
+    },
+    "Saint-Étienne": {
+        "stadium": "Geoffroy-Guichard",
+        "location": "Stade Geoffroy-Guichard, Saint-Étienne, Francia",
+        "aliases": [
+            "Saint-Etienne",
+            "ASSE",
+            "St. Etienne"
+        ]
+    },
+    "Sporting CP": {
+        "stadium": "José Alvalade",
+        "location": "Estádio José Alvalade, Lisboa, Portugal",
+        "aliases": [
+            "Sporting",
+            "Sporting de Portugal",
+            "Sporting Lisbon",
+            "SCP"
+        ]
+    },
+    "Benfica": {
+        "stadium": "Estádio da Luz",
+        "location": "Estádio do Sport Lisboa e Benfica, Lisboa, Portugal",
+        "aliases": [
+            "SL Benfica",
+            "Las Aguilas"
+        ]
+    },
+    "Oporto": {
+        "stadium": "Estádio do Dragão",
+        "location": "Estádio do Dragão, Oporto, Portugal",
+        "aliases": [
+            "Porto",
+            "FC Porto"
+        ]
+    },
+    "SC Braga": {
+        "stadium": "Municipal de Braga",
+        "location": "Estádio Municipal de Braga, Braga, Portugal",
+        "aliases": [
+            "Braga",
+            "Sporting Braga"
+        ]
+    },
+    "Vitória Guimarães": {
+        "stadium": "D. Afonso Henriques",
+        "location": "Estádio D. Afonso Henriques, Guimarães, Portugal",
+        "aliases": [
+            "Vitoria Guimaraes",
+            "Vitoria SC",
+            "V. Guimaraes"
+        ]
+    },
+    "Arouca": {
+        "stadium": "Municipal de Arouca",
+        "location": "Estádio Municipal de Arouca, Arouca, Portugal",
+        "aliases": [
+            "FC Arouca"
+        ]
+    },
+    "Famalicão": {
+        "stadium": "Municipal 22 de Junho",
+        "location": "Estádio Municipal 22 de Junho, Famalicão, Portugal",
+        "aliases": [
+            "Famalicao",
+            "FC Famalicão"
+        ]
+    },
+    "PSV Eindhoven": {
+        "stadium": "Philips Stadion",
+        "location": "Philips Stadion, Eindhoven, Países Bajos",
+        "aliases": [
+            "PSV",
+            "Eindhoven"
+        ]
+    },
+    "Feyenoord": {
+        "stadium": "De Kuip",
+        "location": "Stadion Feijenoord 'De Kuip', Róterdam, Países Bajos",
+        "aliases": [
+            "Feyenoord Rotterdam"
+        ]
+    },
+    "FC Twente": {
+        "stadium": "De Grolsch Veste",
+        "location": "De Grolsch Veste, Enschede, Países Bajos",
+        "aliases": [
+            "Twente"
+        ]
+    },
+    "AZ Alkmaar": {
+        "stadium": "AFAS Stadion",
+        "location": "AFAS Stadion, Alkmaar, Países Bajos",
+        "aliases": [
+            "AZ",
+            "Alkmaar"
+        ]
+    },
+    "Ajax": {
+        "stadium": "Johan Cruijff ArenA",
+        "location": "Johan Cruijff ArenA, Ámsterdam, Países Bajos",
+        "aliases": [
+            "AFC Ajax"
+        ]
+    },
+    "Go Ahead Eagles": {
+        "stadium": "De Adelaarshorst",
+        "location": "De Adelaarshorst, Deventer, Países Bajos",
+        "aliases": []
+    },
+    "NEC Nijmegen": {
+        "stadium": "Goffertstadion",
+        "location": "Goffertstadion, Nimega, Países Bajos",
+        "aliases": [
+            "NEC",
+            "N.E.C."
+        ]
+    },
+    "Utrecht": {
+        "stadium": "Galgenwaard",
+        "location": "Stadion Galgenwaard, Utrecht, Países Bajos",
+        "aliases": [
+            "FC Utrecht"
+        ]
+    },
+    "Club Brujas": {
+        "stadium": "Jan Breydel",
+        "location": "Jan Breydel Stadium, Brujas, Bélgica",
+        "aliases": [
+            "Club Brugge",
+            "Brugge",
+            "Brujas"
+        ]
+    },
+    "Union Saint-Gilloise": {
+        "stadium": "Joseph Marien",
+        "location": "Stade Joseph Marien, Bruselas, Bélgica",
+        "aliases": [
+            "Union SG",
+            "USG",
+            "Royale Union Saint-Gilloise"
+        ]
+    },
+    "Anderlecht": {
+        "stadium": "Lotto Park",
+        "location": "Lotto Park, Bruselas, Bélgica",
+        "aliases": [
+            "RSC Anderlecht"
+        ]
+    },
+    "Cercle Brugge": {
+        "stadium": "Jan Breydel",
+        "location": "Jan Breydel Stadium, Brujas, Bélgica",
+        "aliases": [
+            "Circulo de Brujas"
+        ]
+    },
+    "Genk": {
+        "stadium": "Cegeka Arena",
+        "location": "Cegeka Arena, Genk, Bélgica",
+        "aliases": [
+            "KRC Genk"
+        ]
+    },
+    "Gent": {
+        "stadium": "Planet Group Arena",
+        "location": "Planet Group Arena, Gante, Bélgica",
+        "aliases": [
+            "KAA Gent",
+            "Gante"
+        ]
+    },
+    "Royal Antwerp": {
+        "stadium": "Bosuilstadion",
+        "location": "Bosuilstadion, Amberes, Bélgica",
+        "aliases": [
+            "Antwerp",
+            "Amberes",
+            "Royal Antwerp FC"
+        ]
+    },
+    "Standard Lieja": {
+        "stadium": "Maurice Dufrasne",
+        "location": "Stade Maurice Dufrasne, Lieja, Bélgica",
+        "aliases": [
+            "Standard de Liège",
+            "Standard Liege"
+        ]
+    },
+    "Galatasaray": {
+        "stadium": "RAMS Park",
+        "location": "RAMS Park, Estambul, Turquía",
+        "aliases": [
+            "Galatasaray SK"
+        ]
+    },
+    "Fenerbahçe": {
+        "stadium": "Şükrü Saracoğlu",
+        "location": "Ülker Stadyumu Şükrü Saracoğlu, Estambul, Turquía",
+        "aliases": [
+            "Fenerbahce",
+            "Fenerbahçe SK"
+        ]
+    },
+    "Besiktas": {
+        "stadium": "Tüpraş Stadyumu",
+        "location": "Tüpraş Stadyumu (Vodafone Park), Estambul, Turquía",
+        "aliases": [
+            "Beşiktaş",
+            "Besiktas JK"
+        ]
+    },
+    "Trabzonspor": {
+        "stadium": "Papara Park",
+        "location": "Papara Park, Trabzon, Turquía",
+        "aliases": [
+            "Trabzon"
+        ]
+    },
+    "Istanbul Basaksehir": {
+        "stadium": "Başakşehir Fatih Terim",
+        "location": "Başakşehir Fatih Terim Stadyumu, Estambul, Turquía",
+        "aliases": [
+            "Basaksehir",
+            "Istanbul BB"
+        ]
+    },
+    "Sparta Praga": {
+        "stadium": "epet ARENA",
+        "location": "epet ARENA, Praga, República Checa",
+        "aliases": [
+            "Sparta Praha",
+            "AC Sparta Praha"
+        ]
+    },
+    "Slavia Praga": {
+        "stadium": "Fortuna Arena",
+        "location": "Fortuna Arena, Praga, República Checa",
+        "aliases": [
+            "Slavia Praha",
+            "SK Slavia Praha"
+        ]
+    },
+    "Viktoria Plzen": {
+        "stadium": "Doosan Arena",
+        "location": "Doosan Arena, Pilsen, República Checa",
+        "aliases": [
+            "Plzen",
+            "Viktoria Plzeň"
+        ]
+    },
+    "Mladá Boleslav": {
+        "stadium": "Lokotrans Aréna",
+        "location": "Lokotrans Aréna, Mladá Boleslav, República Checa",
+        "aliases": [
+            "Mlada Boleslav"
+        ]
+    },
+    "Banik Ostrava": {
+        "stadium": "Městský stadion",
+        "location": "Městský stadion, Ostrava, República Checa",
+        "aliases": [
+            "Ostrava",
+            "FC Baník Ostrava"
+        ]
+    },
+    "PAOK": {
+        "stadium": "Toumba",
+        "location": "Estadio de la Tumba, Salónica, Grecia",
+        "aliases": [
+            "PAOK Salonica",
+            "PAOK FC"
+        ]
+    },
+    "AEK Atenas": {
+        "stadium": "OPAP Arena",
+        "location": "OPAP Arena (Agia Sophia), Atenas, Grecia",
+        "aliases": [
+            "AEK",
+            "AEK Athens"
+        ]
+    },
+    "Olympiacos": {
+        "stadium": "Karaiskakis",
+        "location": "Georgios Karaiskakis, El Pireo, Grecia",
+        "aliases": [
+            "Olympiakos",
+            "Olympiacos FC"
+        ]
+    },
+    "Panathinaikos": {
+        "stadium": "Apostolos Nikolaidis",
+        "location": "Estadio Apostolos Nikolaidis, Atenas, Grecia",
+        "aliases": [
+            "Panathinaikos FC"
+        ]
+    },
+    "Aris Salónica": {
+        "stadium": "Kleanthis Vikelidis",
+        "location": "Kleanthis Vikelidis Stadium, Salónica, Grecia",
+        "aliases": [
+            "Aris",
+            "Aris Thessaloniki"
+        ]
+    },
+    "Celtic": {
+        "stadium": "Celtic Park",
+        "location": "Celtic Park, Glasgow, Escocia",
+        "aliases": [
+            "Celtic FC",
+            "The Bhoys"
+        ]
+    },
+    "Rangers": {
+        "stadium": "Ibrox Stadium",
+        "location": "Ibrox Stadium, Glasgow, Escocia",
+        "aliases": [
+            "Glasgow Rangers",
+            "Rangers FC"
+        ]
+    },
+    "Hearts": {
+        "stadium": "Tynecastle Park",
+        "location": "Tynecastle Park, Edimburgo, Escocia",
+        "aliases": [
+            "Heart of Midlothian",
+            "Hearts FC"
+        ]
+    },
+    "Kilmarnock": {
+        "stadium": "Rugby Park",
+        "location": "Rugby Park, Kilmarnock, Escocia",
+        "aliases": [
+            "Kilmarnock FC"
+        ]
+    },
+    "Aberdeen": {
+        "stadium": "Pittodrie",
+        "location": "Pittodrie Stadium, Aberdeen, Escocia",
+        "aliases": [
+            "Aberdeen FC"
+        ]
+    },
+    "Sturm Graz": {
+        "stadium": "Merkur Arena",
+        "location": "Merkur Arena, Graz, Austria",
+        "aliases": [
+            "SK Sturm Graz"
+        ]
+    },
+    "RB Salzburgo": {
+        "stadium": "Red Bull Arena",
+        "location": "Red Bull Arena, Salzburgo, Austria",
+        "aliases": [
+            "Salzburgo",
+            "Salzburg",
+            "Red Bull Salzburg",
+            "FC Salzburg"
+        ]
+    },
+    "LASK": {
+        "stadium": "Raiffeisen Arena",
+        "location": "Raiffeisen Arena, Linz, Austria",
+        "aliases": [
+            "LASK Linz"
+        ]
+    },
+    "Rapid Viena": {
+        "stadium": "Allianz Stadion",
+        "location": "Allianz Stadion, Viena, Austria",
+        "aliases": [
+            "Rapid Wien",
+            "Rapid Vienna"
+        ]
+    },
+    "Hartberg": {
+        "stadium": "Profertil Arena",
+        "location": "Profertil Arena, Hartberg, Austria",
+        "aliases": [
+            "TSV Hartberg"
+        ]
+    },
+    "Wolfsberger AC": {
+        "stadium": "Lavanttal-Arena",
+        "location": "Lavanttal-Arena, Wolfsberg, Austria",
+        "aliases": [
+            "Wolfsberger",
+            "WAC"
+        ]
+    },
+    "Young Boys": {
+        "stadium": "Stadion Wankdorf",
+        "location": "Stadion Wankdorf, Berna, Suiza",
+        "aliases": [
+            "BSC Young Boys",
+            "YB Bern"
+        ]
+    },
+    "Lugano": {
+        "stadium": "Cornaredo",
+        "location": "Stadio Cornaredo, Lugano, Suiza",
+        "aliases": [
+            "FC Lugano"
+        ]
+    },
+    "Servette": {
+        "stadium": "Stade de Genève",
+        "location": "Stade de Genève, Ginebra, Suiza",
+        "aliases": [
+            "Servette FC"
+        ]
+    },
+    "FC Zúrich": {
+        "stadium": "Letzigrund",
+        "location": "Stadion Letzigrund, Zúrich, Suiza",
+        "aliases": [
+            "FC Zurich",
+            "Zurich"
+        ]
+    },
+    "St. Gallen": {
+        "stadium": "Kybunpark",
+        "location": "Kybunpark, San Galo, Suiza",
+        "aliases": [
+            "St. Gallen 1879",
+            "FCSG"
+        ]
+    },
+    "Basilea": {
+        "stadium": "St. Jakob-Park",
+        "location": "St. Jakob-Park, Basilea, Suiza",
+        "aliases": [
+            "Basel",
+            "FC Basel"
+        ]
+    },
+    "Midtjylland": {
+        "stadium": "MCH Arena",
+        "location": "MCH Arena, Herning, Dinamarca",
+        "aliases": [
+            "FC Midtjylland"
+        ]
+    },
+    "Brøndby": {
+        "stadium": "Brøndby Stadion",
+        "location": "Brøndby Stadion, Copenhague, Dinamarca",
+        "aliases": [
+            "Brondby",
+            "Brøndby IF"
+        ]
+    },
+    "Copenhague": {
+        "stadium": "Parken",
+        "location": "Parken Stadium, Copenhague, Dinamarca",
+        "aliases": [
+            "FC Copenhagen",
+            "Kobenhavn"
+        ]
+    },
+    "Nordsjælland": {
+        "stadium": "Right to Dream Park",
+        "location": "Right to Dream Park, Farum, Dinamarca",
+        "aliases": [
+            "Nordsjaelland",
+            "FC Nordsjælland"
+        ]
+    },
+    "Aarhus GF": {
+        "stadium": "Ceres Park",
+        "location": "Ceres Park, Aarhus, Dinamarca",
+        "aliases": [
+            "AGF",
+            "Aarhus"
+        ]
+    },
+    "Bodø/Glimt": {
+        "stadium": "Aspmyra",
+        "location": "Aspmyra Stadion, Bodø, Noruega",
+        "aliases": [
+            "Bodo Glimt",
+            "Bodo/Glimt",
+            "FK Bodø/Glimt"
+        ]
+    },
+    "Molde": {
+        "stadium": "Aker Stadion",
+        "location": "Aker Stadion, Molde, Noruega",
+        "aliases": [
+            "Molde FK"
+        ]
+    },
+    "Brann": {
+        "stadium": "Brann Stadion",
+        "location": "Brann Stadion, Bergen, Noruega",
+        "aliases": [
+            "SK Brann"
+        ]
+    },
+    "Tromsø": {
+        "stadium": "Romssa Arena",
+        "location": "Romssa Arena, Tromsø, Noruega",
+        "aliases": [
+            "Tromso",
+            "Tromsø IL"
+        ]
+    },
+    "Rosenborg": {
+        "stadium": "Lerkendal",
+        "location": "Lerkendal Stadion, Trondheim, Noruega",
+        "aliases": [
+            "Rosenborg BK",
+            "RBK"
+        ]
+    },
+    "Jagiellonia Bialystok": {
+        "stadium": "Stadion Miejski",
+        "location": "Stadion Miejski w Białymstoku, Bialystok, Polonia",
+        "aliases": [
+            "Jagiellonia"
+        ]
+    },
+    "Slask Wroclaw": {
+        "stadium": "Tarczyński Arena",
+        "location": "Tarczyński Arena, Breslavia, Polonia",
+        "aliases": [
+            "Slask",
+            "Wroclaw"
+        ]
+    },
+    "Legia Varsovia": {
+        "stadium": "Wojska Polskiego",
+        "location": "Stadion Wojska Polskiego, Varsovia, Polonia",
+        "aliases": [
+            "Legia",
+            "Legia Warszawa"
+        ]
+    },
+    "Rakow Czestochowa": {
+        "stadium": "Miejski Stadion",
+        "location": "Miejski Stadion Piłkarski Raków, Częstochowa, Polonia",
+        "aliases": [
+            "Rakow",
+            "Raków"
+        ]
+    },
+    "Lech Poznan": {
+        "stadium": "Enea Stadion",
+        "location": "Enea Stadion, Poznan, Polonia",
+        "aliases": [
+            "Lech",
+            "Lech Poznań"
+        ]
+    },
+    "Dinamo Zagreb": {
+        "stadium": "Maksimir",
+        "location": "Estadio Maksimir, Zagreb, Croacia",
+        "aliases": [
+            "Dinamo"
+        ]
+    },
+    "Rijeka": {
+        "stadium": "Rujevica",
+        "location": "Stadion Rujevica, Rijeka, Croacia",
+        "aliases": [
+            "HNK Rijeka"
+        ]
+    },
+    "Hajduk Split": {
+        "stadium": "Poljud",
+        "location": "Stadion Poljud, Split, Croacia",
+        "aliases": [
+            "Hajduk"
+        ]
+    },
+    "Osijek": {
+        "stadium": "Opus Arena",
+        "location": "Opus Arena, Osijek, Croacia",
+        "aliases": [
+            "NK Osijek"
+        ]
+    },
+    "Estrella Roja": {
+        "stadium": "Rajko Mitić",
+        "location": "Estadio Rajko Mitić, Belgrado, Serbia",
+        "aliases": [
+            "Red Star",
+            "Crvena Zvezda",
+            "Estrella Roja de Belgrado"
+        ]
+    },
+    "Partizan de Belgrado": {
+        "stadium": "Partizan",
+        "location": "Estadio Partizan, Belgrado, Serbia",
+        "aliases": [
+            "Partizan",
+            "FK Partizan"
+        ]
+    },
+    "TSC Backa Topola": {
+        "stadium": "TSC Arena",
+        "location": "TSC Arena, Bačka Topola, Serbia",
+        "aliases": [
+            "TSC",
+            "Backa Topola"
+        ]
+    },
+    "Cukaricki": {
+        "stadium": "Banovom brdu",
+        "location": "Stadion na Banovom brdu, Belgrado, Serbia",
+        "aliases": [
+            "FK Čukarički"
+        ]
+    },
+    "Shakhtar Donetsk": {
+        "stadium": "Arena Lviv",
+        "location": "Arena Lviv, Lviv, Ucrania",
+        "aliases": [
+            "Shakhtar",
+            "Shakhtar Donestk"
+        ]
+    },
+    "Dynamo Kiev": {
+        "stadium": "Lobanovskyi Dynamo",
+        "location": "Valeriy Lobanovskyi Dynamo Stadium, Kiev, Ucrania",
+        "aliases": [
+            "Dynamo Kyiv",
+            "Dinamo de Kiev"
+        ]
+    },
+    "Kryvbas": {
+        "stadium": "Hirnyk Stadium",
+        "location": "Hirnyk Stadium, Kryvyi Rih, Ucrania",
+        "aliases": [
+            "Kryvbas Kryvyi Rih"
+        ]
+    },
+    "Dnipro-1": {
+        "stadium": "Dnipro-Arena",
+        "location": "Dnipro-Arena, Dnipró, Ucrania",
+        "aliases": [
+            "SC Dnipro-1"
+        ]
+    },
+    "Zorya Luhansk": {
+        "stadium": "Slavutych-Arena",
+        "location": "Slavutych-Arena, Zaporiyia, Ucrania",
+        "aliases": [
+            "Zorya"
+        ]
+    },
+    "Maccabi Tel Aviv": {
+        "stadium": "Bloomfield",
+        "location": "Bloomfield Stadium, Tel Aviv, Israel",
+        "aliases": [
+            "Maccabi Tel-Aviv"
+        ]
+    },
+    "Maccabi Haifa": {
+        "stadium": "Sammy Ofer",
+        "location": "Sammy Ofer Stadium, Haifa, Israel",
+        "aliases": []
+    },
+    "Hapoel Be'er Sheva": {
+        "stadium": "Turner Stadium",
+        "location": "Turner Stadium, Beerseba, Israel",
+        "aliases": [
+            "Hapoel Beer Sheva"
+        ]
+    },
+    "Malmö FF": {
+        "stadium": "Eleda Stadion",
+        "location": "Eleda Stadion, Malmö, Suecia",
+        "aliases": [
+            "Malmo",
+            "Malmo FF"
+        ]
+    },
+    "Elfsborg": {
+        "stadium": "Borås Arena",
+        "location": "Borås Arena, Borås, Suecia",
+        "aliases": [
+            "IF Elfsborg"
+        ]
+    },
+    "Djurgårdens": {
+        "stadium": "Tele2 Arena",
+        "location": "Tele2 Arena, Estocolmo, Suecia",
+        "aliases": [
+            "Djurgarden",
+            "Djurgardens IF"
+        ]
+    },
+    "BK Häcken": {
+        "stadium": "Bravida Arena",
+        "location": "Bravida Arena, Gotemburgo, Suecia",
+        "aliases": [
+            "Hacken",
+            "BK Hacken"
+        ]
+    },
+    "APOEL": {
+        "stadium": "GSP Stadium",
+        "location": "GSP Stadium, Nicosia, Chipre",
+        "aliases": [
+            "APOEL Nicosia"
+        ]
+    },
+    "Omonia Nicosia": {
+        "stadium": "GSP Stadium",
+        "location": "GSP Stadium, Nicosia, Chipre",
+        "aliases": [
+            "Omonia",
+            "AC Omonia"
+        ]
+    },
+    "AEK Larnaca": {
+        "stadium": "AEK Arena",
+        "location": "AEK Arena - Georgios Karapatakis, Lárnaca, Chipre",
+        "aliases": [
+            "AEK Larnaka"
+        ]
+    },
+    "Aris Limassol": {
+        "stadium": "Alphamega Stadium",
+        "location": "Alphamega Stadium, Limassol, Chipre",
+        "aliases": [
+            "Aris Limassol FC"
+        ]
+    },
+    "Pafos": {
+        "stadium": "Stelios Kyriakides",
+        "location": "Stelios Kyriakides Stadium, Pafos, Chipre",
+        "aliases": [
+            "Pafos FC"
+        ]
+    },
+    "Ferencváros": {
+        "stadium": "Groupama Arena",
+        "location": "Groupama Arena, Budapest, Hungría",
+        "aliases": [
+            "Ferencvaros",
+            "Ferencvarosi TC"
+        ]
+    },
+    "Puskás Akadémia": {
+        "stadium": "Pancho Aréna",
+        "location": "Pancho Aréna, Felcsút, Hungría",
+        "aliases": [
+            "Puskas Akademia"
+        ]
+    },
+    "Paksi": {
+        "stadium": "Fehérvári úti",
+        "location": "Fehérvári úti Stadion, Paks, Hungría",
+        "aliases": [
+            "Paksi FC"
+        ]
+    },
+    "Fehérvár": {
+        "stadium": "Sóstói Stadion",
+        "location": "Sóstói Stadion, Székesfehérvár, Hungría",
+        "aliases": [
+            "MOL Fehervar"
+        ]
+    },
+    "FCSB": {
+        "stadium": "Arena Națională",
+        "location": "Arena Națională, Bucarest, Rumanía",
+        "aliases": [
+            "Steaua Bucarest",
+            "Steaua",
+            "FCSB Bucarest"
+        ]
+    },
+    "CFR Cluj": {
+        "stadium": "Dr. Constantin Rădulescu",
+        "location": "Stadionul Dr. Constantin Rădulescu, Cluj-Napoca, Rumanía",
+        "aliases": [
+            "Cluj"
+        ]
+    },
+    "Universitatea Craiova": {
+        "stadium": "Ion Oblemenco",
+        "location": "Stadionul Ion Oblemenco, Craiova, Rumanía",
+        "aliases": [
+            "U Craiova"
+        ]
+    },
+    "Farul Constanta": {
+        "stadium": "Viitorul",
+        "location": "Stadionul Viitorul, Ovidiu, Rumanía",
+        "aliases": [
+            "Farul"
+        ]
+    },
+    "Sepsi": {
+        "stadium": "Sepsi Arena",
+        "location": "Sepsi Arena, Sfântu Gheorghe, Rumanía",
+        "aliases": [
+            "Sepsi OSK"
+        ]
+    },
+    "Ludogorets Razgrad": {
+        "stadium": "Huvepharma Arena",
+        "location": "Huvepharma Arena, Razgrad, Bulgaria",
+        "aliases": [
+            "Ludogorets"
+        ]
+    },
+    "CSKA Sofía": {
+        "stadium": "Vasil Levski",
+        "location": "Estadio Nacional Vasil Levski, Sofía, Bulgaria",
+        "aliases": [
+            "CSKA Sofia",
+            "CSKA-Sofia"
+        ]
+    },
+    "Cherno More Varna": {
+        "stadium": "Ticha Stadium",
+        "location": "Ticha Stadium, Varna, Bulgaria",
+        "aliases": [
+            "Cherno More"
+        ]
+    },
+    "Slovan Bratislava": {
+        "stadium": "Tehelné pole",
+        "location": "Tehelné pole, Bratislava, Eslovaquia",
+        "aliases": [
+            "Slovan"
+        ]
+    },
+    "Dunajská Streda": {
+        "stadium": "MOL Aréna",
+        "location": "MOL Aréna, Dunajská Streda, Eslovaquia",
+        "aliases": [
+            "DAC 1904",
+            "DAC Dunajska Streda"
+        ]
+    },
+    "Spartak Trnava": {
+        "stadium": "Anton Malatinský",
+        "location": "Štadión Antona Malatinského, Trnava, Eslovaquia",
+        "aliases": [
+            "Spartak"
+        ]
+    },
+    "Qarabag": {
+        "stadium": "Tofiq Bahramov",
+        "location": "Estadio Tofiq Bahramov, Bakú, Azerbaiyán",
+        "aliases": [
+            "Qarabağ",
+            "Karabakh"
+        ]
+    },
+    "Neftchi Baku": {
+        "stadium": "Bakcell Arena",
+        "location": "Neftçi Arena, Bakú, Azerbaiyán",
+        "aliases": [
+            "Neftchi"
+        ]
+    },
+    "Zira": {
+        "stadium": "Zira Olympic",
+        "location": "Zira Olympic Sport Complex, Zira, Azerbaiyán",
+        "aliases": [
+            "Zira FK"
+        ]
+    },
+    "Sabah": {
+        "stadium": "Bank Respublika Arena",
+        "location": "Bank Respublika Arena, Masazır, Azerbaiyán",
+        "aliases": [
+            "Sabah FK"
+        ]
+    },
+    "Celje": {
+        "stadium": "Z’dežele",
+        "location": "Stadion Z’dežele, Celje, Eslovenia",
+        "aliases": [
+            "NK Celje"
+        ]
+    },
+    "Maribor": {
+        "stadium": "Ljudski vrt",
+        "location": "Ljudski vrt, Maribor, Eslovenia",
+        "aliases": [
+            "NK Maribor"
+        ]
+    },
+    "Olimpija Ljubljana": {
+        "stadium": "Stožice",
+        "location": "Stadion Stožice, Liubliana, Eslovenia",
+        "aliases": [
+            "Olimpija"
+        ]
+    },
+    "Sheriff Tiraspol": {
+        "stadium": "Sheriff Stadium",
+        "location": "Sheriff Main Arena, Tiraspol, Moldavia",
+        "aliases": [
+            "Sheriff",
+            "FC Sheriff"
+        ]
+    },
+    "Petrocub Hîncesti": {
+        "stadium": "Municipal Hîncesti",
+        "location": "Stadionul Municipal, Hîncești, Moldavia",
+        "aliases": [
+            "Petrocub",
+            "Petrocub Hincesti"
+        ]
+    },
+    "Ordabasy": {
+        "stadium": "Kazhymukan Munaitpasov",
+        "location": "Kazhymukan Munaitpasov Stadium, Shymkent, Kazajistán",
+        "aliases": [
+            "FC Ordabasy"
+        ]
+    },
+    "Astana": {
+        "stadium": "Astana Arena",
+        "location": "Astana Arena, Astaná, Kazajistán",
+        "aliases": [
+            "FC Astana"
+        ]
+    },
+    "Aktobe": {
+        "stadium": "Central de Aktobe",
+        "location": "Estadio Central, Aktobe, Kazajistán",
+        "aliases": [
+            "FC Aktobe"
+        ]
+    },
+    "Tobol": {
+        "stadium": "Central de Kostanay",
+        "location": "Estadio Central, Kostanay, Kazajistán",
+        "aliases": [
+            "Tobol Kostanay"
+        ]
+    },
+    "HJK Helsinki": {
+        "stadium": "Bolt Arena",
+        "location": "Bolt Arena, Helsinki, Finlandia",
+        "aliases": [
+            "HJK"
+        ]
+    },
+    "KuPS": {
+        "stadium": "Väre Areena",
+        "location": "Väre Areena, Kuopio, Finlandia",
+        "aliases": [
+            "Kuopion Palloseura"
+        ]
+    },
+    "Ilves": {
+        "stadium": "Tammelan Stadion",
+        "location": "Tammelan Stadion, Tampere, Finlandia",
+        "aliases": [
+            "Ilves Tampere"
+        ]
+    },
+    "Shamrock Rovers": {
+        "stadium": "Tallaght Stadium",
+        "location": "Tallaght Stadium, Dublín, Irlanda",
+        "aliases": [
+            "Shamrock"
+        ]
+    },
+    "Shelbourne": {
+        "stadium": "Tolka Park",
+        "location": "Tolka Park, Dublín, Irlanda",
+        "aliases": [
+            "Shelbourne FC"
+        ]
+    },
+    "Derry City": {
+        "stadium": "Brandywell",
+        "location": "Ryan McBride Brandywell Stadium, Derry, Irlanda del Norte",
+        "aliases": []
+    },
+    "St Patrick's Athletic": {
+        "stadium": "Richmond Park",
+        "location": "Richmond Park, Dublín, Irlanda",
+        "aliases": [
+            "St Patricks",
+            "St. Pats"
+        ]
+    },
+    "RFS": {
+        "stadium": "LNK Sporta Parks",
+        "location": "LNK Sporta Parks, Riga, Letonia",
+        "aliases": [
+            "Rigas FS"
+        ]
+    },
+    "Riga FC": {
+        "stadium": "Skonto Stadium",
+        "location": "Skonto Stadium, Riga, Letonia",
+        "aliases": [
+            "Riga"
+        ]
+    },
+    "Valmiera": {
+        "stadium": "Jānis Daliņš",
+        "location": "Jānis Daliņš Stadium, Valmiera, Letonia",
+        "aliases": [
+            "Valmiera FC"
+        ]
+    },
+    "Borac Banja Luka": {
+        "stadium": "Banja Luka City Stadium",
+        "location": "Gradski stadion Banja Luka, Banja Luka, Bosnia y Herzegovina",
+        "aliases": [
+            "Borac"
+        ]
+    },
+    "Zrinjski Mostar": {
+        "stadium": "Bijelim Brijegom",
+        "location": "Stadion pod Bijelim Brijegom, Mostar, Bosnia y Herzegovina",
+        "aliases": [
+            "Zrinjski"
+        ]
+    },
+    "Sarajevo": {
+        "stadium": "Asim Ferhatović Hase",
+        "location": "Estadio Asim Ferhatović Hase, Sarajevo, Bosnia y Herzegovina",
+        "aliases": [
+            "FK Sarajevo"
+        ]
+    },
+    "Vikingur Reykjavik": {
+        "stadium": "Víkingsvöllur",
+        "location": "Víkingsvöllur, Reikiavik, Islandia",
+        "aliases": [
+            "Vikingur"
+        ]
+    },
+    "Breidablik": {
+        "stadium": "Kópavogsvöllur",
+        "location": "Kópavogsvöllur, Kópavogur, Islandia",
+        "aliases": [
+            "Breidablik UBK"
+        ]
+    },
+    "Valur": {
+        "stadium": "Hlíðarendi",
+        "location": "Hlíðarendi, Reikiavik, Islandia",
+        "aliases": [
+            "Valur Reykjavik"
+        ]
+    },
+    "FK Panevezys": {
+        "stadium": "Aukštaitija",
+        "location": "Aukštaitija Stadium, Panevėžys, Lituania",
+        "aliases": [
+            "Panevezys"
+        ]
+    },
+    "Zalgiris Vilnius": {
+        "stadium": "LFF Stadium",
+        "location": "LFF Stadium, Vilna, Lituania",
+        "aliases": [
+            "Zalgiris",
+            "FK Žalgiris"
+        ]
+    },
+    "Pyunik": {
+        "stadium": "Vazgen Sargsyan",
+        "location": "Estadio Republicano Vazgen Sargsyan, Ereván, Armenia",
+        "aliases": [
+            "Pyunik Yerevan"
+        ]
+    },
+    "Noah": {
+        "stadium": "Abovyan City Stadium",
+        "location": "Abovyan City Stadium, Abovyan, Armenia",
+        "aliases": [
+            "FC Noah"
+        ]
+    },
+    "Ararat-Armenia": {
+        "stadium": "Yerevan Football Academy",
+        "location": "Yerevan Football Academy Stadium, Ereván, Armenia",
+        "aliases": [
+            "Ararat Armenia"
+        ]
+    },
+    "Dinamo Minsk": {
+        "stadium": "Dinamo Stadium",
+        "location": "Dinamo National Olympic Stadium, Minsk, Bielorrusia",
+        "aliases": [
+            "Dinamo Mn"
+        ]
+    },
+    "Neman Grodno": {
+        "stadium": "Neman Stadium",
+        "location": "Neman Stadium, Grodno, Bielorrusia",
+        "aliases": [
+            "Neman"
+        ]
+    },
+    "KÍ Klaksvik": {
+        "stadium": "Við Djúpumýrar",
+        "location": "Við Djúpumýrar, Klaksvík, Islas Feroe",
+        "aliases": [
+            "KI Klaksvik",
+            "Klaksvik"
+        ]
+    },
+    "Vikingur Gota": {
+        "stadium": "Sarpugerði",
+        "location": "Sarpugerði, Norðragøta, Islas Feroe",
+        "aliases": [
+            "Vikingur Gøta"
+        ]
+    },
+    "Ballkani": {
+        "stadium": "Suhareka City Stadium",
+        "location": "Suhareka City Stadium, Suhareka, Kosovo",
+        "aliases": [
+            "FC Ballkani"
+        ]
+    },
+    "Drita": {
+        "stadium": "Gjilan City Stadium",
+        "location": "Gjilan City Stadium, Gnjilane, Kosovo",
+        "aliases": [
+            "FC Drita"
+        ]
+    },
+    "Differdange 03": {
+        "stadium": "Stade Municipal",
+        "location": "Stade Municipal de la Ville de Differdange, Differdange, Luxemburgo",
+        "aliases": [
+            "Differdange"
+        ]
+    },
+    "Dudelange": {
+        "stadium": "Jos Nosbaum",
+        "location": "Stade Jos Nosbaum, Dudelange, Luxemburgo",
+        "aliases": [
+            "F91 Dudelange"
+        ]
+    },
+    "Swift Hesperange": {
+        "stadium": "Alphonse Theis",
+        "location": "Stade Alphonse Theis, Hesperange, Luxemburgo",
+        "aliases": [
+            "Swift Hesper"
+        ]
+    },
+    "Larne": {
+        "stadium": "Inver Park",
+        "location": "Inver Park, Larne, Irlanda del Norte",
+        "aliases": [
+            "Larne FC"
+        ]
+    },
+    "Linfield": {
+        "stadium": "Windsor Park",
+        "location": "Windsor Park, Belfast, Irlanda del Norte",
+        "aliases": [
+            "Linfield FC"
+        ]
+    },
+    "Flora Tallinn": {
+        "stadium": "A. Le Coq Arena",
+        "location": "A. Le Coq Arena, Tallin, Estonia",
+        "aliases": [
+            "Flora"
+        ]
+    },
+    "Levadia Tallinn": {
+        "stadium": "A. Le Coq Arena",
+        "location": "A. Le Coq Arena, Tallin, Estonia",
+        "aliases": [
+            "Levadia"
+        ]
+    },
+    "The New Saints": {
+        "stadium": "Park Hall",
+        "location": "Park Hall, Oswestry, Gales",
+        "aliases": [
+            "TNS",
+            "The New Saints FC"
+        ]
+    },
+    "Lincoln Red Imps": {
+        "stadium": "Victoria Stadium",
+        "location": "Victoria Stadium, Gibraltar",
+        "aliases": [
+            "Lincoln Red Imps FC"
+        ]
+    },
+    "FC Vaduz": {
+        "stadium": "Rheinpark",
+        "location": "Rheinpark Stadion, Vaduz, Liechtenstein",
+        "aliases": [
+            "Vaduz"
+        ]
+    },
+    "Dinamo Batumi": {
+        "stadium": "Adjarabet Arena",
+        "location": "Adjarabet Arena, Batumi, Georgia",
+        "aliases": []
+    },
+    "Dinamo Tbilisi": {
+        "stadium": "Boris Paichadze",
+        "location": "Boris Paichadze Dinamo Arena, Tiflis, Georgia",
+        "aliases": []
+    },
+    "Egnatia": {
+        "stadium": "Egnatia Arena",
+        "location": "Egnatia Arena, Rrogozhinë, Albania",
+        "aliases": [
+            "KF Egnatia"
+        ]
+    },
+    "Partizani": {
+        "stadium": "Arena e Demave",
+        "location": "Arena e Demave, Tirana, Albania",
+        "aliases": [
+            "FK Partizani"
+        ]
+    },
+    "Struga": {
+        "stadium": "Gradska Plaza",
+        "location": "Gradska Plaza Stadium, Struga, Macedonia del Norte",
+        "aliases": [
+            "FC Struga"
+        ]
+    },
+    "Shkëndija": {
+        "stadium": "Ecolog Arena",
+        "location": "Ecolog Arena, Tetovo, Macedonia del Norte",
+        "aliases": [
+            "Shkendija"
+        ]
+    },
+    "Decic": {
+        "stadium": "Stadion Tuško Polje",
+        "location": "Stadion Tuško Polje, Tuzi, Montenegro",
+        "aliases": [
+            "FK Dečić"
+        ]
+    },
+    "Buducnost Podgorica": {
+        "stadium": "Pod Goricom",
+        "location": "Stadion pod Goricom, Podgorica, Montenegro",
+        "aliases": [
+            "Buducnost"
+        ]
+    },
+    "UE Santa Coloma": {
+        "stadium": "Estadi Nacional",
+        "location": "Estadi Nacional, Andorra la Vella, Andorra",
+        "aliases": [
+            "UE Santa Coloma"
+        ]
+    },
+    "Inter Club d'Escaldes": {
+        "stadium": "Centre d'Entrenament de la FAF",
+        "location": "Centre d'Entrenament de la FAF, Andorra la Vella, Andorra",
+        "aliases": [
+            "Inter Escaldes"
+        ]
+    },
+    "Hamrun Spartans": {
+        "stadium": "Victor Tedesco",
+        "location": "Victor Tedesco Stadium, Ħamrun, Malta",
+        "aliases": [
+            "Hamrun"
+        ]
+    },
+    "Floriana": {
+        "stadium": "Independence Arena",
+        "location": "Independence Arena, Floriana, Malta",
+        "aliases": [
+            "Floriana FC"
+        ]
+    },
+    "Virtus": {
+        "stadium": "Campo Sportivo di Acquaviva",
+        "location": "Campo Sportivo di Acquaviva, Acquaviva, San Marino",
+        "aliases": [
+            "SS Virtus"
+        ]
+    },
+    "Tre Penne": {
+        "stadium": "Stadio Fonte dell'Ovo",
+        "location": "Stadio Fonte dell'Ovo, San Marino",
+        "aliases": [
+            "SP Tre Penne"
+        ]
+    },
+    "Boavista": {
+        "stadium": "Estádio do Bessa",
+        "location": "Estádio do Bessa, Oporto, Portugal",
+        "aliases": [
+            "Boavista FC"
+        ]
+    },
+    "Gil Vicente": {
+        "stadium": "Cidade de Barcelos",
+        "location": "Estádio Cidade de Barcelos, Barcelos, Portugal",
+        "aliases": [
+            "Gil Vicente FC"
+        ]
+    },
+    "Rio Ave": {
+        "stadium": "Estádio dos Arcos",
+        "location": "Estádio dos Arcos, Vila do Conde, Portugal",
+        "aliases": [
+            "Rio Ave FC"
+        ]
+    },
+    "Chaves": {
+        "stadium": "Municipal de Chaves",
+        "location": "Estádio Municipal Eng. Manuel Branco Teixeira, Chaves, Portugal",
+        "aliases": [
+            "GD Chaves"
+        ]
+    },
+    "Vizela": {
+        "stadium": "Estádio do FC Vizela",
+        "location": "Estádio do FC Vizela, Vizela, Portugal",
+        "aliases": [
+            "FC Vizela"
+        ]
+    },
+    "Paços de Ferreira": {
+        "stadium": "Capital do Móvel",
+        "location": "Estádio Capital do Móvel, Paços de Ferreira, Portugal",
+        "aliases": [
+            "Pacos de Ferreira",
+            "FC Paços de Ferreira"
+        ]
+    },
+    "Estoril": {
+        "stadium": "António Coimbra da Mota",
+        "location": "Estádio António Coimbra da Mota, Estoril, Portugal",
+        "aliases": [
+            "Estoril Praia"
+        ]
+    },
+    "Moreirense": {
+        "stadium": "Comendador Joaquim",
+        "location": "Parque de Jogos Comendador Joaquim de Almeida Freitas, Moreira de Cónegos, Portugal",
+        "aliases": [
+            "Moreirense FC"
+        ]
+    },
+    "Portimonense": {
+        "stadium": "Municipal de Portimão",
+        "location": "Estádio Municipal de Portimão, Portimão, Portugal",
+        "aliases": [
+            "Portimonense SC"
+        ]
+    },
+    "Santa Clara": {
+        "stadium": "São Miguel",
+        "location": "Estádio de São Miguel, Ponta Delgada, Portugal",
+        "aliases": [
+            "CD Santa Clara"
+        ]
+    },
+    "Farense": {
+        "stadium": "São Luís",
+        "location": "Estádio de São Luís, Faro, Portugal",
+        "aliases": [
+            "SC Farense"
+        ]
+    },
+    "Leixões": {
+        "stadium": "Estádio do Mar",
+        "location": "Estádio do Mar, Matosinhos, Portugal",
+        "aliases": [
+            "Leixoes",
+            "Leixões SC"
+        ]
+    },
+    "Académica": {
+        "stadium": "Cidade de Coimbra",
+        "location": "Estádio Cidade de Coimbra, Coimbra, Portugal",
+        "aliases": [
+            "Academica",
+            "Académica de Coimbra"
+        ]
+    },
+    "Feirense": {
+        "stadium": "Marcolino de Castro",
+        "location": "Estádio Marcolino de Castro, Santa Maria da Feira, Portugal",
+        "aliases": [
+            "CD Feirense"
+        ]
+    },
+    "Al-Nassr": {
+        "stadium": "Al-Awwal Park",
+        "location": "Al-Awwal Park, Riad, Arabia Saudí",
+        "aliases": [
+            "Al Nassr",
+            "Al-Nassr FC"
+        ]
+    },
+    "Al-Shabab": {
+        "stadium": "Al-Shabab Club Stadium",
+        "location": "Al-Shabab Club Stadium, Riad, Arabia Saudí",
+        "aliases": [
+            "Al Shabab"
+        ]
+    },
+    "Pumas UNAM": {
+        "stadium": "Olímpico Universitario",
+        "location": "Estadio Olímpico Universitario, Ciudad de México, México",
+        "aliases": [
+            "Pumas"
+        ]
+    },
+    "Club América": {
+        "stadium": "Ciudad de los Deportes",
+        "location": "Estadio Ciudad de los Deportes, Ciudad de México, México",
+        "aliases": [
+            "America",
+            "CF América",
+            "Las Águilas"
+        ]
+    },
+    "San Jose Earthquakes": {
+        "stadium": "PayPal Park",
+        "location": "PayPal Park, San José, EE.UU.",
+        "aliases": [
+            "San Jose"
+        ]
+    },
+    "Club Nacional": {
+        "stadium": "Gran Parque Central",
+        "location": "Estadio Gran Parque Central, Montevideo, Uruguay",
+        "aliases": [
+            "Nacional",
+            "Nacional de Montevideo"
+        ]
+    },
+    "Peñarol": {
+        "stadium": "Campeón del Siglo",
+        "location": "Estadio Campeón del Siglo, Montevideo, Uruguay",
+        "aliases": [
+            "Penarol",
+            "Club Atlético Peñarol"
+        ]
+    },
+    "Boca Juniors": {
+        "stadium": "La Bombonera",
+        "location": "Estadio Alberto J. Armando, Buenos Aires, Argentina",
+        "aliases": [
+            "Boca"
+        ]
+    },
+    "River Plate": {
+        "stadium": "Mâs Monumental",
+        "location": "Estadio Mâs Monumental, Buenos Aires, Argentina",
+        "aliases": [
+            "River"
+        ]
+    },
+    "Santos": {
+        "stadium": "Vila Belmiro",
+        "location": "Estádio Urbano Caldeira, Santos, Brasil",
+        "aliases": [
+            "Santos FC"
+        ]
+    },
+    "Flamengo": {
+        "stadium": "Maracanã",
+        "location": "Estádio do Maracanã, Río de Janeiro, Brasil",
+        "aliases": [
+            "Fla"
+        ]
+    },
+    "Zenit": {
+        "stadium": "Gazprom Arena",
+        "location": "Gazprom Arena, San Petersburgo, Rusia",
+        "aliases": [
+            "Zenit St. Petersburg"
+        ]
+    },
+    "Spartak Moscú": {
+        "stadium": "Lukoil Arena",
+        "location": "Lukoil Arena, Moscú, Rusia",
+        "aliases": [
+            "Spartak Moscow"
+        ]
+    },
+    "Palermo": {
+        "stadium": "Renzo Barbera",
+        "location": "Stadio Renzo Barbera, Palermo, Italia",
+        "aliases": [
+            "Palermo FC"
+        ]
+    },
+    "Slovan Liberec": {
+        "stadium": "U Nisy",
+        "location": "Stadion U Nisy, Liberec, República Checa",
+        "aliases": [
+            "Liberec"
+        ]
+    },
+    "Leeds United": {
+        "stadium": "Elland Road",
+        "location": "Elland Road, Leeds, Reino Unido",
+        "aliases": [
+            "Leeds"
+        ]
+    },
+    "Sheffield United": {
+        "stadium": "Bramall Lane",
+        "location": "Bramall Lane, Sheffield, Reino Unido",
+        "aliases": [
+            "Sheffield Utd"
+        ]
+    },
+    "Norwich City": {
+        "stadium": "Carrow Road",
+        "location": "Carrow Road, Norwich, Reino Unido",
+        "aliases": [
+            "Norwich"
+        ]
+    },
+    "Watford": {
+        "stadium": "Vicarage Road",
+        "location": "Vicarage Road, Watford, Reino Unido",
+        "aliases": [
+            "Watford FC"
+        ]
+    },
+    "Middlesbrough": {
+        "stadium": "Riverside Stadium",
+        "location": "Riverside Stadium, Middlesbrough, Reino Unido",
+        "aliases": [
+            "Boro"
+        ]
+    },
+    "Sunderland": {
+        "stadium": "Stadium of Light",
+        "location": "Stadium of Light, Sunderland, Reino Unido",
+        "aliases": [
+            "Sunderland AFC"
+        ]
+    },
+    "Burnley": {
+        "stadium": "Turf Moor",
+        "location": "Turf Moor, Burnley, Reino Unido",
+        "aliases": [
+            "Burnley FC"
+        ]
+    },
+    "Luton Town": {
+        "stadium": "Kenilworth Road",
+        "location": "Kenilworth Road, Luton, Reino Unido",
+        "aliases": [
+            "Luton"
+        ]
+    },
+    "Caracas FC": {
+        "stadium": "Olímpico de la UCV",
+        "location": "Estadio Olímpico de la UCV, Caracas, Venezuela",
+        "aliases": [
+            "Caracas"
+        ]
+    },
+    "Deportivo La Guaira": {
+        "stadium": "Olímpico de la UCV",
+        "location": "Estadio Olímpico de la UCV, Caracas, Venezuela",
+        "aliases": [
+            "La Guaira"
+        ]
+    },
+    "Deportivo Español": {
+        "stadium": "Estadio Nueva España",
+        "location": "Estadio Nueva España, Buenos Aires, Argentina",
+        "aliases": [
+            "Club Deportivo Español",
+            "Dep. Español",
+            "Deportivo Espanol"
+        ]
+    },
+    "Varzim": {
+        "stadium": "Estádio do Varzim SC",
+        "location": "Estádio do Varzim SC, Póvoa de Varzim, Portugal",
+        "aliases": [
+            "Varzim S.C.",
+            "Varzim SC"
+        ]
+    },
+    "Penafiel": {
+        "stadium": "Estádio Municipal 25 de Abril",
+        "location": "Estádio Municipal 25 de Abril, Penafiel, Portugal",
+        "aliases": [
+            "F.C. Penafiel",
+            "FC Penafiel"
+        ]
+    },
+    "Académico Viseu": {
+        "stadium": "Estádio do Fontelo",
+        "location": "Estádio do Fontelo, Viseu, Portugal",
+        "aliases": [
+            "Académico de Viseu",
+            "Academico Viseu",
+            "Academico de Viseu"
+        ]
+    },
+    "Oliveirense": {
+        "stadium": "Estádio Carlos Osório",
+        "location": "Estádio Carlos Osório, Oliveira de Azeméis, Portugal",
+        "aliases": [
+            "U.D. Oliveirense",
+            "UD Oliveirense"
+        ]
+    },
+    "Tondela": {
+        "stadium": "Estádio João Cardoso",
+        "location": "Estádio João Cardoso, Tondela, Portugal",
+        "aliases": [
+            "C.D. Tondela",
+            "CD Tondela"
+        ]
+    },
+    "Millonarios": {
+        "stadium": "Estadio Nemesio Camacho El Campín",
+        "location": "Estadio Nemesio Camacho El Campín, Bogotá, Colombia",
+        "aliases": [
+            "Millonarios F.C.",
+            "Millonarios FC",
+            "Millos"
+        ]
+    },
+    "LDU Quito": {
+        "stadium": "Estadio Rodrigo Paz Delgado",
+        "location": "Estadio Rodrigo Paz Delgado, Quito, Ecuador",
+        "aliases": [
+            "LDU de Quito",
+            "Liga de Quito",
+            "L.D.U. Quito"
+        ]
+    },
+    "Al-Ittihad": {
+        "stadium": "King Abdullah Sports City",
+        "location": "King Abdullah Sports City, Yeda, Arabia Saudí",
+        "aliases": [
+            "Al Ittihad",
+            "Ittihad Club",
+            "Al-Ittihad Jeddah"
+        ]
+    },
+    "Vissel Kobe": {
+        "stadium": "Noevir Stadium Kobe",
+        "location": "Noevir Stadium Kobe, Kobe, Japón",
+        "aliases": [
+            "Vissel",
+            "Vissel Kōbe"
+        ]
+    },
+    "UE Sant Andreu": {
+        "stadium": "Estadio Narcís Sala",
+        "location": "Estadio Narcís Sala, UE Sant Andreu",
+        "aliases": [],
+        "last_updated": "2025-11-25"
+    },
+    "Crvena Zvezda": {
+        "stadium": "Stadion Rajko Mitić",
+        "location": "Stadion Rajko Mitić, Crvena Zvezda",
+        "aliases": [],
+        "last_updated": "2025-11-25"
+    }
+}

@@ -1,0 +1,43 @@
+name: Celta Calendar Bot Scheduler
+
+on:
+  schedule:
+    # Cron configurado en UTC.
+    # '0 9-23 * * *' = Ejecutar en el minuto 0 de las horas 9 a la 23 (UTC).
+    # Equivalencia España (CET/Invierno): 10:00 AM a 00:00 AM.
+    - cron: '0 9-23 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+
+    - name: 🐍 Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: 📦 Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: 🚀 Run Scraper
+      env:
+        CALENDAR_ID: ${{ secrets.CALENDAR_ID }}
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        GCP_CREDENTIALS_JSON: ${{ secrets.GCP_CREDENTIALS_JSON }}
+        GCP_TOKEN_JSON_B64: ${{ secrets.GCP_TOKEN_JSON_B64 }}
+      run: python main_scraper.py
+
+    - name: 💾 Commit Stadium DB Changes
+      run: |
+        git config --global user.name 'GitHub Action Bot'
+        git config --global user.email 'action@github.com'
+        git add stadiums.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "🏟️ Update stadium database" && git push)
