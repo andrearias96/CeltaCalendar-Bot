@@ -18,6 +18,9 @@ from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 from dotenv import load_dotenv 
 
+# --- IMPORTACIONES EXTRA PARA MANEJO DE ERRORES SELENIUM ---
+from selenium.common.exceptions import TimeoutException, WebDriverException
+
 # --- CONFIGURACIÓN DE ENTORNO (FIX GEOLOCALIZACIÓN Y ESTABILIDAD) ---
 os.environ['DBUS_SESSION_BUS_ADDRESS'] = '/dev/null'
 os.environ['TZ'] = 'Europe/Madrid' # Forzar zona horaria de España
@@ -304,7 +307,7 @@ def fetch_tv_schedule(team_name_filter):
 def setup_driver():
     """
     Configuración centralizada y robusta del Driver.
-    Incluye Fix Anti-Timeout y Override de Timezone para evitar contenido USA.
+    Incluye Fix Anti-Timeout y Override de Timezone.
     """
     chrome_options = Options()
     chrome_options.page_load_strategy = 'eager' 
@@ -333,7 +336,12 @@ def setup_driver():
     
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
     
-    # --- CDP COMMANDS PARA FORZAR LOCALE Y TIMEZONE (Anti-USA Content) ---
+    # --- STABILITY: FAIL-FAST TIMEOUTS ---
+    # Si la página tarda más de 10s en cargar recursos externos, cortamos.
+    driver.set_page_load_timeout(10)
+    driver.set_script_timeout(10)
+
+    # --- CDP COMMANDS PARA FORZAR LOCALE Y TIMEZONE ---
     try:
         driver.execute_cdp_cmd('Emulation.setTimezoneOverride', {'timezoneId': 'Europe/Madrid'})
         driver.execute_cdp_cmd('Network.setExtraHTTPHeaders', {'headers': {'Accept-Language': 'es-ES,es;q=0.9'}})
@@ -344,8 +352,8 @@ def setup_driver():
 
 def scrape_besoccer_info(driver, match_link):
     """
-    Extrae Estadio y TV de la página de detalles del partido.
-    Usa el driver compartido para evitar Timeouts.
+    Extrae Estadio y TV con lógica FAIL-FAST.
+    Si falla el timeout, devuelve None para no bloquear la sincronización.
     """
     if not match_link: return None, None
     
@@ -353,53 +361,40 @@ def scrape_besoccer_info(driver, match_link):
     tv_text = None
 
     try:
-        logging.info(f"🕵️ Scrapeando detalles (Shared Driver): {match_link}")
-
-        # Pequeña pausa para no saturar requests seguidas
-        time.sleep(1.5)
+        # logging.info(f"🕵️ Scrapeando detalles (Shared Driver): {match_link}")
+        
+        # Pausa mínima
+        time.sleep(1)
         
         driver.get(match_link)
         
-        # Parsear el HTML generado
         soup = BeautifulSoup(driver.page_source, 'lxml')
             
-        # Priorizar la "caja" específica donde suele estar la info
         box_rows = soup.select('.table-body.p10 .table-row-round')
         rows = box_rows if box_rows else soup.select('.table-row-round')
         
-        # logging.info(f"   Filas encontradas para análisis: {len(rows)}") # Reduce log noise
-
         for row in rows:
             text = clean_text(row.get_text())
             
             # --- DETECTAR ESTADIO ---
-            # Prioridad 1: Link específico de estadio
             stadium_link = row.select_one('a.popup_btn[href="#stadium"]')
             if stadium_link:
                 stadium = clean_text(stadium_link.text)
-            # Prioridad 2: Texto contiene 'estadio' y no 'TV'
             elif "estadio" in text.lower() and not stadium:
                 stadium = text
 
-            # --- DETECTAR TV (Lógica mejorada según snippet) ---
+            # --- DETECTAR TV ---
             is_tv_row = False
-            
-            # 1. Busqueda por icono SVG específico (aria-label o title o href)
             tv_icon_aria = row.select_one('svg[aria-label="TV"], svg[aria-label="Televisión"]')
             tv_title = row.select_one('svg title')
             use_tag = row.select_one('use')
             
-            if tv_icon_aria:
-                is_tv_row = True
-            elif tv_title and "TV" in tv_title.text:
-                is_tv_row = True
-            elif use_tag and ('ic_tv' in use_tag.get('href', '') or '#tv' in use_tag.get('href', '')):
-                is_tv_row = True
+            if tv_icon_aria: is_tv_row = True
+            elif tv_title and "TV" in tv_title.text: is_tv_row = True
+            elif use_tag and ('ic_tv' in use_tag.get('href', '') or '#tv' in use_tag.get('href', '')): is_tv_row = True
                 
-            # 2. Busqueda por palabras clave si falla el icono
             keywords = ["MOVISTAR", "DAZN", "LA 1", "TVG", "GOL PLAY", "TELECINCO", "CUATRO", "ORANGE"]
-            if not is_tv_row and any(k in text.upper() for k in keywords):
-                is_tv_row = True
+            if not is_tv_row and any(k in text.upper() for k in keywords): is_tv_row = True
 
             if is_tv_row and "estadio" not in text.lower():
                 content_div = row.select_one('.ta-r')
@@ -414,53 +409,55 @@ def scrape_besoccer_info(driver, match_link):
         
         if tv_text:
             logging.info(f"   ✅ TV detectada: {tv_text}")
-        else:
-            # logging.info("   ❌ No se detectó información de TV.") # Reduce log noise
-            pass
 
+    except TimeoutException:
+        logging.warning(f"   ⏳ Timeout (10s) en detalles. Saltando enriquecimiento para este partido.")
+        try: driver.execute_script("window.stop();") 
+        except: pass
+        return None, None
     except Exception as e:
-        logging.warning(f"⚠️ Error scraping info (Estadio/TV) from link: {e}")
-        # NO cerramos el driver aquí, es compartido.
+        logging.warning(f"   ⚠️ Error driver en detalles: {e}. Saltando.")
+        raise e # Re-lanzar para que el loop principal detecte si el driver murió
     
     return stadium, tv_text
 
 def get_stadium_info(driver, team_name, match_link=None, match_status="", is_tbd=False):
     """
-    Lógica de obtención de estadio y TV revisada.
+    Wrapper que maneja la lógica de negocio y fallos del driver.
     """
     if not team_name: return None, None, None
     clean_name = team_name.strip()
     
-    # 1. Consulta a DB
     db_stadium, db_location = find_stadium_dynamic(clean_name)
     
     final_stadium = db_stadium
     final_location = db_location
     final_tv = None
     
-    # 2. Verificación con página del partido
     is_upcoming = 'fin' not in match_status.lower()
     
-    # NUEVA LÓGICA: Solo scrapear si NO es TBD y NO ha finalizado (Upcoming real)
     if match_link and not is_tbd and is_upcoming:
-        # Pasa el driver compartido
-        web_stadium, web_tv = scrape_besoccer_info(driver, match_link)
-        
-        if web_tv: final_tv = web_tv
-
-        if web_stadium:
-            should_update = False
-            if not final_stadium:
-                should_update = True
-            else:
-                ratio = difflib.SequenceMatcher(None, normalize_team_key(final_stadium), normalize_team_key(web_stadium)).ratio()
-                if ratio < 0.85: 
-                    should_update = True
+        try:
+            web_stadium, web_tv = scrape_besoccer_info(driver, match_link)
             
-            if should_update:
-                final_stadium = web_stadium
-                final_location = f"{web_stadium}, {clean_name}" 
-                update_db(clean_name, final_stadium, final_location)
+            if web_tv: final_tv = web_tv
+
+            if web_stadium:
+                should_update = False
+                if not final_stadium:
+                    should_update = True
+                else:
+                    ratio = difflib.SequenceMatcher(None, normalize_team_key(final_stadium), normalize_team_key(web_stadium)).ratio()
+                    if ratio < 0.85: 
+                        should_update = True
+                
+                if should_update:
+                    final_stadium = web_stadium
+                    final_location = f"{web_stadium}, {clean_name}" 
+                    update_db(clean_name, final_stadium, final_location)
+        except Exception:
+            # Si el driver falla, retornamos lo que tenemos de DB y seguimos
+            pass
 
     return final_stadium, final_location, final_tv
 
@@ -660,13 +657,13 @@ def run_sync():
     # 1. Cargar DB al inicio
     load_stadium_db()
 
-    # 2. Iniciar DRIVER UNICO (Fix Timeout & USA Locale)
+    # 2. Iniciar DRIVER UNICO
     driver = setup_driver()
+    driver_alive = True # Flag de control
     
     try:
         tv_schedule_map = fetch_tv_schedule(CONFIG["TEAM_NAME"])
         
-        # Pasamos el driver a fetch_matches
         matches = fetch_matches(driver)
         if not matches: 
             logging.info("⚠️ No se encontraron partidos.")
@@ -709,12 +706,12 @@ def run_sync():
 
                 round_tag = get_round_details(match['competicion'])
                 
-                # --- ESTADIO Y TV LOGIC REVISADA (Con Driver Compartido) ---
+                # --- ESTADIO Y TV (PROTEGIDO) ---
                 stadium_name = None
                 full_address = None
                 existing_loc = None
                 
-                # Recuperar TV existente del evento para NO re-scrapear si ya existe
+                # Recuperar TV existente del evento
                 match_tv_existing = None
                 if mid in existing_events: 
                     existing_loc = existing_events[mid].get('location')
@@ -722,28 +719,31 @@ def run_sync():
                     m = re.search(r'📺 Dónde ver: (.*)', desc)
                     if m: match_tv_existing = m.group(1).strip()
 
-                # Pasamos el driver a get_stadium_info
-                stadium_name, full_address, besoccer_tv = get_stadium_info(driver, match['local'], match.get('link'), match['status'], match['is_tbd'])
+                # Solo intentamos scrapear si el driver sigue vivo
+                besoccer_tv = None
+                if driver_alive:
+                    try:
+                        stadium_name, full_address, besoccer_tv = get_stadium_info(driver, match['local'], match.get('link'), match['status'], match['is_tbd'])
+                    except Exception as e:
+                        logging.error(f"❌ Driver falló fatalmente. Se desactiva scraping detallado para el resto de la sesión.")
+                        driver_alive = False
                 
+                # Fallback de Localización si el scraping falló
                 if not stadium_name and existing_loc and "Estadio Local" not in existing_loc and "Estadio Visitante" not in existing_loc:
                      full_address = existing_loc
                      stadium_name = existing_loc.split(',')[0]
 
-                # Lógica de Consolidación de TV (Prioridad: External > Calendar Cache > Besoccer)
+                # Lógica de Consolidación de TV
                 match_date_key = match['inicio'].strftime("%Y-%m-%d")
                 external_tv = tv_schedule_map.get(match_date_key)
                 
                 tv_info_raw = None
-                if external_tv:
-                    tv_info_raw = external_tv
-                elif match_tv_existing: 
-                    tv_info_raw = match_tv_existing
-                else:
-                    tv_info_raw = besoccer_tv
+                if external_tv: tv_info_raw = external_tv
+                elif match_tv_existing: tv_info_raw = match_tv_existing
+                else: tv_info_raw = besoccer_tv
                 
                 is_finished = 'fin' in match['status'].lower()
-                if is_finished:
-                    tv_info_raw = None
+                if is_finished: tv_info_raw = None
 
                 tv_info_short = get_short_tv_name(tv_info_raw) if tv_info_raw else None
                 
@@ -867,7 +867,6 @@ def run_sync():
                 logging.error(f"❌ Error procesando partido {match.get('local')} vs {match.get('visitante')}: {e}")
                 continue 
 
-        # 4. Guardar DB si hubo cambios (Lazy Write)
         save_stadium_db()
 
         if telegram_msgs: 
