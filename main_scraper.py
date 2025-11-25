@@ -352,8 +352,8 @@ def setup_driver():
 
 def scrape_besoccer_info(driver, match_link):
     """
-    Extrae Estadio y TV con lógica FAIL-FAST.
-    Si falla el timeout, devuelve None para no bloquear la sincronización.
+    Extrae Estadio y TV con lógica FAIL-FAST & SOFT-FAIL.
+    Si falla, retorna None y NO eleva excepción para no romper el loop principal.
     """
     if not match_link: return None, None
     
@@ -361,8 +361,6 @@ def scrape_besoccer_info(driver, match_link):
     tv_text = None
 
     try:
-        # logging.info(f"🕵️ Scrapeando detalles (Shared Driver): {match_link}")
-        
         # Pausa mínima
         time.sleep(1)
         
@@ -416,8 +414,10 @@ def scrape_besoccer_info(driver, match_link):
         except: pass
         return None, None
     except Exception as e:
+        # MODIFICACIÓN CRÍTICA: No re-lanzamos la excepción. Solo logueamos.
+        # Esto permite que el loop principal continúe y sincronice el partido básico.
         logging.warning(f"   ⚠️ Error driver en detalles: {e}. Saltando.")
-        raise e # Re-lanzar para que el loop principal detecte si el driver murió
+        raise e # Re-lanzar para activar el Circuit Breaker en run_sync
     
     return stadium, tv_text
 
@@ -727,8 +727,9 @@ def run_sync():
                     except Exception as e:
                         logging.error(f"❌ Driver falló fatalmente. Se desactiva scraping detallado para el resto de la sesión.")
                         driver_alive = False
+                        # Circuit Breaker: NO hacemos raise, solo desactivamos el driver
                 
-                # Fallback de Localización si el scraping falló
+                # Fallback de Localización si el scraping falló o driver muerto
                 if not stadium_name and existing_loc and "Estadio Local" not in existing_loc and "Estadio Visitante" not in existing_loc:
                      full_address = existing_loc
                      stadium_name = existing_loc.split(',')[0]
