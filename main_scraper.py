@@ -381,7 +381,7 @@ def setup_driver():
 def scrape_besoccer_info(driver, match_link):
     """
     Extrae Estadio y TV con lógica FAIL-FAST & SOFT-FAIL.
-    Incluye filtro Anti-USA.
+    Incluye filtro Anti-USA y Wrapper de errores para forzar reinicio.
     """
     if not match_link: return None, None
     
@@ -389,8 +389,11 @@ def scrape_besoccer_info(driver, match_link):
     tv_text = None
 
     try:
+        # Pequeña pausa para evitar race conditions en el socket
         time.sleep(1)
         driver.get(match_link)
+        
+        # Usamos lxml para velocidad
         soup = BeautifulSoup(driver.page_source, 'lxml')
             
         box_rows = soup.select('.table-body.p10 .table-row-round')
@@ -421,11 +424,7 @@ def scrape_besoccer_info(driver, match_link):
 
             if is_tv_row and "estadio" not in text.lower():
                 content_div = row.select_one('.ta-r')
-                if content_div:
-                    raw_tv = content_div.get_text(separator=' ', strip=True)
-                else:
-                    raw_tv = text
-
+                raw_tv = content_div.get_text(separator=' ', strip=True) if content_div else text
                 raw_tv = re.sub(r'^TV\s*', '', raw_tv, flags=re.IGNORECASE)
                 clean_tv = raw_tv.replace('(Esp)', '').replace('|', '/').strip()
                 tv_text = " ".join(clean_tv.split())
@@ -440,14 +439,14 @@ def scrape_besoccer_info(driver, match_link):
                 logging.info(f"   ✅ TV detectada (Válida): {tv_text}")
 
     except TimeoutException:
-        # AHORA LANZAMOS LA EXCEPCIÓN PARA ACTIVAR EL RETRY EN RUN_SYNC
-        logging.warning(f"   ⏳ Timeout (10s) en detalles.")
-        try: driver.execute_script("window.stop();") 
-        except: pass
-        raise TimeoutException("Timeout scraping details")
+        logging.warning(f"   ⏳ Timeout (Selenium) en detalles.")
+        raise TimeoutException("Timeout interno Selenium")
+        
     except Exception as e:
-        logging.warning(f"   ⚠️ Error driver en detalles: {e}. Saltando.")
-        raise e 
+        # CRÍTICO: Convertimos cualquier error de conexión (ReadTimeout, etc)
+        # en WebDriverException para que el bucle 'run_sync' sepa que debe REINICIAR el driver.
+        logging.warning(f"   ⚠️ Error crítico driver ({type(e).__name__}): {e}. Solicitando reinicio...")
+        raise WebDriverException(f"Wrapper Error: {e}")
     
     return stadium, tv_text
 
@@ -856,20 +855,24 @@ def run_sync():
                     notify_telegram = True
                 
                 # Cambios menores (TV, Estadio)
+                # Cambios menores (TV, Estadio)
                 if not needs_update:
                     current_desc = normalize_text(ev.get('description', ''))
                     new_desc_norm = normalize_text(desc_text)
                     current_loc = normalize_text(ev.get('location', ''))
                     new_loc_norm = normalize_text(event_body['location'])
                     
-                    if current_desc != new_desc_norm or current_loc != new_loc_norm:
-                        # DEBUG MODE: Mostrar por qué se actualiza
-                        if current_desc != new_desc_norm:
-                            logging.info(f"🔍 [DEBUG] Cambio Descripción en {base_title}.")
-                        if current_loc != new_loc_norm:
-                            logging.info(f"🔍 [DEBUG] Cambio Ubicación en {base_title}: '{current_loc}' -> '{new_loc_norm}'")
+                    if current_desc != new_desc_norm:
+                        # DEBUG MODE MEJORADO: Mostrar diff exacto
+                        # Cortamos a 100 chars para no saturar log, pero mostramos inicio
+                        logging.info(f"🔍 [DEBUG] Diferencia Descripción detectada:")
+                        logging.info(f"   🔴 OLD: {current_desc[:60]}...")
+                        logging.info(f"   🟢 NEW: {new_desc_norm[:60]}...")
                         needs_update = True
-                        # notify_telegram sigue False
+                        
+                    if current_loc != new_loc_norm:
+                        logging.info(f"🔍 [DEBUG] Cambio Ubicación: '{current_loc}' -> '{new_loc_norm}'")
+                        needs_update = True
 
                     existing_overrides = ev.get('reminders', {}).get('overrides', [])
                     target_overrides = event_body['reminders'].get('overrides', [])
