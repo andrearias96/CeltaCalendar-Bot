@@ -309,23 +309,30 @@ def scrape_besoccer_info(match_link):
     driver = None
 
     try:
-        # Configuración de Selenium (IDÉNTICA a fetch_matches para consistencia y evitar detección)
+        # Pausa táctica para permitir limpieza de sockets del OS antes de iniciar nueva instancia
+        time.sleep(2)
+
+        # Configuración de Selenium (Hardened para CI)
         chrome_options = Options()
-        # MODIFICACIÓN CRÍTICA: Headless New Mode + Pipe (Fix ReadTimeout)
         chrome_options.add_argument("--headless=new") 
         chrome_options.add_argument("--log-level=3")
-        chrome_options.add_argument("--window-size=1920,1080")
+        chrome_options.add_argument("--window-size=1280,720") # Reducido para ahorrar RAM
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
-        # --- FIX CI CRASHES & TIMEOUTS ---
         chrome_options.add_argument("--disable-gpu")
         chrome_options.add_argument("--disable-extensions")
         chrome_options.add_argument("--disable-infobars")
         chrome_options.add_argument("--disable-setuid-sandbox")
-        chrome_options.add_argument("--remote-debugging-pipe") # <-- FIX DEFINITIVO
-        chrome_options.add_argument("--disable-search-engine-choice-screen") # <-- FIX V125+
+        
+        # Flags Críticos Anti-Timeout
+        chrome_options.add_argument("--remote-debugging-pipe") 
+        chrome_options.add_argument("--disable-search-engine-choice-screen")
         chrome_options.add_argument("--ignore-certificate-errors")
-        # ----------------------
+        chrome_options.add_argument("--disable-popup-blocking")
+        chrome_options.add_argument("--disable-notifications")
+        chrome_options.add_argument("--disable-software-rasterizer") # Renderizado software eficiente
+        chrome_options.add_argument("--disable-blink-features=AutomationControlled") # Evasión básica
+        
         chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
         
         logging.info(f"🕵️ Scrapeando detalles (Selenium Anti-406): {match_link}")
@@ -398,7 +405,10 @@ def scrape_besoccer_info(match_link):
         logging.warning(f"⚠️ Error scraping info (Estadio/TV) from link: {e}")
     finally:
         if driver:
-            driver.quit()
+            try:
+                driver.quit()
+            except:
+                pass
     
     return stadium, tv_text
 
@@ -527,19 +537,23 @@ def fetch_matches():
     # MODIFICACIÓN CRÍTICA: Headless New Mode + Pipe (Fix ReadTimeout)
     chrome_options.add_argument("--headless=new") 
     chrome_options.add_argument("--log-level=3")
-    chrome_options.add_argument("--window-size=1920,1080")
+    chrome_options.add_argument("--window-size=1280,720") # Reducido
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
-    # --- FIX CI CRASHES & TIMEOUTS ---
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--disable-infobars")
     chrome_options.add_argument("--disable-setuid-sandbox")
-    chrome_options.add_argument("--remote-debugging-pipe") # <-- FIX DEFINITIVO
-    chrome_options.add_argument("--disable-search-engine-choice-screen") # <-- FIX V125+
+    
+    # Flags Críticos Anti-Timeout
+    chrome_options.add_argument("--remote-debugging-pipe")
+    chrome_options.add_argument("--disable-search-engine-choice-screen") 
     chrome_options.add_argument("--ignore-certificate-errors")
-    # ----------------------
-    # Actualizado User-Agent a Chrome 122 también aquí para evitar bloqueos en la lista principal
+    chrome_options.add_argument("--disable-popup-blocking")
+    chrome_options.add_argument("--disable-notifications")
+    chrome_options.add_argument("--disable-software-rasterizer")
+    chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+
     chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
     
     driver = None
