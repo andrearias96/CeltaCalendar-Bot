@@ -320,6 +320,8 @@ def scrape_besoccer_info(match_link):
         chrome_options.add_argument("--disable-gpu")
         chrome_options.add_argument("--disable-extensions")
         chrome_options.add_argument("--disable-infobars")
+        chrome_options.add_argument("--remote-debugging-port=9222") # CRITICAL FOR GITHUB ACTIONS
+        chrome_options.add_argument("--disable-setuid-sandbox")
         # ----------------------
         chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
         
@@ -528,6 +530,8 @@ def fetch_matches():
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--disable-infobars")
+    chrome_options.add_argument("--remote-debugging-port=9222") # CRITICAL FOR GITHUB ACTIONS
+    chrome_options.add_argument("--disable-setuid-sandbox")
     # ----------------------
     # Actualizado User-Agent a Chrome 122 también aquí para evitar bloqueos en la lista principal
     chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
