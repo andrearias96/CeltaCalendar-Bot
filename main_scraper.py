@@ -311,7 +311,8 @@ def scrape_besoccer_info(match_link):
     try:
         # Configuración de Selenium (IDÉNTICA a fetch_matches para consistencia y evitar detección)
         chrome_options = Options()
-        chrome_options.add_argument("--headless") 
+        # MODIFICACIÓN CRÍTICA: Headless New Mode y sin puerto fijo
+        chrome_options.add_argument("--headless=new") 
         chrome_options.add_argument("--log-level=3")
         chrome_options.add_argument("--window-size=1920,1080")
         chrome_options.add_argument("--no-sandbox")
@@ -320,7 +321,6 @@ def scrape_besoccer_info(match_link):
         chrome_options.add_argument("--disable-gpu")
         chrome_options.add_argument("--disable-extensions")
         chrome_options.add_argument("--disable-infobars")
-        chrome_options.add_argument("--remote-debugging-port=9222") # CRITICAL FOR GITHUB ACTIONS
         chrome_options.add_argument("--disable-setuid-sandbox")
         # ----------------------
         chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
@@ -521,7 +521,8 @@ def restore_auth_files():
 def fetch_matches():
     logging.info(f"🚀 Arrancando navegador para {CONFIG['TEAM_NAME']}...")
     chrome_options = Options()
-    chrome_options.add_argument("--headless") 
+    # MODIFICACIÓN CRÍTICA: Headless New Mode y sin puerto fijo
+    chrome_options.add_argument("--headless=new") 
     chrome_options.add_argument("--log-level=3")
     chrome_options.add_argument("--window-size=1920,1080")
     chrome_options.add_argument("--no-sandbox")
@@ -530,7 +531,6 @@ def fetch_matches():
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--disable-infobars")
-    chrome_options.add_argument("--remote-debugging-port=9222") # CRITICAL FOR GITHUB ACTIONS
     chrome_options.add_argument("--disable-setuid-sandbox")
     # ----------------------
     # Actualizado User-Agent a Chrome 122 también aquí para evitar bloqueos en la lista principal
