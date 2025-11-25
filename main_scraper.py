@@ -219,12 +219,17 @@ def parse_tv_channels(ul_element):
     for li in items:
         # Extraer texto limpio, ignorando etiquetas ocultas si las hubiera
         raw_text = li.get_text(separator=" ").strip()
+        
         # Filtros de exclusión
         if any(x in raw_text for x in ["Hellotickets", "LaLiga TV Bar", "Entrada"]):
             continue
         if "confirmar" in raw_text.lower():
             continue
         
+        # --- LIMPIEZA DE BASURA (Paréntesis y lo que sigue) ---
+        if "(" in raw_text:
+            raw_text = raw_text.split("(")[0].strip()
+            
         channels.append(clean_text(raw_text))
     
     if not channels: return None, None
@@ -294,11 +299,11 @@ def fetch_tv_summary_from_url(driver):
         wait = WebDriverWait(driver, 10)
         time.sleep(2) 
         
-        # --- NUEVA LÓGICA DE CLIC EN 'Más días' ---
+        # --- NUEVA LÓGICA DE CLIC EN 'Más días' (Selector dinámico) ---
         while True:
             try:
-                # El selector exacto basado en la inspección
-                more_days_button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "a#btnMoreThan3Days.btnPrincipal")))
+                # El selector ahora busca cualquier ID que empiece por 'btnMoreThan'
+                more_days_button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "a[id^='btnMoreThan'].btnPrincipal")))
                 # Comprobación adicional de visibilidad
                 if more_days_button.is_displayed():
                     logging.info("🖱️ Click en 'Más días' para cargar más partidos...")
@@ -911,13 +916,21 @@ def run_sync():
                 if needs_update:
                     req = service.events().update(calendarId=CONFIG["CALENDAR_ID"], eventId=ev['id'], body=event_body)
                     execute_with_retry(req)
-                    logging.info(f"[+] 🔄 Actualizado: {base_title}")
+                    
+                    # Construcción del log detallado (Estilo V2)
+                    log_str = f"[+] 🔄 Actualizado: {base_title} | Temporada {season_display} | {icon} {comp_name} {log_suffix}"
+                    logging.info(log_str)
+                    
                     if notify_telegram: telegram_msgs.append(f"🔄 <b>Actualizado:</b> {full_title}\n{log_suffix}")
             else:
                 # Nuevo Evento
                 req = service.events().insert(calendarId=CONFIG["CALENDAR_ID"], body=event_body)
                 execute_with_retry(req)
-                logging.info(f"[+] ✅ Nuevo: {base_title}")
+                
+                # Construcción del log detallado (Estilo V2)
+                log_str = f"[+] ✅ Nuevo: {base_title} | Temporada {season_display} | {icon} {comp_name} {log_suffix}"
+                logging.info(log_str)
+                
                 telegram_msgs.append(f"✅ <b>Nuevo:</b> {full_title}\n{log_suffix}")
 
         save_stadium_db()
