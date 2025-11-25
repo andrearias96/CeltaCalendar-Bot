@@ -612,8 +612,12 @@ def fetch_matches():
                 minute = start_utc.astimezone().minute
                 is_tbd = False
                 
-                # --- LÓGICA TBC REVERTIDA: Confianza en 'hastime' y TZ Fix ---
-                if str(has_time_attr) == "0": is_tbd = True
+                # --- LÓGICA TBC CORREGIDA ---
+                # Evidencia: hastime="0" -> Partido Confirmado (ej: 14:00)
+                # Evidencia: hastime="1" -> Partido TBC (ej: 00:00)
+                # Backup: hora 00:00 siempre es TBC
+                
+                if str(has_time_attr) == "1": is_tbd = True
                 elif hour == 0 and minute == 0: is_tbd = True
 
                 local_elem = m.select_one(SELECTORS["TEAM_LOCAL"])
