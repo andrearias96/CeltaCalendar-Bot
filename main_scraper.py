@@ -296,29 +296,37 @@ def fetch_tv_summary_from_url(driver):
     
     try:
         driver.get(CONFIG['URL_TV_CELTA'])
-        wait = WebDriverWait(driver, 10)
+        # Eliminamos wait global para esta función, usaremos lógica manual
         time.sleep(2) 
         
-        # --- NUEVA LÓGICA DE CLIC EN 'Más días' (Selector dinámico) ---
+        # --- NUEVA LÓGICA DE CLIC EN 'Más días' (Iteración robusta sobre elementos ocultos) ---
         while True:
             try:
-                # El selector ahora busca cualquier ID que empiece por 'btnMoreThan'
-                more_days_button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "a[id^='btnMoreThan'].btnPrincipal")))
-                # Comprobación adicional de visibilidad
-                if more_days_button.is_displayed():
-                    logging.info("🖱️ Click en 'Más días' para cargar más partidos...")
-                    more_days_button.click()
-                    time.sleep(3) # Esperar a que el contenido se cargue dinámicamente
-                else:
-                    logging.info("ℹ️ Botón 'Más días' no visible. Finaliza la carga dinámica.")
+                # 1. Buscar TODOS los botones candidatos
+                buttons = driver.find_elements(By.CSS_SELECTOR, "a[id^='btnMoreThan'].btnPrincipal")
+                
+                clicked_any = False
+                for btn in buttons:
+                    # 2. Interactuar solo con el VISIBLE
+                    if btn.is_displayed():
+                        # Scroll defensivo
+                        driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", btn)
+                        time.sleep(0.5)
+                        
+                        btn.click()
+                        logging.info(f"🖱️ Click en '{btn.get_attribute('id')}' para cargar más partidos...")
+                        clicked_any = True
+                        
+                        time.sleep(3) # Esperar a que el contenido cargue (AJAX)
+                        break # Romper loop 'for' para re-escanear el DOM actualizado
+                
+                # 3. Si recorrimos todos y ninguno era visible, hemos terminado
+                if not clicked_any:
+                    logging.info("ℹ️ No quedan botones 'Más días' visibles. Carga finalizada.")
                     break
-            except TimeoutException:
-                # Si el botón no aparece después de un tiempo, asumimos que no hay más partidos
-                logging.info("ℹ️ Timeout: No se encontró el botón 'Más días'. Finaliza la carga dinámica.")
-                break
-            except WebDriverException as e:
-                # Capturar otros errores de interacción (e.g., ElementClickInterceptedException)
-                logging.warning(f"⚠️ Error al hacer clic en 'Más días': {e}. Deteniendo carga.")
+
+            except Exception as e:
+                logging.warning(f"⚠️ Error iterando botones 'Más días': {e}. Deteniendo carga.")
                 break
 
         # --- FIN LÓGICA DE CLIC ---
