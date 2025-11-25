@@ -12,7 +12,6 @@ import json
 import difflib 
 import unicodedata 
 import base64  # Añadido para decodificar el token de GitHub
-from zoneinfo import ZoneInfo # AÑADIDO: Necesario para conversión robusta de zonas horarias
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -317,6 +316,11 @@ def scrape_besoccer_info(match_link):
         chrome_options.add_argument("--window-size=1920,1080")
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
+        # --- FIX CI CRASHES ---
+        chrome_options.add_argument("--disable-gpu")
+        chrome_options.add_argument("--disable-extensions")
+        chrome_options.add_argument("--disable-infobars")
+        # ----------------------
         chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
         
         logging.info(f"🕵️ Scrapeando detalles (Selenium Anti-406): {match_link}")
@@ -520,6 +524,11 @@ def fetch_matches():
     chrome_options.add_argument("--window-size=1920,1080")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
+    # --- FIX CI CRASHES ---
+    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--disable-extensions")
+    chrome_options.add_argument("--disable-infobars")
+    # ----------------------
     # Actualizado User-Agent a Chrome 122 también aquí para evitar bloqueos en la lista principal
     chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
     
@@ -708,10 +717,7 @@ def run_sync():
              stadium_name = existing_loc.split(',')[0]
 
         # Lógica de Consolidación de TV (Prioridad: External > Calendar Cache > Besoccer)
-        # CORRECCIÓN ZONEINFO: Convertir UTC a Madrid para coincidir con la fecha de cartelera de TV
-        madrid_tz = ZoneInfo("Europe/Madrid")
-        match_date_key = match['inicio'].astimezone(madrid_tz).strftime("%Y-%m-%d")
-        
+        match_date_key = match['inicio'].strftime("%Y-%m-%d")
         external_tv = tv_schedule_map.get(match_date_key)
         
         tv_info_raw = None
