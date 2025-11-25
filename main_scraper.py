@@ -9,7 +9,9 @@ import urllib.parse
 import re 
 import html
 import json 
-import difflib 
+import difflib
+import base64
+import subprocess
 import unicodedata 
 import base64
 from google.oauth2.credentials import Credentials
@@ -303,74 +305,82 @@ def fetch_tv_schedule(team_name_filter):
         return {}
 
 # --- DRIVER FACTORY & SCRAPING ---
+def force_kill_chrome():
+    """Mata procesos huérfanos de Chrome/ChromeDriver para liberar memoria/puertos."""
+    try:
+        # Solo funciona en entornos Linux (GitHub Actions / Servidores)
+        if os.name == 'posix':
+            subprocess.run(['pkill', '-f', 'chrome'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            subprocess.run(['pkill', '-f', 'chromedriver'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            time.sleep(1) # Dar un respiro al sistema
+    except Exception:
+        pass
 
 def setup_driver():
     """
-    Configuración centralizada y robusta del Driver.
-    Incluye Fix Anti-Timeout y Override de Timezone.
+    Configuración robusta con limpieza preventiva y refuerzo Anti-USA.
     """
+    # 1. Limpieza preventiva de zombis
+    force_kill_chrome()
+
     chrome_options = Options()
     chrome_options.page_load_strategy = 'eager' 
     chrome_options.add_argument("--headless=new") 
     chrome_options.add_argument("--log-level=3")
-    chrome_options.add_argument("--window-size=1280,720") 
+    chrome_options.add_argument("--window-size=1920,1080") # Aumentado para evitar layouts móviles
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--disable-infobars")
-    chrome_options.add_argument("--disable-setuid-sandbox")
     
-    # Flags Críticos Anti-Timeout y Estabilidad CI
-    chrome_options.add_argument("--remote-debugging-pipe")
-    chrome_options.add_argument("--disable-search-engine-choice-screen") 
-    chrome_options.add_argument("--ignore-certificate-errors")
-    chrome_options.add_argument("--disable-popup-blocking")
-    chrome_options.add_argument("--disable-notifications")
-    chrome_options.add_argument("--disable-software-rasterizer")
+    # Flags Anti-Detección y Estabilidad
     chrome_options.add_argument("--disable-blink-features=AutomationControlled")
-    chrome_options.add_argument("--dns-prefetch-disable")
+    chrome_options.add_argument("--ignore-certificate-errors")
+    chrome_options.add_argument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
     
-    # Optimización de Recursos (Evita colapsos de memoria)
-    chrome_options.add_argument("--disable-browser-side-navigation")
-    chrome_options.add_argument("--disable-extensions-file-access")
-
-    # CONTEXTO ESPAÑA (Argumentos de arranque)
+    # CONTEXTO ESPAÑA (Argumentos de arranque críticos)
     chrome_options.add_argument("--lang=es-ES") 
     chrome_options.add_argument("--accept-lang=es-ES")
 
-    chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
-    
-    # FIX TIMEOUT: Instanciación explicita del servicio con timeout aumentado
-    service = Service(ChromeDriverManager().install())
-    # Aumentamos agresivamente el timeout interno si la librería lo permite, 
-    # y confiamos en WDM para gestionar el binario correcto.
-    
+    # FIX TIMEOUT: Aumentar timeout por defecto de Python sockets
+    import socket
+    socket.setdefaulttimeout(120)
+
     try:
+        service = Service(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=chrome_options)
     except Exception as e:
-        # Fallback de emergencia si falla la creación del servicio
-        logging.warning(f"⚠️ Error iniciando driver con opciones optimizadas: {e}. Reintentando básico.")
+        logging.warning(f"⚠️ Error iniciando driver optimizado: {e}. Reintentando básico.")
+        # Segundo intento tras limpieza agresiva
+        force_kill_chrome()
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
     
-    # --- STABILITY: FAIL-FAST TIMEOUTS ---
-    driver.set_page_load_timeout(15) # Aumentado ligeramente de 10 a 15 para dar margen
-    driver.set_script_timeout(15)
+    # Configurar Timeouts del Driver
+    driver.set_page_load_timeout(20) 
+    driver.set_script_timeout(20)
 
-    # --- CDP COMMANDS: GEOLOCALIZACIÓN Y LOCALE (Soberanía de Datos) ---
+    # --- CDP COMMANDS: GEOLOCALIZACIÓN Y LOCALE (Reforzado) ---
     try:
-        # Lat/Lon de Madrid para forzar contenido ES
+        # Crear sesión CDP
+        session = driver.execute_cdp_cmd('Target.createTarget', {'url': 'about:blank'})
+        
+        # 1. Forzar Geolocalización (Madrid)
         driver.execute_cdp_cmd('Emulation.setGeolocationOverride', {
             'latitude': 40.4168, 
             'longitude': -3.7038, 
             'accuracy': 100
         })
+        
+        # 2. Forzar Zona Horaria
         driver.execute_cdp_cmd('Emulation.setTimezoneOverride', {'timezoneId': 'Europe/Madrid'})
-        # INYECCIÓN AGRESIVA DE HEADERS PARA ESPAÑA
+        
+        # 3. Inyectar Headers en CADA petición (Lo más efectivo para anti-USA)
         driver.execute_cdp_cmd('Network.setExtraHTTPHeaders', {
             'headers': {
                 'Accept-Language': 'es-ES,es;q=0.9',
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8'
+                'Upgrade-Insecure-Requests': '1',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
             }
         })
     except Exception as e:
@@ -705,12 +715,17 @@ def run_sync():
 
         for i, match in enumerate(matches):
             
-            # Rotation Regular (prevención memoria) - solo si NO estamos en un retry loop
+            # Rotation Regular (prevención memoria)
             if i > 0 and i % BATCH_SIZE == 0:
-                if driver: 
-                    logging.info(f"🔄 [Batch] Rotación preventiva navegador (Item {i})...")
-                    driver.quit()
-                    driver = setup_driver()
+                logging.info(f"🔄 [Batch] Rotación preventiva navegador (Item {i})...")
+                if driver:
+                    try:
+                        driver.quit()
+                    except:
+                        pass
+                driver = None # Forzamos a None
+                force_kill_chrome() # <--- Limpieza profunda
+                driver = setup_driver() # Reinicio limpio
             
             # --- SMART RETRY LOOP ---
             max_retries = 3
