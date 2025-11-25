@@ -612,11 +612,9 @@ def fetch_matches():
                 minute = start_utc.astimezone().minute
                 is_tbd = False
                 
-                # --- FIX CRÍTICO TBC: Considerar desvío horario (00:00 Local ~= 23:00/22:00 UTC) ---
-                if (hour == 0 and minute == 0) or (hour == 23 and minute == 0) or (hour == 22 and minute == 0):
-                     is_tbd = True
-                elif str(has_time_attr) == "0" and hour == 0: 
-                     is_tbd = True
+                # --- LÓGICA TBC REVERTIDA: Confianza en 'hastime' y TZ Fix ---
+                if str(has_time_attr) == "0": is_tbd = True
+                elif hour == 0 and minute == 0: is_tbd = True
 
                 local_elem = m.select_one(SELECTORS["TEAM_LOCAL"])
                 visit_elem = m.select_one(SELECTORS["TEAM_VISIT"])
