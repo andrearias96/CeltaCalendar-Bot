@@ -746,15 +746,25 @@ def run_sync():
             
             if should_scan_stadium:
                 # Scrape profundo solo para este partido
-                try:
-                    s_name, s_loc = get_stadium_info(driver, match['local'], match.get('link'))
-                    stadium_name = s_name
-                    full_address = s_loc
-                    if s_name: update_db(match['local'], s_name, f"{s_name}, {match['local']}")
-                except Exception as e:
-                    logging.warning(f"Error scraping estadio next match: {e}")
-                    # Fallback DB
-                    stadium_name, full_address = find_stadium_dynamic(match['local'])
+                # --- REINTENTO ROBUSTO CON REINICIO DE DRIVER ---
+                for attempt in range(3):
+                    try:
+                        # Si falló el primer intento, reiniciamos el driver
+                        if attempt > 0:
+                            logging.info(f"🔄 Reiniciando navegador para scraping de estadio (Intento {attempt+1})...")
+                            try: driver.quit()
+                            except: pass
+                            driver = setup_driver()
+
+                        s_name, s_loc = get_stadium_info(driver, match['local'], match.get('link'))
+                        stadium_name = s_name
+                        full_address = s_loc
+                        if s_name: update_db(match['local'], s_name, f"{s_name}, {match['local']}")
+                        break # Éxito
+                    except Exception as e:
+                        logging.warning(f"⚠️ Error scraping estadio (Intento {attempt+1}/3): {e}")
+                        if attempt == 2: # Fallback en el último fallo
+                            stadium_name, full_address = find_stadium_dynamic(match['local'])
             else:
                 # Lectura pasiva de DB
                 stadium_name, full_address = find_stadium_dynamic(match['local'])
@@ -954,7 +964,11 @@ def run_sync():
     finally:
         if driver:
             logging.info("🏁 Cerrando driver...")
-            driver.quit()
+            try:
+                driver.quit()
+            except Exception:
+                pass # Silenciar errores de desconexión al cerrar
+            force_kill_chrome()
 
 def main():
     try:
