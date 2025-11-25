@@ -11,7 +11,7 @@ import html
 import json 
 import difflib 
 import unicodedata 
-import base64  # Añadido para decodificar el token de GitHub
+import base64
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -145,7 +145,6 @@ def find_stadium_dynamic(team_name):
     
     if matches:
         real_key = norm_keys_map[matches[0]]
-        # logging.info(f"⚡ Smart Match: '{team_name}' identificado como '{real_key}'") # LOG REMOVED
         entry = STADIUM_DB[real_key]
         return entry.get('stadium'), entry.get('location')
     
@@ -184,10 +183,6 @@ def update_db(team_name, stadium, location):
 # --- FUNCIONES DE AYUDA (EXISTENTES) ---
 
 def normalize_text(text):
-    """
-    Normaliza el texto para comparaciones estrictas (elimina HTML, espacios extra, etc).
-    Esencial para evitar bucles de actualización infinitos.
-    """
     if not text: return ""
     text = html.unescape(text)
     text = text.replace('<br>', '\n').replace('<br/>', '\n').replace('</p>', '\n')
@@ -304,66 +299,75 @@ def fetch_tv_schedule(team_name_filter):
         logging.warning(f"⚠️ Error TV scraper: {e}")
         return {}
 
-def scrape_besoccer_info(match_link):
+# --- DRIVER FACTORY & SCRAPING ---
+
+def setup_driver():
+    """
+    Configuración centralizada y robusta del Driver.
+    Incluye Fix Anti-Timeout y Override de Timezone para evitar contenido USA.
+    """
+    chrome_options = Options()
+    chrome_options.page_load_strategy = 'eager' 
+    chrome_options.add_argument("--headless=new") 
+    chrome_options.add_argument("--log-level=3")
+    chrome_options.add_argument("--window-size=1280,720") 
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--disable-extensions")
+    chrome_options.add_argument("--disable-infobars")
+    chrome_options.add_argument("--disable-setuid-sandbox")
+    
+    # Flags Críticos Anti-Timeout
+    chrome_options.add_argument("--remote-debugging-pipe")
+    chrome_options.add_argument("--disable-search-engine-choice-screen") 
+    chrome_options.add_argument("--ignore-certificate-errors")
+    chrome_options.add_argument("--disable-popup-blocking")
+    chrome_options.add_argument("--disable-notifications")
+    chrome_options.add_argument("--disable-software-rasterizer")
+    chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+    chrome_options.add_argument("--dns-prefetch-disable")
+    chrome_options.add_argument("--lang=es-ES") 
+
+    chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
+    
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+    
+    # --- CDP COMMANDS PARA FORZAR LOCALE Y TIMEZONE (Anti-USA Content) ---
+    try:
+        driver.execute_cdp_cmd('Emulation.setTimezoneOverride', {'timezoneId': 'Europe/Madrid'})
+        driver.execute_cdp_cmd('Network.setExtraHTTPHeaders', {'headers': {'Accept-Language': 'es-ES,es;q=0.9'}})
+    except Exception as e:
+        logging.warning(f"⚠️ No se pudo inyectar CDP Timezone: {e}")
+
+    return driver
+
+def scrape_besoccer_info(driver, match_link):
     """
     Extrae Estadio y TV de la página de detalles del partido.
-    Busca robustamente en las filas .table-row-round usando lógica mejorada.
-    MODIFICADO: Usa Selenium en lugar de Requests para evitar error 406.
+    Usa el driver compartido para evitar Timeouts.
     """
     if not match_link: return None, None
     
     stadium = None
     tv_text = None
-    driver = None
 
     try:
-        # Pausa táctica aumentada para garantizar estabilidad
-        time.sleep(3)
+        logging.info(f"🕵️ Scrapeando detalles (Shared Driver): {match_link}")
 
-        # Configuración de Selenium (Hardened para CI)
-        chrome_options = Options()
-        chrome_options.page_load_strategy = 'eager'
-        chrome_options.add_argument("--headless=new") 
-        chrome_options.add_argument("--log-level=3")
-        chrome_options.add_argument("--window-size=1280,720")
-        chrome_options.add_argument("--no-sandbox")
-        chrome_options.add_argument("--disable-dev-shm-usage")
-        chrome_options.add_argument("--disable-gpu")
-        chrome_options.add_argument("--disable-extensions")
-        chrome_options.add_argument("--disable-infobars")
-        chrome_options.add_argument("--disable-setuid-sandbox")
+        # Pequeña pausa para no saturar requests seguidas
+        time.sleep(1.5)
         
-        # Flags Críticos Anti-Timeout y Geolocalización
-        chrome_options.add_argument("--remote-debugging-pipe") 
-        chrome_options.add_argument("--disable-search-engine-choice-screen")
-        chrome_options.add_argument("--ignore-certificate-errors")
-        chrome_options.add_argument("--disable-popup-blocking")
-        chrome_options.add_argument("--disable-notifications")
-        chrome_options.add_argument("--disable-software-rasterizer") 
-        chrome_options.add_argument("--disable-blink-features=AutomationControlled") 
-        chrome_options.add_argument("--dns-prefetch-disable")
-        chrome_options.add_argument("--disk-cache-size=0") # Evitar caché corrupta
-        chrome_options.add_argument("--lang=es-ES") # Forzar contenido en español
-        
-        chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
-        
-        logging.info(f"🕵️ Scrapeando detalles (Selenium Anti-406): {match_link}")
-
-        # Iniciar Driver efímero para esta petición
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
         driver.get(match_link)
         
-        # Espera táctica para carga de JS y evasión de bots
-        time.sleep(3)
-        
-        # Parsear el HTML generado por Selenium
+        # Parsear el HTML generado
         soup = BeautifulSoup(driver.page_source, 'lxml')
             
         # Priorizar la "caja" específica donde suele estar la info
         box_rows = soup.select('.table-body.p10 .table-row-round')
         rows = box_rows if box_rows else soup.select('.table-row-round')
         
-        logging.info(f"   Filas encontradas para análisis: {len(rows)}")
+        # logging.info(f"   Filas encontradas para análisis: {len(rows)}") # Reduce log noise
 
         for row in rows:
             text = clean_text(row.get_text())
@@ -411,20 +415,16 @@ def scrape_besoccer_info(match_link):
         if tv_text:
             logging.info(f"   ✅ TV detectada: {tv_text}")
         else:
-            logging.info("   ❌ No se detectó información de TV.")
+            # logging.info("   ❌ No se detectó información de TV.") # Reduce log noise
+            pass
 
     except Exception as e:
         logging.warning(f"⚠️ Error scraping info (Estadio/TV) from link: {e}")
-    finally:
-        if driver:
-            try:
-                driver.quit()
-            except:
-                pass
+        # NO cerramos el driver aquí, es compartido.
     
     return stadium, tv_text
 
-def get_stadium_info(team_name, match_link=None, match_status="", is_tbd=False):
+def get_stadium_info(driver, team_name, match_link=None, match_status="", is_tbd=False):
     """
     Lógica de obtención de estadio y TV revisada.
     """
@@ -443,7 +443,8 @@ def get_stadium_info(team_name, match_link=None, match_status="", is_tbd=False):
     
     # NUEVA LÓGICA: Solo scrapear si NO es TBD y NO ha finalizado (Upcoming real)
     if match_link and not is_tbd and is_upcoming:
-        web_stadium, web_tv = scrape_besoccer_info(match_link)
+        # Pasa el driver compartido
+        web_stadium, web_tv = scrape_besoccer_info(driver, match_link)
         
         if web_tv: final_tv = web_tv
 
@@ -464,9 +465,6 @@ def get_stadium_info(team_name, match_link=None, match_status="", is_tbd=False):
     return final_stadium, final_location, final_tv
 
 def get_euro_max_rounds(comp_name, season_str):
-    """
-    Retorna el número total de jornadas para competiciones europeas en fase de liga.
-    """
     name = comp_name.lower()
     is_europe = any(x in name for x in ['champions', 'europa league', 'conference'])
     if not is_europe: return None
@@ -513,12 +511,6 @@ def format_log_date(dt_obj, is_tbd):
 
 # --- HELPER: RESTORE AUTH FROM SECRETS (GITHUB ACTIONS) ---
 def restore_auth_files():
-    """
-    Si detecta variables de entorno de GitHub Secrets, reconstruye
-    los archivos credentials.json y token.json para que el script funcione
-    como si estuviera en local.
-    """
-    # 1. Reconstruir credentials.json
     creds_json = os.getenv("GCP_CREDENTIALS_JSON")
     if creds_json and not os.path.exists(CONFIG["CREDENTIALS_FILE"]):
         try:
@@ -528,12 +520,10 @@ def restore_auth_files():
         except Exception as e:
             logging.error(f"❌ Error restaurando credentials.json: {e}")
 
-    # 2. Reconstruir token.json (Base64 decoded)
     token_b64 = os.getenv("GCP_TOKEN_JSON_B64")
     if token_b64 and not os.path.exists(CONFIG["TOKEN_FILE"]):
         try:
             logging.info("🔑 Detectado entorno Cloud: Restaurando token.json...")
-            # Decodificar Base64 a bytes, luego a string
             token_bytes = base64.b64decode(token_b64)
             token_str = token_bytes.decode("utf-8")
             with open(CONFIG["TOKEN_FILE"], "w", encoding="utf-8") as f:
@@ -541,39 +531,14 @@ def restore_auth_files():
         except Exception as e:
             logging.error(f"❌ Error restaurando token.json: {e}")
 
-# --- SCRAPER ---
+# --- MAIN LOGIC ---
 
-def fetch_matches():
-    logging.info(f"🚀 Arrancando navegador para {CONFIG['TEAM_NAME']}...")
-    chrome_options = Options()
-    # MODIFICACIÓN CRÍTICA: Headless New Mode + Pipe (Fix ReadTimeout)
-    chrome_options.page_load_strategy = 'eager' 
-    chrome_options.add_argument("--headless=new") 
-    chrome_options.add_argument("--log-level=3")
-    chrome_options.add_argument("--window-size=1280,720") 
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--disable-gpu")
-    chrome_options.add_argument("--disable-extensions")
-    chrome_options.add_argument("--disable-infobars")
-    chrome_options.add_argument("--disable-setuid-sandbox")
-    
-    # Flags Críticos Anti-Timeout
-    chrome_options.add_argument("--remote-debugging-pipe")
-    chrome_options.add_argument("--disable-search-engine-choice-screen") 
-    chrome_options.add_argument("--ignore-certificate-errors")
-    chrome_options.add_argument("--disable-popup-blocking")
-    chrome_options.add_argument("--disable-notifications")
-    chrome_options.add_argument("--disable-software-rasterizer")
-    chrome_options.add_argument("--disable-blink-features=AutomationControlled")
-    chrome_options.add_argument("--dns-prefetch-disable")
-    chrome_options.add_argument("--lang=es-ES") # Forzar ES
-
-    chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
-    
-    driver = None
+def fetch_matches(driver):
+    """
+    Obtiene la lista de partidos usando el driver compartido.
+    """
+    logging.info(f"🚀 Navegando a calendario de {CONFIG['TEAM_NAME']}...")
     try:
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
         url_final = f"{CONFIG['URL_BASE']}{CONFIG['TEAM_NAME']}"
         driver.get(url_final)
         wait = WebDriverWait(driver, 20)
@@ -612,11 +577,8 @@ def fetch_matches():
                 minute = start_utc.astimezone().minute
                 is_tbd = False
                 
-                # --- LÓGICA TBC CORREGIDA ---
-                # Evidencia: hastime="0" -> Partido Confirmado (ej: 14:00)
-                # Evidencia: hastime="1" -> Partido TBC (ej: 00:00)
-                # Backup: hora 00:00 siempre es TBC
-                
+                # hastime="0" -> Confirmado
+                # hastime="1" -> TBC
                 if str(has_time_attr) == "1": is_tbd = True
                 elif hour == 0 and minute == 0: is_tbd = True
 
@@ -661,10 +623,7 @@ def fetch_matches():
 
     except Exception as e:
         raise e 
-    finally: 
-        if driver: driver.quit()
-
-# --- GOOGLE ---
+    # NO cerramos el driver aquí, es compartido.
 
 def get_calendar_service():
     creds = None
@@ -701,215 +660,229 @@ def run_sync():
     # 1. Cargar DB al inicio
     load_stadium_db()
 
-    tv_schedule_map = fetch_tv_schedule(CONFIG["TEAM_NAME"])
-    matches = fetch_matches()
-    if not matches: 
-        logging.info("⚠️ No se encontraron partidos.")
-        return
-
-    logging.info("☁️ Sincronizando con Google Calendar...")
-    service = get_calendar_service()
-    if not service: return
-
-    existing_events = {}
-    page_token = None
-    while True:
-        events_result = service.events().list(
-            calendarId=CONFIG["CALENDAR_ID"], 
-            singleEvents=True, 
-            showDeleted=False, 
-            pageToken=page_token
-        ).execute()
+    # 2. Iniciar DRIVER UNICO (Fix Timeout & USA Locale)
+    driver = setup_driver()
+    
+    try:
+        tv_schedule_map = fetch_tv_schedule(CONFIG["TEAM_NAME"])
         
-        for ev in events_result.get('items', []):
-            if ev.get('status') != 'cancelled':
-                eid = ev.get('extendedProperties', {}).get('shared', {}).get('match_id')
-                if eid: existing_events[eid] = ev
-        
-        page_token = events_result.get('nextPageToken')
-        if not page_token: break
+        # Pasamos el driver a fetch_matches
+        matches = fetch_matches(driver)
+        if not matches: 
+            logging.info("⚠️ No se encontraron partidos.")
+            return
 
-    telegram_msgs = []
-    console_msgs = [] 
+        logging.info("☁️ Sincronizando con Google Calendar...")
+        service = get_calendar_service()
+        if not service: return
 
-    for match in matches:
-        # --- FAULT TOLERANCE BLOCK ---
-        try:
-            mid = match['id']
-            comp_name, icon, color = get_competition_details(match['competicion'])
+        existing_events = {}
+        page_token = None
+        while True:
+            events_result = service.events().list(
+                calendarId=CONFIG["CALENDAR_ID"], 
+                singleEvents=True, 
+                showDeleted=False, 
+                pageToken=page_token
+            ).execute()
             
-            match_month = match['inicio'].month
-            if 'amistoso' in comp_name.lower() and match_month in [7, 8]: comp_name = 'Pretemporada'
-            if match['season'] == '2025-2026' and comp_name == 'Primera División': comp_name = 'Liga'
+            for ev in events_result.get('items', []):
+                if ev.get('status') != 'cancelled':
+                    eid = ev.get('extendedProperties', {}).get('shared', {}).get('match_id')
+                    if eid: existing_events[eid] = ev
+            
+            page_token = events_result.get('nextPageToken')
+            if not page_token: break
 
-            round_tag = get_round_details(match['competicion'])
-            
-            # --- ESTADIO Y TV LOGIC REVISADA ---
-            stadium_name = None
-            full_address = None
-            existing_loc = None
-            
-            # Recuperar TV existente del evento para NO re-scrapear si ya existe
-            match_tv_existing = None
-            if mid in existing_events: 
-                existing_loc = existing_events[mid].get('location')
-                desc = existing_events[mid].get('description', '')
-                m = re.search(r'📺 Dónde ver: (.*)', desc)
-                if m: match_tv_existing = m.group(1).strip()
+        telegram_msgs = []
+        console_msgs = [] 
 
-            stadium_name, full_address, besoccer_tv = get_stadium_info(match['local'], match.get('link'), match['status'], match['is_tbd'])
-            
-            if not stadium_name and existing_loc and "Estadio Local" not in existing_loc and "Estadio Visitante" not in existing_loc:
-                 full_address = existing_loc
-                 stadium_name = existing_loc.split(',')[0]
+        for match in matches:
+            # --- FAULT TOLERANCE BLOCK ---
+            try:
+                mid = match['id']
+                comp_name, icon, color = get_competition_details(match['competicion'])
+                
+                match_month = match['inicio'].month
+                if 'amistoso' in comp_name.lower() and match_month in [7, 8]: comp_name = 'Pretemporada'
+                if match['season'] == '2025-2026' and comp_name == 'Primera División': comp_name = 'Liga'
 
-            # Lógica de Consolidación de TV (Prioridad: External > Calendar Cache > Besoccer)
-            match_date_key = match['inicio'].strftime("%Y-%m-%d")
-            external_tv = tv_schedule_map.get(match_date_key)
-            
-            tv_info_raw = None
-            if external_tv:
-                tv_info_raw = external_tv
-            elif match_tv_existing: # Si ya tenemos TV en calendario, mantenerla
-                tv_info_raw = match_tv_existing
-            else:
-                tv_info_raw = besoccer_tv
-            
-            is_finished = 'fin' in match['status'].lower()
-            if is_finished:
+                round_tag = get_round_details(match['competicion'])
+                
+                # --- ESTADIO Y TV LOGIC REVISADA (Con Driver Compartido) ---
+                stadium_name = None
+                full_address = None
+                existing_loc = None
+                
+                # Recuperar TV existente del evento para NO re-scrapear si ya existe
+                match_tv_existing = None
+                if mid in existing_events: 
+                    existing_loc = existing_events[mid].get('location')
+                    desc = existing_events[mid].get('description', '')
+                    m = re.search(r'📺 Dónde ver: (.*)', desc)
+                    if m: match_tv_existing = m.group(1).strip()
+
+                # Pasamos el driver a get_stadium_info
+                stadium_name, full_address, besoccer_tv = get_stadium_info(driver, match['local'], match.get('link'), match['status'], match['is_tbd'])
+                
+                if not stadium_name and existing_loc and "Estadio Local" not in existing_loc and "Estadio Visitante" not in existing_loc:
+                     full_address = existing_loc
+                     stadium_name = existing_loc.split(',')[0]
+
+                # Lógica de Consolidación de TV (Prioridad: External > Calendar Cache > Besoccer)
+                match_date_key = match['inicio'].strftime("%Y-%m-%d")
+                external_tv = tv_schedule_map.get(match_date_key)
+                
                 tv_info_raw = None
-
-            tv_info_short = get_short_tv_name(tv_info_raw) if tv_info_raw else None
-            
-            display_tbd = match['is_tbd']
-            if display_tbd and match.get('season') != '2025-2026': display_tbd = False
-
-            base_title = f"{match['local']} vs {match['visitante']}"
-            if match['score'] and is_finished: base_title = f"{match['local']} {match['score']} {match['visitante']}"
-            
-            full_title_suffix = f" |{icon}{comp_name}"
-            if round_tag and 'amistoso' not in comp_name.lower() and 'pretemporada' not in comp_name.lower():
-                 full_title_suffix += f" | {round_tag}"
-            if tv_info_short: full_title_suffix += f" | {tv_info_short}"
-            
-            full_title = f"{base_title}{full_title_suffix}"
-            if display_tbd: full_title = f"(TBC) {base_title}{full_title_suffix}"
-
-            log_suffix = format_log_date(match['inicio'], display_tbd)
-            specific_url = match.get('link', '')
-            
-            round_str = round_tag
-            if round_str.startswith("J") and round_str[1:].isdigit(): 
-                round_num = round_str[1:]
-                round_str = f"Jornada {round_num}"
-                total_rounds = get_euro_max_rounds(comp_name, match['season'])
-                if total_rounds:
-                    round_str = f"Jornada {round_num} de {total_rounds}"
-
-            season_display = match.get('season', '')
-
-            desc_text = f"{icon} {comp_name}\n"
-            desc_text += f"📅 Temporada {season_display}\n"
-            if round_str: desc_text += f"▶️ {round_str}\n"
-            if tv_info_raw: desc_text += f"📺 Dónde ver: {tv_info_raw}\n"
-            if stadium_name: desc_text += f"🏟️ Estadio: {stadium_name}\n"
-            else: desc_text += f"📍 {match['lugar']}\n"
-            desc_text += f"🔗 Más Info: {specific_url}" 
-            
-            if display_tbd: desc_text = "⚠️ Fecha y hora por confirmar (TBC)\n" + desc_text
-
-            custom_reminders = [
-                {'method': 'popup', 'minutes': 60},
-                {'method': 'popup', 'minutes': 180},
-                {'method': 'popup', 'minutes': 1440},
-                {'method': 'popup', 'minutes': 4320}
-            ]
-            if 'amistoso' in comp_name.lower() or 'pretemporada' in comp_name.lower():
-                custom_reminders = [{'method': 'popup', 'minutes': 60}]
-            custom_reminders.sort(key=lambda x: x['minutes'])
-
-            event_body = {
-                'summary': full_title,
-                'location': full_address if full_address else match['lugar'],
-                'description': desc_text,
-                'start': {'dateTime': match['inicio'].isoformat(), 'timeZone': 'UTC'},
-                'end': {'dateTime': (match['inicio'] + datetime.timedelta(hours=2)).isoformat(), 'timeZone': 'UTC'},
-                'colorId': color,
-                'extendedProperties': {'shared': {'match_id': mid}},
-                'reminders': {'useDefault': False, 'overrides': custom_reminders}
-            }
-
-            if mid in existing_events:
-                ev = existing_events[mid]
-                if 'fin' in match['status'].lower() and match['score'] and match['score'] in clean_text(ev.get('summary', '')):
-                    continue
-
-                needs_update = False
-                notify_telegram = False 
-
-                current_calendar_title = normalize_text(ev.get('summary', ''))
-                new_scraper_title = normalize_text(full_title)
-
-                if current_calendar_title != new_scraper_title: 
-                    needs_update = True
-                    if base_title in current_calendar_title and base_title in new_scraper_title:
-                         notify_telegram = False
-                    else:
-                         notify_telegram = True 
+                if external_tv:
+                    tv_info_raw = external_tv
+                elif match_tv_existing: 
+                    tv_info_raw = match_tv_existing
+                else:
+                    tv_info_raw = besoccer_tv
                 
-                if not needs_update:
-                    old_dt = parse_google_iso(ev['start'].get('dateTime'))
-                    if old_dt and abs((old_dt - match['inicio']).total_seconds()) > 60: 
+                is_finished = 'fin' in match['status'].lower()
+                if is_finished:
+                    tv_info_raw = None
+
+                tv_info_short = get_short_tv_name(tv_info_raw) if tv_info_raw else None
+                
+                display_tbd = match['is_tbd']
+                if display_tbd and match.get('season') != '2025-2026': display_tbd = False
+
+                base_title = f"{match['local']} vs {match['visitante']}"
+                if match['score'] and is_finished: base_title = f"{match['local']} {match['score']} {match['visitante']}"
+                
+                full_title_suffix = f" |{icon}{comp_name}"
+                if round_tag and 'amistoso' not in comp_name.lower() and 'pretemporada' not in comp_name.lower():
+                     full_title_suffix += f" | {round_tag}"
+                if tv_info_short: full_title_suffix += f" | {tv_info_short}"
+                
+                full_title = f"{base_title}{full_title_suffix}"
+                if display_tbd: full_title = f"(TBC) {base_title}{full_title_suffix}"
+
+                log_suffix = format_log_date(match['inicio'], display_tbd)
+                specific_url = match.get('link', '')
+                
+                round_str = round_tag
+                if round_str.startswith("J") and round_str[1:].isdigit(): 
+                    round_num = round_str[1:]
+                    round_str = f"Jornada {round_num}"
+                    total_rounds = get_euro_max_rounds(comp_name, match['season'])
+                    if total_rounds:
+                        round_str = f"Jornada {round_num} de {total_rounds}"
+
+                season_display = match.get('season', '')
+
+                desc_text = f"{icon} {comp_name}\n"
+                desc_text += f"📅 Temporada {season_display}\n"
+                if round_str: desc_text += f"▶️ {round_str}\n"
+                if tv_info_raw: desc_text += f"📺 Dónde ver: {tv_info_raw}\n"
+                if stadium_name: desc_text += f"🏟️ Estadio: {stadium_name}\n"
+                else: desc_text += f"📍 {match['lugar']}\n"
+                desc_text += f"🔗 Más Info: {specific_url}" 
+                
+                if display_tbd: desc_text = "⚠️ Fecha y hora por confirmar (TBC)\n" + desc_text
+
+                custom_reminders = [
+                    {'method': 'popup', 'minutes': 60},
+                    {'method': 'popup', 'minutes': 180},
+                    {'method': 'popup', 'minutes': 1440},
+                    {'method': 'popup', 'minutes': 4320}
+                ]
+                if 'amistoso' in comp_name.lower() or 'pretemporada' in comp_name.lower():
+                    custom_reminders = [{'method': 'popup', 'minutes': 60}]
+                custom_reminders.sort(key=lambda x: x['minutes'])
+
+                event_body = {
+                    'summary': full_title,
+                    'location': full_address if full_address else match['lugar'],
+                    'description': desc_text,
+                    'start': {'dateTime': match['inicio'].isoformat(), 'timeZone': 'UTC'},
+                    'end': {'dateTime': (match['inicio'] + datetime.timedelta(hours=2)).isoformat(), 'timeZone': 'UTC'},
+                    'colorId': color,
+                    'extendedProperties': {'shared': {'match_id': mid}},
+                    'reminders': {'useDefault': False, 'overrides': custom_reminders}
+                }
+
+                if mid in existing_events:
+                    ev = existing_events[mid]
+                    if 'fin' in match['status'].lower() and match['score'] and match['score'] in clean_text(ev.get('summary', '')):
+                        continue
+
+                    needs_update = False
+                    notify_telegram = False 
+
+                    current_calendar_title = normalize_text(ev.get('summary', ''))
+                    new_scraper_title = normalize_text(full_title)
+
+                    if current_calendar_title != new_scraper_title: 
                         needs_update = True
-                        notify_telegram = True 
-                
-                current_desc = normalize_text(ev.get('description', ''))
-                new_desc = normalize_text(desc_text)
-                if current_desc != new_desc: 
-                    needs_update = True
-                
-                current_loc = normalize_text(ev.get('location', ''))
-                new_loc = normalize_text(event_body['location'])
-                if current_loc != new_loc: 
-                    needs_update = True
-
-                existing_overrides = ev.get('reminders', {}).get('overrides', [])
-                if existing_overrides: existing_overrides.sort(key=lambda x: x.get('minutes', 0))
-                target_overrides = event_body['reminders'].get('overrides', [])
-
-                if ev.get('reminders', {}).get('useDefault') is True: needs_update = True
-                elif existing_overrides != target_overrides: needs_update = True
-
-                if needs_update:
-                    req = service.events().update(calendarId=CONFIG["CALENDAR_ID"], eventId=ev['id'], body=event_body)
-                    execute_with_retry(req)
-                    log_str = f"[+] 🔄 Actualizado: {base_title} | Temporada {season_display} | {icon} {comp_name} {log_suffix}"
-                    console_msgs.append(log_str)
-                    logging.info(log_str)
+                        if base_title in current_calendar_title and base_title in new_scraper_title:
+                             notify_telegram = False
+                        else:
+                             notify_telegram = True 
                     
-                    if notify_telegram:
-                        telegram_msgs.append(f"🔄 <b>Actualizado:</b> {full_title}\n{log_suffix}")
-            else:
-                req = service.events().insert(calendarId=CONFIG["CALENDAR_ID"], body=event_body)
-                execute_with_retry(req)
-                log_str = f"[+] ✅ Nuevo: {base_title} | Temporada {season_display} | {icon} {comp_name} {log_suffix}"
-                console_msgs.append(log_str)
-                telegram_msgs.append(f"✅ <b>Nuevo:</b> {full_title}\n{log_suffix}")
-                logging.info(log_str)
-        
-        except Exception as e:
-            logging.error(f"❌ Error procesando partido {match.get('local')} vs {match.get('visitante')}: {e}")
-            continue # Fault Tolerance: Continúa con el siguiente partido
+                    if not needs_update:
+                        old_dt = parse_google_iso(ev['start'].get('dateTime'))
+                        if old_dt and abs((old_dt - match['inicio']).total_seconds()) > 60: 
+                            needs_update = True
+                            notify_telegram = True 
+                    
+                    current_desc = normalize_text(ev.get('description', ''))
+                    new_desc = normalize_text(desc_text)
+                    if current_desc != new_desc: 
+                        needs_update = True
+                    
+                    current_loc = normalize_text(ev.get('location', ''))
+                    new_loc = normalize_text(event_body['location'])
+                    if current_loc != new_loc: 
+                        needs_update = True
 
-    # 4. Guardar DB si hubo cambios (Lazy Write)
-    save_stadium_db()
+                    existing_overrides = ev.get('reminders', {}).get('overrides', [])
+                    if existing_overrides: existing_overrides.sort(key=lambda x: x.get('minutes', 0))
+                    target_overrides = event_body['reminders'].get('overrides', [])
 
-    if telegram_msgs: 
-        send_telegram("<b>🔔 Celta Calendar Update</b>\n\n" + "\n".join(telegram_msgs))
-        logging.info(f"📨 Notificación enviada ({len(telegram_msgs)} cambios importantes).")
-    else:
-        if console_msgs: logging.info("✅ Actualizaciones realizadas (sin notificar a Telegram por ser menores/estadio/TV).")
-        else: logging.info("✅ Todo sincronizado. No hubo cambios.")
+                    if ev.get('reminders', {}).get('useDefault') is True: needs_update = True
+                    elif existing_overrides != target_overrides: needs_update = True
+
+                    if needs_update:
+                        req = service.events().update(calendarId=CONFIG["CALENDAR_ID"], eventId=ev['id'], body=event_body)
+                        execute_with_retry(req)
+                        log_str = f"[+] 🔄 Actualizado: {base_title} | Temporada {season_display} | {icon} {comp_name} {log_suffix}"
+                        console_msgs.append(log_str)
+                        logging.info(log_str)
+                        
+                        if notify_telegram:
+                            telegram_msgs.append(f"🔄 <b>Actualizado:</b> {full_title}\n{log_suffix}")
+                else:
+                    req = service.events().insert(calendarId=CONFIG["CALENDAR_ID"], body=event_body)
+                    execute_with_retry(req)
+                    log_str = f"[+] ✅ Nuevo: {base_title} | Temporada {season_display} | {icon} {comp_name} {log_suffix}"
+                    console_msgs.append(log_str)
+                    telegram_msgs.append(f"✅ <b>Nuevo:</b> {full_title}\n{log_suffix}")
+                    logging.info(log_str)
+            
+            except Exception as e:
+                logging.error(f"❌ Error procesando partido {match.get('local')} vs {match.get('visitante')}: {e}")
+                continue 
+
+        # 4. Guardar DB si hubo cambios (Lazy Write)
+        save_stadium_db()
+
+        if telegram_msgs: 
+            send_telegram("<b>🔔 Celta Calendar Update</b>\n\n" + "\n".join(telegram_msgs))
+            logging.info(f"📨 Notificación enviada ({len(telegram_msgs)} cambios importantes).")
+        else:
+            if console_msgs: logging.info("✅ Actualizaciones realizadas (sin notificar a Telegram por ser menores/estadio/TV).")
+            else: logging.info("✅ Todo sincronizado. No hubo cambios.")
+
+    except Exception as e:
+        raise e
+    finally:
+        if driver:
+            logging.info("🏁 Cerrando driver compartido...")
+            driver.quit()
 
 def main():
     try:
