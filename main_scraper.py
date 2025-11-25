@@ -12,50 +12,66 @@ import json
 import difflib 
 import unicodedata 
 import base64
-import subprocess # Para matar procesos zombis
-
+import subprocess # Hardening: Gestión de procesos
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 from dotenv import load_dotenv 
 
-# --- IMPORTACIONES SELENIUM ---
+# --- IMPORTACIONES EXTRA PARA MANEJO DE ERRORES SELENIUM ---
+from selenium.common.exceptions import TimeoutException, WebDriverException
+
+# --- CONFIGURACIÓN DE ENTORNO ---
+os.environ['DBUS_SESSION_BUS_ADDRESS'] = '/dev/null'
+os.environ['TZ'] = 'Europe/Madrid' 
+try:
+    time.tzset() 
+except:
+    pass
+
+# --- LIBRERÍAS SELENIUM ---
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.ui import Select 
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException, WebDriverException, NoSuchElementException
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 
-# --- CONFIGURACIÓN DE ENTORNO ---
-os.environ['DBUS_SESSION_BUS_ADDRESS'] = '/dev/null'
-os.environ['TZ'] = 'Europe/Madrid'
-try:
-    time.tzset()
-except:
-    pass
-
+# --- CARGA DE VARIABLES DE ENTORNO ---
 load_dotenv() 
 
-# --- CONSTANTES ---
+# --- CONFIGURACIÓN Y CONSTANTES ---
 CONFIG = {
     "CALENDAR_ID": os.getenv("CALENDAR_ID"),
     "TELEGRAM_TOKEN": os.getenv("TELEGRAM_BOT_TOKEN"),
     "TELEGRAM_CHAT_ID": os.getenv("TELEGRAM_CHAT_ID"),
     "TEAM_NAME": "celta",
-    "URL_BESOCCER": "https://es.besoccer.com/equipo/partidos/celta",
-    "URL_TV": "https://www.futbolenlatv.es/equipo/celta",
+    "URL_BASE": "https://es.besoccer.com/equipo/partidos/",
+    "URL_TV_CELTA": "https://www.futbolenlatv.es/equipo/celta", # Nueva URL TV
     "SCOPES": ['https://www.googleapis.com/auth/calendar'],
     "CREDENTIALS_FILE": 'credentials.json',
     "TOKEN_FILE": 'token.json',
     "DB_FILE": 'stadiums.json' 
 }
 
-# --- GLOBAL STATE ---
+# Selectores CSS centralizados (Besoccer)
+SELECTORS = {
+    "MATCH_LINK": "a.match-link",
+    "TEAM_LOCAL": ".team-name.team_left .name",
+    "TEAM_VISIT": ".team-name.team_right .name",
+    "COMPETITION": ".middle-info",
+    "SCORE_R1": ".marker .r1",
+    "SCORE_R2": ".marker .r2",
+    "STATUS": ".match-status-label .tag",
+    "COOKIE_BTN": "didomi-notice-agree-button",
+    "SEASON_DROP": "#season" 
+}
+
+# --- GLOBAL STATE FOR DB ---
 STADIUM_DB = {}
 DB_DIRTY = False
 
@@ -70,7 +86,7 @@ except:
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 
-# --- DB & HELPERS ---
+# --- FUNCIONES DE BASE DE DATOS Y SMART MATCH ---
 
 def load_stadium_db():
     global STADIUM_DB
@@ -83,6 +99,7 @@ def load_stadium_db():
             logging.error(f"⚠️ Error cargando DB estadios: {e}")
             STADIUM_DB = {}
     else:
+        logging.warning("⚠️ No se encontró stadiums.json. Se iniciará vacío.")
         STADIUM_DB = {}
 
 def save_stadium_db():
@@ -96,12 +113,6 @@ def save_stadium_db():
         except Exception as e:
             logging.error(f"❌ Error guardando DB estadios: {e}")
 
-def normalize_text(text):
-    if not text: return ""
-    text = html.unescape(text)
-    text = re.sub('<[^<]+?>', '', text)
-    return " ".join(text.split()).strip()
-
 def normalize_team_key(name):
     if not name: return ""
     text = unicodedata.normalize('NFD', name).encode('ascii', 'ignore').decode("utf-8")
@@ -111,51 +122,238 @@ def normalize_team_key(name):
         text = text.replace(item, " ")
     return " ".join(text.split()).strip()
 
-def find_stadium_in_db(team_name):
-    """Busca estadio en DB local."""
+def find_stadium_dynamic(team_name):
     if not STADIUM_DB: return None, None
     clean_target = normalize_team_key(team_name)
-    
     if team_name in STADIUM_DB:
         entry = STADIUM_DB[team_name]
         return entry.get('stadium'), entry.get('location')
-
     db_keys = list(STADIUM_DB.keys())
     norm_keys_map = {normalize_team_key(k): k for k in db_keys}
     matches = difflib.get_close_matches(clean_target, norm_keys_map.keys(), n=1, cutoff=0.85)
-    
     if matches:
         real_key = norm_keys_map[matches[0]]
         entry = STADIUM_DB[real_key]
         return entry.get('stadium'), entry.get('location')
+    for key, data in STADIUM_DB.items():
+        aliases = data.get('aliases', [])
+        if team_name in aliases:
+            return data.get('stadium'), data.get('location')
     return None, None
 
 def update_db(team_name, stadium, location):
     global STADIUM_DB, DB_DIRTY
-    # Validaciones básicas
-    invalid_terms = ["campo municipal", "estadio local", "campo de futbol"]
-    if any(term in stadium.lower() for term in invalid_terms) and len(stadium) < 15: return
-    
+    invalid_terms = ["campo municipal", "estadio local", "campo de futbol", "municipal"]
+    if any(term in stadium.lower() for term in invalid_terms) and len(stadium) < 15:
+        return 
+    if team_name in STADIUM_DB:
+        old_stadium = STADIUM_DB[team_name].get('stadium', 'Desconocido')
+        if old_stadium != stadium:
+            logging.info(f"🏟️ Cambio de estadio detectado para {team_name}: '{old_stadium}' -> '{stadium}'")
+    else:
+        logging.info(f"🆕 Nuevo equipo añadido a DB: {team_name} -> {stadium}")
     STADIUM_DB[team_name] = {
         "stadium": stadium,
         "location": location,
+        "aliases": [],
         "last_updated": datetime.datetime.now().strftime("%Y-%m-%d")
     }
     DB_DIRTY = True
 
-# --- DRIVER HARDENING (TU VERSIÓN ROBUSTA) ---
+# --- FUNCIONES DE AYUDA ---
+
+def normalize_text(text):
+    if not text: return ""
+    text = html.unescape(text)
+    text = text.replace('<br>', '\n').replace('<br/>', '\n').replace('</p>', '\n')
+    text = re.sub('<[^<]+?>', '', text)
+    text = " ".join(text.split())
+    return text.strip()
+
+def clean_text(text):
+    if not text: return ""
+    return " ".join(text.strip().split())
+
+def get_competition_details(comp_text):
+    text = comp_text.lower()
+    if 'promoción' in text: return 'Promoción de ascenso a Primera', '🏆', '3'
+    if 'champions' in text: return 'Champions League', '✨', '5'
+    if 'intertoto' in text: return 'Copa Intertoto', '🏆', '3'
+    if 'segunda división b' in text: return 'Segunda División B', '🅱️', '7'
+    if 'segunda división' in text: return 'Segunda División', '2️⃣', '7'
+    if 'liga' in text or 'primera' in text: return 'Primera División', '⚽', '7'
+    if 'copa' in text or 'rey' in text: return 'Copa del Rey', '🏆', '3'
+    if 'europa' in text or 'uefa' in text: return 'Europa League', '🌍', '6'
+    return 'Amistoso', '🤝', '8'
+
+def get_round_details(comp_raw):
+    if not comp_raw or 'amistoso' in comp_raw.lower(): return ""
+    parts = comp_raw.split('.')
+    if len(parts) < 2: return "" 
+    raw_detail = parts[-1].strip()
+    text = raw_detail.lower()
+    if 'jornada' in text:
+        nums = [s for s in raw_detail.split() if s.isdigit()]
+        if nums: return f"J{nums[0]}"
+    if 'semi' in text or '1/2' in text: return "Semis"
+    if 'cuartos' in text or '1/4' in text: return "Cuartos"
+    if 'octavos' in text or '1/8' in text: return "Octavos"
+    if '/' in text:
+        for word in raw_detail.split():
+            if '/' in word: return f"Ronda {word}"
+    if 'final' in text: return "Final"
+    return ""
+
+# --- NUEVA LÓGICA DE TV (FUTBOLENLATV POR EQUIPO) ---
+
+def parse_tv_channels(ul_element):
+    """
+    Parsea la lista <ul> de canales aplicando prioridades y filtros.
+    Retorna (short_code, full_string).
+    """
+    if not ul_element: return None, None
+    
+    channels = []
+    items = ul_element.find_all('li')
+    
+    for li in items:
+        # Extraer texto limpio, ignorando etiquetas ocultas si las hubiera
+        raw_text = li.get_text(separator=" ").strip()
+        # Filtros de exclusión
+        if any(x in raw_text for x in ["Hellotickets", "LaLiga TV Bar", "Entrada"]):
+            continue
+        if "confirmar" in raw_text.lower():
+            continue
+        
+        channels.append(clean_text(raw_text))
+    
+    if not channels: return None, None
+    
+    # Ordenar por prioridad
+    # 1. Gratuitos (La1, Teledeporte, TVG, RTVE)
+    # 2. DAZN
+    # 3. Movistar / M+
+    
+    free_keywords = ["La 1", "TVE", "Teledeporte", "TVG", "Galicia", "Gol", "Cuatro", "Telecinco"]
+    dazn_keywords = ["DAZN"]
+    movistar_keywords = ["M+", "Movistar"]
+    
+    sorted_channels = []
+    
+    # Bucket sort simple
+    bucket_free = []
+    bucket_dazn = []
+    bucket_movistar = []
+    bucket_others = []
+    
+    for ch in channels:
+        upper_ch = ch.upper()
+        if any(k.upper() in upper_ch for k in free_keywords):
+            bucket_free.append(ch)
+        elif any(k.upper() in upper_ch for k in dazn_keywords):
+            bucket_dazn.append(ch)
+        elif any(k.upper() in upper_ch for k in movistar_keywords):
+            bucket_movistar.append(ch)
+        else:
+            bucket_others.append(ch)
+            
+    final_list = bucket_free + bucket_dazn + bucket_movistar + bucket_others
+    
+    if not final_list: return None, None
+    
+    full_string = ", ".join(final_list)
+    
+    # Determinar Short Code del canal principal (el primero de la lista ordenada)
+    top_channel = final_list[0].upper()
+    short_code = "TV"
+    
+    if any(k.upper() in top_channel for k in free_keywords):
+        if "TVG" in top_channel or "GALICIA" in top_channel: short_code = "TVG"
+        elif "TELEDEPORTE" in top_channel: short_code = "tdp"
+        elif "LA 1" in top_channel or "TVE" in top_channel: short_code = "La1"
+        elif "RTVE" in top_channel: short_code = "RTVEPlay"
+        else: short_code = "Abierto"
+    elif "DAZN" in top_channel:
+        short_code = "DAZN"
+    elif "M+" in top_channel or "MOVISTAR" in top_channel:
+        short_code = "M+"
+        
+    return short_code, full_string
+
+def fetch_tv_summary_from_url(driver):
+    """
+    Descarga la página del equipo en futbolenlatv una sola vez y extrae todos los partidos.
+    Retorna dict: { 'YYYY-MM-DD': {'short': '...', 'full': '...'} }
+    """
+    tv_data = {}
+    logging.info(f"📺 Obteniendo guía TV completa desde {CONFIG['URL_TV_CELTA']}...")
+    
+    try:
+        driver.get(CONFIG['URL_TV_CELTA'])
+        # Esperar un poco a que cargue el DOM
+        time.sleep(2) 
+        
+        soup = BeautifulSoup(driver.page_source, 'lxml')
+        
+        # Iterar sobre las tablas de fecha (tablaPrincipal)
+        # La estructura suele ser: tr.cabeceraTabla (Fecha) -> tr (Partido)
+        
+        tables = soup.find_all('table', class_='tablaPrincipal')
+        now_ref = datetime.datetime.now()
+        
+        for table in tables:
+            rows = table.find_all('tr')
+            current_date_str = None
+            
+            for row in rows:
+                # 1. Detectar Cabecera de Fecha
+                if 'cabeceraTabla' in row.get('class', []):
+                    date_text = row.get_text(strip=True) # Ej: "Domingo, 30/11/2025"
+                    # Extraer fecha con regex
+                    match_date = re.search(r'(\d{1,2})/(\d{1,2})/(\d{4})', date_text)
+                    if match_date:
+                        d, m, y = match_date.groups()
+                        current_date_str = f"{y}-{m.zfill(2)}-{d.zfill(2)}"
+                    continue
+                
+                # 2. Detectar Fila de Partido (tiene td con clase 'canales')
+                if not current_date_str: continue
+                
+                canales_td = row.find('td', class_='canales')
+                if canales_td:
+                    ul_canales = canales_td.find('ul', class_='listaCanales')
+                    short, full = parse_tv_channels(ul_canales)
+                    
+                    if short and full:
+                        tv_data[current_date_str] = {'short': short, 'full': full}
+                    else:
+                        # Si existe la entrada pero no hay canales válidos (o solo Hellotickets)
+                        # Marcamos explícitamente como pendiente si no es TBC
+                        tv_data[current_date_str] = {'short': None, 'full': 'Canal sin confirmar'}
+
+        logging.info(f"📺 Guía TV procesada: {len(tv_data)} fechas encontradas.")
+        return tv_data
+
+    except Exception as e:
+        logging.warning(f"⚠️ Error obteniendo guía TV global: {e}")
+        return {}
+
+# --- DRIVER HARDENING & FACTORY ---
 
 def force_kill_chrome():
+    """Mata procesos huérfanos de Chrome/ChromeDriver para liberar memoria/puertos."""
     try:
         if os.name == 'posix':
             subprocess.run(['pkill', '-f', 'chrome'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             subprocess.run(['pkill', '-f', 'chromedriver'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             time.sleep(1)
-    except: pass
+    except Exception:
+        pass
 
 def setup_driver():
+    """Configuración robusta con limpieza preventiva y refuerzo Anti-USA."""
     force_kill_chrome()
-    
+
     chrome_options = Options()
     chrome_options.page_load_strategy = 'eager' 
     chrome_options.add_argument("--headless=new") 
@@ -166,9 +364,11 @@ def setup_driver():
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--disable-infobars")
+    
     chrome_options.add_argument("--disable-blink-features=AutomationControlled")
     chrome_options.add_argument("--ignore-certificate-errors")
-    chrome_options.add_argument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
+    chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
+    
     chrome_options.add_argument("--lang=es-ES") 
     chrome_options.add_argument("--accept-lang=es-ES")
 
@@ -178,17 +378,20 @@ def setup_driver():
     try:
         service = Service(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=chrome_options)
-    except:
+    except Exception as e:
+        logging.warning(f"⚠️ Error iniciando driver optimizado: {e}. Reintentando básico.")
         force_kill_chrome()
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
     
-    driver.set_page_load_timeout(30) 
-    driver.set_script_timeout(30)
+    driver.set_page_load_timeout(20) 
+    driver.set_script_timeout(20)
 
     try:
         driver.execute_cdp_cmd('Target.createTarget', {'url': 'about:blank'})
         driver.execute_cdp_cmd('Emulation.setGeolocationOverride', {
-            'latitude': 40.4168, 'longitude': -3.7038, 'accuracy': 100
+            'latitude': 40.4168, 
+            'longitude': -3.7038, 
+            'accuracy': 100
         })
         driver.execute_cdp_cmd('Emulation.setTimezoneOverride', {'timezoneId': 'Europe/Madrid'})
         driver.execute_cdp_cmd('Network.setExtraHTTPHeaders', {
@@ -198,431 +401,440 @@ def setup_driver():
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
             }
         })
-    except: pass
+    except Exception as e:
+        logging.warning(f"⚠️ No se pudo inyectar CDP Geo/Timezone: {e}")
 
     return driver
 
-# --- LÓGICA DE CANALES (NUEVA ESTRATEGIA) ---
-
-def process_channels(channel_list):
+def scrape_besoccer_info(driver, match_link):
     """
-    Procesa lista cruda de canales, aplica prioridades y formateo.
-    Retorna (short_name_for_title, full_string_for_desc).
+    Extrae Estadio. TV ya no se usa de aquí, pero mantenemos la estructura por si acaso.
     """
-    clean_channels = []
-    
-    # 1. Limpieza y Filtrado
-    ignored = ["hellotickets", "laliga tv bar", "entradas", "ticket"]
-    
-    for ch in channel_list:
-        ch_lower = ch.lower()
-        if any(x in ch_lower for x in ignored): continue
-        if "confirmar" in ch_lower: continue
-        
-        # Limpieza de textos basura (paréntesis de diales, etc.)
-        clean = re.sub(r'\(.*?\)', '', ch).strip()
-        clean = clean.replace('Ver en directo', '').strip()
-        if clean: clean_channels.append(clean)
-    
-    if not clean_channels: return None, None
-
-    # 2. Categorización por Prioridad
-    # Prio 1: Gratuitos
-    free = []
-    # Prio 2: DAZN
-    dazn = []
-    # Prio 3: Movistar
-    movistar = []
-    # Resto
-    others = []
-
-    for c in clean_channels:
-        up = c.upper()
-        if any(x in up for x in ["TVE", "LA 1", "LA1", "TELEDEPORTE", "TDP", "RTVE", "TVG", "GALICIA"]):
-            free.append(c)
-        elif "DAZN" in up:
-            dazn.append(c)
-        elif any(x in up for x in ["MOVISTAR", "M+", "LIGA DE CAMPEONES", "VAMOS"]):
-            movistar.append(c)
-        else:
-            others.append(c)
-            
-    # 3. Selección de Short Name (El mejor disponible)
-    short_name = ""
-    if free:
-        # Preferencia de nombre corto para gratuitos
-        top = free[0].upper()
-        if "TVG" in top or "GALICIA" in top: short_name = "TVG"
-        elif "TELEDEPORTE" in top: short_name = "tdp"
-        elif "RTVE" in top or "LA 1" in top: short_name = "La1"
-        else: short_name = free[0]
-    elif dazn:
-        short_name = "DAZN"
-    elif movistar:
-        short_name = "M+"
-    elif others:
-        short_name = "TV"
-        
-    # 4. Construcción de String Completo (Unir únicos)
-    # Ordenamos para la descripción: Free -> DAZN -> Movistar -> Otros
-    final_list = sorted(list(set(free + dazn + movistar + others)))
-    full_desc = ", ".join(final_list)
-    
-    return short_name, full_desc
-
-def fetch_tv_schedule_centralized():
-    """
-    Scrapea futbolenlatv.es/equipo/celta una sola vez.
-    Hace click en 'Más días' para cargar todo.
-    Retorna diccionario: { 'YYYY-MM-DD': {'short': '...', 'full': '...'} }
-    """
-    schedule = {}
-    driver = setup_driver()
-    logging.info(f"📺 Cargando guía TV centralizada: {CONFIG['URL_TV']}")
-    
-    try:
-        driver.get(CONFIG["URL_TV"])
-        wait = WebDriverWait(driver, 10)
-        
-        # Intentar clickar "Más días" varias veces para cargar todo
-        for _ in range(3):
-            try:
-                # Buscamos botones visibles de "Más días"
-                btns = driver.find_elements(By.CSS_SELECTOR, ".btnPrincipal")
-                clicked = False
-                for btn in btns:
-                    if btn.is_displayed() and "más días" in btn.text.lower():
-                        driver.execute_script("arguments[0].click();", btn)
-                        time.sleep(1.5) # Esperar carga AJAX
-                        clicked = True
-                if not clicked: break # No hay más botones
-            except: break
-
-        soup = BeautifulSoup(driver.page_source, 'lxml')
-        
-        # Procesar tablas de días
-        tables = soup.select('table.tablaPrincipal')
-        
-        for table in tables:
-            try:
-                # Extraer Fecha
-                header = table.select_one('.cabeceraTabla')
-                if not header: continue
-                date_text = header.get_text(strip=True) # "Jueves, 27/11/2025"
-                match_date = re.search(r'(\d{1,2}/\d{1,2}/\d{4})', date_text)
-                if not match_date: continue
-                
-                day, month, year = match_date.group(1).split('/')
-                iso_date = f"{year}-{month}-{day}"
-                
-                # Extraer Canales
-                row = table.select_one('tr:not(.cabeceraTabla)')
-                if not row: continue
-                
-                channel_elems = row.select('td.canales ul.listaCanales li')
-                raw_channels = [c.get_text(strip=True) for c in channel_elems]
-                
-                short, full = process_channels(raw_channels)
-                
-                if short:
-                    schedule[iso_date] = {'short': short, 'full': full}
-                    
-            except Exception as e:
-                continue
-                
-        logging.info(f"📺 Guía TV procesada: {len(schedule)} fechas encontradas.")
-        return schedule
-
-    except Exception as e:
-        logging.error(f"❌ Error scraping TV: {e}")
-        return {}
-    finally:
-        driver.quit()
-
-# --- LÓGICA DE ESTADIOS (NUEVA ESTRATEGIA) ---
-
-def scrape_besoccer_stadium(match_link):
-    """Scrapea un partido individual de BeSoccer para sacar estadio."""
-    if not match_link: return None
-    driver = setup_driver()
+    if not match_link: return None, None
     stadium = None
     try:
+        time.sleep(1)
         driver.get(match_link)
         soup = BeautifulSoup(driver.page_source, 'lxml')
+        box_rows = soup.select('.table-body.p10 .table-row-round')
+        rows = box_rows if box_rows else soup.select('.table-row-round')
         
-        # Intentar sacar estadio
-        box_rows = soup.select('.table-row-round')
-        for row in box_rows:
+        for row in rows:
+            text = clean_text(row.get_text())
             stadium_link = row.select_one('a.popup_btn[href="#stadium"]')
             if stadium_link:
-                stadium = normalize_text(stadium_link.text)
-                break
-            text = normalize_text(row.get_text())
-            if "estadio" in text.lower():
+                stadium = clean_text(stadium_link.text)
+            elif "estadio" in text.lower() and not stadium:
                 stadium = text
-                break
+    except TimeoutException:
+        raise TimeoutException("Timeout interno Selenium")
     except Exception as e:
-        logging.warning(f"⚠️ Error scraping estadio: {e}")
-    finally:
-        driver.quit()
-        
-    return stadium
+        raise WebDriverException(f"Wrapper Error: {e}")
+    return stadium, None
 
-# --- MAIN FETCH & SYNC ---
+def get_stadium_info(driver, team_name, match_link=None):
+    """
+    Obtiene estadio (DB o Web si es necesario). 
+    """
+    if not team_name: return None, None
+    clean_name = team_name.strip()
+    db_stadium, db_location = find_stadium_dynamic(clean_name)
+    
+    if match_link:
+        # Si se llama a esta función es porque se decidió actualizar via Web (Next Match Logic)
+        web_stadium, _ = scrape_besoccer_info(driver, match_link)
+        if web_stadium:
+            should_update = False
+            if not db_stadium:
+                should_update = True
+            else:
+                ratio = difflib.SequenceMatcher(None, normalize_team_key(db_stadium), normalize_team_key(web_stadium)).ratio()
+                if ratio < 0.85: 
+                    should_update = True
+            
+            if should_update:
+                return web_stadium, f"{web_stadium}, {clean_name}" 
+                
+    return db_stadium, db_location
 
-def fetch_matches_list_besoccer():
-    """Obtiene la lista base de partidos (IDs, Fechas, Rivales)."""
-    driver = setup_driver()
-    matches = []
+def get_euro_max_rounds(comp_name, season_str):
+    name = comp_name.lower()
+    is_europe = any(x in name for x in ['champions', 'europa league', 'conference'])
+    if not is_europe: return None
     try:
-        logging.info(f"📋 Obteniendo lista de partidos: {CONFIG['URL_BESOCCER']}")
-        driver.get(CONFIG["URL_BESOCCER"])
-        
-        # Click cookie si existe
+        start_year = int(season_str.split('-')[0])
+    except:
+        start_year = 0
+    if start_year >= 2024:
+        if 'conference' in name: return 6
+        elif 'champions' in name or 'europa league' in name: return 8
+    return 6
+
+def parse_besoccer_date(iso_date_str):
+    try:
+        dt_obj = datetime.datetime.fromisoformat(iso_date_str)
+        dt_utc = dt_obj.astimezone(datetime.timezone.utc)
+        return dt_utc
+    except Exception as e:
+        return None
+
+def parse_google_iso(date_str):
+    if not date_str: return None
+    try:
+        if date_str.endswith('Z'):
+            date_str = date_str[:-1] + '+00:00'
+        dt = datetime.datetime.fromisoformat(date_str)
+        return dt.astimezone(datetime.timezone.utc)
+    except:
+        return None
+
+def format_log_date(dt_obj, is_tbd):
+    dias = {0:"Lunes", 1:"Martes", 2:"Miércoles", 3:"Jueves", 4:"Viernes", 5:"Sábado", 6:"Domingo"}
+    dt_local = dt_obj.astimezone() 
+    dia_str = dias.get(dt_local.weekday(), "Día")
+    fecha_str = dt_local.strftime("%d/%m")
+    hora_str = dt_local.strftime("%H:%M")
+    if is_tbd: return f"(Día: {dia_str} {fecha_str}, TBC | Hora: TBC)"
+    else: return f"(Día: {dia_str} {fecha_str} | Hora: {hora_str}h)"
+
+def restore_auth_files():
+    creds_json = os.getenv("GCP_CREDENTIALS_JSON")
+    if creds_json and not os.path.exists(CONFIG["CREDENTIALS_FILE"]):
         try:
-            wait = WebDriverWait(driver, 5)
-            wait.until(EC.element_to_be_clickable((By.ID, "didomi-notice-agree-button"))).click()
+            with open(CONFIG["CREDENTIALS_FILE"], "w", encoding="utf-8") as f:
+                f.write(creds_json)
+        except Exception: pass
+
+    token_b64 = os.getenv("GCP_TOKEN_JSON_B64")
+    if token_b64 and not os.path.exists(CONFIG["TOKEN_FILE"]):
+        try:
+            token_bytes = base64.b64decode(token_b64)
+            with open(CONFIG["TOKEN_FILE"], "w", encoding="utf-8") as f:
+                f.write(token_bytes.decode("utf-8"))
+        except Exception: pass
+
+# --- MAIN LOGIC ---
+
+def fetch_matches(driver):
+    """
+    Fase A: Obtención de lista de partidos desde Besoccer.
+    """
+    logging.info(f"🚀 [Fase A] Obteniendo lista de partidos desde Besoccer...")
+    try:
+        url_final = f"{CONFIG['URL_BASE']}{CONFIG['TEAM_NAME']}"
+        driver.get(url_final)
+        wait = WebDriverWait(driver, 20)
+        try: 
+            driver.find_element(By.ID, SELECTORS["COOKIE_BTN"]).click()
+            time.sleep(1)
         except: pass
 
-        soup = BeautifulSoup(driver.page_source, 'lxml')
-        match_elements = soup.select("a.match-link")
+        matches = []
+        try: wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, SELECTORS["MATCH_LINK"])))
+        except: return []
 
+        soup = BeautifulSoup(driver.page_source, 'lxml')
+        match_elements = soup.select(SELECTORS["MATCH_LINK"])
+        
         for m in match_elements:
             try:
                 start_iso = m.get('starttime')
+                has_time_attr = m.get('hastime', "1")
+                match_link = m.get('href') 
                 if not start_iso: continue
-                
-                # Parse fecha UTC
-                dt_obj = datetime.datetime.fromisoformat(start_iso)
-                dt_utc = dt_obj.astimezone(datetime.timezone.utc)
-                
-                # Estado y Score
-                status_tag = m.select_one(".match-status-label .tag")
-                status_text = status_tag.text.strip().lower() if status_tag else ""
-                
-                r1 = m.select_one(".marker .r1")
-                r2 = m.select_one(".marker .r2")
-                score = f"{r1.text.strip()}-{r2.text.strip()}" if (r1 and r2 and r1.text.isdigit()) else None
+                start_utc = parse_besoccer_date(start_iso)
+                if not start_utc: continue
 
-                local = normalize_text(m.select_one(".team-name.team_left .name").text)
-                visit = normalize_text(m.select_one(".team-name.team_right .name").text)
-                comp = normalize_text(m.select_one(".middle-info").text)
+                match_year = start_utc.year
+                match_month = start_utc.month
+                if match_month >= 7: season_text = f"{match_year}-{match_year + 1}"
+                else: season_text = f"{match_year - 1}-{match_year}"
+
+                hour = start_utc.astimezone().hour
+                minute = start_utc.astimezone().minute
+                is_tbd = False
+                if str(has_time_attr) == "1": is_tbd = True
+                elif hour == 0 and minute == 0: is_tbd = True
+
+                local_elem = m.select_one(SELECTORS["TEAM_LOCAL"])
+                visit_elem = m.select_one(SELECTORS["TEAM_VISIT"])
+                if not local_elem or not visit_elem: continue
                 
-                # Determinación de TBD (Hora 00:00 o flag hastime=0)
-                has_time = m.get('hastime', '1') == '1'
-                if dt_utc.hour == 0 and dt_utc.minute == 0: has_time = False
+                local = clean_text(local_elem.text)
+                visitante = clean_text(visit_elem.text)
+                comp_elem = m.select_one(SELECTORS["COMPETITION"])
+                comp_raw = clean_text(comp_elem.text) if comp_elem else "Amistoso"
                 
-                # ID Único
-                mid = f"{dt_utc.strftime('%Y%m%d')}_{local[:3]}_{visit[:3]}".lower().replace(" ", "")
+                score_text = None
+                r1 = m.select_one(SELECTORS["SCORE_R1"])
+                r2 = m.select_one(SELECTORS["SCORE_R2"])
+                if r1 and r2:
+                    t1 = clean_text(r1.text)
+                    t2 = clean_text(r2.text)
+                    if t1.isdigit() and t2.isdigit(): score_text = f"{t1}-{t2}"
+
+                status_tag = m.select_one(SELECTORS["STATUS"])
+                status_text = status_tag.text.strip().lower() if status_tag else ""
+
+                mid = f"{start_utc.strftime('%Y%m%d')}_{local[:3]}_{visitante[:3]}".lower().replace(" ", "")
+                if CONFIG["TEAM_NAME"] in local.lower(): lugar = f"Estadio Local ({local})"
+                else: lugar = f"Estadio Visitante ({local})"
 
                 matches.append({
-                    'id': mid,
-                    'local': local,
-                    'visitante': visit,
-                    'competicion': comp,
-                    'inicio': dt_utc,
-                    'is_tbd': not has_time,
-                    'status': status_text,
-                    'score': score,
-                    'link': m.get('href'),
-                    'season': '2025-2026' # Asumido por contexto
+                    'id': mid, 'local': local, 'visitante': visitante,
+                    'competicion': comp_raw, 'inicio': start_utc,
+                    'is_tbd': is_tbd, 'lugar': lugar,
+                    'score': score_text, 'status': status_text,
+                    'link': match_link, 'season': season_text 
                 })
             except: continue
-            
+        
         return matches
     except Exception as e:
-        logging.error(f"❌ Error fetching list: {e}")
-        return []
-    finally:
-        driver.quit()
+        raise e 
 
 def get_calendar_service():
-    restore_auth_files() # Restaurar secretos si es entorno Cloud
     creds = None
-    if os.path.exists(CONFIG["TOKEN_FILE"]): 
-        creds = Credentials.from_authorized_user_file(CONFIG["TOKEN_FILE"], CONFIG["SCOPES"])
+    if os.path.exists(CONFIG["TOKEN_FILE"]): creds = Credentials.from_authorized_user_file(CONFIG["TOKEN_FILE"], CONFIG["SCOPES"])
     if not creds or not creds.valid:
-        if creds and creds.expired and creds.refresh_token: 
-            creds.refresh(Request())
+        if creds and creds.expired and creds.refresh_token: creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(CONFIG["CREDENTIALS_FILE"], CONFIG["SCOPES"])
             creds = flow.run_local_server(port=0)
         with open(CONFIG["TOKEN_FILE"], 'w') as token: token.write(creds.to_json())
     return build('calendar', 'v3', credentials=creds)
 
-def restore_auth_files():
-    """Restaura credentials.json y token.json desde ENV VARS (GitHub Secrets)."""
-    creds_json = os.getenv("GCP_CREDENTIALS_JSON")
-    if creds_json and not os.path.exists(CONFIG["CREDENTIALS_FILE"]):
-        with open(CONFIG["CREDENTIALS_FILE"], "w") as f: f.write(creds_json)
-        
-    token_b64 = os.getenv("GCP_TOKEN_JSON_B64")
-    if token_b64 and not os.path.exists(CONFIG["TOKEN_FILE"]):
-        with open(CONFIG["TOKEN_FILE"], "w") as f: 
-            f.write(base64.b64decode(token_b64).decode("utf-8"))
-
 def send_telegram(msg):
-    if not CONFIG["TELEGRAM_TOKEN"]: return
+    if not CONFIG["TELEGRAM_TOKEN"] or not CONFIG["TELEGRAM_CHAT_ID"]: return
     url = f"https://api.telegram.org/bot{CONFIG['TELEGRAM_TOKEN']}/sendMessage"
-    requests.post(url, json={'chat_id': CONFIG['TELEGRAM_CHAT_ID'], 'text': msg, 'parse_mode': 'HTML'})
+    try: requests.post(url, json={'chat_id': CONFIG['TELEGRAM_CHAT_ID'], 'text': msg, 'parse_mode': 'HTML'})
+    except: pass
+
+def execute_with_retry(request):
+    for n in range(0, 5):
+        try: return request.execute()
+        except Exception as e:
+            if "rateLimitExceeded" in str(e) or "403" in str(e):
+                time.sleep((2 ** n) + 1)
+            else: raise e
+    return None
 
 def run_sync():
+    restore_auth_files()
     load_stadium_db()
-    
-    # 1. Obtener datos TV (Fuente: FutbolEnLaTV)
-    tv_map = fetch_tv_schedule_centralized()
-    
-    # 2. Obtener lista partidos (Fuente: BeSoccer)
-    matches = fetch_matches_list_besoccer()
-    if not matches: return
 
-    # 3. Identificar el "Próximo Partido" para actualización de estadio
-    now = datetime.datetime.now(datetime.timezone.utc)
-    next_match_index = -1
+    driver = setup_driver() 
     
-    # Ordenar por fecha
-    matches.sort(key=lambda x: x['inicio'])
-    
-    for i, m in enumerate(matches):
-        if m['inicio'] > now and 'fin' not in m['status']:
-            next_match_index = i
-            break
-            
-    # 4. Sincronizar Calendar
-    service = get_calendar_service()
-    if not service: return
-    
-    # Cargar eventos existentes para comparar
-    existing_events = {}
-    page_token = None
-    while True:
-        events = service.events().list(calendarId=CONFIG["CALENDAR_ID"], singleEvents=True, pageToken=page_token).execute()
-        for ev in events.get('items', []):
-            eid = ev.get('extendedProperties', {}).get('shared', {}).get('match_id')
-            if eid: existing_events[eid] = ev
-        page_token = events.get('nextPageToken')
-        if not page_token: break
+    try:
+        # 1. Obtener Lista TV Completa (UNA SOLA LLAMADA)
+        tv_schedule_map = fetch_tv_summary_from_url(driver)
+        
+        # 2. Obtener Partidos Besoccer
+        matches = fetch_matches(driver)
+        
+        if not matches: return
 
-    telegram_msgs = []
-    
-    for i, match in enumerate(matches):
-        mid = match['id']
-        is_next = (i == next_match_index)
-        
-        # --- Lógica TV ---
-        # Cruce por fecha (YYYY-MM-DD)
-        date_key = match['inicio'].strftime("%Y-%m-%d")
-        tv_data = tv_map.get(date_key)
-        
-        tv_short = tv_data['short'] if tv_data else None
-        tv_full = tv_data['full'] if tv_data else None
-        
-        # Si el partido ya acabó, borramos info TV
-        if 'fin' in match['status']: 
-            tv_short = None
-            tv_full = None
+        logging.info("☁️ Sincronizando con Google Calendar...")
+        service = get_calendar_service()
+        if not service: return
 
-        # --- Lógica Estadio ---
-        # Por defecto de DB
-        stadium, location = find_stadium_in_db(match['local'])
-        
-        # SOLO si es el próximo partido, intentamos actualizar scraping
-        if is_next and match['link']:
-            logging.info(f"🏟️ Verificando estadio próximo partido: {match['local']}")
-            web_stadium = scrape_besoccer_stadium(match['link'])
-            if web_stadium:
-                # Si es diferente o no teníamos, actualizamos
-                if not stadium or difflib.SequenceMatcher(None, stadium, web_stadium).ratio() < 0.85:
-                    stadium = web_stadium
-                    location = f"{web_stadium}, {match['local']}"
-                    update_db(match['local'], stadium, location)
-        
-        final_location = location if location else f"Estadio Local ({match['local']})"
-        if CONFIG["TEAM_NAME"] not in match['local'].lower():
-            # Si somos visitantes y no tenemos dato, ponemos generico
-            if not location: final_location = f"Estadio Visitante ({match['local']})"
+        existing_events = {}
+        page_token = None
+        while True:
+            events_result = service.events().list(
+                calendarId=CONFIG["CALENDAR_ID"], singleEvents=True, showDeleted=False, pageToken=page_token
+            ).execute()
+            for ev in events_result.get('items', []):
+                if ev.get('status') != 'cancelled':
+                    eid = ev.get('extendedProperties', {}).get('shared', {}).get('match_id')
+                    if eid: existing_events[eid] = ev
+            page_token = events_result.get('nextPageToken')
+            if not page_token: break
 
-        # --- Construcción Evento ---
-        icon_comp = '🏆'
-        if 'liga' in match['competicion'].lower(): icon_comp = '⚽'
-        elif 'champions' in match['competicion'].lower(): icon_comp = '✨'
+        telegram_msgs = []
         
-        base_title = f"{match['local']} vs {match['visitante']}"
-        if match['score']: base_title = f"{match['local']} {match['score']} {match['visitante']}"
+        # --- LOGICA NEXT MATCH (STADIUM LAZY LOAD) ---
+        now_utc = datetime.datetime.now(datetime.timezone.utc)
+        next_match_processed = False 
         
-        title_suffix = f" | {icon_comp} {match['competicion']}"
-        if tv_short: title_suffix += f" | 📺 {tv_short}"
-        
-        full_title = base_title + title_suffix
-        if match['is_tbd']: full_title = "(TBC) " + full_title
-        
-        desc = f"{icon_comp} {match['competicion']}\n"
-        if tv_full: desc += f"📺 Dónde ver: {tv_full}\n"
-        else: 
-            if not 'fin' in match['status']: desc += "📺 Dónde ver: Canal por confirmar\n"
+        for i, match in enumerate(matches):
             
-        desc += f"🏟️ Estadio: {stadium if stadium else 'Por confirmar'}\n"
-        desc += f"🔗 Info: {match['link']}"
-
-        # Horarios (Google Cal usa ISO string)
-        start_dt = match['inicio']
-        end_dt = start_dt + datetime.timedelta(hours=2)
-
-        event_body = {
-            'summary': full_title,
-            'location': final_location,
-            'description': desc,
-            'start': {'dateTime': start_dt.isoformat(), 'timeZone': 'UTC'},
-            'end': {'dateTime': end_dt.isoformat(), 'timeZone': 'UTC'},
-            'extendedProperties': {'shared': {'match_id': mid}},
-            'reminders': {'useDefault': False, 'overrides': [{'method': 'popup', 'minutes': 60}]}
-        }
-        
-        # --- Update or Insert ---
-        if mid in existing_events:
-            ev = existing_events[mid]
+            # --- STADIUM ---
+            # Solo buscamos estadio activamente si es el PROXIMO partido
+            stadium_name = None
+            full_address = None
             
-            # Detectar cambios
-            old_title = normalize_text(ev.get('summary', ''))
-            new_title = normalize_text(full_title)
+            is_future = match['inicio'] > now_utc
+            should_scan_stadium = False
             
-            old_desc = normalize_text(ev.get('description', ''))
-            new_desc = normalize_text(desc)
+            if is_future and not next_match_processed and not match['is_tbd']:
+                should_scan_stadium = True
+                next_match_processed = True # Solo el primero
             
-            old_start = ev['start'].get('dateTime')
-            new_start = start_dt.isoformat().replace('+00:00', 'Z') # Normalizar UTC string
-            if old_start and old_start.endswith('Z'): old_start = old_start[:-1] # simple hack check
-            
-            # Check de tiempo (diff > 60s)
-            time_diff = 0
-            if old_start:
+            if should_scan_stadium:
+                # Scrape profundo solo para este partido
                 try:
-                    t1 = datetime.datetime.fromisoformat(ev['start']['dateTime'].replace('Z', '+00:00')).timestamp()
-                    t2 = start_dt.timestamp()
-                    time_diff = abs(t1 - t2)
-                except: time_diff = 100
-            
-            if old_title != new_title or old_desc != new_desc or time_diff > 60:
-                service.events().update(calendarId=CONFIG["CALENDAR_ID"], eventId=ev['id'], body=event_body).execute()
-                logging.info(f"🔄 Actualizado: {full_title}")
-                if time_diff > 60: telegram_msgs.append(f"🔄 <b>Cambio Hora/Día:</b> {full_title}")
-                elif "TBC" not in full_title and "TBC" in old_title: telegram_msgs.append(f"✅ <b>Horario Confirmado:</b> {full_title}")
-        else:
-            service.events().insert(calendarId=CONFIG["CALENDAR_ID"], body=event_body).execute()
-            logging.info(f"✅ Nuevo Evento: {full_title}")
-            telegram_msgs.append(f"✅ <b>Nuevo Partido:</b> {full_title}")
+                    s_name, s_loc = get_stadium_info(driver, match['local'], match.get('link'))
+                    stadium_name = s_name
+                    full_address = s_loc
+                    if s_name: update_db(match['local'], s_name, f"{s_name}, {match['local']}")
+                except Exception as e:
+                    logging.warning(f"Error scraping estadio next match: {e}")
+                    # Fallback DB
+                    stadium_name, full_address = find_stadium_dynamic(match['local'])
+            else:
+                # Lectura pasiva de DB
+                stadium_name, full_address = find_stadium_dynamic(match['local'])
 
-    save_stadium_db()
-    
-    if telegram_msgs:
-        send_telegram("<b>🔔 Celta Calendar Update</b>\n\n" + "\n".join(telegram_msgs))
+            # --- TV ASSIGNMENT (CROSS REFERENCE) ---
+            match_date_key = match['inicio'].strftime("%Y-%m-%d")
+            
+            tv_info_full = None
+            tv_info_short = None
+            
+            # Si es TBD, no buscamos TV
+            if not match['is_tbd']:
+                tv_data_entry = tv_schedule_map.get(match_date_key)
+                if tv_data_entry:
+                    tv_info_full = tv_data_entry['full']
+                    tv_info_short = tv_data_entry['short']
+            
+            is_finished = 'fin' in match['status'].lower()
+            if is_finished: 
+                tv_info_full = None
+                tv_info_short = None
+
+            # --- TITLE & DESC ---
+            comp_name, icon, color = get_competition_details(match['competicion'])
+            match_month = match['inicio'].month
+            if 'amistoso' in comp_name.lower() and match_month in [7, 8]: comp_name = 'Pretemporada'
+            if match['season'] == '2025-2026' and comp_name == 'Primera División': comp_name = 'Liga'
+            round_tag = get_round_details(match['competicion'])
+
+            display_tbd = match['is_tbd']
+            if display_tbd and match.get('season') != '2025-2026': display_tbd = False
+
+            base_title = f"{match['local']} vs {match['visitante']}"
+            if match['score'] and is_finished: base_title = f"{match['local']} {match['score']} {match['visitante']}"
+            
+            full_title_suffix = f" |{icon}{comp_name}"
+            if round_tag and 'amistoso' not in comp_name.lower() and 'pretemporada' not in comp_name.lower():
+                    full_title_suffix += f" | {round_tag}"
+            
+            # Abreviatura TV en título
+            if tv_info_short: full_title_suffix += f" | {tv_info_short}"
+            
+            full_title = f"{base_title}{full_title_suffix}"
+            if display_tbd: full_title = f"(TBC) {base_title}{full_title_suffix}"
+
+            log_suffix = format_log_date(match['inicio'], display_tbd)
+            
+            round_str = round_tag
+            if round_str.startswith("J") and round_str[1:].isdigit(): 
+                round_num = round_str[1:]
+                round_str = f"Jornada {round_num}"
+                total_rounds = get_euro_max_rounds(comp_name, match['season'])
+                if total_rounds: round_str = f"Jornada {round_num} de {total_rounds}"
+            season_display = match.get('season', '')
+
+            desc_text = f"{icon} {comp_name}\n"
+            desc_text += f"📅 Temporada {season_display}\n"
+            if round_str: desc_text += f"▶️ {round_str}\n"
+            if tv_info_full: desc_text += f"📺 Dónde ver: {tv_info_full}\n"
+            
+            loc_final = match['lugar']
+            if stadium_name: 
+                desc_text += f"🏟️ Estadio: {stadium_name}\n"
+                if full_address: loc_final = full_address
+            else:
+                desc_text += f"📍 {match['lugar']}\n"
+                
+            desc_text += f"🔗 Más Info: {match.get('link', '')}" 
+            
+            if display_tbd: desc_text = "⚠️ Fecha y hora por confirmar (TBC)\n" + desc_text
+
+            custom_reminders = [{'method': 'popup', 'minutes': 60}, {'method': 'popup', 'minutes': 180}, {'method': 'popup', 'minutes': 1440}, {'method': 'popup', 'minutes': 4320}]
+            if 'amistoso' in comp_name.lower() or 'pretemporada' in comp_name.lower(): custom_reminders = [{'method': 'popup', 'minutes': 60}]
+            custom_reminders.sort(key=lambda x: x['minutes'])
+
+            event_body = {
+                'summary': full_title,
+                'location': loc_final,
+                'description': desc_text,
+                'start': {'dateTime': match['inicio'].isoformat(), 'timeZone': 'UTC'},
+                'end': {'dateTime': (match['inicio'] + datetime.timedelta(hours=2)).isoformat(), 'timeZone': 'UTC'},
+                'colorId': color,
+                'extendedProperties': {'shared': {'match_id': match['id']}},
+                'reminders': {'useDefault': False, 'overrides': custom_reminders}
+            }
+
+            mid = match['id']
+            if mid in existing_events:
+                ev = existing_events[mid]
+                if 'fin' in match['status'].lower() and match['score'] and match['score'] in clean_text(ev.get('summary', '')): continue
+
+                needs_update = False
+                notify_telegram = False 
+
+                old_dt = parse_google_iso(ev['start'].get('dateTime'))
+                time_changed = False
+                if old_dt:
+                    diff = abs(old_dt.timestamp() - match['inicio'].timestamp())
+                    if diff > 60: time_changed = True
+
+                old_title_norm = normalize_text(ev.get('summary', ''))
+                new_title_norm = normalize_text(full_title)
+                title_changed = base_title not in old_title_norm
+
+                if time_changed or title_changed:
+                    needs_update = True
+                    notify_telegram = True
+                
+                if not needs_update:
+                    current_desc = normalize_text(ev.get('description', ''))
+                    new_desc_norm = normalize_text(desc_text)
+                    if current_desc != new_desc_norm: needs_update = True
+                        
+                    current_loc = normalize_text(ev.get('location', ''))
+                    new_loc_norm = normalize_text(event_body['location'])
+                    if current_loc != new_loc_norm: needs_update = True
+
+                    existing_overrides = ev.get('reminders', {}).get('overrides', [])
+                    target_overrides = event_body['reminders'].get('overrides', [])
+                    if existing_overrides != target_overrides: needs_update = True
+
+                if needs_update:
+                    req = service.events().update(calendarId=CONFIG["CALENDAR_ID"], eventId=ev['id'], body=event_body)
+                    execute_with_retry(req)
+                    logging.info(f"[+] 🔄 Actualizado: {base_title}")
+                    if notify_telegram: telegram_msgs.append(f"🔄 <b>Actualizado:</b> {full_title}\n{log_suffix}")
+            else:
+                req = service.events().insert(calendarId=CONFIG["CALENDAR_ID"], body=event_body)
+                execute_with_retry(req)
+                logging.info(f"[+] ✅ Nuevo: {base_title}")
+                telegram_msgs.append(f"✅ <b>Nuevo:</b> {full_title}\n{log_suffix}")
+
+        save_stadium_db()
+
+        if telegram_msgs: 
+            send_telegram("<b>🔔 Celta Calendar Update</b>\n\n" + "\n".join(telegram_msgs))
+            logging.info(f"📨 Notificación enviada ({len(telegram_msgs)} cambios importantes).")
+        else:
+            logging.info("✅ Todo sincronizado. No hubo cambios.")
+
+    except Exception as e:
+        raise e
+    finally:
+        if driver:
+            logging.info("🏁 Cerrando driver...")
+            driver.quit()
 
 def main():
     try:
         run_sync()
-        logging.info("🏁 Sincronización finalizada.")
+        logging.info("🎉 Fin.")
     except Exception as e:
-        logging.error(f"❌ Error fatal en main: {e}")
+        logging.error(f"❌ Error fatal: {e}")
         traceback.print_exc()
 
 if __name__ == '__main__':
