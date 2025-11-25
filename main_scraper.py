@@ -676,8 +676,13 @@ def execute_with_retry(request):
     for n in range(0, 5):
         try: return request.execute()
         except Exception as e:
-            if "rateLimitExceeded" in str(e) or "403" in str(e):
-                time.sleep((2 ** n) + 1)
+            # Normalizamos el error a minusculas para chequear patrones
+            err_str = str(e).lower()
+            # Ampliamos filtro: Rate Limit, 403, SSL EOF, Connection errors
+            if any(x in err_str for x in ["ratelimitexceeded", "403", "ssl", "eof", "connection", "broken pipe"]):
+                wait_time = (2 ** n) + 1
+                logging.warning(f"⚠️ Error de conexión/API ({e}). Reintentando en {wait_time}s...")
+                time.sleep(wait_time)
             else: raise e
     return None
 
@@ -754,6 +759,7 @@ def run_sync():
                             logging.info(f"🔄 Reiniciando navegador para scraping de estadio (Intento {attempt+1})...")
                             try: driver.quit()
                             except: pass
+                            force_kill_chrome() # <--- Hard kill para eliminar zombies
                             driver = setup_driver()
 
                         s_name, s_loc = get_stadium_info(driver, match['local'], match.get('link'))
