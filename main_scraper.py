@@ -29,6 +29,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 
+# --- CONFIGURACIÓN DE ENTORNO (FIX CRÍTICO CI) ---
+# Evita bloqueos por intentos de conexión a DBUS en entornos headless
+os.environ['DBUS_SESSION_BUS_ADDRESS'] = '/dev/null'
+
 # --- CARGA DE VARIABLES DE ENTORNO ---
 load_dotenv() 
 
@@ -314,6 +318,7 @@ def scrape_besoccer_info(match_link):
 
         # Configuración de Selenium (Hardened para CI)
         chrome_options = Options()
+        chrome_options.page_load_strategy = 'eager' # <-- FIX CRÍTICO: No espera carga completa
         chrome_options.add_argument("--headless=new") 
         chrome_options.add_argument("--log-level=3")
         chrome_options.add_argument("--window-size=1280,720") # Reducido para ahorrar RAM
@@ -332,6 +337,7 @@ def scrape_besoccer_info(match_link):
         chrome_options.add_argument("--disable-notifications")
         chrome_options.add_argument("--disable-software-rasterizer") # Renderizado software eficiente
         chrome_options.add_argument("--disable-blink-features=AutomationControlled") # Evasión básica
+        chrome_options.add_argument("--dns-prefetch-disable")
         
         chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
         
@@ -535,6 +541,7 @@ def fetch_matches():
     logging.info(f"🚀 Arrancando navegador para {CONFIG['TEAM_NAME']}...")
     chrome_options = Options()
     # MODIFICACIÓN CRÍTICA: Headless New Mode + Pipe (Fix ReadTimeout)
+    chrome_options.page_load_strategy = 'eager' # <-- FIX CRÍTICO: No espera carga completa
     chrome_options.add_argument("--headless=new") 
     chrome_options.add_argument("--log-level=3")
     chrome_options.add_argument("--window-size=1280,720") # Reducido
@@ -553,6 +560,7 @@ def fetch_matches():
     chrome_options.add_argument("--disable-notifications")
     chrome_options.add_argument("--disable-software-rasterizer")
     chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+    chrome_options.add_argument("--dns-prefetch-disable")
 
     chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
     
