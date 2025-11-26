@@ -808,7 +808,7 @@ def run_sync():
 
                 needs_update = False
                 notify_telegram = False 
-                change_details = [] # --- INSTRUMENTACION DE CAMBIOS ---
+                change_details = [] 
 
                 # 1. CAMBIO DE HORA / FECHA
                 old_dt = parse_google_iso(ev['start'].get('dateTime'))
@@ -827,7 +827,7 @@ def run_sync():
                     # Analizar si es cambio critico (Score o TBC)
                     if "TBC" in old_title_norm != "TBC" in new_title_norm: notify_telegram = True
                     if match['score'] and match['score'] not in old_title_norm: notify_telegram = True
-                    change_details.append(f"📝 Título: {ev.get('summary')} -> {full_title}")
+                    change_details.append(f"📝 Título: '{ev.get('summary')}' -> '{full_title}'")
 
                 # 3. OTROS CAMBIOS
                 if not needs_update:
@@ -842,21 +842,26 @@ def run_sync():
                     new_loc_norm = normalize_text(event_body['location'])
                     if current_loc != new_loc_norm: 
                         needs_update = True
-                        change_details.append(f"📍 Lugar: {ev.get('location')} -> {event_body['location']}")
+                        change_details.append(f"📍 Lugar: '{ev.get('location')}' -> '{event_body['location']}'")
                 
                 if not needs_update:
-                    existing_overrides = ev.get('reminders', {}).get('overrides', [])
+                    # FIX CRÍTICO: Ordenar recordatorios de Google antes de comparar
+                    existing_overrides = ev.get('reminders', {}).get('overrides', []) or []
+                    existing_overrides.sort(key=lambda x: x['minutes'])
+                    
                     target_overrides = event_body['reminders'].get('overrides', [])
+                    # target_overrides ya viene ordenado por construcción
+                    
                     if existing_overrides != target_overrides: 
                         needs_update = True
-                        change_details.append("🔔 Recordatorios")
+                        change_details.append(f"🔔 Recordatorios (Google: {len(existing_overrides)} vs Local: {len(target_overrides)})")
 
                 if needs_update:
                     req = service.events().update(calendarId=CONFIG["CALENDAR_ID"], eventId=ev['id'], body=event_body)
                     execute_with_retry(req)
                     
                     changes_str = ", ".join(change_details)
-                    log_str = f"[+] 🔄 Actualizado: {base_title} | Cambios: {changes_str}"
+                    log_str = f"[+] 🔄 Actualizado: {base_title} | Temporada {season_display} | {icon} {comp_name} {log_suffix} | Cambios: {changes_str}"
                     logging.info(log_str)
                     
                     if notify_telegram: 
