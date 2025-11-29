@@ -184,6 +184,61 @@ def update_db(team_name, stadium, location):
         target_key = existing_key
         is_new_entry = False
     
+    today_str = datetime.datetime.now().strftime("%Y-%m-%d")
+
+    if is_new_entry:
+        logging.info(f"🆕 Nuevo equipo añadido a DB: {team_name} -> {stadium}")
+        STADIUM_DB[target_key] = {
+            "stadium": stadium,
+            "location": location,
+            "aliases": [team_name], # Auto-add self as alias
+            "update_date": today_str # CORREGIDO: key estandarizada
+        }
+    else:
+        # Verificar si cambia el estadio
+        current_data = STADIUM_DB[target_key]
+        old_stadium = current_data.get('stadium', '')
+        
+        # Actualizamos SI cambia el estadio O SI simplemente estamos refrescando la fecha
+        # Nota: Si Selenium tuvo éxito, queremos actualizar la fecha aunque el estadio sea el mismo
+        # para evitar re-escanearlo mañana.
+        STADIUM_DB[target_key]["stadium"] = stadium
+        STADIUM_DB[target_key]["location"] = location
+        STADIUM_DB[target_key]["update_date"] = today_str # CORREGIDO: key estandarizada
+        
+        if old_stadium != stadium:
+            logging.info(f"🏟️ Actualizando estadio para '{target_key}': '{old_stadium}' -> '{stadium}'")
+        else:
+            logging.info(f"✅ Estadio confirmado (Fecha actualizada): {stadium}")
+        
+        # Añadir el nombre actual como alias si no existe
+        if team_name not in current_data.get('aliases', []):
+            if normalize_team_key(team_name) != normalize_team_key(target_key):
+                STADIUM_DB[target_key].setdefault('aliases', []).append(team_name)
+                logging.info(f"🏷️ Nuevo alias añadido para '{target_key}': {team_name}")
+
+    # Actualizar Cache y Flag
+    norm_name = normalize_team_key(team_name)
+    ALIAS_CACHE[norm_name] = target_key
+    DB_DIRTY = True    global STADIUM_DB, ALIAS_CACHE, DB_DIRTY
+    
+    # Validación básica de calidad de datos
+    invalid_terms = ["campo municipal", "estadio local", "campo de futbol", "municipal", "ciudad deportiva"]
+    stadium_lower = stadium.lower()
+    if any(term == stadium_lower for term in invalid_terms) or len(stadium) < 4:
+        logging.info(f"⚠️ Estadio '{stadium}' descartado por ser genérico.")
+        return 
+
+    # Buscar si el equipo ya existe (incluso bajo otro nombre/alias)
+    _, _, existing_key = find_stadium_dynamic(team_name)
+    
+    target_key = team_name
+    is_new_entry = True
+
+    if existing_key:
+        target_key = existing_key
+        is_new_entry = False
+    
     if is_new_entry:
         logging.info(f"🆕 Nuevo equipo añadido a DB: {team_name} -> {stadium}")
         STADIUM_DB[target_key] = {
@@ -578,6 +633,31 @@ def execute_with_retry(request):
             else: raise e
     return None
 
+def is_stadium_stale(team_name):
+    """
+    Determina si un estadio necesita actualización (No existe o fecha > 60 días).
+    """
+    _, _, real_key = find_stadium_dynamic(team_name)
+    
+    # Caso 1: No existe en DB -> Necesita actualización
+    if not real_key: 
+        return True
+        
+    entry = STADIUM_DB.get(real_key, {})
+    last_date_str = entry.get('update_date') # Estandarizado a update_date
+    
+    # Caso 2: Existe pero no tiene fecha -> Necesita actualización
+    if not last_date_str: 
+        return True
+        
+    try:
+        # Caso 3: Verificar antigüedad (60 días / 2 meses)
+        last_date = datetime.datetime.strptime(last_date_str, "%Y-%m-%d").date()
+        age = (datetime.date.today() - last_date).days
+        return age > 60
+    except ValueError:
+        return True # Formato de fecha corrupto -> Actualizar
+
 def run_sync():
     load_stadium_db()
     driver = setup_driver() 
@@ -608,6 +688,11 @@ def run_sync():
         next_match_processed = False 
         
         for i, match in enumerate(matches):
+            telegram_msgs = []
+        now_utc = datetime.datetime.now(datetime.timezone.utc)
+        next_match_processed = False 
+        
+        for i, match in enumerate(matches):
             is_finished = 'fin' in match['status'].lower()
             if match['inicio'] < now_utc and not is_finished and match['id'] not in existing_events: continue
 
@@ -618,9 +703,16 @@ def run_sync():
             is_future = match['inicio'] > now_utc
             should_scan_stadium = False
             
+            # NUEVA LÓGICA: Solo escaneamos si es futuro, no es TBD, no hemos escaneado ya uno,
+            # Y los datos están caducados (stale) o faltantes.
             if is_future and not next_match_processed and not match['is_tbd']:
-                should_scan_stadium = True
-                next_match_processed = True 
+                if is_stadium_stale(match['local']):
+                    should_scan_stadium = True
+                    next_match_processed = True # Limitamos a 1 escaneo por ejecución por seguridad
+                    logging.info(f"🕵️ Datos de estadio antiguos o inexistentes para {match['local']}. Iniciando escaneo...")
+                else:
+                    # Si los datos son frescos (< 2 meses), no usamos Selenium.
+                    should_scan_stadium = False
             
             # Recuperar key real desde la función optimizada
             s_name_cache, s_loc_cache, real_db_key = find_stadium_dynamic(match['local'])
@@ -638,11 +730,16 @@ def run_sync():
                         s_name, s_loc = get_stadium_info(driver, match['local'], match.get('link'))
                         stadium_name = s_name
                         full_address = s_loc
-                        if s_name: update_db(match['local'], s_name, f"{s_name}, {match['local']}")
+                        
+                        # IMPORTANTE: Solo actualizamos la DB si obtenemos datos válidos
+                        if s_name: 
+                            update_db(match['local'], s_name, f"{s_name}, {match['local']}")
                         break 
                     except Exception as e:
                         logging.warning(f"⚠️ Error scraping estadio (Intento {attempt+1}/3): {e}")
                         if attempt == 2: 
+                            # Si fallamos 3 veces, usamos caché pero NO llamamos a update_db.
+                            # La fecha antigua se mantiene, y se reintentará en la próxima ejecución.
                             stadium_name = s_name_cache
                             full_address = s_loc_cache
             else:

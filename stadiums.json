@@ -6,7 +6,8 @@
             "Athletic Club",
             "Athletic Bilbao",
             "Athletic de Bilbao"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Atlético de Madrid": {
         "stadium": "Riyadh Air Metropolitano",
@@ -18,7 +19,8 @@
             "Atletico Madrid",
             "Wanda Metropolitano",
             "Cívitas Metropolitano"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Osasuna": {
         "stadium": "El Sadar",
@@ -27,7 +29,8 @@
             "C.A. Osasuna",
             "CA Osasuna",
             "Osasuna B"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Alavés": {
         "stadium": "Mendizorroza",
@@ -36,7 +39,8 @@
             "Deportivo Alavés",
             "Dep. Alavés",
             "D. Alavés"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Elche": {
         "stadium": "Martínez Valero",
@@ -44,7 +48,8 @@
         "aliases": [
             "Elche C.F.",
             "Elche CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Barcelona": {
         "stadium": "Spotify Camp Nou",
@@ -53,7 +58,8 @@
             "F.C. Barcelona",
             "FC Barcelona",
             "Barça"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Getafe": {
         "stadium": "Coliseum",
@@ -61,7 +67,8 @@
         "aliases": [
             "Getafe C.F.",
             "Getafe CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Girona": {
         "stadium": "Montilivi",
@@ -69,7 +76,8 @@
         "aliases": [
             "Girona F.C.",
             "Girona FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Levante": {
         "stadium": "Ciutat de València",
@@ -77,7 +85,8 @@
         "aliases": [
             "Levante U.D.",
             "Levante UD"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Rayo Vallecano": {
         "stadium": "Estadio de Vallecas",
@@ -85,7 +94,8 @@
         "aliases": [
             "Rayo",
             "R. Vallecano"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Celta": {
         "stadium": "Abanca-Balaídos",
@@ -95,7 +105,8 @@
             "Celta de Vigo",
             "Celta Vigo",
             "RC Celta"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Espanyol": {
         "stadium": "RCDE Stadium",
@@ -105,7 +116,8 @@
             "Espanyol de Barcelona",
             "RCD Espanyol",
             "Stage Front Stadium"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Mallorca": {
         "stadium": "Estadi Mallorca Son Moix",
@@ -114,7 +126,8 @@
             "R.C.D. Mallorca",
             "RCD Mallorca",
             "Real Mallorca"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Betis": {
         "stadium": "Estadio de La Cartuja",
@@ -122,7 +135,8 @@
         "aliases": [
             "Real Betis Balompié",
             "Real Betis"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Real Madrid": {
         "stadium": "Santiago Bernabéu",
@@ -131,7 +145,8 @@
             "Real Madrid C.F.",
             "R. Madrid",
             "Real Madrid CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Oviedo": {
         "stadium": "Carlos Tartiere",
@@ -139,7 +154,8 @@
         "aliases": [
             "Real Oviedo",
             "R. Oviedo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Real Sociedad": {
         "stadium": "Reale Arena",
@@ -148,7 +164,8 @@
             "R. Sociedad",
             "La Real",
             "Anoeta"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sevilla": {
         "stadium": "Ramón Sánchez-Pizjuán",
@@ -156,7 +173,8 @@
         "aliases": [
             "Sevilla F.C.",
             "Sevilla FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Valencia": {
         "stadium": "Mestalla",
@@ -164,7 +182,8 @@
         "aliases": [
             "Valencia C.F.",
             "Valencia CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Villarreal": {
         "stadium": "Estadio de la Cerámica",
@@ -172,7 +191,8 @@
         "aliases": [
             "Villarreal C.F.",
             "Villarreal CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Albacete": {
         "stadium": "Carlos Belmonte",
@@ -180,7 +200,8 @@
         "aliases": [
             "Albacete Balompié",
             "Alba"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Burgos": {
         "stadium": "El Plantío",
@@ -188,7 +209,8 @@
         "aliases": [
             "Burgos C.F.",
             "Burgos CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cádiz": {
         "stadium": "Nuevo Mirandilla",
@@ -197,7 +219,8 @@
             "Cádiz C.F.",
             "Cádiz CF",
             "Cadiz"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Castellón": {
         "stadium": "Nou Castalia",
@@ -206,7 +229,8 @@
             "C.D. Castellón",
             "CD Castellón",
             "CD Castellon"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Leganés": {
         "stadium": "Butarque",
@@ -215,7 +239,8 @@
             "C.D. Leganés",
             "CD Leganés",
             "Lega"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Mirandés": {
         "stadium": "Anduva",
@@ -223,7 +248,8 @@
         "aliases": [
             "C.D. Mirandés",
             "CD Mirandés"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Córdoba": {
         "stadium": "Nuevo Arcángel",
@@ -232,7 +258,8 @@
             "Córdoba C.F.",
             "Cordoba",
             "Córdoba CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cultural Leonesa": {
         "stadium": "Reino de León",
@@ -241,7 +268,8 @@
             "Cultural y Deportiva Leonesa",
             "Cultural",
             "La Cultu"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Andorra": {
         "stadium": "Estadi Nacional",
@@ -249,7 +277,8 @@
         "aliases": [
             "F.C. Andorra",
             "FC Andorra"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cartagena": {
         "stadium": "Cartagonova",
@@ -258,7 +287,8 @@
             "F.C. Cartagena",
             "FC Cartagena",
             "Efesé"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Granada": {
         "stadium": "Nuevo Los Cármenes",
@@ -266,7 +296,8 @@
         "aliases": [
             "Granada C.F.",
             "Granada CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Málaga": {
         "stadium": "La Rosaleda",
@@ -275,7 +306,8 @@
             "Málaga C.F.",
             "Malaga CF",
             "Málaga CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Racing de Santander": {
         "stadium": "El Sardinero",
@@ -283,7 +315,8 @@
         "aliases": [
             "Racing",
             "Real Racing Club"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Real Club Deportivo": {
         "stadium": "Abanca-Riazor",
@@ -293,7 +326,8 @@
             "Deportivo de La Coruña",
             "Dépor",
             "RC Deportivo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sporting de Gijón": {
         "stadium": "El Molinón - Enrique Castro Quini",
@@ -302,7 +336,8 @@
             "Real Sporting de Gijón",
             "Sporting",
             "Real Sporting"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Valladolid": {
         "stadium": "José Zorrilla",
@@ -311,7 +346,8 @@
             "Real Valladolid C.F.",
             "Real Valladolid",
             "Pucela"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Zaragoza": {
         "stadium": "Ibercaja Estadio",
@@ -319,7 +355,8 @@
         "aliases": [
             "Real Zaragoza",
             "R. Zaragoza"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Eibar": {
         "stadium": "Ipurua",
@@ -327,7 +364,8 @@
         "aliases": [
             "S.D. Eibar",
             "SD Eibar"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Huesca": {
         "stadium": "El Alcoraz",
@@ -335,7 +373,8 @@
         "aliases": [
             "S.D. Huesca",
             "SD Huesca"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Almería": {
         "stadium": "UD Almería Stadium",
@@ -345,7 +384,8 @@
             "UD Almería",
             "Power Horse Stadium",
             "Juegos Mediterráneos"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Las Palmas": {
         "stadium": "Estadio de Gran Canaria",
@@ -353,7 +393,8 @@
         "aliases": [
             "U.D. Las Palmas",
             "UD Las Palmas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Alcorcón": {
         "stadium": "Santo Domingo",
@@ -361,7 +402,8 @@
         "aliases": [
             "A.D. Alcorcón",
             "AD Alcorcón"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ceuta": {
         "stadium": "Alfonso Murube",
@@ -370,7 +412,8 @@
             "A.D. Ceuta F.C.",
             "AD Ceuta",
             "AD Ceuta FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Mérida": {
         "stadium": "Estadio Romano José Fouto",
@@ -379,7 +422,8 @@
             "A.D. Mérida",
             "AD Mérida",
             "Mérida AD"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Algeciras": {
         "stadium": "Nuevo Mirador",
@@ -387,7 +431,8 @@
         "aliases": [
             "Algeciras C.F.",
             "Algeciras CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Antequera": {
         "stadium": "El Maulí",
@@ -395,7 +440,8 @@
         "aliases": [
             "Antequera C.F.",
             "Antequera CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Arenas de Getxo": {
         "stadium": "Gobela",
@@ -404,7 +450,8 @@
             "Arenas Club de Getxo",
             "Arenas Club",
             "Arenas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Atlético Sanluqueño": {
         "stadium": "El Palmar",
@@ -412,7 +459,8 @@
         "aliases": [
             "Atlético Sanluqueño C.F.",
             "At. Sanluqueño"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Barakaldo": {
         "stadium": "Lasesarre",
@@ -420,7 +468,8 @@
         "aliases": [
             "Barakaldo C.F.",
             "Barakaldo CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Arenteiro": {
         "stadium": "Espiñedo",
@@ -428,7 +477,8 @@
         "aliases": [
             "C.D. Arenteiro",
             "CD Arenteiro"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Eldense": {
         "stadium": "Nuevo Pepico Amat",
@@ -436,7 +486,8 @@
         "aliases": [
             "C.D. Eldense",
             "CD Eldense"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Guadalajara": {
         "stadium": "Pedro Escartín",
@@ -445,7 +496,8 @@
             "C.D. Guadalajara",
             "CD Guadalajara",
             "Dépor Guadalajara"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Lugo": {
         "stadium": "Anxo Carro",
@@ -453,7 +505,8 @@
         "aliases": [
             "C.D. Lugo",
             "CD Lugo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Tenerife": {
         "stadium": "Heliodoro Rodríguez López",
@@ -461,7 +514,8 @@
         "aliases": [
             "C.D. Tenerife",
             "CD Tenerife"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Teruel": {
         "stadium": "Pinilla",
@@ -469,7 +523,8 @@
         "aliases": [
             "C.D. Teruel",
             "CD Teruel"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Europa": {
         "stadium": "Nou Sardenya",
@@ -477,7 +532,8 @@
         "aliases": [
             "C.E. Europa",
             "CE Europa"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Talavera": {
         "stadium": "El Prado",
@@ -486,7 +542,8 @@
             "C.F. Talavera de la Reina",
             "CF Talavera",
             "Talavera de la Reina"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cacereño": {
         "stadium": "Príncipe Felipe",
@@ -494,7 +551,8 @@
         "aliases": [
             "C.P. Cacereño",
             "CP Cacereño"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Gimnàstic": {
         "stadium": "Nou Estadi Costa Daurada",
@@ -503,7 +561,8 @@
             "Gimnàstic de Tarragona",
             "Nàstic",
             "Nastic"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Hércules": {
         "stadium": "José Rico Pérez",
@@ -512,7 +571,8 @@
             "Hércules de Alicante C.F.",
             "Hercules",
             "Hércules CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Torremolinos": {
         "stadium": "El Pozuelo",
@@ -520,7 +580,8 @@
         "aliases": [
             "Juventud Torremolinos C.F.",
             "J. Torremolinos"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Unión Adarve": {
         "stadium": "Vicente del Bosque",
@@ -528,7 +589,8 @@
         "aliases": [
             "Adarve",
             "Union Adarve"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Marbella": {
         "stadium": "Dama de Noche",
@@ -536,7 +598,8 @@
         "aliases": [
             "Marbella F.C.",
             "Marbella FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ourense CF": {
         "stadium": "O Couto",
@@ -544,7 +607,8 @@
         "aliases": [
             "Ourense C.F.",
             "Ourense"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Pontevedra": {
         "stadium": "Pasarón",
@@ -552,7 +616,8 @@
         "aliases": [
             "Pontevedra C.F.",
             "Pontevedra CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Racing de Ferrol": {
         "stadium": "A Malata",
@@ -560,7 +625,8 @@
         "aliases": [
             "Racing Club de Ferrol",
             "R. Ferrol"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Real Avilés": {
         "stadium": "Román Suárez Puerta",
@@ -568,7 +634,8 @@
         "aliases": [
             "Real Avilés Industrial",
             "R. Avilés"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Real Murcia": {
         "stadium": "Enrique Roca",
@@ -577,7 +644,8 @@
             "Real Murcia C.F.",
             "R. Murcia",
             "Nueva Condomina"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Recreativo": {
         "stadium": "Nuevo Colombino",
@@ -585,7 +653,8 @@
         "aliases": [
             "Recreativo de Huelva",
             "Recre"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ponferradina": {
         "stadium": "El Toralín",
@@ -594,7 +663,8 @@
             "S.D. Ponferradina",
             "SD Ponferradina",
             "La Ponfe"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Tarazona": {
         "stadium": "Municipal de Tarazona",
@@ -602,7 +672,8 @@
         "aliases": [
             "S.D. Tarazona",
             "SD Tarazona"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ibiza": {
         "stadium": "Can Misses",
@@ -610,7 +681,8 @@
         "aliases": [
             "U.D. Ibiza",
             "UD Ibiza"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Unionistas": {
         "stadium": "Reina Sofía",
@@ -619,7 +691,8 @@
             "Unionistas de Salamanca C.F.",
             "Unionistas CF",
             "Unionistas Salamanca"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Zamora": {
         "stadium": "Ruta de la Plata",
@@ -627,7 +700,8 @@
         "aliases": [
             "Zamora C.F.",
             "Zamora CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Águilas": {
         "stadium": "El Rubial",
@@ -635,7 +709,8 @@
         "aliases": [
             "Águilas F.C.",
             "Aguilas FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Astorga": {
         "stadium": "La Eragudina",
@@ -643,7 +718,8 @@
         "aliases": [
             "Atlético Astorga F.C.",
             "At. Astorga"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Antoniano": {
         "stadium": "Municipal de Lebrija",
@@ -651,7 +727,8 @@
         "aliases": [
             "Atlético Antoniano",
             "CA Antoniano"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Bergantiños": {
         "stadium": "As Eiroas",
@@ -659,7 +736,8 @@
         "aliases": [
             "Bergantiños F.C.",
             "Bergantiños FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Alcoyano": {
         "stadium": "El Collao",
@@ -667,7 +745,8 @@
         "aliases": [
             "C.D. Alcoyano",
             "CD Alcoyano"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Alfaro": {
         "stadium": "La Molineta",
@@ -675,7 +754,8 @@
         "aliases": [
             "C.D. Alfaro",
             "CD Alfaro"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Atlético Baleares": {
         "stadium": "Estadi Balear",
@@ -684,7 +764,8 @@
             "C.D. Atlético Baleares",
             "At. Baleares",
             "Atletico Baleares"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Badajoz": {
         "stadium": "Nuevo Vivero",
@@ -692,7 +773,8 @@
         "aliases": [
             "C.D. Badajoz",
             "CD Badajoz"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Calahorra": {
         "stadium": "La Planilla",
@@ -700,7 +782,8 @@
         "aliases": [
             "C.D. Calahorra",
             "CD Calahorra"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Moscardó": {
         "stadium": "Román Valero",
@@ -709,7 +792,8 @@
             "C.D. Colonia Moscardó",
             "CD Moscardó",
             "Colonia Moscardo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Coria": {
         "stadium": "La Isla",
@@ -717,7 +801,8 @@
         "aliases": [
             "C.D. Coria",
             "CD Coria"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Don Benito": {
         "stadium": "Vicente Sanz",
@@ -725,7 +810,8 @@
         "aliases": [
             "C.D. Don Benito",
             "CD Don Benito"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Estepona": {
         "stadium": "Francisco Muñoz Pérez",
@@ -733,7 +819,8 @@
         "aliases": [
             "C.D. Estepona",
             "CD Estepona"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Celta Fortuna": {
         "stadium": "Campo de Barreiro",
@@ -742,7 +829,8 @@
             "Celta B",
             "Celta de Vigo B",
             "RC Celta B"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Guijuelo": {
         "stadium": "Municipal de Guijuelo",
@@ -750,7 +838,8 @@
         "aliases": [
             "C.D. Guijuelo",
             "CD Guijuelo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Illescas": {
         "stadium": "Municipal de Illescas",
@@ -758,7 +847,8 @@
         "aliases": [
             "C.D. Illescas",
             "CD Illescas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Izarra": {
         "stadium": "Merkatondoa",
@@ -766,7 +856,8 @@
         "aliases": [
             "C.D. Izarra",
             "CD Izarra"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Laredo": {
         "stadium": "San Lorenzo",
@@ -775,7 +866,8 @@
             "C.D. Laredo",
             "CD Laredo",
             "Charles"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Lealtad": {
         "stadium": "Las Callejas",
@@ -784,7 +876,8 @@
             "C.D. Lealtad",
             "CD Lealtad",
             "Lealtad de Villaviciosa"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Manchego": {
         "stadium": "Rey Juan Carlos I",
@@ -793,7 +886,8 @@
             "C.D. Manchego Ciudad Real",
             "Manchego Ciudad Real",
             "CD Manchego"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Mensajero": {
         "stadium": "Silvestre Carrillo",
@@ -801,7 +895,8 @@
         "aliases": [
             "C.D. Mensajero",
             "CD Mensajero"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Minera": {
         "stadium": "Ángel Celdrán",
@@ -810,7 +905,8 @@
             "C.D. Minera",
             "CD Minera",
             "Deportiva Minera"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Móstoles": {
         "stadium": "El Soto",
@@ -819,7 +915,8 @@
             "C.D. Móstoles URJC",
             "CD Mostoles",
             "Móstoles URJC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Navalcarnero": {
         "stadium": "Mariano González",
@@ -828,7 +925,8 @@
             "C.D. Navalcarnero",
             "CD Navalcarnero",
             "Artístico Navalcarnero"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Numancia": {
         "stadium": "Los Pajaritos",
@@ -836,7 +934,8 @@
         "aliases": [
             "C.D. Numancia de Soria",
             "CD Numancia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Betis Deportivo": {
         "stadium": "Ciudad Deportiva Luis del Sol",
@@ -844,7 +943,8 @@
         "aliases": [
             "Betis B",
             "Real Betis B"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Tudelano": {
         "stadium": "Ciudad de Tudela",
@@ -852,7 +952,8 @@
         "aliases": [
             "C.D. Tudelano",
             "CD Tudelano"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Yaiza": {
         "stadium": "Municipal de Yaiza",
@@ -861,7 +962,8 @@
             "C.D. Unión Sur Yaiza",
             "US Yaiza",
             "Unión Sur Yaiza"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Andratx": {
         "stadium": "Sa Plana",
@@ -869,7 +971,8 @@
         "aliases": [
             "C.E. Andratx",
             "CE Andratx"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Manresa": {
         "stadium": "El Congost",
@@ -877,7 +980,8 @@
         "aliases": [
             "C.E. Manresa",
             "CE Manresa"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sabadell": {
         "stadium": "Nova Creu Alta",
@@ -886,7 +990,8 @@
             "C.E. Sabadell F.C.",
             "CE Sabadell",
             "Sabadell FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Terrassa": {
         "stadium": "Olímpic de Terrassa",
@@ -895,7 +1000,8 @@
             "C.E. Terrassa F.C.",
             "CE Terrassa",
             "Terrassa FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Badalona Futur": {
         "stadium": "Estadi Municipal de Badalona",
@@ -903,7 +1009,8 @@
         "aliases": [
             "C.F. Badalona Futur",
             "CF Badalona Futur"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Fuenlabrada": {
         "stadium": "Fernando Torres",
@@ -912,7 +1019,8 @@
             "C.F. Fuenlabrada",
             "CF Fuenlabrada",
             "Fuenla"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Intercity": {
         "stadium": "Antonio Solana",
@@ -920,7 +1028,8 @@
         "aliases": [
             "C.F. Intercity",
             "CF Intercity"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "La Nucía": {
         "stadium": "Camilo Cano",
@@ -928,7 +1037,8 @@
         "aliases": [
             "C.F. La Nucía",
             "CF La Nucía"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Rayo Majadahonda": {
         "stadium": "Cerro del Espino",
@@ -936,7 +1046,8 @@
         "aliases": [
             "C.F. Rayo Majadahonda",
             "CF Rayo Majadahonda"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Villanovense": {
         "stadium": "Municipal Villanovense",
@@ -944,7 +1055,8 @@
         "aliases": [
             "C.F. Villanovense",
             "CF Villanovense"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Lleida": {
         "stadium": "Camp d'Esports",
@@ -952,7 +1064,8 @@
         "aliases": [
             "Club Lleida Esportiu",
             "Lleida Esportiu"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Marino de Luanco": {
         "stadium": "Miramar",
@@ -960,7 +1073,8 @@
         "aliases": [
             "Club Marino de Luanco",
             "Marino Luanco"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Coruxo": {
         "stadium": "O Vao",
@@ -968,7 +1082,8 @@
         "aliases": [
             "Coruxo F.C.",
             "Coruxo FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Gernika": {
         "stadium": "Urbieta",
@@ -976,7 +1091,8 @@
         "aliases": [
             "Gernika Club",
             "SD Gernika"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Torrelavega": {
         "stadium": "El Malecón",
@@ -984,7 +1100,8 @@
         "aliases": [
             "Gimnástica de Torrelavega",
             "RS Gimnástica"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Segoviana": {
         "stadium": "La Albuera",
@@ -993,7 +1110,8 @@
             "Gimnástica Segoviana C.F.",
             "Gimnástica Segoviana",
             "Segoviana"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Linares": {
         "stadium": "Linarejos",
@@ -1001,7 +1119,8 @@
         "aliases": [
             "Linares Deportivo",
             "Linares"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Orihuela": {
         "stadium": "Los Arcos",
@@ -1009,7 +1128,8 @@
         "aliases": [
             "Orihuela C.F.",
             "Orihuela CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ávila": {
         "stadium": "Adolfo Suárez",
@@ -1017,7 +1137,8 @@
         "aliases": [
             "Real Ávila C.F.",
             "Real Ávila"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Linense": {
         "stadium": "Municipal de La Línea",
@@ -1025,7 +1146,8 @@
         "aliases": [
             "Real Balompédica Linense",
             "Balona"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Jaén": {
         "stadium": "Nuevo La Victoria",
@@ -1033,7 +1155,8 @@
         "aliases": [
             "Real Jaén C.F.",
             "Real Jaén"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Real Unión": {
         "stadium": "Stadium Gal",
@@ -1041,7 +1164,8 @@
         "aliases": [
             "Real Unión Club",
             "Real Union"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Salamanca UDS": {
         "stadium": "Helmántico",
@@ -1049,7 +1173,8 @@
         "aliases": [
             "Salamanca C.F. UDS",
             "Salamanca CF UDS"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "San Fernando CD": {
         "stadium": "Iberoamericano 2010",
@@ -1057,7 +1182,8 @@
         "aliases": [
             "San Fernando C.D.",
             "San Fernando CD"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Amorebieta": {
         "stadium": "Urritxe",
@@ -1065,7 +1191,8 @@
         "aliases": [
             "S.D. Amorebieta",
             "SD Amorebieta"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Compostela": {
         "stadium": "Verónica Boquete",
@@ -1074,7 +1201,8 @@
             "S.D. Compostela",
             "SD Compostela",
             "Compos"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Formentera": {
         "stadium": "Municipal de Sant Francesc",
@@ -1082,7 +1210,8 @@
         "aliases": [
             "S.D. Formentera",
             "SD Formentera"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "SD Logroñés": {
         "stadium": "Las Gaunas",
@@ -1090,7 +1219,8 @@
         "aliases": [
             "S.D. Logroñés",
             "SDL"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sestao": {
         "stadium": "Las Llanas",
@@ -1098,7 +1228,8 @@
         "aliases": [
             "Sestao River Club",
             "Sestao River"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Conquense": {
         "stadium": "La Fuensanta",
@@ -1106,7 +1237,8 @@
         "aliases": [
             "U.B. Conquense",
             "UB Conquense"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "UCAM Murcia": {
         "stadium": "La Condomina",
@@ -1115,7 +1247,8 @@
             "U.C.A.M. Murcia C.F.",
             "UCAM Murcia CF",
             "UCAM"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Alzira": {
         "stadium": "Luis Suñer Picó",
@@ -1123,7 +1256,8 @@
         "aliases": [
             "U.D. Alzira",
             "UD Alzira"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Barbastro": {
         "stadium": "Municipal de Deportes",
@@ -1131,7 +1265,8 @@
         "aliases": [
             "U.D. Barbastro",
             "UD Barbastro"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Llanera": {
         "stadium": "Pepe Quimarán",
@@ -1139,7 +1274,8 @@
         "aliases": [
             "U.D. Llanera",
             "UD Llanera"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "UD Logroñés": {
         "stadium": "Las Gaunas",
@@ -1148,7 +1284,8 @@
             "U.D. Logroñés",
             "UDL",
             "Logroñés"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Melilla": {
         "stadium": "Álvarez Claro",
@@ -1156,7 +1293,8 @@
         "aliases": [
             "U.D. Melilla",
             "UD Melilla"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Montijo": {
         "stadium": "Emilio Macarro",
@@ -1164,7 +1302,8 @@
         "aliases": [
             "U.D. Montijo",
             "UD Montijo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "UD Ourense": {
         "stadium": "O Couto",
@@ -1172,7 +1311,8 @@
         "aliases": [
             "U.D. Ourense",
             "UDO"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "San Sebastián de los Reyes": {
         "stadium": "Matapiñonera",
@@ -1181,7 +1321,8 @@
             "U.D. San Sebastián de los Reyes",
             "San Sebastián de los Reyes",
             "UD Sanse"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Socuéllamos": {
         "stadium": "Paquito Giménez",
@@ -1189,7 +1330,8 @@
         "aliases": [
             "U.D. Socuéllamos",
             "UD Socuéllamos"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cornellà": {
         "stadium": "Nou Municipal de Cornellà",
@@ -1197,7 +1339,8 @@
         "aliases": [
             "U.E. Cornellà",
             "UE Cornellà"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Olot": {
         "stadium": "Municipal d'Olot",
@@ -1205,7 +1348,8 @@
         "aliases": [
             "U.E. Olot",
             "UE Olot"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sant Andreu": {
         "stadium": "Narcís Sala",
@@ -1213,7 +1357,8 @@
         "aliases": [
             "U.E. Sant Andreu",
             "UE Sant Andreu"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Langreo": {
         "stadium": "Ganzábal",
@@ -1221,7 +1366,8 @@
         "aliases": [
             "U.P. Langreo",
             "UP Langreo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Utebo": {
         "stadium": "Santa Ana",
@@ -1229,14 +1375,16 @@
         "aliases": [
             "Utebo F.C.",
             "Utebo FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Xerez CD": {
         "stadium": "Chapín",
         "location": "Estadio Municipal de Chapín, Jerez de la Frontera, España",
         "aliases": [
             "Xerez C.D."
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Xerez DFC": {
         "stadium": "Chapín",
@@ -1244,14 +1392,16 @@
         "aliases": [
             "Xerez Deportivo F.C.",
             "Xerez Deportivo FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Yeclano": {
         "stadium": "La Constitución",
         "location": "Estadio La Constitución, Yecla, España",
         "aliases": [
             "Yeclano Deportivo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Alondras": {
         "stadium": "O Morrazo",
@@ -1259,7 +1409,8 @@
         "aliases": [
             "Alondras C.F.",
             "Alondras CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Arosa": {
         "stadium": "A Lomba",
@@ -1267,7 +1418,8 @@
         "aliases": [
             "Arosa S.C.",
             "Arosa SC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Arteixo": {
         "stadium": "Ponte dos Brozos",
@@ -1275,7 +1427,8 @@
         "aliases": [
             "Atlético Arteixo",
             "At. Arteixo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Barbadás": {
         "stadium": "Os Carrís",
@@ -1283,7 +1436,8 @@
         "aliases": [
             "U.D. Barbadás",
             "UD Barbadás"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Betanzos": {
         "stadium": "García Hermanos",
@@ -1291,7 +1445,8 @@
         "aliases": [
             "Betanzos C.F.",
             "Betanzos CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Boiro": {
         "stadium": "Barraña",
@@ -1299,7 +1454,8 @@
         "aliases": [
             "C.D. Boiro",
             "CD Boiro"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Estradense": {
         "stadium": "Novo Municipal",
@@ -1307,7 +1463,8 @@
         "aliases": [
             "C.D. Estradense",
             "CD Estradense"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Noia": {
         "stadium": "Julio Mato",
@@ -1315,7 +1472,8 @@
         "aliases": [
             "C.F. Noia",
             "CF Noia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sarriana": {
         "stadium": "A Ribela",
@@ -1323,7 +1481,8 @@
         "aliases": [
             "S.D. Sarriana",
             "SD Sarriana"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Silva": {
         "stadium": "A Grela",
@@ -1331,7 +1490,8 @@
         "aliases": [
             "Silva S.D.",
             "Silva SD"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Somozas": {
         "stadium": "Alcalde Manuel Candocia",
@@ -1339,7 +1499,8 @@
         "aliases": [
             "U.D. Somozas",
             "UD Somozas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Valladares": {
         "stadium": "A Gándara",
@@ -1347,7 +1508,8 @@
         "aliases": [
             "C.D. Valladares",
             "CD Valladares"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Villalonga": {
         "stadium": "San Pedro",
@@ -1355,7 +1517,8 @@
         "aliases": [
             "Villalonga F.C.",
             "Villalonga FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Viveiro": {
         "stadium": "Cantarrana",
@@ -1363,7 +1526,8 @@
         "aliases": [
             "Viveiro C.F.",
             "Viveiro CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Avilés Stadium": {
         "stadium": "Muro de Zaro",
@@ -1371,14 +1535,16 @@
         "aliases": [
             "Avilés Stadium C.F.",
             "Avilés Stadium CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Caudal": {
         "stadium": "Hermanos Antuña",
         "location": "Estadio Hermanos Antuña, Mieres, España",
         "aliases": [
             "Caudal Deportivo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Colunga": {
         "stadium": "Santianes",
@@ -1386,7 +1552,8 @@
         "aliases": [
             "C.D. Colunga",
             "CD Colunga"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Covadonga": {
         "stadium": "Álvarez Rabanal",
@@ -1394,7 +1561,8 @@
         "aliases": [
             "C.D. Covadonga",
             "CD Covadonga"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Llanes": {
         "stadium": "San José",
@@ -1402,7 +1570,8 @@
         "aliases": [
             "C.D. Llanes",
             "CD Llanes"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Mosconia": {
         "stadium": "Marqués de la Vega de Anzo",
@@ -1410,7 +1579,8 @@
         "aliases": [
             "C.D. Mosconia",
             "CD Mosconia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Praviano": {
         "stadium": "Santa Catalina",
@@ -1418,7 +1588,8 @@
         "aliases": [
             "C.D. Praviano",
             "CD Praviano"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Tuilla": {
         "stadium": "El Candín",
@@ -1426,14 +1597,16 @@
         "aliases": [
             "C.D. Tuilla",
             "CD Tuilla"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Condal": {
         "stadium": "Alejandro Ortea",
         "location": "Estadio Alejandro Ortea, Noreña, España",
         "aliases": [
             "Condal Club"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "San Martín": {
         "stadium": "El Florán",
@@ -1441,7 +1614,8 @@
         "aliases": [
             "E.I. San Martín",
             "EI San Martín"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "L'Entregu": {
         "stadium": "Nuevo Nalón",
@@ -1449,14 +1623,16 @@
         "aliases": [
             "L'Entregu C.F.",
             "L'Entregu CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Titánico": {
         "stadium": "Las Tolvas",
         "location": "Campo de Las Tolvas, Pola de Laviana, España",
         "aliases": [
             "Real Titánico"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ceares": {
         "stadium": "La Cruz",
@@ -1464,7 +1640,8 @@
         "aliases": [
             "U.C. Ceares",
             "UC Ceares"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Gijón Industrial": {
         "stadium": "Santa Cruz",
@@ -1472,7 +1649,8 @@
         "aliases": [
             "U.D. Gijón Industrial",
             "UD Gijón Industrial"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Urraca": {
         "stadium": "La Corredoria",
@@ -1480,7 +1658,8 @@
         "aliases": [
             "Urraca C.F.",
             "Urraca CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Albericia": {
         "stadium": "Juan Hormaechea",
@@ -1488,7 +1667,8 @@
         "aliases": [
             "Atlético Albericia",
             "At. Albericia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Barquereño": {
         "stadium": "El Castañar",
@@ -1496,7 +1676,8 @@
         "aliases": [
             "C.D. Barquereño",
             "CD Barquereño"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Bezana": {
         "stadium": "Municipal de Bezana",
@@ -1504,7 +1685,8 @@
         "aliases": [
             "C.D. Bezana",
             "CD Bezana"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cayón": {
         "stadium": "Fernando Astobiza",
@@ -1512,7 +1694,8 @@
         "aliases": [
             "C.D. Cayón",
             "CD Cayón"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Colindres": {
         "stadium": "El Carmen",
@@ -1520,7 +1703,8 @@
         "aliases": [
             "C.D. Colindres",
             "CD Colindres"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Guarnizo": {
         "stadium": "El Pilar",
@@ -1528,7 +1712,8 @@
         "aliases": [
             "C.D. Guarnizo",
             "CD Guarnizo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Naval": {
         "stadium": "San Francisco",
@@ -1536,7 +1721,8 @@
         "aliases": [
             "C.D. Naval",
             "CD Naval"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Revilla": {
         "stadium": "El Crucero",
@@ -1544,7 +1730,8 @@
         "aliases": [
             "C.D. Revilla",
             "CD Revilla"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Tropezón": {
         "stadium": "Santa Ana",
@@ -1553,7 +1740,8 @@
             "C.D. Tropezón",
             "CD Tropezón",
             "Trope"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Castro": {
         "stadium": "Riomar",
@@ -1561,7 +1749,8 @@
         "aliases": [
             "Castro FC",
             "Castro F.C."
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cultural Guarnizo": {
         "stadium": "El Pilar",
@@ -1569,7 +1758,8 @@
         "aliases": [
             "C. Guarnizo",
             "Cultural de Guarnizo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Barreda": {
         "stadium": "Solvay",
@@ -1577,14 +1767,16 @@
         "aliases": [
             "SD Barreda",
             "Barreda Balompié"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Gama": {
         "stadium": "Santa María",
         "location": "Campo de Santa María, Gama, España",
         "aliases": [
             "SD Gama"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Solares": {
         "stadium": "La Estación",
@@ -1592,14 +1784,16 @@
         "aliases": [
             "SD Solares",
             "Solares-Medio Cudeyo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Torina": {
         "stadium": "El Alpedre",
         "location": "Campo Municipal El Alpedre, Bárcena de Pie de Concha, España",
         "aliases": [
             "SD Torina"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Vimenor": {
         "stadium": "La Vidriera",
@@ -1607,21 +1801,24 @@
         "aliases": [
             "SD Vimenor",
             "CF Vimenor"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sámano": {
         "stadium": "Vallegón",
         "location": "Campo de Vallegón, Sámano, España",
         "aliases": [
             "UD Sámano"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Velarde": {
         "stadium": "La Maruca",
         "location": "Campo Municipal La Maruca, Muriedas, España",
         "aliases": [
             "Velarde CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Anaitasuna": {
         "stadium": "Txerloia",
@@ -1629,35 +1826,40 @@
         "aliases": [
             "CD Anaitasuna",
             "Anaitasuna FT"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ariznabarra": {
         "stadium": "Municipal Ariznabarra",
         "location": "Campo Municipal Ariznabarra, Vitoria-Gasteiz, España",
         "aliases": [
             "CD Ariznabarra"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Derio": {
         "stadium": "Ibaiondo",
         "location": "Campo Ibaiondo, Derio, España",
         "aliases": [
             "CD Derio"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Lagun Onak": {
         "stadium": "Garmendipe",
         "location": "Estadio Garmendipe, Azpeitia, España",
         "aliases": [
             "CD Lagun Onak"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Padura": {
         "stadium": "Santo Cristo",
         "location": "Campo Santo Cristo, Arrigorriaga, España",
         "aliases": [
             "CD Padura"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Pasaia": {
         "stadium": "Don Bosco",
@@ -1666,7 +1868,8 @@
             "CD Pasajes",
             "Pasajes",
             "Pasaia KE"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "San Ignacio": {
         "stadium": "Adurtzabal",
@@ -1674,21 +1877,24 @@
         "aliases": [
             "CD San Ignacio",
             "San Ignacio CD"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Santurtzi": {
         "stadium": "San Jorge",
         "location": "Campo Municipal San Jorge, Santurtzi, España",
         "aliases": [
             "CD Santurtzi"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Portugalete": {
         "stadium": "La Florida",
         "location": "Estadio La Florida, Portugalete, España",
         "aliases": [
             "Club Portugalete"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cultural Durango": {
         "stadium": "Tabira",
@@ -1697,42 +1903,48 @@
             "SCD Durango",
             "Cultural de Durango",
             "Durango"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Beasain": {
         "stadium": "Loinaz",
         "location": "Estadio Municipal de Loinaz, Beasain, España",
         "aliases": [
             "SD Beasain"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Deusto": {
         "stadium": "Etxezuri",
         "location": "Campo de Etxezuri, Bilbao, España",
         "aliases": [
             "SD Deusto"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Leioa": {
         "stadium": "Sarriena",
         "location": "Instalaciones de Sarriena, Leioa, España",
         "aliases": [
             "SD Leioa"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Aretxabaleta": {
         "stadium": "Ibarra",
         "location": "Campo Municipal de Ibarra, Aretxabaleta, España",
         "aliases": [
             "UD Aretxabaleta"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Urduliz": {
         "stadium": "Iparralde",
         "location": "Estadio Iparralde, Urduliz, España",
         "aliases": [
             "Urduliz FT"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "L'Hospitalet": {
         "stadium": "Estadi Municipal",
@@ -1740,21 +1952,24 @@
         "aliases": [
             "CE L'Hospitalet",
             "Hospitalet"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Montañesa": {
         "stadium": "Nou Barris",
         "location": "Camp Municipal de Nou Barris, Barcelona, España",
         "aliases": [
             "CF Montañesa"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Peralada": {
         "stadium": "Municipal de Peralada",
         "location": "Camp Municipal de Peralada, Peralada, España",
         "aliases": [
             "CF Peralada"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "San Cristóbal": {
         "stadium": "Ca n'Anglada",
@@ -1762,14 +1977,16 @@
         "aliases": [
             "CP San Cristóbal",
             "San Cristobal"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Vilafranca": {
         "stadium": "Municipal de Vilafranca",
         "location": "Camp Municipal de Vilafranca, Vilafranca del Penedès, España",
         "aliases": [
             "FC Vilafranca"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Grama": {
         "stadium": "Nou Municipal",
@@ -1777,7 +1994,8 @@
         "aliases": [
             "FE Grama",
             "Fundació Grama"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Reus Reddis": {
         "stadium": "Estadi Municipal",
@@ -1785,35 +2003,40 @@
         "aliases": [
             "Reus FC Reddis",
             "Reus Reddis"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Castelldefels": {
         "stadium": "Els Canyars",
         "location": "Camp Municipal Els Canyars, Castelldefels, España",
         "aliases": [
             "UE Castelldefels"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Rapitenca": {
         "stadium": "La Devesa",
         "location": "Estadi Municipal La Devesa, Sant Carles de la Ràpita, España",
         "aliases": [
             "UE Rapitenca"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sants": {
         "stadium": "L'Energia",
         "location": "Camp de Futbol de l'Energia, Barcelona, España",
         "aliases": [
             "UE Sants"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Tona": {
         "stadium": "Municipal de Tona",
         "location": "Camp Municipal de Tona, Tona, España",
         "aliases": [
             "UE Tona"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Vilassar de Mar": {
         "stadium": "Xevi Ramón",
@@ -1821,77 +2044,88 @@
         "aliases": [
             "UE Vilassar de Mar",
             "Vilassar"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Atzeneta": {
         "stadium": "El Regit",
         "location": "Camp El Regit, Atzeneta d'Albaida, España",
         "aliases": [
             "Atzeneta UE"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Acero": {
         "stadium": "El Fornás",
         "location": "Estadio El Fornás, Puerto de Sagunto, España",
         "aliases": [
             "CD Acero"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Burriana": {
         "stadium": "Joan Planelles",
         "location": "Estadio Municipal Joan Planelles, Burriana, España",
         "aliases": [
             "CD Burriana"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Castellonense": {
         "stadium": "L'Almenà",
         "location": "Poliesportiu Municipal L'Almenà, Villanueva de Castellón, España",
         "aliases": [
             "CD Castellonense"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Roda": {
         "stadium": "Pamesa Cerámica",
         "location": "Ciudad Deportiva Pamesa Cerámica, Vila-real, España",
         "aliases": [
             "CD Roda"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Soneja": {
         "stadium": "El Arco",
         "location": "Campo Municipal El Arco, Soneja, España",
         "aliases": [
             "CD Soneja"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Utiel": {
         "stadium": "La Celadilla",
         "location": "Estadio La Celadilla, Utiel, España",
         "aliases": [
             "CD Utiel"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "CF Benidorm": {
         "stadium": "Guillermo Amor",
         "location": "Estadio Guillermo Amor, Benidorm, España",
         "aliases": [
             "Benidorm CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Gandía": {
         "stadium": "Guillermo Olagüe",
         "location": "Estadio Guillermo Olagüe, Gandía, España",
         "aliases": [
             "CF Gandía"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Crevillente": {
         "stadium": "Enrique Miralles",
         "location": "Estadio Enrique Miralles, Crevillent, España",
         "aliases": [
             "Crevillente Deportivo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Jove Español": {
         "stadium": "Ciudad Deportiva",
@@ -1899,7 +2133,8 @@
         "aliases": [
             "FC Jove Español",
             "Jove Español San Vicente"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ontinyent 1931": {
         "stadium": "El Clariano",
@@ -1907,35 +2142,40 @@
         "aliases": [
             "Ontinyent 1931 CF",
             "Ontinyent"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Patacona": {
         "stadium": "Municipal Patacona",
         "location": "Campo Municipal Patacona, Alboraya, España",
         "aliases": [
             "Patacona CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sueca": {
         "stadium": "L'Infantil",
         "location": "Camp L'Infantil, Sueca, España",
         "aliases": [
             "SD Sueca"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Torrent": {
         "stadium": "San Gregorio",
         "location": "Estadio San Gregorio, Torrent, España",
         "aliases": [
             "Torrent CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Rayo Ibense": {
         "stadium": "Francisco Vilaplana",
         "location": "Estadio Francisco Vilaplana Mariel, Ibi, España",
         "aliases": [
             "UD Rayo Ibense"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cala Pozuelo": {
         "stadium": "Valle de las Cañas",
@@ -1943,14 +2183,16 @@
         "aliases": [
             "AD Cala Pozuelo",
             "Pozuelo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Parla": {
         "stadium": "Los Prados",
         "location": "Estadio Municipal Los Prados, Parla, España",
         "aliases": [
             "AD Parla"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Torrejón": {
         "stadium": "Las Veredillas",
@@ -1958,21 +2200,24 @@
         "aliases": [
             "AD Torrejón CF",
             "AD Torrejón"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Canillas": {
         "stadium": "Canillas",
         "location": "Instalaciones Deportivas Canillas, Madrid, España",
         "aliases": [
             "CD Canillas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Galapagar": {
         "stadium": "El Chopo",
         "location": "Campo Municipal El Chopo, Galapagar, España",
         "aliases": [
             "CD Galapagar"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Collado Villalba": {
         "stadium": "Ciudad Deportiva",
@@ -1980,7 +2225,8 @@
         "aliases": [
             "CU Collado Villalba",
             "CUC Villalba"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Villanueva del Pardillo": {
         "stadium": "Los Pinos",
@@ -1988,14 +2234,16 @@
         "aliases": [
             "FC Villanueva del Pardillo",
             "Villanueva Pardillo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Las Rozas": {
         "stadium": "Navalcarbón",
         "location": "Polideportivo Dehesa de Navalcarbón, Las Rozas, España",
         "aliases": [
             "Las Rozas CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Carabanchel": {
         "stadium": "La Mina",
@@ -2004,14 +2252,16 @@
             "Real Carabanchel",
             "R.C.D. Carabanchel",
             "RCD Carabanchel"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Alcalá": {
         "stadium": "El Val",
         "location": "Estadio Municipal del Val, Alcalá de Henares, España",
         "aliases": [
             "RSD Alcalá"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Aranjuez": {
         "stadium": "El Deleite",
@@ -2019,7 +2269,8 @@
         "aliases": [
             "Real Aranjuez CF",
             "Real Aranjuez"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Trival Valderas": {
         "stadium": "La Canaleja",
@@ -2027,14 +2278,16 @@
         "aliases": [
             "Trival Valderas Alcorcón",
             "Trival"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Tres Cantos": {
         "stadium": "Jaime Mata",
         "location": "Campo de Fútbol Jaime Mata, Tres Cantos, España",
         "aliases": [
             "Tres Cantos CDF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Villaverde San Andrés": {
         "stadium": "Boetticher",
@@ -2042,28 +2295,32 @@
         "aliases": [
             "Villaverde",
             "S.R. Villaverde Boetticher"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Atlético Bembibre": {
         "stadium": "La Devesa",
         "location": "Estadio La Devesa, Bembibre, España",
         "aliases": [
             "At. Bembibre"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Atlético Tordesillas": {
         "stadium": "Las Salinas",
         "location": "Campo Municipal Las Salinas, Tordesillas, España",
         "aliases": [
             "At. Tordesillas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Becerril": {
         "stadium": "Mariano Haro",
         "location": "Campo Mariano Haro, Becerril de Campos, España",
         "aliases": [
             "CD Becerril"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cristo Atlético": {
         "stadium": "La Balastera",
@@ -2071,14 +2328,16 @@
         "aliases": [
             "CD Palencia Cristo Atlético",
             "Palencia Cristo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Laguna": {
         "stadium": "La Laguna",
         "location": "Estadio Municipal La Laguna, Laguna de Duero, España",
         "aliases": [
             "CD Laguna"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Virgen del Camino": {
         "stadium": "Los Dominicos",
@@ -2086,35 +2345,40 @@
         "aliases": [
             "CD La Virgen del Camino",
             "La Virgen"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ciudad Rodrigo": {
         "stadium": "Francisco Mateos",
         "location": "Estadio Francisco Mateos, Ciudad Rodrigo, España",
         "aliases": [
             "Ciudad Rodrigo CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Palencia CF": {
         "stadium": "La Balastera",
         "location": "Estadio Nueva Balastera, Palencia, España",
         "aliases": [
             "Palencia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Almazán": {
         "stadium": "La Arboleda",
         "location": "Campo Municipal La Arboleda, Almazán, España",
         "aliases": [
             "SD Almazán"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Unami": {
         "stadium": "La Albuera",
         "location": "Estadio Municipal de La Albuera, Segovia, España",
         "aliases": [
             "Unami CP"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Arenas de Armilla": {
         "stadium": "Municipal de Armilla",
@@ -2122,7 +2386,8 @@
         "aliases": [
             "Arenas Armilla",
             "Arenas CyD"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Mancha Real": {
         "stadium": "La Juventud",
@@ -2130,35 +2395,40 @@
         "aliases": [
             "Atlético Mancha Real",
             "At. Mancha Real"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Huétor Tájar": {
         "stadium": "Miguel Moranto",
         "location": "Estadio Miguel Moranto, Huétor-Tájar, España",
         "aliases": [
             "CD Huétor Tájar"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Huétor Vega": {
         "stadium": "Las Viñas",
         "location": "Polideportivo Municipal Las Viñas, Huétor Vega, España",
         "aliases": [
             "CD Huétor Vega"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Torreperogil": {
         "stadium": "Abdón Martínez",
         "location": "Estadio Abdón Martínez Fariñas, Torreperogil, España",
         "aliases": [
             "CD Torreperogil"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Motril": {
         "stadium": "Escribano Castilla",
         "location": "Estadio Escribano Castilla, Motril, España",
         "aliases": [
             "CF Motril"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Poli Almería": {
         "stadium": "Ciudad Deportiva de Los Ángeles",
@@ -2166,21 +2436,24 @@
         "aliases": [
             "CP Almería",
             "Club Polideportivo Almería"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "El Palo": {
         "stadium": "San Ignacio",
         "location": "Estadio San Ignacio, Málaga, España",
         "aliases": [
             "El Palo FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Málaga City": {
         "stadium": "Pepe Luis Bobadilla",
         "location": "Estadio Municipal Pepe Luis Bobadilla, Nerja, España",
         "aliases": [
             "FC Málaga City"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Torredonjimeno": {
         "stadium": "Matías Prats",
@@ -2188,35 +2461,40 @@
         "aliases": [
             "UD Ciudad de Torredonjimeno",
             "Ciudad Torredonjimeno"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Maracena": {
         "stadium": "Ciudad Deportiva",
         "location": "Ciudad Deportiva de Maracena, Maracena, España",
         "aliases": [
             "UD Maracena"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Torre del Mar": {
         "stadium": "Juan Manuel Azuaga",
         "location": "Estadio Juan Manuel Azuaga, Torre del Mar, España",
         "aliases": [
             "UD Torre del Mar"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cartaya": {
         "stadium": "Luis Rodríguez Salvador",
         "location": "Estadio Luis Rodríguez Salvador, Cartaya, España",
         "aliases": [
             "AD Cartaya"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Atlético Central": {
         "stadium": "Vega de Triana",
         "location": "Instalaciones Vega de Triana, Sevilla, España",
         "aliases": [
             "At. Central"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Atlético Espeleño": {
         "stadium": "Municipal de Espiel",
@@ -2224,14 +2502,16 @@
         "aliases": [
             "At. Espeleño",
             "Espeleño"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Bollullos": {
         "stadium": "Eloy Ávila Cano",
         "location": "Estadio Eloy Ávila Cano, Bollullos Par del Condado, España",
         "aliases": [
             "Bollullos CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ciudad de Lucena": {
         "stadium": "Ciudad de Lucena",
@@ -2239,35 +2519,40 @@
         "aliases": [
             "CD Ciudad de Lucena",
             "Lucena"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Gerena": {
         "stadium": "Leonardo Ramos",
         "location": "Estadio Leonardo Ramos, Gerena, España",
         "aliases": [
             "CD Gerena"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Pozoblanco": {
         "stadium": "Municipal Pozoblanco",
         "location": "Polideportivo Municipal, Pozoblanco, España",
         "aliases": [
             "CD Pozoblanco"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Utrera": {
         "stadium": "San Juan Bosco",
         "location": "Estadio Municipal San Juan Bosco, Utrera, España",
         "aliases": [
             "CD Utrera"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Conil": {
         "stadium": "José Antonio Pérez Ureba",
         "location": "Campo José Antonio Pérez Ureba, Conil de la Frontera, España",
         "aliases": [
             "Conil CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Coria CF": {
         "stadium": "Guadalquivir",
@@ -2275,14 +2560,16 @@
         "aliases": [
             "Coria",
             "Coria C.F."
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "La Palma": {
         "stadium": "Municipal La Palma",
         "location": "Polideportivo Municipal, La Palma del Condado, España",
         "aliases": [
             "La Palma CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Puente Genil": {
         "stadium": "Manuel Polinario",
@@ -2290,7 +2577,8 @@
         "aliases": [
             "Salerm Puente Genil",
             "Salerm Puente Genil FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Constància": {
         "stadium": "Nou Camp d'Inca",
@@ -2298,63 +2586,72 @@
         "aliases": [
             "CD Constància",
             "Constancia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Felanitx": {
         "stadium": "Es Torrentó",
         "location": "Estadi Es Torrentó, Felanitx, España",
         "aliases": [
             "CD Felanitx"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Llosetense": {
         "stadium": "Es Puig",
         "location": "Camp Municipal Es Puig, Lloseta, España",
         "aliases": [
             "CD Llosetense"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Manacor": {
         "stadium": "Na Capellera",
         "location": "Estadi Na Capellera, Manacor, España",
         "aliases": [
             "CD Manacor"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Migjorn": {
         "stadium": "Los Nogales",
         "location": "Camp Los Nogales, Es Migjorn Gran, España",
         "aliases": [
             "CD Migjorn"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Alaior": {
         "stadium": "Los Pinos",
         "location": "Estadi Los Pinos, Alaior, España",
         "aliases": [
             "CE Alaior"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Mercadal": {
         "stadium": "Sant Martí",
         "location": "Camp Municipal Sant Martí, Es Mercadal, España",
         "aliases": [
             "CE Mercadal"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sóller": {
         "stadium": "Camp d'en Maiol",
         "location": "Camp d'en Maiol, Sóller, España",
         "aliases": [
             "CF Sóller"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sant Jordi": {
         "stadium": "Kiko Serra",
         "location": "Estadi Municipal Kiko Serra, Sant Jordi de ses Salines, España",
         "aliases": [
             "PE Sant Jordi"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Penya Independent": {
         "stadium": "Sant Miquel",
@@ -2362,63 +2659,72 @@
         "aliases": [
             "Penya Indep.",
             "SE Penya Independent"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Poblense": {
         "stadium": "Sa Pobla",
         "location": "Estadi Municipal de Sa Pobla, Sa Pobla, España",
         "aliases": [
             "UD Poblense"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Portmany": {
         "stadium": "Sant Antoni",
         "location": "Camp Municipal de Sant Antoni, Sant Antoni de Portmany, España",
         "aliases": [
             "SD Portmany"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Collerense": {
         "stadium": "Ca Na Paulina",
         "location": "Camp Municipal Ca Na Paulina, Palma, España",
         "aliases": [
             "UD Collerense"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Arucas": {
         "stadium": "Tonono",
         "location": "Estadio Manuel Pablo (Tonono), Arucas, España",
         "aliases": [
             "Arucas CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Buzanada": {
         "stadium": "Clementina de Bello",
         "location": "Campo Clementina de Bello, Buzanada, España",
         "aliases": [
             "CD Buzanada"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Herbania": {
         "stadium": "Los Pozos",
         "location": "Estadio Municipal Los Pozos, Puerto del Rosario, España",
         "aliases": [
             "CD Herbania"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Marino": {
         "stadium": "Antonio Domínguez",
         "location": "Estadio Antonio Domínguez, Arona, España",
         "aliases": [
             "CD Marino"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Santa Úrsula": {
         "stadium": "Argelio Tabares",
         "location": "Estadio Argelio Tabares, Santa Úrsula, España",
         "aliases": [
             "CD Santa Úrsula"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Panadería Pulido": {
         "stadium": "San Mateo",
@@ -2426,21 +2732,24 @@
         "aliases": [
             "CF Panadería Pulido San Mateo",
             "Panadería Pulido San Mateo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ibarra": {
         "stadium": "Villa Isabel",
         "location": "Campo Villa Isabel, El Fraile, España",
         "aliases": [
             "UD Ibarra"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Lanzarote": {
         "stadium": "Ciudad Deportiva",
         "location": "Ciudad Deportiva Lanzarote, Arrecife, España",
         "aliases": [
             "UD Lanzarote"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "San Fernando GC": {
         "stadium": "Maspalomas",
@@ -2448,21 +2757,24 @@
         "aliases": [
             "UD San Fernando",
             "San Fernando"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Tamaraceite": {
         "stadium": "Juan Guedes",
         "location": "Campo de Fútbol Juan Guedes, Las Palmas, España",
         "aliases": [
             "UD Tamaraceite"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Teror": {
         "stadium": "El Pino",
         "location": "Estadio El Pino, Teror, España",
         "aliases": [
             "UD Teror"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Villa Santa Brígida": {
         "stadium": "Los Olivos",
@@ -2470,14 +2782,16 @@
         "aliases": [
             "UD Villa de Santa Brígida",
             "Villa Sta Brígida"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Alcantarilla": {
         "stadium": "Ángel Sornichero",
         "location": "Estadio Ángel Sornichero, Alcantarilla, España",
         "aliases": [
             "Alcantarilla FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Pulpileño": {
         "stadium": "San Miguel",
@@ -2485,84 +2799,96 @@
         "aliases": [
             "Atlético Pulpileño",
             "At. Pulpileño"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Bullense": {
         "stadium": "Nicolás de las Peñas",
         "location": "Estadio Nicolás de las Peñas, Bullas, España",
         "aliases": [
             "CD Bullense"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cieza": {
         "stadium": "La Arboleja",
         "location": "Estadio La Arboleja, Cieza, España",
         "aliases": [
             "CD Cieza"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Plus Ultra": {
         "stadium": "Llano de Brujas",
         "location": "Campo Municipal de Llano de Brujas, Llano de Brujas, España",
         "aliases": [
             "CD Plus Ultra"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ciudad de Murcia": {
         "stadium": "José Barnés",
         "location": "Campo Municipal José Barnés, Murcia, España",
         "aliases": [
             "CAP Ciudad de Murcia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Caravaca": {
         "stadium": "El Morao",
         "location": "Estadio El Morao, Caravaca de la Cruz, España",
         "aliases": [
             "UD Caravaca"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Deportivo Marítimo": {
         "stadium": "Gómez Meseguer",
         "location": "Polígono Gómez Meseguer, Cartagena, España",
         "aliases": [
             "Deportivo Marítimo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Molinense": {
         "stadium": "Sánchez Cánovas",
         "location": "Estadio Sánchez Cánovas, Molina de Segura, España",
         "aliases": [
             "Unión Molinense"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Muleño": {
         "stadium": "Municipal de Mula",
         "location": "Campo Municipal de Deportes, Mula, España",
         "aliases": [
             "Muleño CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Racing Murcia": {
         "stadium": "Campus Universitario",
         "location": "Estadio Campus Universitario, Murcia, España",
         "aliases": [
             "Racing Murcia FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Llerenense": {
         "stadium": "Fernando Robina",
         "location": "Estadio Fernando Robina, Llerena, España",
         "aliases": [
             "AD Llerenense"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Arroyo": {
         "stadium": "Municipal de Arroyo",
         "location": "Estadio Municipal de Arroyo de la Luz, Arroyo de la Luz, España",
         "aliases": [
             "Arroyo CP"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Pueblonuevo": {
         "stadium": "Antonio Amaya",
@@ -2570,49 +2896,56 @@
         "aliases": [
             "At. Pueblonuevo",
             "Atlético Pueblonuevo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Azuaga": {
         "stadium": "Municipal de Azuaga",
         "location": "Estadio Municipal de Deportes, Azuaga, España",
         "aliases": [
             "CD Azuaga"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Castuera": {
         "stadium": "Manuel Ruiz",
         "location": "Estadio Manuel Ruiz, Castuera, España",
         "aliases": [
             "CD Castuera"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Diocesano": {
         "stadium": "Campos de la Federación",
         "location": "Campos de la Federación, Cáceres, España",
         "aliases": [
             "CD Diocesano"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Jaraíz": {
         "stadium": "Municipal de Jaraíz",
         "location": "Polideportivo Municipal, Jaraíz de la Vera, España",
         "aliases": [
             "CF Jaraíz"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Trujillo": {
         "stadium": "Julián García de Guadiana",
         "location": "Estadio Julián García de Guadiana, Trujillo, España",
         "aliases": [
             "CF Trujillo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Montehermoso": {
         "stadium": "Municipal de Montehermoso",
         "location": "Campo Municipal, Montehermoso, España",
         "aliases": [
             "CP Montehermoso"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Jerez CF": {
         "stadium": "Manuel Calzado",
@@ -2620,224 +2953,256 @@
         "aliases": [
             "Jerez",
             "Jerez C.F."
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Moralo": {
         "stadium": "Municipal de Navalmoral",
         "location": "Campo Municipal de Deportes, Navalmoral de la Mata, España",
         "aliases": [
             "Moralo CP"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Olivenza": {
         "stadium": "Ciudad Deportiva Olivenza",
         "location": "Ciudad Deportiva de Olivenza, Olivenza, España",
         "aliases": [
             "Olivenza FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "SP Villafranca": {
         "stadium": "Municipal de Villafranca",
         "location": "Campo Municipal de Villafranca, Villafranca de los Barros, España",
         "aliases": [
             "Villafranca"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Fuente de Cantos": {
         "stadium": "Francisco de Zurbarán",
         "location": "Estadio Francisco de Zurbarán, Fuente de Cantos, España",
         "aliases": [
             "UD Fuente de Cantos"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Betigorri": {
         "stadium": "Hermanos Induráin",
         "location": "Polideportivo Hermanos Induráin, Villava, España",
         "aliases": [
             "Betigorri KE"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cirbonero": {
         "stadium": "San Juan",
         "location": "Campo San Juan, Cintruénigo, España",
         "aliases": [
             "CA Cirbonero"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ardoi": {
         "stadium": "El Pinar",
         "location": "Campo El Pinar, Zizur Mayor, España",
         "aliases": [
             "CD Ardoi"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Beti Onak": {
         "stadium": "Lorenzo Goikoa",
         "location": "Campo Lorenzo Goikoa, Villava, España",
         "aliases": [
             "CD Beti Onak"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cantolagua": {
         "stadium": "Municipal de Sangüesa",
         "location": "Campo Municipal de Sangüesa, Sangüesa, España",
         "aliases": [
             "CD Cantolagua"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cortes": {
         "stadium": "San Francisco Javier",
         "location": "Campo San Francisco Javier, Cortes, España",
         "aliases": [
             "CD Cortes"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Huarte": {
         "stadium": "Areta",
         "location": "Campo Nuevo Areta, Huarte, España",
         "aliases": [
             "CD Huarte"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Oberena": {
         "stadium": "Oberena",
         "location": "Instalaciones Oberena, Pamplona, España",
         "aliases": [
             "CD Oberena"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Pamplona": {
         "stadium": "Beitikuntzea",
         "location": "Instalaciones Beitikuntzea, Pamplona, España",
         "aliases": [
             "CD Pamplona"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Valle de Egüés": {
         "stadium": "Sarriguren",
         "location": "Ciudad Deportiva Sarriguren, Egüés, España",
         "aliases": [
             "CD Valle de Egüés"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Peña Sport": {
         "stadium": "San Francisco",
         "location": "Campo San Francisco, Tafalla, España",
         "aliases": [
             "Peña Sport FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Mutilvera": {
         "stadium": "Mutilnova",
         "location": "Estadio Mutilnova, Mutilva, España",
         "aliases": [
             "UD Mutilvera"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "River Ebro": {
         "stadium": "San Miguel",
         "location": "Campo San Miguel, Rincón de Soto, España",
         "aliases": [
             "CA River Ebro"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Vianés": {
         "stadium": "Príncipe de Viana",
         "location": "Campo Príncipe de Viana, Viana, España",
         "aliases": [
             "CA Vianés"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Agoncillo": {
         "stadium": "San Roque",
         "location": "Campo San Roque, Agoncillo, España",
         "aliases": [
             "CD Agoncillo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Arnedo": {
         "stadium": "Sendero",
         "location": "Campo Municipal Sendero, Arnedo, España",
         "aliases": [
             "CD Arnedo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Berceo": {
         "stadium": "La Isla",
         "location": "Instalaciones La Isla, Logroño, España",
         "aliases": [
             "CD Berceo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Tedeón": {
         "stadium": "San Miguel",
         "location": "Campo San Miguel, Navarrete, España",
         "aliases": [
             "CD Tedeón"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Varea": {
         "stadium": "Municipal de Varea",
         "location": "Campo Municipal de Varea, Logroño, España",
         "aliases": [
             "CD Varea"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Casalarreina": {
         "stadium": "El Soto",
         "location": "Campo El Soto, Casalarreina, España",
         "aliases": [
             "Casalarreina CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Haro Deportivo": {
         "stadium": "El Mazo",
         "location": "Estadio Municipal El Mazo, Haro, España",
         "aliases": [
             "Haro"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "La Calzada": {
         "stadium": "El Rollo",
         "location": "Campo El Rollo, Santo Domingo de la Calzada, España",
         "aliases": [
             "FC La Calzada"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Náxara": {
         "stadium": "La Salera",
         "location": "Estadio La Salera, Nájera, España",
         "aliases": [
             "Náxara CD"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Peña Balsamaiso": {
         "stadium": "La Estrella",
         "location": "Campo La Estrella, Logroño, España",
         "aliases": [
             "SD Peña Balsamaiso"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Racing Rioja": {
         "stadium": "Mundial 82",
         "location": "Estadio Mundial 82, Logroño, España",
         "aliases": [
             "Racing Rioja CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Oyonesa": {
         "stadium": "El Espinar",
         "location": "Campo El Espinar, Oyón, España",
         "aliases": [
             "SD Oyonesa"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Almudévar": {
         "stadium": "La Corona",
         "location": "Campo La Corona, Almudévar, España",
         "aliases": [
             "AD Almudévar"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Monzón": {
         "stadium": "Isidro Calderón",
@@ -2845,105 +3210,120 @@
         "aliases": [
             "Atlético Monzón",
             "At. Monzón"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Belchite 97": {
         "stadium": "El Tejar",
         "location": "Campo El Tejar, Belchite, España",
         "aliases": [
             "CD Belchite 97"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Binéfar": {
         "stadium": "Los Olmos",
         "location": "Estadio Los Olmos, Binéfar, España",
         "aliases": [
             "CD Binéfar"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Caspe": {
         "stadium": "Rosales",
         "location": "Campo Municipal Rosales, Caspe, España",
         "aliases": [
             "CD Caspe"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cuarte": {
         "stadium": "Municipal de Cuarte",
         "location": "Campo Municipal de Cuarte de Huerva, Cuarte de Huerva, España",
         "aliases": [
             "CD Cuarte"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "CD Ebro": {
         "stadium": "La Almozara",
         "location": "Campo Municipal La Almozara, Zaragoza, España",
         "aliases": [
             "Ebro"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Fuentes": {
         "stadium": "San Miguel",
         "location": "Campo San Miguel, Fuentes de Ebro, España",
         "aliases": [
             "CD Fuentes"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Utrillas": {
         "stadium": "La Vega",
         "location": "Campo La Vega, Utrillas, España",
         "aliases": [
             "CD Utrillas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Calamocha": {
         "stadium": "Jumaya",
         "location": "Campo Jumaya, Calamocha, España",
         "aliases": [
             "CF Calamocha"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Epila": {
         "stadium": "La Huerta",
         "location": "Campo La Huerta, Épila, España",
         "aliases": [
             "CF Epila"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Illueca": {
         "stadium": "Papa Luna",
         "location": "Estadio Papa Luna, Illueca, España",
         "aliases": [
             "CF Illueca"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Borja": {
         "stadium": "Manuel Meler",
         "location": "Estadio Manuel Meler, Borja, España",
         "aliases": [
             "SD Borja"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Fraga": {
         "stadium": "La Estacada",
         "location": "La Estacada, Fraga, España",
         "aliases": [
             "UD Fraga"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Azuqueca": {
         "stadium": "San Miguel",
         "location": "Estadio San Miguel, Azuqueca de Henares, España",
         "aliases": [
             "CD Azuqueca"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cazalegas": {
         "stadium": "Ebora Formación",
         "location": "Ciudad Deportiva Ebora Formación, Cazalegas, España",
         "aliases": [
             "CD Cazalegas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Huracán de Balazote": {
         "stadium": "Municipal de Balazote",
@@ -2951,7 +3331,8 @@
         "aliases": [
             "CD Huracán de Balazote",
             "Huracán Balazote"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Marchamalo": {
         "stadium": "La Solana",
@@ -2959,7 +3340,8 @@
         "aliases": [
             "C.D. Marchamalo",
             "CD Marchamalo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Noblejas": {
         "stadium": "Ángel Luengo",
@@ -2967,7 +3349,8 @@
         "aliases": [
             "C.D. Noblejas",
             "CD Noblejas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Quintanar del Rey": {
         "stadium": "San Marcos",
@@ -2976,7 +3359,8 @@
             "C.D. Quintanar del Rey",
             "CD Quintanar del Rey",
             "Quintanar"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Tarancón": {
         "stadium": "Estadio Municipal",
@@ -2984,7 +3368,8 @@
         "aliases": [
             "C.D. Tarancón",
             "CD Tarancón"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Toledo": {
         "stadium": "Salto del Caballo",
@@ -2992,7 +3377,8 @@
         "aliases": [
             "C.D. Toledo",
             "CD Toledo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Villacañas": {
         "stadium": "Las Pirámides",
@@ -3000,7 +3386,8 @@
         "aliases": [
             "C.D. Villacañas",
             "CD Villacañas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Villarrubia": {
         "stadium": "Nuevo Campo",
@@ -3008,7 +3395,8 @@
         "aliases": [
             "C.D. Villarrubia",
             "CD Villarrubia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Calvo Sotelo": {
         "stadium": "El Cerrú",
@@ -3017,7 +3405,8 @@
             "Calvo Sotelo Puertollano C.F.",
             "CS Puertollano",
             "Puertollano"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Manzanares": {
         "stadium": "José Camacho",
@@ -3025,7 +3414,8 @@
         "aliases": [
             "Manzanares C.F.",
             "Manzanares CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Puerto Vega": {
         "stadium": "El Campón",
@@ -3033,7 +3423,8 @@
         "aliases": [
             "Puerto de Vega C.F.",
             "Puerto de Vega CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Luarca": {
         "stadium": "La Veigona",
@@ -3041,7 +3432,8 @@
         "aliases": [
             "Luarca C.F.",
             "Luarca CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Astur": {
         "stadium": "Hermanos Llana",
@@ -3049,7 +3441,8 @@
         "aliases": [
             "Astur C.F.",
             "Astur CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Andés": {
         "stadium": "San Pedro",
@@ -3058,7 +3451,8 @@
             "Andés C.F.",
             "Andes CF",
             "Andes"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Barcia": {
         "stadium": "San Sebastián",
@@ -3066,7 +3460,8 @@
         "aliases": [
             "Barcia C.F.",
             "Barcia CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Candás": {
         "stadium": "La Mata",
@@ -3075,7 +3470,8 @@
             "Candás C.F.",
             "Candas CF",
             "Candas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Muros": {
         "stadium": "Municipal de Muros",
@@ -3084,7 +3480,8 @@
             "C.D. Muros Balompié",
             "Muros Balompié",
             "CD Muros"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Roces": {
         "stadium": "Covadonga",
@@ -3092,7 +3489,8 @@
         "aliases": [
             "C.D. Roces",
             "CD Roces"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Tineo": {
         "stadium": "Municipal de Tineo",
@@ -3100,7 +3498,8 @@
         "aliases": [
             "C.D. Tineo",
             "CD Tineo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Universidad de Oviedo": {
         "stadium": "San Gregorio",
@@ -3109,7 +3508,8 @@
             "C.D. Universidad de Oviedo",
             "Uni Oviedo",
             "Universidad Oviedo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Vallobín": {
         "stadium": "Vallobín",
@@ -3117,7 +3517,8 @@
         "aliases": [
             "C.D. Vallobín",
             "CD Vallobín"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Hispano": {
         "stadium": "Ferrota",
@@ -3125,7 +3526,8 @@
         "aliases": [
             "Club Hispano de Castrillón",
             "Hispano de Castrillón"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Gozón": {
         "stadium": "Balbín",
@@ -3134,7 +3536,8 @@
             "Gozón C.F.",
             "Gozon CF",
             "Gozon"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Navia": {
         "stadium": "El Pardo",
@@ -3142,7 +3545,8 @@
         "aliases": [
             "Navia C.F.",
             "Navia CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Podes": {
         "stadium": "Builla",
@@ -3150,7 +3554,8 @@
         "aliases": [
             "Podes C.F.",
             "Podes CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ribadesella": {
         "stadium": "Oreyana",
@@ -3158,7 +3563,8 @@
         "aliases": [
             "Ribadesella C.F.",
             "Ribadesella CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Atlético Camocha": {
         "stadium": "Vega",
@@ -3167,7 +3573,8 @@
             "S.D. Atlético Camocha",
             "Atlético Camocha",
             "At. Camocha"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "San Claudio": {
         "stadium": "José Ramón Suárez Fernández",
@@ -3175,7 +3582,8 @@
         "aliases": [
             "U.D. San Claudio",
             "UD San Claudio"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Valdesoto": {
         "stadium": "Villarea",
@@ -3183,7 +3591,8 @@
         "aliases": [
             "Valdesoto C.F.",
             "Valdesoto CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Vegadeo": {
         "stadium": "El Soutón",
@@ -3191,7 +3600,8 @@
         "aliases": [
             "Vegadeo C.F.",
             "Vegadeo CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Atlético Arnoia": {
         "stadium": "A Queixeira",
@@ -3199,7 +3609,8 @@
         "aliases": [
             "At. Arnoia",
             "Arnoia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Lalín": {
         "stadium": "Manuel Anxo Cortizo",
@@ -3207,7 +3618,8 @@
         "aliases": [
             "C.D. Lalín",
             "CD Lalín"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Céltiga": {
         "stadium": "Salvador Otero",
@@ -3216,7 +3628,8 @@
             "Céltiga F.C.",
             "Celtiga FC",
             "Celtiga"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Lemos": {
         "stadium": "A Pinguela",
@@ -3224,7 +3637,8 @@
         "aliases": [
             "Club Lemos",
             "C. Lemos"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Dubra": {
         "stadium": "Juan Baleato",
@@ -3232,7 +3646,8 @@
         "aliases": [
             "Dubra S.D.",
             "Dubra SD"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Galicia de Mugardos": {
         "stadium": "A Pedreira",
@@ -3240,7 +3655,8 @@
         "aliases": [
             "Mugardos",
             "Galicia Mugardos"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Portonovo": {
         "stadium": "Baltar",
@@ -3248,7 +3664,8 @@
         "aliases": [
             "Portonovo S.D.",
             "Portonovo SD"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ribadeo": {
         "stadium": "Pepe Barrera",
@@ -3256,7 +3673,8 @@
         "aliases": [
             "Ribadeo F.C.",
             "Ribadeo FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sofán": {
         "stadium": "O Carral",
@@ -3265,7 +3683,8 @@
             "S.D. Sofán",
             "SD Sofán",
             "Sofan"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Victoria": {
         "stadium": "A Grela",
@@ -3274,7 +3693,8 @@
             "Victoria C.F.",
             "Victoria CF",
             "Victoria Coruña"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Vic": {
         "stadium": "Hipòlit Planàs",
@@ -3283,7 +3703,8 @@
             "U.E. Vic",
             "UE Vic",
             "Unió Esportiva Vic"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Horta": {
         "stadium": "Feliu i Codina",
@@ -3291,7 +3712,8 @@
         "aliases": [
             "U.A. Horta",
             "UA Horta"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Palamós": {
         "stadium": "Palamós - Costa Brava",
@@ -3300,7 +3722,8 @@
             "Palamós C.F.",
             "Palamos CF",
             "Palamos"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Figueres": {
         "stadium": "Vilatenim",
@@ -3308,7 +3731,8 @@
         "aliases": [
             "U.E. Figueres",
             "UE Figueres"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Granollers": {
         "stadium": "Carrer Girona",
@@ -3316,7 +3740,8 @@
         "aliases": [
             "E.C. Granollers",
             "EC Granollers"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Valls": {
         "stadium": "El Vilar",
@@ -3324,7 +3749,8 @@
         "aliases": [
             "U.E. Valls",
             "UE Valls"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Santboià": {
         "stadium": "Joan Baptista Milà",
@@ -3333,7 +3759,8 @@
             "F.C. Santboià",
             "FC Santboià",
             "Santboia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Lloret": {
         "stadium": "Municipal de Lloret",
@@ -3341,7 +3768,8 @@
         "aliases": [
             "C.F. Lloret",
             "CF Lloret"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Can Vidalet": {
         "stadium": "El Molí",
@@ -3349,7 +3777,8 @@
         "aliases": [
             "C.F. Can Vidalet",
             "CF Can Vidalet"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Buñol": {
         "stadium": "Beltrán Báguena",
@@ -3357,7 +3786,8 @@
         "aliases": [
             "C.D. Buñol",
             "CD Buñol"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Almazora": {
         "stadium": "José Manuel Pesudo",
@@ -3366,7 +3796,8 @@
             "C.D. Almazora",
             "CD Almazora",
             "Almassora"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Recambios Colón": {
         "stadium": "El Perdiguer",
@@ -3375,7 +3806,8 @@
             "C.F. Recambios Colón",
             "CF Recambios Colón",
             "Recambios Colon"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ribarroja": {
         "stadium": "Roberto Gil",
@@ -3383,7 +3815,8 @@
         "aliases": [
             "Ribarroja C.F.",
             "Ribarroja CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Manises": {
         "stadium": "Municipal de Manises",
@@ -3391,7 +3824,8 @@
         "aliases": [
             "Manises C.F.",
             "Manises CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Onda": {
         "stadium": "La Serratella",
@@ -3399,7 +3833,8 @@
         "aliases": [
             "C.D. Onda",
             "CD Onda"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Silla": {
         "stadium": "Vicente Morera",
@@ -3407,7 +3842,8 @@
         "aliases": [
             "Silla C.F.",
             "Silla CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Callosa Deportiva": {
         "stadium": "El Palmeral",
@@ -3415,7 +3851,8 @@
         "aliases": [
             "Callosa",
             "Callosa Dpva"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "L'Olleria": {
         "stadium": "La Solana",
@@ -3424,7 +3861,8 @@
             "L'Olleria C.F.",
             "L'Olleria CF",
             "Olleria"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ayamonte": {
         "stadium": "Ciudad de Ayamonte",
@@ -3432,7 +3870,8 @@
         "aliases": [
             "Ayamonte C.F.",
             "Ayamonte CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Isla Cristina": {
         "stadium": "Municipal",
@@ -3440,7 +3879,8 @@
         "aliases": [
             "Isla Cristina F.C.",
             "Isla Cristina FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Rociana": {
         "stadium": "Manuel Macario",
@@ -3448,7 +3888,8 @@
         "aliases": [
             "Rociana C.F.",
             "Club Deportivo Rociana"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Churriana": {
         "stadium": "El Frascuelo",
@@ -3457,7 +3898,8 @@
             "Churriana C.F.",
             "Churriana CF",
             "Churriana de la Vega"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Loja": {
         "stadium": "Medina Lauxa",
@@ -3465,7 +3907,8 @@
         "aliases": [
             "Loja C.D.",
             "Loja CD"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Atarfe Industrial": {
         "stadium": "Municipal de Atarfe",
@@ -3473,7 +3916,8 @@
         "aliases": [
             "Atarfe",
             "C.D. Atarfe Industrial"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cantoria": {
         "stadium": "Los Olivos",
@@ -3481,7 +3925,8 @@
         "aliases": [
             "C.D. Cantoria",
             "CD Cantoria"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "San Pedro": {
         "stadium": "Municipal San Pedro",
@@ -3489,7 +3934,8 @@
         "aliases": [
             "U.D. San Pedro",
             "UD San Pedro"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Castilleja": {
         "stadium": "Antonio Almendro",
@@ -3497,7 +3943,8 @@
         "aliases": [
             "Castilleja C.F.",
             "Castilleja CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Aravaca": {
         "stadium": "Antonio Sanfiz",
@@ -3505,7 +3952,8 @@
         "aliases": [
             "Aravaca C.F.",
             "Aravaca CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Colmenar Viejo": {
         "stadium": "Alberto Ruiz",
@@ -3514,7 +3962,8 @@
             "A.D. Colmenar Viejo",
             "AD Colmenar Viejo",
             "Colmenar"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "El Álamo": {
         "stadium": "Facundo Rivas",
@@ -3522,7 +3971,8 @@
         "aliases": [
             "C.D. El Álamo",
             "CD El Álamo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "San Fernando de Henares": {
         "stadium": "Santiago del Pino",
@@ -3531,7 +3981,8 @@
             "C.D. San Fernando",
             "CD San Fernando",
             "San Fernando de Henares"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Vicálvaro": {
         "stadium": "Municipal de Vicálvaro",
@@ -3539,7 +3990,8 @@
         "aliases": [
             "C.D. Vicálvaro",
             "CD Vicálvaro"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Moratalaz": {
         "stadium": "Dehesa de Moratalaz",
@@ -3547,7 +3999,8 @@
         "aliases": [
             "E.D. Moratalaz",
             "ED Moratalaz"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Atlético Mineros": {
         "stadium": "Pepín Cadelo",
@@ -3555,7 +4008,8 @@
         "aliases": [
             "C.D.E. Atlético Mineros",
             "Atlético Mineros Reocín"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Textil Escudo": {
         "stadium": "Juan María Parés",
@@ -3563,7 +4017,8 @@
         "aliases": [
             "S.D. Textil Escudo",
             "SD Textil Escudo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Selaya": {
         "stadium": "El Castañal",
@@ -3571,7 +4026,8 @@
         "aliases": [
             "Selaya F.C.",
             "Selaya FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Aurrera de Vitoria": {
         "stadium": "Olaranbe",
@@ -3580,7 +4036,8 @@
             "C.D. Aurrera de Vitoria",
             "Aurrera Vitoria",
             "Aurrera"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Elgoibar": {
         "stadium": "Mintxeta",
@@ -3588,7 +4045,8 @@
         "aliases": [
             "C.D. Elgoibar",
             "CD Elgoibar"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Tolosa": {
         "stadium": "Berazubi",
@@ -3596,7 +4054,8 @@
         "aliases": [
             "Tolosa C.F.",
             "Tolosa CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Zamudio": {
         "stadium": "Gazituaga",
@@ -3604,7 +4063,8 @@
         "aliases": [
             "S.D. Zamudio",
             "SD Zamudio"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Bermeo": {
         "stadium": "Itxas Gane",
@@ -3612,7 +4072,8 @@
         "aliases": [
             "Bermeo F.T.",
             "Bermeo FT"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sodinara": {
         "stadium": "Municipal",
@@ -3620,7 +4081,8 @@
         "aliases": [
             "Sodinara",
             "C.D. Sodinara"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Benavente": {
         "stadium": "Luciano Rubio",
@@ -3628,7 +4090,8 @@
         "aliases": [
             "C.D. Benavente",
             "CD Benavente"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Mojados": {
         "stadium": "Municipal de Mojados",
@@ -3636,7 +4099,8 @@
         "aliases": [
             "C.D. Mojados",
             "CD Mojados"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Briviesca": {
         "stadium": "Diego Dávila Álvarez",
@@ -3644,7 +4108,8 @@
         "aliases": [
             "C.F. Briviesca",
             "CF Briviesca"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Villaralbo": {
         "stadium": "Los Barreros",
@@ -3653,7 +4118,8 @@
             "G.C.E. Villaralbo",
             "GCE Villaralbo",
             "CD Villaralbo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Racing Lermeño": {
         "stadium": "Arlanza",
@@ -3661,7 +4127,8 @@
         "aliases": [
             "Racing Lermeño C.F.",
             "Lermeño"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sporting Uxama": {
         "stadium": "Municipal de El Burgo",
@@ -3669,7 +4136,8 @@
         "aliases": [
             "Sporting Club Uxama",
             "SC Uxama"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Robres": {
         "stadium": "San Blas",
@@ -3677,7 +4145,8 @@
         "aliases": [
             "C.D. Robres",
             "CD Robres"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Santa Anastasia": {
         "stadium": "Fontananzas",
@@ -3685,7 +4154,8 @@
         "aliases": [
             "C.F. Santa Anastasia",
             "Santa Anastasia CF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ferriolense": {
         "stadium": "Municipal de Son Ferriol",
@@ -3693,7 +4163,8 @@
         "aliases": [
             "C.D. Ferriolense",
             "CD Ferriolense"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Rotlet Molinar": {
         "stadium": "Municipal del Molinar",
@@ -3701,7 +4172,8 @@
         "aliases": [
             "U.D. Rotlet Molinar",
             "UD Rotlet Molinar"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Guía": {
         "stadium": "Octavio Estévez",
@@ -3709,7 +4181,8 @@
         "aliases": [
             "U.D. Guía",
             "UD Guía"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Maspalomas": {
         "stadium": "Ciudad Deportiva Maspalomas",
@@ -3717,7 +4190,8 @@
         "aliases": [
             "C.D. Maspalomas",
             "CD Maspalomas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Chinato": {
         "stadium": "Era de las Matas",
@@ -3725,7 +4199,8 @@
         "aliases": [
             "C.P. Chinato",
             "CP Chinato"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Algar": {
         "stadium": "Sánchez Luengo",
@@ -3733,7 +4208,8 @@
         "aliases": [
             "C.D. Algar",
             "CD Algar"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Churra": {
         "stadium": "Municipal de Churra",
@@ -3742,7 +4218,8 @@
             "E.D.M.F. Churra",
             "EDMF Churra",
             "Churra"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Iruña": {
         "stadium": "Tajonar",
@@ -3750,7 +4227,8 @@
         "aliases": [
             "C.D. Iruña",
             "CD Iruña"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Avance Ezcabarte": {
         "stadium": "Igeldea",
@@ -3758,7 +4236,8 @@
         "aliases": [
             "C.D. Avance Ezcabarte",
             "CD Avance Ezcabarte"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Pradejón": {
         "stadium": "Municipal de Pradejón",
@@ -3766,7 +4245,8 @@
         "aliases": [
             "C.D. Pradejón",
             "CD Pradejón"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Calasancio": {
         "stadium": "La Estrella",
@@ -3774,7 +4254,8 @@
         "aliases": [
             "C.P. Calasancio",
             "CP Calasancio"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Pedroñeras": {
         "stadium": "Municipal de Las Pedroñeras",
@@ -3782,7 +4263,8 @@
         "aliases": [
             "C.D. Pedroñeras",
             "CD Pedroñeras"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Madridejos": {
         "stadium": "Nuevo Campo",
@@ -3790,7 +4272,8 @@
         "aliases": [
             "C.D. Madridejos",
             "CD Madridejos"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sporting de Alcázar": {
         "stadium": "Delgado Meco",
@@ -3798,7 +4281,8 @@
         "aliases": [
             "Sporting Alcázar",
             "Alcázar"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Manchester City": {
         "stadium": "Etihad Stadium",
@@ -3807,28 +4291,32 @@
             "Man. City",
             "Man City",
             "Manchester City FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Arsenal": {
         "stadium": "Emirates Stadium",
         "location": "Emirates Stadium, Londres, Reino Unido",
         "aliases": [
             "Arsenal FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Liverpool": {
         "stadium": "Anfield",
         "location": "Anfield, Liverpool, Reino Unido",
         "aliases": [
             "Liverpool FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Aston Villa": {
         "stadium": "Villa Park",
         "location": "Villa Park, Birmingham, Reino Unido",
         "aliases": [
             "Aston Villa FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Tottenham": {
         "stadium": "Tottenham Hotspur Stadium",
@@ -3837,14 +4325,16 @@
             "Tottenham Hotspur",
             "Spurs",
             "Tottenham Hotspur FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Chelsea": {
         "stadium": "Stamford Bridge",
         "location": "Stamford Bridge, Londres, Reino Unido",
         "aliases": [
             "Chelsea FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Newcastle": {
         "stadium": "St. James' Park",
@@ -3852,7 +4342,8 @@
         "aliases": [
             "Newcastle United",
             "Newcastle United FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Manchester United": {
         "stadium": "Old Trafford",
@@ -3862,7 +4353,8 @@
             "Man Utd",
             "Man. United",
             "Manchester United FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "West Ham": {
         "stadium": "London Stadium",
@@ -3871,7 +4363,8 @@
             "West Ham United",
             "West Ham Utd",
             "West Ham United FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Crystal Palace": {
         "stadium": "Selhurst Park",
@@ -3879,7 +4372,8 @@
         "aliases": [
             "Crystal Palace FC",
             "C. Palace"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Brighton": {
         "stadium": "The Amex",
@@ -3888,21 +4382,24 @@
             "Brighton & Hove Albion",
             "Brighton & Hove",
             "Brighton FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Bournemouth": {
         "stadium": "Vitality Stadium",
         "location": "Vitality Stadium, Bournemouth, Reino Unido",
         "aliases": [
             "AFC Bournemouth"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Fulham": {
         "stadium": "Craven Cottage",
         "location": "Craven Cottage, Londres, Reino Unido",
         "aliases": [
             "Fulham FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Wolves": {
         "stadium": "Molineux",
@@ -3910,21 +4407,24 @@
         "aliases": [
             "Wolverhampton Wanderers",
             "Wolverhampton"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Everton": {
         "stadium": "Everton Stadium",
         "location": "Everton Stadium, Bramley-Moore Dock, Liverpool, Reino Unido",
         "aliases": [
             "Everton FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Brentford": {
         "stadium": "Gtech Community Stadium",
         "location": "Gtech Community Stadium, Londres, Reino Unido",
         "aliases": [
             "Brentford FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Nottingham Forest": {
         "stadium": "City Ground",
@@ -3933,7 +4433,8 @@
             "Nottm Forest",
             "Nottingham",
             "Forest"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Leicester": {
         "stadium": "King Power Stadium",
@@ -3941,7 +4442,8 @@
         "aliases": [
             "Leicester City",
             "Leicester City FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ipswich": {
         "stadium": "Portman Road",
@@ -3949,14 +4451,16 @@
         "aliases": [
             "Ipswich Town",
             "Ipswich Town FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Southampton": {
         "stadium": "St Mary's",
         "location": "St Mary's Stadium, Southampton, Reino Unido",
         "aliases": [
             "Southampton FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Inter": {
         "stadium": "Giuseppe Meazza",
@@ -3965,7 +4469,8 @@
             "Inter de Milán",
             "Inter Milan",
             "Internazionale"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Milan": {
         "stadium": "San Siro",
@@ -3973,7 +4478,8 @@
         "aliases": [
             "AC Milan",
             "A.C. Milan"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Juventus": {
         "stadium": "Allianz Stadium",
@@ -3981,14 +4487,16 @@
         "aliases": [
             "Juventus FC",
             "Juve"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Atalanta": {
         "stadium": "Gewiss Stadium",
         "location": "Gewiss Stadium, Bérgamo, Italia",
         "aliases": [
             "Atalanta BC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Bologna": {
         "stadium": "Renato Dall'Ara",
@@ -3996,7 +4504,8 @@
         "aliases": [
             "Bolonia",
             "Bologna FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Roma": {
         "stadium": "Olímpico de Roma",
@@ -4004,7 +4513,8 @@
         "aliases": [
             "AS Roma",
             "A.S. Roma"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Lazio": {
         "stadium": "Olímpico de Roma",
@@ -4012,14 +4522,16 @@
         "aliases": [
             "SS Lazio",
             "S.S. Lazio"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Fiorentina": {
         "stadium": "Artemio Franchi",
         "location": "Stadio Artemio Franchi, Florencia, Italia",
         "aliases": [
             "ACF Fiorentina"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Napoli": {
         "stadium": "Diego Armando Maradona",
@@ -4027,14 +4539,16 @@
         "aliases": [
             "Nápoles",
             "SSC Napoli"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Torino": {
         "stadium": "Olímpico Grande Torino",
         "location": "Stadio Olimpico Grande Torino, Turín, Italia",
         "aliases": [
             "Torino FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Genoa": {
         "stadium": "Luigi Ferraris",
@@ -4042,14 +4556,16 @@
         "aliases": [
             "Génova",
             "Genoa CFC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Monza": {
         "stadium": "U-Power Stadium",
         "location": "U-Power Stadium, Monza, Italia",
         "aliases": [
             "AC Monza"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Hellas Verona": {
         "stadium": "Marcantonio Bentegodi",
@@ -4057,35 +4573,40 @@
         "aliases": [
             "Verona",
             "Hellas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Lecce": {
         "stadium": "Via del Mare",
         "location": "Stadio Via del Mare, Lecce, Italia",
         "aliases": [
             "US Lecce"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Udinese": {
         "stadium": "Bluenergy Stadium",
         "location": "Stadio Friuli, Udine, Italia",
         "aliases": [
             "Udinese Calcio"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cagliari": {
         "stadium": "Unipol Domus",
         "location": "Unipol Domus, Cagliari, Italia",
         "aliases": [
             "Cagliari Calcio"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Empoli": {
         "stadium": "Carlo Castellani",
         "location": "Stadio Carlo Castellani, Empoli, Italia",
         "aliases": [
             "Empoli FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Parma": {
         "stadium": "Ennio Tardini",
@@ -4093,14 +4614,16 @@
         "aliases": [
             "Parma Calcio 1913",
             "Parma Calcio"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Como": {
         "stadium": "Giuseppe Sinigaglia",
         "location": "Stadio Giuseppe Sinigaglia, Como, Italia",
         "aliases": [
             "Como 1907"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Venezia": {
         "stadium": "Pier Luigi Penzo",
@@ -4108,7 +4631,8 @@
         "aliases": [
             "Venecia",
             "Venezia FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Bayer Leverkusen": {
         "stadium": "BayArena",
@@ -4116,14 +4640,16 @@
         "aliases": [
             "Bayer 04 Leverkusen",
             "Leverkusen"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Stuttgart": {
         "stadium": "MHPArena",
         "location": "MHPArena, Stuttgart, Alemania",
         "aliases": [
             "VfB Stuttgart"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Bayern Múnich": {
         "stadium": "Allianz Arena",
@@ -4132,7 +4658,8 @@
             "Bayern Munich",
             "FC Bayern München",
             "Bayern"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "RB Leipzig": {
         "stadium": "Red Bull Arena",
@@ -4140,7 +4667,8 @@
         "aliases": [
             "Leipzig",
             "RasenBallsport Leipzig"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Borussia Dortmund": {
         "stadium": "Signal Iduna Park",
@@ -4149,7 +4677,8 @@
             "Dortmund",
             "BVB",
             "B. Dortmund"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Eintracht Frankfurt": {
         "stadium": "Deutsche Bank Park",
@@ -4158,7 +4687,8 @@
             "Frankfurt",
             "Eintracht",
             "SGE"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Hoffenheim": {
         "stadium": "PreZero Arena",
@@ -4166,7 +4696,8 @@
         "aliases": [
             "TSG Hoffenheim",
             "TSG 1899 Hoffenheim"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Heidenheim": {
         "stadium": "Voith-Arena",
@@ -4174,7 +4705,8 @@
         "aliases": [
             "1. FC Heidenheim",
             "Heidenheim 1846"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Werder Bremen": {
         "stadium": "Weserstadion",
@@ -4182,7 +4714,8 @@
         "aliases": [
             "Bremen",
             "SV Werder Bremen"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Friburgo": {
         "stadium": "Europa-Park Stadion",
@@ -4190,7 +4723,8 @@
         "aliases": [
             "Freiburg",
             "SC Freiburg"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Augsburgo": {
         "stadium": "WWK Arena",
@@ -4198,7 +4732,8 @@
         "aliases": [
             "Augsburg",
             "FC Augsburg"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Wolfsburgo": {
         "stadium": "Volkswagen Arena",
@@ -4206,7 +4741,8 @@
         "aliases": [
             "Wolfsburg",
             "VfL Wolfsburg"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Mainz 05": {
         "stadium": "Mewa Arena",
@@ -4214,7 +4750,8 @@
         "aliases": [
             "Mainz",
             "1. FSV Mainz 05"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Borussia Mönchengladbach": {
         "stadium": "Borussia-Park",
@@ -4224,7 +4761,8 @@
             "M'gladbach",
             "Gladbach",
             "Borussia M'gladbach"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Unión Berlín": {
         "stadium": "An der Alten Försterei",
@@ -4233,14 +4771,16 @@
             "Union Berlin",
             "1. FC Union Berlin",
             "U. Berlin"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Bochum": {
         "stadium": "Vonovia Ruhrstadion",
         "location": "Vonovia Ruhrstadion, Bochum, Alemania",
         "aliases": [
             "VfL Bochum"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "St. Pauli": {
         "stadium": "Millerntor-Stadion",
@@ -4248,7 +4788,8 @@
         "aliases": [
             "FC St. Pauli",
             "Sankt Pauli"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Holstein Kiel": {
         "stadium": "Holstein-Stadion",
@@ -4256,7 +4797,8 @@
         "aliases": [
             "Kiel",
             "KSV Holstein"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "PSG": {
         "stadium": "Parque de los Príncipes",
@@ -4265,7 +4807,8 @@
             "Paris Saint-Germain",
             "Paris SG",
             "Paris"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "AS Mónaco": {
         "stadium": "Stade Louis II",
@@ -4273,7 +4816,8 @@
         "aliases": [
             "Monaco",
             "AS Monaco"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Brest": {
         "stadium": "Stade Francis-Le Blé",
@@ -4281,7 +4825,8 @@
         "aliases": [
             "Stade Brestois",
             "Stade Brestois 29"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Lille": {
         "stadium": "Pierre-Mauroy",
@@ -4289,7 +4834,8 @@
         "aliases": [
             "LOSC",
             "Lille OSC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Niza": {
         "stadium": "Allianz Riviera",
@@ -4298,7 +4844,8 @@
             "Nice",
             "OGC Nice",
             "OGC Niza"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Lyon": {
         "stadium": "Groupama Stadium",
@@ -4306,14 +4853,16 @@
         "aliases": [
             "Olympique Lyonnais",
             "OL"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Lens": {
         "stadium": "Bollaert-Delelis",
         "location": "Stade Bollaert-Delelis, Lens, Francia",
         "aliases": [
             "RC Lens"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Marsella": {
         "stadium": "Vélodrome",
@@ -4322,21 +4871,24 @@
             "Marseille",
             "Olympique de Marseille",
             "OM"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Reims": {
         "stadium": "Auguste-Delaune",
         "location": "Stade Auguste-Delaune, Reims, Francia",
         "aliases": [
             "Stade de Reims"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Rennes": {
         "stadium": "Roazhon Park",
         "location": "Roazhon Park, Rennes, Francia",
         "aliases": [
             "Stade Rennais"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Toulouse": {
         "stadium": "Stadium de Toulouse",
@@ -4344,7 +4896,8 @@
         "aliases": [
             "Toulouse FC",
             "TFC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Montpellier": {
         "stadium": "Stade de la Mosson",
@@ -4352,7 +4905,8 @@
         "aliases": [
             "Montpellier HSC",
             "MHSC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Estrasburgo": {
         "stadium": "Stade de la Meinau",
@@ -4360,14 +4914,16 @@
         "aliases": [
             "Strasbourg",
             "RC Strasbourg"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Nantes": {
         "stadium": "Stade de la Beaujoire",
         "location": "Stade de la Beaujoire, Nantes, Francia",
         "aliases": [
             "FC Nantes"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Le Havre": {
         "stadium": "Stade Océane",
@@ -4375,7 +4931,8 @@
         "aliases": [
             "Le Havre AC",
             "HAC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Auxerre": {
         "stadium": "Abbé-Deschamps",
@@ -4383,14 +4940,16 @@
         "aliases": [
             "AJ Auxerre",
             "AJA"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Angers": {
         "stadium": "Raymond Kopa",
         "location": "Stade Raymond Kopa, Angers, Francia",
         "aliases": [
             "Angers SCO"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Saint-Étienne": {
         "stadium": "Geoffroy-Guichard",
@@ -4399,7 +4958,8 @@
             "Saint-Etienne",
             "ASSE",
             "St. Etienne"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sporting CP": {
         "stadium": "José Alvalade",
@@ -4409,7 +4969,8 @@
             "Sporting de Portugal",
             "Sporting Lisbon",
             "SCP"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Benfica": {
         "stadium": "Estádio da Luz",
@@ -4417,7 +4978,8 @@
         "aliases": [
             "SL Benfica",
             "Las Aguilas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Oporto": {
         "stadium": "Estádio do Dragão",
@@ -4425,7 +4987,8 @@
         "aliases": [
             "Porto",
             "FC Porto"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "SC Braga": {
         "stadium": "Municipal de Braga",
@@ -4433,7 +4996,8 @@
         "aliases": [
             "Braga",
             "Sporting Braga"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Vitória Guimarães": {
         "stadium": "D. Afonso Henriques",
@@ -4442,14 +5006,16 @@
             "Vitoria Guimaraes",
             "Vitoria SC",
             "V. Guimaraes"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Arouca": {
         "stadium": "Municipal de Arouca",
         "location": "Estádio Municipal de Arouca, Arouca, Portugal",
         "aliases": [
             "FC Arouca"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Famalicão": {
         "stadium": "Municipal 22 de Junho",
@@ -4457,7 +5023,8 @@
         "aliases": [
             "Famalicao",
             "FC Famalicão"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "PSV Eindhoven": {
         "stadium": "Philips Stadion",
@@ -4465,21 +5032,24 @@
         "aliases": [
             "PSV",
             "Eindhoven"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Feyenoord": {
         "stadium": "De Kuip",
         "location": "Stadion Feijenoord 'De Kuip', Róterdam, Países Bajos",
         "aliases": [
             "Feyenoord Rotterdam"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "FC Twente": {
         "stadium": "De Grolsch Veste",
         "location": "De Grolsch Veste, Enschede, Países Bajos",
         "aliases": [
             "Twente"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "AZ Alkmaar": {
         "stadium": "AFAS Stadion",
@@ -4487,19 +5057,22 @@
         "aliases": [
             "AZ",
             "Alkmaar"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ajax": {
         "stadium": "Johan Cruijff ArenA",
         "location": "Johan Cruijff ArenA, Ámsterdam, Países Bajos",
         "aliases": [
             "AFC Ajax"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Go Ahead Eagles": {
         "stadium": "De Adelaarshorst",
         "location": "De Adelaarshorst, Deventer, Países Bajos",
-        "aliases": []
+        "aliases": [],
+        "update_date": "2025-11-29"
     },
     "NEC Nijmegen": {
         "stadium": "Goffertstadion",
@@ -4507,14 +5080,16 @@
         "aliases": [
             "NEC",
             "N.E.C."
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Utrecht": {
         "stadium": "Galgenwaard",
         "location": "Stadion Galgenwaard, Utrecht, Países Bajos",
         "aliases": [
             "FC Utrecht"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Club Brujas": {
         "stadium": "Jan Breydel",
@@ -4523,7 +5098,8 @@
             "Club Brugge",
             "Brugge",
             "Brujas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Union Saint-Gilloise": {
         "stadium": "Joseph Marien",
@@ -4532,28 +5108,32 @@
             "Union SG",
             "USG",
             "Royale Union Saint-Gilloise"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Anderlecht": {
         "stadium": "Lotto Park",
         "location": "Lotto Park, Bruselas, Bélgica",
         "aliases": [
             "RSC Anderlecht"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cercle Brugge": {
         "stadium": "Jan Breydel",
         "location": "Jan Breydel Stadium, Brujas, Bélgica",
         "aliases": [
             "Circulo de Brujas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Genk": {
         "stadium": "Cegeka Arena",
         "location": "Cegeka Arena, Genk, Bélgica",
         "aliases": [
             "KRC Genk"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Gent": {
         "stadium": "Planet Group Arena",
@@ -4561,7 +5141,8 @@
         "aliases": [
             "KAA Gent",
             "Gante"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Royal Antwerp": {
         "stadium": "Bosuilstadion",
@@ -4570,7 +5151,8 @@
             "Antwerp",
             "Amberes",
             "Royal Antwerp FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Standard Lieja": {
         "stadium": "Maurice Dufrasne",
@@ -4578,14 +5160,16 @@
         "aliases": [
             "Standard de Liège",
             "Standard Liege"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Galatasaray": {
         "stadium": "RAMS Park",
         "location": "RAMS Park, Estambul, Turquía",
         "aliases": [
             "Galatasaray SK"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Fenerbahçe": {
         "stadium": "Şükrü Saracoğlu",
@@ -4593,7 +5177,8 @@
         "aliases": [
             "Fenerbahce",
             "Fenerbahçe SK"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Besiktas": {
         "stadium": "Tüpraş Stadyumu",
@@ -4601,14 +5186,16 @@
         "aliases": [
             "Beşiktaş",
             "Besiktas JK"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Trabzonspor": {
         "stadium": "Papara Park",
         "location": "Papara Park, Trabzon, Turquía",
         "aliases": [
             "Trabzon"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Istanbul Basaksehir": {
         "stadium": "Başakşehir Fatih Terim",
@@ -4616,7 +5203,8 @@
         "aliases": [
             "Basaksehir",
             "Istanbul BB"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sparta Praga": {
         "stadium": "epet ARENA",
@@ -4624,7 +5212,8 @@
         "aliases": [
             "Sparta Praha",
             "AC Sparta Praha"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Slavia Praga": {
         "stadium": "Fortuna Arena",
@@ -4632,7 +5221,8 @@
         "aliases": [
             "Slavia Praha",
             "SK Slavia Praha"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Viktoria Plzen": {
         "stadium": "Doosan Arena",
@@ -4640,14 +5230,16 @@
         "aliases": [
             "Plzen",
             "Viktoria Plzeň"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Mladá Boleslav": {
         "stadium": "Lokotrans Aréna",
         "location": "Lokotrans Aréna, Mladá Boleslav, República Checa",
         "aliases": [
             "Mlada Boleslav"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Banik Ostrava": {
         "stadium": "Městský stadion",
@@ -4655,7 +5247,8 @@
         "aliases": [
             "Ostrava",
             "FC Baník Ostrava"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "PAOK": {
         "stadium": "Toumba",
@@ -4663,7 +5256,8 @@
         "aliases": [
             "PAOK Salonica",
             "PAOK FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "AEK Atenas": {
         "stadium": "OPAP Arena",
@@ -4671,7 +5265,8 @@
         "aliases": [
             "AEK",
             "AEK Athens"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Olympiacos": {
         "stadium": "Karaiskakis",
@@ -4679,14 +5274,16 @@
         "aliases": [
             "Olympiakos",
             "Olympiacos FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Panathinaikos": {
         "stadium": "Apostolos Nikolaidis",
         "location": "Estadio Apostolos Nikolaidis, Atenas, Grecia",
         "aliases": [
             "Panathinaikos FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Aris Salónica": {
         "stadium": "Kleanthis Vikelidis",
@@ -4694,7 +5291,8 @@
         "aliases": [
             "Aris",
             "Aris Thessaloniki"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Celtic": {
         "stadium": "Celtic Park",
@@ -4702,7 +5300,8 @@
         "aliases": [
             "Celtic FC",
             "The Bhoys"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Rangers": {
         "stadium": "Ibrox Stadium",
@@ -4710,7 +5309,8 @@
         "aliases": [
             "Glasgow Rangers",
             "Rangers FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Hearts": {
         "stadium": "Tynecastle Park",
@@ -4718,28 +5318,32 @@
         "aliases": [
             "Heart of Midlothian",
             "Hearts FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Kilmarnock": {
         "stadium": "Rugby Park",
         "location": "Rugby Park, Kilmarnock, Escocia",
         "aliases": [
             "Kilmarnock FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Aberdeen": {
         "stadium": "Pittodrie",
         "location": "Pittodrie Stadium, Aberdeen, Escocia",
         "aliases": [
             "Aberdeen FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sturm Graz": {
         "stadium": "Merkur Arena",
         "location": "Merkur Arena, Graz, Austria",
         "aliases": [
             "SK Sturm Graz"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "RB Salzburgo": {
         "stadium": "Red Bull Arena",
@@ -4749,14 +5353,16 @@
             "Salzburg",
             "Red Bull Salzburg",
             "FC Salzburg"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "LASK": {
         "stadium": "Raiffeisen Arena",
         "location": "Raiffeisen Arena, Linz, Austria",
         "aliases": [
             "LASK Linz"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Rapid Viena": {
         "stadium": "Allianz Stadion",
@@ -4764,14 +5370,16 @@
         "aliases": [
             "Rapid Wien",
             "Rapid Vienna"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Hartberg": {
         "stadium": "Profertil Arena",
         "location": "Profertil Arena, Hartberg, Austria",
         "aliases": [
             "TSV Hartberg"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Wolfsberger AC": {
         "stadium": "Lavanttal-Arena",
@@ -4779,7 +5387,8 @@
         "aliases": [
             "Wolfsberger",
             "WAC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Young Boys": {
         "stadium": "Stadion Wankdorf",
@@ -4787,21 +5396,24 @@
         "aliases": [
             "BSC Young Boys",
             "YB Bern"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Lugano": {
         "stadium": "Cornaredo",
         "location": "Stadio Cornaredo, Lugano, Suiza",
         "aliases": [
             "FC Lugano"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Servette": {
         "stadium": "Stade de Genève",
         "location": "Stade de Genève, Ginebra, Suiza",
         "aliases": [
             "Servette FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "FC Zúrich": {
         "stadium": "Letzigrund",
@@ -4809,7 +5421,8 @@
         "aliases": [
             "FC Zurich",
             "Zurich"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "St. Gallen": {
         "stadium": "Kybunpark",
@@ -4817,7 +5430,8 @@
         "aliases": [
             "St. Gallen 1879",
             "FCSG"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Basilea": {
         "stadium": "St. Jakob-Park",
@@ -4825,14 +5439,16 @@
         "aliases": [
             "Basel",
             "FC Basel"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Midtjylland": {
         "stadium": "MCH Arena",
         "location": "MCH Arena, Herning, Dinamarca",
         "aliases": [
             "FC Midtjylland"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Brøndby": {
         "stadium": "Brøndby Stadion",
@@ -4840,7 +5456,8 @@
         "aliases": [
             "Brondby",
             "Brøndby IF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Copenhague": {
         "stadium": "Parken",
@@ -4848,7 +5465,8 @@
         "aliases": [
             "FC Copenhagen",
             "Kobenhavn"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Nordsjælland": {
         "stadium": "Right to Dream Park",
@@ -4856,7 +5474,8 @@
         "aliases": [
             "Nordsjaelland",
             "FC Nordsjælland"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Aarhus GF": {
         "stadium": "Ceres Park",
@@ -4864,7 +5483,8 @@
         "aliases": [
             "AGF",
             "Aarhus"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Bodø/Glimt": {
         "stadium": "Aspmyra",
@@ -4873,21 +5493,24 @@
             "Bodo Glimt",
             "Bodo/Glimt",
             "FK Bodø/Glimt"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Molde": {
         "stadium": "Aker Stadion",
         "location": "Aker Stadion, Molde, Noruega",
         "aliases": [
             "Molde FK"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Brann": {
         "stadium": "Brann Stadion",
         "location": "Brann Stadion, Bergen, Noruega",
         "aliases": [
             "SK Brann"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Tromsø": {
         "stadium": "Romssa Arena",
@@ -4895,7 +5518,8 @@
         "aliases": [
             "Tromso",
             "Tromsø IL"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Rosenborg": {
         "stadium": "Lerkendal",
@@ -4903,14 +5527,16 @@
         "aliases": [
             "Rosenborg BK",
             "RBK"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Jagiellonia Bialystok": {
         "stadium": "Stadion Miejski",
         "location": "Stadion Miejski w Białymstoku, Bialystok, Polonia",
         "aliases": [
             "Jagiellonia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Slask Wroclaw": {
         "stadium": "Tarczyński Arena",
@@ -4918,7 +5544,8 @@
         "aliases": [
             "Slask",
             "Wroclaw"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Legia Varsovia": {
         "stadium": "Wojska Polskiego",
@@ -4926,7 +5553,8 @@
         "aliases": [
             "Legia",
             "Legia Warszawa"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Rakow Czestochowa": {
         "stadium": "Miejski Stadion",
@@ -4934,7 +5562,8 @@
         "aliases": [
             "Rakow",
             "Raków"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Lech Poznan": {
         "stadium": "Enea Stadion",
@@ -4942,35 +5571,40 @@
         "aliases": [
             "Lech",
             "Lech Poznań"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Dinamo Zagreb": {
         "stadium": "Maksimir",
         "location": "Estadio Maksimir, Zagreb, Croacia",
         "aliases": [
             "Dinamo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Rijeka": {
         "stadium": "Rujevica",
         "location": "Stadion Rujevica, Rijeka, Croacia",
         "aliases": [
             "HNK Rijeka"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Hajduk Split": {
         "stadium": "Poljud",
         "location": "Stadion Poljud, Split, Croacia",
         "aliases": [
             "Hajduk"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Osijek": {
         "stadium": "Opus Arena",
         "location": "Opus Arena, Osijek, Croacia",
         "aliases": [
             "NK Osijek"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Estrella Roja": {
         "stadium": "Rajko Mitić",
@@ -4979,7 +5613,8 @@
             "Red Star",
             "Crvena Zvezda",
             "Estrella Roja de Belgrado"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Partizan de Belgrado": {
         "stadium": "Partizan",
@@ -4987,7 +5622,8 @@
         "aliases": [
             "Partizan",
             "FK Partizan"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "TSC Backa Topola": {
         "stadium": "TSC Arena",
@@ -4995,14 +5631,16 @@
         "aliases": [
             "TSC",
             "Backa Topola"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cukaricki": {
         "stadium": "Banovom brdu",
         "location": "Stadion na Banovom brdu, Belgrado, Serbia",
         "aliases": [
             "FK Čukarički"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Shakhtar Donetsk": {
         "stadium": "Arena Lviv",
@@ -5010,7 +5648,8 @@
         "aliases": [
             "Shakhtar",
             "Shakhtar Donestk"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Dynamo Kiev": {
         "stadium": "Lobanovskyi Dynamo",
@@ -5018,47 +5657,54 @@
         "aliases": [
             "Dynamo Kyiv",
             "Dinamo de Kiev"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Kryvbas": {
         "stadium": "Hirnyk Stadium",
         "location": "Hirnyk Stadium, Kryvyi Rih, Ucrania",
         "aliases": [
             "Kryvbas Kryvyi Rih"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Dnipro-1": {
         "stadium": "Dnipro-Arena",
         "location": "Dnipro-Arena, Dnipró, Ucrania",
         "aliases": [
             "SC Dnipro-1"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Zorya Luhansk": {
         "stadium": "Slavutych-Arena",
         "location": "Slavutych-Arena, Zaporiyia, Ucrania",
         "aliases": [
             "Zorya"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Maccabi Tel Aviv": {
         "stadium": "Bloomfield",
         "location": "Bloomfield Stadium, Tel Aviv, Israel",
         "aliases": [
             "Maccabi Tel-Aviv"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Maccabi Haifa": {
         "stadium": "Sammy Ofer",
         "location": "Sammy Ofer Stadium, Haifa, Israel",
-        "aliases": []
+        "aliases": [],
+        "update_date": "2025-11-29"
     },
     "Hapoel Be'er Sheva": {
         "stadium": "Turner Stadium",
         "location": "Turner Stadium, Beerseba, Israel",
         "aliases": [
             "Hapoel Beer Sheva"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Malmö FF": {
         "stadium": "Eleda Stadion",
@@ -5066,14 +5712,16 @@
         "aliases": [
             "Malmo",
             "Malmo FF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Elfsborg": {
         "stadium": "Borås Arena",
         "location": "Borås Arena, Borås, Suecia",
         "aliases": [
             "IF Elfsborg"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Djurgårdens": {
         "stadium": "Tele2 Arena",
@@ -5081,7 +5729,8 @@
         "aliases": [
             "Djurgarden",
             "Djurgardens IF"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "BK Häcken": {
         "stadium": "Bravida Arena",
@@ -5089,14 +5738,16 @@
         "aliases": [
             "Hacken",
             "BK Hacken"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "APOEL": {
         "stadium": "GSP Stadium",
         "location": "GSP Stadium, Nicosia, Chipre",
         "aliases": [
             "APOEL Nicosia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Omonia Nicosia": {
         "stadium": "GSP Stadium",
@@ -5104,28 +5755,32 @@
         "aliases": [
             "Omonia",
             "AC Omonia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "AEK Larnaca": {
         "stadium": "AEK Arena",
         "location": "AEK Arena - Georgios Karapatakis, Lárnaca, Chipre",
         "aliases": [
             "AEK Larnaka"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Aris Limassol": {
         "stadium": "Alphamega Stadium",
         "location": "Alphamega Stadium, Limassol, Chipre",
         "aliases": [
             "Aris Limassol FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Pafos": {
         "stadium": "Stelios Kyriakides",
         "location": "Stelios Kyriakides Stadium, Pafos, Chipre",
         "aliases": [
             "Pafos FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ferencváros": {
         "stadium": "Groupama Arena",
@@ -5133,28 +5788,32 @@
         "aliases": [
             "Ferencvaros",
             "Ferencvarosi TC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Puskás Akadémia": {
         "stadium": "Pancho Aréna",
         "location": "Pancho Aréna, Felcsút, Hungría",
         "aliases": [
             "Puskas Akademia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Paksi": {
         "stadium": "Fehérvári úti",
         "location": "Fehérvári úti Stadion, Paks, Hungría",
         "aliases": [
             "Paksi FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Fehérvár": {
         "stadium": "Sóstói Stadion",
         "location": "Sóstói Stadion, Székesfehérvár, Hungría",
         "aliases": [
             "MOL Fehervar"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "FCSB": {
         "stadium": "Arena Națională",
@@ -5163,42 +5822,48 @@
             "Steaua Bucarest",
             "Steaua",
             "FCSB Bucarest"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "CFR Cluj": {
         "stadium": "Dr. Constantin Rădulescu",
         "location": "Stadionul Dr. Constantin Rădulescu, Cluj-Napoca, Rumanía",
         "aliases": [
             "Cluj"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Universitatea Craiova": {
         "stadium": "Ion Oblemenco",
         "location": "Stadionul Ion Oblemenco, Craiova, Rumanía",
         "aliases": [
             "U Craiova"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Farul Constanta": {
         "stadium": "Viitorul",
         "location": "Stadionul Viitorul, Ovidiu, Rumanía",
         "aliases": [
             "Farul"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sepsi": {
         "stadium": "Sepsi Arena",
         "location": "Sepsi Arena, Sfântu Gheorghe, Rumanía",
         "aliases": [
             "Sepsi OSK"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ludogorets": {
         "stadium": "Huvepharma Arena",
         "location": "Huvepharma Arena, Razgrad, Bulgaria",
         "aliases": [
             "Ludogorets, Ludogorets Razgrad"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "CSKA Sofía": {
         "stadium": "Vasil Levski",
@@ -5206,21 +5871,24 @@
         "aliases": [
             "CSKA Sofia",
             "CSKA-Sofia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Cherno More Varna": {
         "stadium": "Ticha Stadium",
         "location": "Ticha Stadium, Varna, Bulgaria",
         "aliases": [
             "Cherno More"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Slovan Bratislava": {
         "stadium": "Tehelné pole",
         "location": "Tehelné pole, Bratislava, Eslovaquia",
         "aliases": [
             "Slovan"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Dunajská Streda": {
         "stadium": "MOL Aréna",
@@ -5228,14 +5896,16 @@
         "aliases": [
             "DAC 1904",
             "DAC Dunajska Streda"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Spartak Trnava": {
         "stadium": "Anton Malatinský",
         "location": "Štadión Antona Malatinského, Trnava, Eslovaquia",
         "aliases": [
             "Spartak"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Qarabag": {
         "stadium": "Tofiq Bahramov",
@@ -5243,49 +5913,56 @@
         "aliases": [
             "Qarabağ",
             "Karabakh"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Neftchi Baku": {
         "stadium": "Bakcell Arena",
         "location": "Neftçi Arena, Bakú, Azerbaiyán",
         "aliases": [
             "Neftchi"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Zira": {
         "stadium": "Zira Olympic",
         "location": "Zira Olympic Sport Complex, Zira, Azerbaiyán",
         "aliases": [
             "Zira FK"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sabah": {
         "stadium": "Bank Respublika Arena",
         "location": "Bank Respublika Arena, Masazır, Azerbaiyán",
         "aliases": [
             "Sabah FK"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Celje": {
         "stadium": "Z’dežele",
         "location": "Stadion Z’dežele, Celje, Eslovenia",
         "aliases": [
             "NK Celje"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Maribor": {
         "stadium": "Ljudski vrt",
         "location": "Ljudski vrt, Maribor, Eslovenia",
         "aliases": [
             "NK Maribor"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Olimpija Ljubljana": {
         "stadium": "Stožice",
         "location": "Stadion Stožice, Liubliana, Eslovenia",
         "aliases": [
             "Olimpija"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sheriff Tiraspol": {
         "stadium": "Sheriff Stadium",
@@ -5293,7 +5970,8 @@
         "aliases": [
             "Sheriff",
             "FC Sheriff"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Petrocub Hîncesti": {
         "stadium": "Municipal Hîncesti",
@@ -5301,75 +5979,86 @@
         "aliases": [
             "Petrocub",
             "Petrocub Hincesti"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ordabasy": {
         "stadium": "Kazhymukan Munaitpasov",
         "location": "Kazhymukan Munaitpasov Stadium, Shymkent, Kazajistán",
         "aliases": [
             "FC Ordabasy"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Astana": {
         "stadium": "Astana Arena",
         "location": "Astana Arena, Astaná, Kazajistán",
         "aliases": [
             "FC Astana"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Aktobe": {
         "stadium": "Central de Aktobe",
         "location": "Estadio Central, Aktobe, Kazajistán",
         "aliases": [
             "FC Aktobe"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Tobol": {
         "stadium": "Central de Kostanay",
         "location": "Estadio Central, Kostanay, Kazajistán",
         "aliases": [
             "Tobol Kostanay"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "HJK Helsinki": {
         "stadium": "Bolt Arena",
         "location": "Bolt Arena, Helsinki, Finlandia",
         "aliases": [
             "HJK"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "KuPS": {
         "stadium": "Väre Areena",
         "location": "Väre Areena, Kuopio, Finlandia",
         "aliases": [
             "Kuopion Palloseura"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ilves": {
         "stadium": "Tammelan Stadion",
         "location": "Tammelan Stadion, Tampere, Finlandia",
         "aliases": [
             "Ilves Tampere"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Shamrock Rovers": {
         "stadium": "Tallaght Stadium",
         "location": "Tallaght Stadium, Dublín, Irlanda",
         "aliases": [
             "Shamrock"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Shelbourne": {
         "stadium": "Tolka Park",
         "location": "Tolka Park, Dublín, Irlanda",
         "aliases": [
             "Shelbourne FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Derry City": {
         "stadium": "Brandywell",
         "location": "Ryan McBride Brandywell Stadium, Derry, Irlanda del Norte",
-        "aliases": []
+        "aliases": [],
+        "update_date": "2025-11-29"
     },
     "St Patrick's Athletic": {
         "stadium": "Richmond Park",
@@ -5377,77 +6066,88 @@
         "aliases": [
             "St Patricks",
             "St. Pats"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "RFS": {
         "stadium": "LNK Sporta Parks",
         "location": "LNK Sporta Parks, Riga, Letonia",
         "aliases": [
             "Rigas FS"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Riga FC": {
         "stadium": "Skonto Stadium",
         "location": "Skonto Stadium, Riga, Letonia",
         "aliases": [
             "Riga"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Valmiera": {
         "stadium": "Jānis Daliņš",
         "location": "Jānis Daliņš Stadium, Valmiera, Letonia",
         "aliases": [
             "Valmiera FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Borac Banja Luka": {
         "stadium": "Banja Luka City Stadium",
         "location": "Gradski stadion Banja Luka, Banja Luka, Bosnia y Herzegovina",
         "aliases": [
             "Borac"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Zrinjski Mostar": {
         "stadium": "Bijelim Brijegom",
         "location": "Stadion pod Bijelim Brijegom, Mostar, Bosnia y Herzegovina",
         "aliases": [
             "Zrinjski"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sarajevo": {
         "stadium": "Asim Ferhatović Hase",
         "location": "Estadio Asim Ferhatović Hase, Sarajevo, Bosnia y Herzegovina",
         "aliases": [
             "FK Sarajevo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Vikingur Reykjavik": {
         "stadium": "Víkingsvöllur",
         "location": "Víkingsvöllur, Reikiavik, Islandia",
         "aliases": [
             "Vikingur"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Breidablik": {
         "stadium": "Kópavogsvöllur",
         "location": "Kópavogsvöllur, Kópavogur, Islandia",
         "aliases": [
             "Breidablik UBK"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Valur": {
         "stadium": "Hlíðarendi",
         "location": "Hlíðarendi, Reikiavik, Islandia",
         "aliases": [
             "Valur Reykjavik"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "FK Panevezys": {
         "stadium": "Aukštaitija",
         "location": "Aukštaitija Stadium, Panevėžys, Lituania",
         "aliases": [
             "Panevezys"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Zalgiris Vilnius": {
         "stadium": "LFF Stadium",
@@ -5455,42 +6155,48 @@
         "aliases": [
             "Zalgiris",
             "FK Žalgiris"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Pyunik": {
         "stadium": "Vazgen Sargsyan",
         "location": "Estadio Republicano Vazgen Sargsyan, Ereván, Armenia",
         "aliases": [
             "Pyunik Yerevan"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Noah": {
         "stadium": "Abovyan City Stadium",
         "location": "Abovyan City Stadium, Abovyan, Armenia",
         "aliases": [
             "FC Noah"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ararat-Armenia": {
         "stadium": "Yerevan Football Academy",
         "location": "Yerevan Football Academy Stadium, Ereván, Armenia",
         "aliases": [
             "Ararat Armenia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Dinamo Minsk": {
         "stadium": "Dinamo Stadium",
         "location": "Dinamo National Olympic Stadium, Minsk, Bielorrusia",
         "aliases": [
             "Dinamo Mn"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Neman Grodno": {
         "stadium": "Neman Stadium",
         "location": "Neman Stadium, Grodno, Bielorrusia",
         "aliases": [
             "Neman"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "KÍ Klaksvik": {
         "stadium": "Við Djúpumýrar",
@@ -5498,77 +6204,88 @@
         "aliases": [
             "KI Klaksvik",
             "Klaksvik"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Vikingur Gota": {
         "stadium": "Sarpugerði",
         "location": "Sarpugerði, Norðragøta, Islas Feroe",
         "aliases": [
             "Vikingur Gøta"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Ballkani": {
         "stadium": "Suhareka City Stadium",
         "location": "Suhareka City Stadium, Suhareka, Kosovo",
         "aliases": [
             "FC Ballkani"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Drita": {
         "stadium": "Gjilan City Stadium",
         "location": "Gjilan City Stadium, Gnjilane, Kosovo",
         "aliases": [
             "FC Drita"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Differdange 03": {
         "stadium": "Stade Municipal",
         "location": "Stade Municipal de la Ville de Differdange, Differdange, Luxemburgo",
         "aliases": [
             "Differdange"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Dudelange": {
         "stadium": "Jos Nosbaum",
         "location": "Stade Jos Nosbaum, Dudelange, Luxemburgo",
         "aliases": [
             "F91 Dudelange"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Swift Hesperange": {
         "stadium": "Alphonse Theis",
         "location": "Stade Alphonse Theis, Hesperange, Luxemburgo",
         "aliases": [
             "Swift Hesper"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Larne": {
         "stadium": "Inver Park",
         "location": "Inver Park, Larne, Irlanda del Norte",
         "aliases": [
             "Larne FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Linfield": {
         "stadium": "Windsor Park",
         "location": "Windsor Park, Belfast, Irlanda del Norte",
         "aliases": [
             "Linfield FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Flora Tallinn": {
         "stadium": "A. Le Coq Arena",
         "location": "A. Le Coq Arena, Tallin, Estonia",
         "aliases": [
             "Flora"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Levadia Tallinn": {
         "stadium": "A. Le Coq Arena",
         "location": "A. Le Coq Arena, Tallin, Estonia",
         "aliases": [
             "Levadia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "The New Saints": {
         "stadium": "Park Hall",
@@ -5576,150 +6293,172 @@
         "aliases": [
             "TNS",
             "The New Saints FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Lincoln Red Imps": {
         "stadium": "Victoria Stadium",
         "location": "Victoria Stadium, Gibraltar",
         "aliases": [
             "Lincoln Red Imps FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "FC Vaduz": {
         "stadium": "Rheinpark",
         "location": "Rheinpark Stadion, Vaduz, Liechtenstein",
         "aliases": [
             "Vaduz"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Dinamo Batumi": {
         "stadium": "Adjarabet Arena",
         "location": "Adjarabet Arena, Batumi, Georgia",
-        "aliases": []
+        "aliases": [],
+        "update_date": "2025-11-29"
     },
     "Dinamo Tbilisi": {
         "stadium": "Boris Paichadze",
         "location": "Boris Paichadze Dinamo Arena, Tiflis, Georgia",
-        "aliases": []
+        "aliases": [],
+        "update_date": "2025-11-29"
     },
     "Egnatia": {
         "stadium": "Egnatia Arena",
         "location": "Egnatia Arena, Rrogozhinë, Albania",
         "aliases": [
             "KF Egnatia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Partizani": {
         "stadium": "Arena e Demave",
         "location": "Arena e Demave, Tirana, Albania",
         "aliases": [
             "FK Partizani"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Struga": {
         "stadium": "Gradska Plaza",
         "location": "Gradska Plaza Stadium, Struga, Macedonia del Norte",
         "aliases": [
             "FC Struga"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Shkëndija": {
         "stadium": "Ecolog Arena",
         "location": "Ecolog Arena, Tetovo, Macedonia del Norte",
         "aliases": [
             "Shkendija"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Decic": {
         "stadium": "Stadion Tuško Polje",
         "location": "Stadion Tuško Polje, Tuzi, Montenegro",
         "aliases": [
             "FK Dečić"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Buducnost Podgorica": {
         "stadium": "Pod Goricom",
         "location": "Stadion pod Goricom, Podgorica, Montenegro",
         "aliases": [
             "Buducnost"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "UE Santa Coloma": {
         "stadium": "Estadi Nacional",
         "location": "Estadi Nacional, Andorra la Vella, Andorra",
         "aliases": [
             "UE Santa Coloma"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Inter Club d'Escaldes": {
         "stadium": "Centre d'Entrenament de la FAF",
         "location": "Centre d'Entrenament de la FAF, Andorra la Vella, Andorra",
         "aliases": [
             "Inter Escaldes"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Hamrun Spartans": {
         "stadium": "Victor Tedesco",
         "location": "Victor Tedesco Stadium, Ħamrun, Malta",
         "aliases": [
             "Hamrun"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Floriana": {
         "stadium": "Independence Arena",
         "location": "Independence Arena, Floriana, Malta",
         "aliases": [
             "Floriana FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Virtus": {
         "stadium": "Campo Sportivo di Acquaviva",
         "location": "Campo Sportivo di Acquaviva, Acquaviva, San Marino",
         "aliases": [
             "SS Virtus"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Tre Penne": {
         "stadium": "Stadio Fonte dell'Ovo",
         "location": "Stadio Fonte dell'Ovo, San Marino",
         "aliases": [
             "SP Tre Penne"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Boavista": {
         "stadium": "Estádio do Bessa",
         "location": "Estádio do Bessa, Oporto, Portugal",
         "aliases": [
             "Boavista FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Gil Vicente": {
         "stadium": "Cidade de Barcelos",
         "location": "Estádio Cidade de Barcelos, Barcelos, Portugal",
         "aliases": [
             "Gil Vicente FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Rio Ave": {
         "stadium": "Estádio dos Arcos",
         "location": "Estádio dos Arcos, Vila do Conde, Portugal",
         "aliases": [
             "Rio Ave FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Chaves": {
         "stadium": "Municipal de Chaves",
         "location": "Estádio Municipal Eng. Manuel Branco Teixeira, Chaves, Portugal",
         "aliases": [
             "GD Chaves"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Vizela": {
         "stadium": "Estádio do FC Vizela",
         "location": "Estádio do FC Vizela, Vizela, Portugal",
         "aliases": [
             "FC Vizela"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Paços de Ferreira": {
         "stadium": "Capital do Móvel",
@@ -5727,42 +6466,48 @@
         "aliases": [
             "Pacos de Ferreira",
             "FC Paços de Ferreira"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Estoril": {
         "stadium": "António Coimbra da Mota",
         "location": "Estádio António Coimbra da Mota, Estoril, Portugal",
         "aliases": [
             "Estoril Praia"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Moreirense": {
         "stadium": "Comendador Joaquim",
         "location": "Parque de Jogos Comendador Joaquim de Almeida Freitas, Moreira de Cónegos, Portugal",
         "aliases": [
             "Moreirense FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Portimonense": {
         "stadium": "Municipal de Portimão",
         "location": "Estádio Municipal de Portimão, Portimão, Portugal",
         "aliases": [
             "Portimonense SC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Santa Clara": {
         "stadium": "São Miguel",
         "location": "Estádio de São Miguel, Ponta Delgada, Portugal",
         "aliases": [
             "CD Santa Clara"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Farense": {
         "stadium": "São Luís",
         "location": "Estádio de São Luís, Faro, Portugal",
         "aliases": [
             "SC Farense"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Leixões": {
         "stadium": "Estádio do Mar",
@@ -5770,7 +6515,8 @@
         "aliases": [
             "Leixoes",
             "Leixões SC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Académica": {
         "stadium": "Cidade de Coimbra",
@@ -5778,14 +6524,16 @@
         "aliases": [
             "Academica",
             "Académica de Coimbra"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Feirense": {
         "stadium": "Marcolino de Castro",
         "location": "Estádio Marcolino de Castro, Santa Maria da Feira, Portugal",
         "aliases": [
             "CD Feirense"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Al-Nassr": {
         "stadium": "Al-Awwal Park",
@@ -5793,21 +6541,24 @@
         "aliases": [
             "Al Nassr",
             "Al-Nassr FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Al-Shabab": {
         "stadium": "Al-Shabab Club Stadium",
         "location": "Al-Shabab Club Stadium, Riad, Arabia Saudí",
         "aliases": [
             "Al Shabab"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Pumas UNAM": {
         "stadium": "Olímpico Universitario",
         "location": "Estadio Olímpico Universitario, Ciudad de México, México",
         "aliases": [
             "Pumas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Club América": {
         "stadium": "Ciudad de los Deportes",
@@ -5816,14 +6567,16 @@
             "America",
             "CF América",
             "Las Águilas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "San Jose Earthquakes": {
         "stadium": "PayPal Park",
         "location": "PayPal Park, San José, EE.UU.",
         "aliases": [
             "San Jose"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Club Nacional": {
         "stadium": "Gran Parque Central",
@@ -5831,7 +6584,8 @@
         "aliases": [
             "Nacional",
             "Nacional de Montevideo"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Peñarol": {
         "stadium": "Campeón del Siglo",
@@ -5839,133 +6593,152 @@
         "aliases": [
             "Penarol",
             "Club Atlético Peñarol"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Boca Juniors": {
         "stadium": "La Bombonera",
         "location": "Estadio Alberto J. Armando, Buenos Aires, Argentina",
         "aliases": [
             "Boca"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "River Plate": {
         "stadium": "Mâs Monumental",
         "location": "Estadio Mâs Monumental, Buenos Aires, Argentina",
         "aliases": [
             "River"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Santos": {
         "stadium": "Vila Belmiro",
         "location": "Estádio Urbano Caldeira, Santos, Brasil",
         "aliases": [
             "Santos FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Flamengo": {
         "stadium": "Maracanã",
         "location": "Estádio do Maracanã, Río de Janeiro, Brasil",
         "aliases": [
             "Fla"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Zenit": {
         "stadium": "Gazprom Arena",
         "location": "Gazprom Arena, San Petersburgo, Rusia",
         "aliases": [
             "Zenit St. Petersburg"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Spartak Moscú": {
         "stadium": "Lukoil Arena",
         "location": "Lukoil Arena, Moscú, Rusia",
         "aliases": [
             "Spartak Moscow"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Palermo": {
         "stadium": "Renzo Barbera",
         "location": "Stadio Renzo Barbera, Palermo, Italia",
         "aliases": [
             "Palermo FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Slovan Liberec": {
         "stadium": "U Nisy",
         "location": "Stadion U Nisy, Liberec, República Checa",
         "aliases": [
             "Liberec"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Leeds United": {
         "stadium": "Elland Road",
         "location": "Elland Road, Leeds, Reino Unido",
         "aliases": [
             "Leeds"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sheffield United": {
         "stadium": "Bramall Lane",
         "location": "Bramall Lane, Sheffield, Reino Unido",
         "aliases": [
             "Sheffield Utd"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Norwich City": {
         "stadium": "Carrow Road",
         "location": "Carrow Road, Norwich, Reino Unido",
         "aliases": [
             "Norwich"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Watford": {
         "stadium": "Vicarage Road",
         "location": "Vicarage Road, Watford, Reino Unido",
         "aliases": [
             "Watford FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Middlesbrough": {
         "stadium": "Riverside Stadium",
         "location": "Riverside Stadium, Middlesbrough, Reino Unido",
         "aliases": [
             "Boro"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Sunderland": {
         "stadium": "Stadium of Light",
         "location": "Stadium of Light, Sunderland, Reino Unido",
         "aliases": [
             "Sunderland AFC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Burnley": {
         "stadium": "Turf Moor",
         "location": "Turf Moor, Burnley, Reino Unido",
         "aliases": [
             "Burnley FC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Luton Town": {
         "stadium": "Kenilworth Road",
         "location": "Kenilworth Road, Luton, Reino Unido",
         "aliases": [
             "Luton"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Caracas FC": {
         "stadium": "Olímpico de la UCV",
         "location": "Estadio Olímpico de la UCV, Caracas, Venezuela",
         "aliases": [
             "Caracas"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Deportivo La Guaira": {
         "stadium": "Olímpico de la UCV",
         "location": "Estadio Olímpico de la UCV, Caracas, Venezuela",
         "aliases": [
             "La Guaira"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Deportivo Español": {
         "stadium": "Estadio Nueva España",
@@ -5974,7 +6747,8 @@
             "Club Deportivo Español",
             "Dep. Español",
             "Deportivo Espanol"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Varzim": {
         "stadium": "Estádio do Varzim SC",
@@ -5982,7 +6756,8 @@
         "aliases": [
             "Varzim S.C.",
             "Varzim SC"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Penafiel": {
         "stadium": "Estádio Municipal 25 de Abril",
@@ -5990,7 +6765,8 @@
         "aliases": [
             "F.C. Penafiel",
             "FC Penafiel"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Académico Viseu": {
         "stadium": "Estádio do Fontelo",
@@ -5999,7 +6775,8 @@
             "Académico de Viseu",
             "Academico Viseu",
             "Academico de Viseu"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Oliveirense": {
         "stadium": "Estádio Carlos Osório",
@@ -6007,7 +6784,8 @@
         "aliases": [
             "U.D. Oliveirense",
             "UD Oliveirense"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Tondela": {
         "stadium": "Estádio João Cardoso",
@@ -6015,7 +6793,8 @@
         "aliases": [
             "C.D. Tondela",
             "CD Tondela"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Millonarios": {
         "stadium": "Estadio Nemesio Camacho El Campín",
@@ -6024,7 +6803,8 @@
             "Millonarios F.C.",
             "Millonarios FC",
             "Millos"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "LDU Quito": {
         "stadium": "Estadio Rodrigo Paz Delgado",
@@ -6033,7 +6813,8 @@
             "LDU de Quito",
             "Liga de Quito",
             "L.D.U. Quito"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Al-Ittihad": {
         "stadium": "King Abdullah Sports City",
@@ -6042,7 +6823,8 @@
             "Al Ittihad",
             "Ittihad Club",
             "Al-Ittihad Jeddah"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "Vissel Kobe": {
         "stadium": "Noevir Stadium Kobe",
@@ -6050,18 +6832,19 @@
         "aliases": [
             "Vissel",
             "Vissel Kōbe"
-        ]
+        ],
+        "update_date": "2025-11-29"
     },
     "UE Sant Andreu": {
         "stadium": "Estadio Narcís Sala",
         "location": "Estadio Narcís Sala, UE Sant Andreu",
         "aliases": [],
-        "last_updated": "2025-11-25"
+        "update_date": "2025-11-29"
     },
     "Crvena Zvezda": {
         "stadium": "Stadion Rajko Mitić",
         "location": "Stadion Rajko Mitić, Crvena Zvezda",
         "aliases": [],
-        "last_updated": "2025-11-25"
+        "update_date": "2025-11-29"
     }
 }
