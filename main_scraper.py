@@ -220,54 +220,6 @@ def update_db(team_name, stadium, location):
     # Actualizar Cache y Flag
     norm_name = normalize_team_key(team_name)
     ALIAS_CACHE[norm_name] = target_key
-    DB_DIRTY = True    global STADIUM_DB, ALIAS_CACHE, DB_DIRTY
-    
-    # Validación básica de calidad de datos
-    invalid_terms = ["campo municipal", "estadio local", "campo de futbol", "municipal", "ciudad deportiva"]
-    stadium_lower = stadium.lower()
-    if any(term == stadium_lower for term in invalid_terms) or len(stadium) < 4:
-        logging.info(f"⚠️ Estadio '{stadium}' descartado por ser genérico.")
-        return 
-
-    # Buscar si el equipo ya existe (incluso bajo otro nombre/alias)
-    _, _, existing_key = find_stadium_dynamic(team_name)
-    
-    target_key = team_name
-    is_new_entry = True
-
-    if existing_key:
-        target_key = existing_key
-        is_new_entry = False
-    
-    if is_new_entry:
-        logging.info(f"🆕 Nuevo equipo añadido a DB: {team_name} -> {stadium}")
-        STADIUM_DB[target_key] = {
-            "stadium": stadium,
-            "location": location,
-            "aliases": [team_name], # Auto-add self as alias
-            "last_updated": datetime.datetime.now().strftime("%Y-%m-%d")
-        }
-    else:
-        # Verificar si cambia el estadio
-        current_data = STADIUM_DB[target_key]
-        old_stadium = current_data.get('stadium', '')
-        
-        # Actualizar datos si son diferentes
-        if old_stadium != stadium:
-            logging.info(f"🏟️ Actualizando estadio para '{target_key}': '{old_stadium}' -> '{stadium}'")
-            STADIUM_DB[target_key]["stadium"] = stadium
-            STADIUM_DB[target_key]["location"] = location
-            STADIUM_DB[target_key]["last_updated"] = datetime.datetime.now().strftime("%Y-%m-%d")
-        
-        # Añadir el nombre actual como alias si no existe
-        if team_name not in current_data.get('aliases', []):
-            if normalize_team_key(team_name) != normalize_team_key(target_key):
-                STADIUM_DB[target_key].setdefault('aliases', []).append(team_name)
-                logging.info(f"🏷️ Nuevo alias añadido para '{target_key}': {team_name}")
-
-    # Actualizar Cache y Flag
-    norm_name = normalize_team_key(team_name)
-    ALIAS_CACHE[norm_name] = target_key
     DB_DIRTY = True
 
 # --- FUNCIONES DE AYUDA ---
