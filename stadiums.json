@@ -62,13 +62,13 @@
         "update_date": "2025-11-29"
     },
     "Getafe": {
-        "stadium": "Coliseum",
-        "location": "Coliseum, Getafe, España",
+        "stadium": "Estadio Coliseum",
+        "location": "Estadio Coliseum, Getafe",
         "aliases": [
             "Getafe C.F.",
             "Getafe CF"
         ],
-        "update_date": "2025-11-29"
+        "update_date": "2026-01-29"
     },
     "Girona": {
         "stadium": "Montilivi",
