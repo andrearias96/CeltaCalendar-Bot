@@ -53,13 +53,13 @@
     },
     "Barcelona": {
         "stadium": "Spotify Camp Nou",
-        "location": "Spotify Camp Nou, Barcelona, España",
+        "location": "Spotify Camp Nou, FC Barcelona",
         "aliases": [
             "F.C. Barcelona",
             "FC Barcelona",
             "Barça"
         ],
-        "update_date": "2025-11-29"
+        "update_date": "2026-04-04"
     },
     "Getafe": {
         "stadium": "Estadio Coliseum",
