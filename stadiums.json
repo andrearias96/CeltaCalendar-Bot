@@ -11,7 +11,7 @@
     },
     "Atlético de Madrid": {
         "stadium": "Riyadh Air Metropolitano",
-        "location": "Estadio Riyadh Air Metropolitano, Madrid, España",
+        "location": "Riyadh Air Metropolitano, Atlético de Madrid",
         "aliases": [
             "Atletico de Madrid",
             "Atlético",
@@ -20,7 +20,7 @@
             "Wanda Metropolitano",
             "Cívitas Metropolitano"
         ],
-        "update_date": "2025-11-29"
+        "update_date": "2026-04-20"
     },
     "Osasuna": {
         "stadium": "El Sadar",
