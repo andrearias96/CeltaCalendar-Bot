@@ -240,6 +240,7 @@ def get_competition_details(comp_text):
     text = comp_text.lower()
     if 'promoción' in text: return 'Promoción de ascenso a Primera', '🏆', '3'
     if 'champions' in text: return 'Champions League', '✨', '5'
+    if 'conference' in text: return 'Conference League', '🇪🇺', '5'
     if 'intertoto' in text: return 'Copa Intertoto', '🏆', '3'
     if 'segunda división b' in text: return 'Segunda División B', '🅱️', '7'
     if 'segunda división' in text: return 'Segunda División', '2️⃣', '7'
@@ -371,6 +372,10 @@ def force_kill_chrome():
             subprocess.run(['pkill', '-f', 'chrome'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             subprocess.run(['pkill', '-f', 'chromedriver'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             time.sleep(2) 
+        elif os.name == 'nt':
+            subprocess.run(['taskkill', '/F', '/IM', 'chrome.exe'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            subprocess.run(['taskkill', '/F', '/IM', 'chromedriver.exe'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            time.sleep(2)
     except Exception: pass
 
 def setup_driver():
@@ -709,11 +714,10 @@ def run_sync():
             comp_name, icon, color = get_competition_details(match['competicion'])
             match_month = match['inicio'].month
             if 'amistoso' in comp_name.lower() and match_month in [7, 8]: comp_name = 'Pretemporada'
-            if match['season'] == '2025-2026' and comp_name == 'Primera División': comp_name = 'Liga'
+            if comp_name == 'Primera División': comp_name = 'Liga'
             
             round_tag = get_round_details(match['competicion'])
             display_tbd = match['is_tbd']
-            if display_tbd and match.get('season') != '2025-2026': display_tbd = False
 
             base_title = f"{match['local']} vs {match['visitante']}"
             if match['score'] and is_finished: base_title = f"{match['local']} {match['score']} {match['visitante']}"
