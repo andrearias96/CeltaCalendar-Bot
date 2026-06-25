@@ -34,7 +34,7 @@ jobs:
         CALENDAR_ID: ${{ secrets.CALENDAR_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        GCP_CREDENTIALS_JSON: ${{ secrets.GCP_CREDENTIALS_JSON }}
+        GCP_CREDENTIALS_JSON_B64: ${{ secrets.GCP_CREDENTIALS_JSON }}
         GCP_TOKEN_JSON_B64: ${{ secrets.GCP_TOKEN_JSON_B64 }}
       run: python main_scraper.py
 

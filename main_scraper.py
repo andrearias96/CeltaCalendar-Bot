@@ -640,11 +640,6 @@ def run_sync():
         next_match_processed = False 
         
         for i, match in enumerate(matches):
-            telegram_msgs = []
-        now_utc = datetime.datetime.now(datetime.timezone.utc)
-        next_match_processed = False 
-        
-        for i, match in enumerate(matches):
             is_finished = 'fin' in match['status'].lower()
             if match['inicio'] < now_utc and not is_finished and match['id'] not in existing_events: continue
 
@@ -793,7 +788,7 @@ def run_sync():
                 new_title_norm = normalize_text(full_title)
                 if old_title_norm != new_title_norm:
                     needs_update = True
-                    if "TBC" in old_title_norm != "TBC" in new_title_norm: notify_telegram = True
+                    if ("TBC" in old_title_norm) != ("TBC" in new_title_norm): notify_telegram = True
                     if match['score'] and match['score'] not in old_title_norm: notify_telegram = True
                     change_details.append(f"📝 Título: '{ev.get('summary')}' -> '{full_title}'")
 
