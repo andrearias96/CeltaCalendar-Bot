@@ -493,7 +493,9 @@ def fetch_matches(driver):
 
         matches = []
         try: wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, SELECTORS["MATCH_LINK"])))
-        except: return []
+        except Exception as e:
+            logging.warning(f"⚠️ Timeout o no se encontraron partidos en Besoccer: {e}")
+            return []
 
         soup = BeautifulSoup(driver.page_source, 'lxml')
         match_elements = soup.select(SELECTORS["MATCH_LINK"])
@@ -548,9 +550,13 @@ def fetch_matches(driver):
                     'score': score_text, 'status': status_text,
                     'link': match_link, 'season': season_text 
                 })
-            except: continue
+            except Exception as e:
+                logging.warning(f"⚠️ Error al extraer datos de un partido: {e}")
+                continue
         return matches
-    except Exception as e: raise e 
+    except Exception as e: 
+        logging.error(f"❌ Error crítico obteniendo lista de partidos: {e}")
+        raise e 
 
 def get_calendar_service():
     if os.getenv("GCP_CREDENTIALS_JSON_B64"):
@@ -575,8 +581,11 @@ def get_calendar_service():
 def send_telegram(msg):
     if not CONFIG["TELEGRAM_TOKEN"] or not CONFIG["TELEGRAM_CHAT_ID"]: return
     url = f"https://api.telegram.org/bot{CONFIG['TELEGRAM_TOKEN']}/sendMessage"
-    try: requests.post(url, json={'chat_id': CONFIG['TELEGRAM_CHAT_ID'], 'text': msg, 'parse_mode': 'HTML'})
-    except: pass
+    try: 
+        resp = requests.post(url, json={'chat_id': CONFIG['TELEGRAM_CHAT_ID'], 'text': msg, 'parse_mode': 'HTML'})
+        if resp.status_code != 200: logging.error(f"Telegram API Error: {resp.text}")
+    except Exception as e:
+        logging.error(f"Telegram Exception: {e}")
 
 def execute_with_retry(request):
     for n in range(0, 5):
@@ -615,6 +624,29 @@ def is_stadium_stale(team_name):
     except ValueError:
         return True # Formato de fecha corrupto -> Actualizar
 
+def find_existing_event(match, existing_events):
+    if match['id'] in existing_events:
+        return existing_events[match['id']]
+    
+    match_local = normalize_text(match['local']).lower()
+    match_visit = normalize_text(match['visitante']).lower()
+    
+    if not match_local or not match_visit:
+        return None
+        
+    for eid, ev in existing_events.items():
+        summary = normalize_text(ev.get('summary', '')).lower()
+        if match_local in summary and match_visit in summary:
+            old_dt_str = ev.get('start', {}).get('dateTime')
+            if not old_dt_str: continue
+            
+            old_dt = parse_google_iso(old_dt_str)
+            if old_dt:
+                diff_days = abs((old_dt - match['inicio']).days)
+                if diff_days <= 10:
+                    return ev
+    return None
+
 def run_sync():
     load_stadium_db()
     driver = setup_driver() 
@@ -645,8 +677,9 @@ def run_sync():
         next_match_processed = False 
         
         for i, match in enumerate(matches):
+            ev = find_existing_event(match, existing_events)
             is_finished = 'fin' in match['status'].lower()
-            if match['inicio'] < now_utc and not is_finished and match['id'] not in existing_events: continue
+            if match['inicio'] < now_utc and not is_finished and not ev: continue
 
             # --- STADIUM ---
             stadium_name = None
@@ -771,9 +804,7 @@ def run_sync():
                 'reminders': {'useDefault': False, 'overrides': custom_reminders}
             }
 
-            mid = match['id']
-            if mid in existing_events:
-                ev = existing_events[mid]
+            if ev:
                 if is_finished and match['score'] and match['score'] in clean_text(ev.get('summary', '')): continue
 
                 needs_update = False
@@ -832,8 +863,14 @@ def run_sync():
                 telegram_msgs.append(f"✅ <b>Nuevo:</b> {full_title}\n{log_suffix}")
 
         save_stadium_db()
-        if telegram_msgs: 
-            send_telegram("<b>🔔 Celta Calendar Update</b>\n\n" + "\n".join(telegram_msgs))
+        if telegram_msgs:
+            chunk = "<b>🔔 Celta Calendar Update</b>\n\n"
+            for msg in telegram_msgs:
+                if len(chunk) + len(msg) > 3800:
+                    send_telegram(chunk)
+                    chunk = "<b>🔔 Celta Calendar Update (Cont.)</b>\n\n"
+                chunk += msg + "\n"
+            send_telegram(chunk)
             logging.info(f"📨 Notificación enviada ({len(telegram_msgs)} cambios importantes).")
         else: logging.info("✅ Todo sincronizado. No hubo cambios.")
 
