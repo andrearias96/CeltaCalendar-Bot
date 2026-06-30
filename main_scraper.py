@@ -652,6 +652,13 @@ def run_sync():
     driver = setup_driver() 
     try:
         tv_schedule_map = fetch_tv_summary_from_url(driver)
+        
+        logging.info("🔄 Reiniciando driver para evitar bloqueos en Besoccer...")
+        try: driver.quit()
+        except: pass
+        force_kill_chrome()
+        driver = setup_driver()
+        
         matches = fetch_matches(driver)
         if not matches: return
 
