@@ -251,14 +251,11 @@ def get_competition_details(comp_text):
 
 def get_round_details(comp_raw):
     if not comp_raw or 'amistoso' in comp_raw.lower(): return "", None
-    parts = comp_raw.split('.')
-    if len(parts) < 2: return "", None 
-    raw_detail = parts[-1].strip()
-    text = raw_detail.lower()
+    text = comp_raw.lower()
     
     round_name = ""
     if 'jornada' in text:
-        nums = [s for s in raw_detail.split() if s.isdigit()]
+        nums = [s for s in text.split() if s.isdigit()]
         if nums: return f"J{nums[0]}", None
     
     if 'semi' in text or '1/2' in text: round_name = "Semis"
@@ -267,7 +264,7 @@ def get_round_details(comp_raw):
     elif 'dieciseis' in text or '1/16' in text: round_name = "Dieciseisavos"
     elif 'final' in text: round_name = "Final"
     elif '/' in text:
-        for word in raw_detail.split():
+        for word in text.split():
             if '/' in word: 
                 round_name = f"Ronda {word}"
                 break
@@ -279,6 +276,17 @@ def get_round_details(comp_raw):
     elif 'vuelta' in text: leg = 'vuelta'
     
     return round_name, leg
+
+def get_league_half(comp_name, round_name):
+    if not round_name.startswith("J"): return ""
+    try: j = int(round_name[1:])
+    except: return ""
+    
+    comp = comp_name.lower()
+    if 'segunda' in comp:
+        return "1era Vuelta" if j <= 21 else "2da Vuelta"
+    else:
+        return "1era Vuelta" if j <= 19 else "2da Vuelta"
 
 def extract_penalties(score_status_str):
     m = re.search(r'\((\d+)\s*-\s*(\d+)\s*p', score_status_str.lower())
@@ -874,8 +882,10 @@ def run_sync():
             log_suffix = format_log_date(match['inicio'], display_tbd)
             
             round_str = round_tag
+            league_half = ""
             if round_str and round_str.startswith("J") and round_str[1:].isdigit(): 
                 round_num = round_str[1:]
+                league_half = get_league_half(comp_name, round_str)
                 round_str = f"Jornada {round_num}"
                 total_rounds = get_euro_max_rounds(comp_name, match['season'])
                 if total_rounds: round_str = f"Jornada {round_num} de {total_rounds}"
@@ -885,7 +895,9 @@ def run_sync():
             if ko_desc: desc_text += f"{ko_desc}---\n"
             desc_text += f"{icon} {comp_name}\n"
             desc_text += f"📅 Temporada {season_display}\n"
-            if round_str and not ko_leg: desc_text += f"▶️ {round_str}\n"
+            if round_str and not ko_leg:
+                if league_half: desc_text += f"▶️ ({league_half}) {round_str}\n"
+                else: desc_text += f"▶️ {round_str}\n"
             if tv_info_full and not is_finished: desc_text += f"📺 Dónde ver: {tv_info_full}\n"
             
             loc_final = full_address if full_address else match['lugar'] 
