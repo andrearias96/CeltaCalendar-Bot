@@ -250,22 +250,50 @@ def get_competition_details(comp_text):
     return 'Amistoso', '🤝', '8'
 
 def get_round_details(comp_raw):
-    if not comp_raw or 'amistoso' in comp_raw.lower(): return ""
+    if not comp_raw or 'amistoso' in comp_raw.lower(): return "", None
     parts = comp_raw.split('.')
-    if len(parts) < 2: return "" 
+    if len(parts) < 2: return "", None 
     raw_detail = parts[-1].strip()
     text = raw_detail.lower()
+    
+    round_name = ""
     if 'jornada' in text:
         nums = [s for s in raw_detail.split() if s.isdigit()]
-        if nums: return f"J{nums[0]}"
-    if 'semi' in text or '1/2' in text: return "Semis"
-    if 'cuartos' in text or '1/4' in text: return "Cuartos"
-    if 'octavos' in text or '1/8' in text: return "Octavos"
-    if '/' in text:
+        if nums: return f"J{nums[0]}", None
+    
+    if 'semi' in text or '1/2' in text: round_name = "Semis"
+    elif 'cuartos' in text or '1/4' in text: round_name = "Cuartos"
+    elif 'octavos' in text or '1/8' in text: round_name = "Octavos"
+    elif 'dieciseis' in text or '1/16' in text: round_name = "Dieciseisavos"
+    elif 'final' in text: round_name = "Final"
+    elif '/' in text:
         for word in raw_detail.split():
-            if '/' in word: return f"Ronda {word}"
-    if 'final' in text: return "Final"
-    return ""
+            if '/' in word: 
+                round_name = f"Ronda {word}"
+                break
+    
+    if not round_name: return "", None
+    
+    leg = 'unico'
+    if 'ida' in text: leg = 'ida'
+    elif 'vuelta' in text: leg = 'vuelta'
+    
+    return round_name, leg
+
+def extract_penalties(score_status_str):
+    m = re.search(r'\((\d+)\s*-\s*(\d+)\s*p', score_status_str.lower())
+    if m: return int(m.group(1)), int(m.group(2))
+    return None, None
+
+def get_team_goals(score_str, local_name, target_team, visit_name):
+    if not score_str: return 0
+    parts = score_str.split('-')
+    if len(parts) == 2:
+        try:
+            g_local, g_visit = int(parts[0].strip()), int(parts[1].strip())
+            return g_local if target_team == local_name else g_visit
+        except: return 0
+    return 0
 
 # --- NUEVA LÓGICA DE TV ---
 
@@ -756,15 +784,89 @@ def run_sync():
             if 'amistoso' in comp_name.lower() and match_month in [7, 8]: comp_name = 'Pretemporada'
             if comp_name == 'Primera División': comp_name = 'Liga'
             
-            round_tag = get_round_details(match['competicion'])
+            round_tag, ko_leg = get_round_details(match['competicion'])
             display_tbd = match['is_tbd']
 
             base_title = f"{match['local']} vs {match['visitante']}"
             if match['score'] and is_finished: base_title = f"{match['local']} {match['score']} {match['visitante']}"
             
+            ko_title_suffix = ""
+            ko_desc = ""
+            is_celta_local = CONFIG["TEAM_NAME"].lower() in match['local'].lower()
+            celta_name = match['local'] if is_celta_local else match['visitante']
+            rival_name = match['visitante'] if is_celta_local else match['local']
+            is_pending_resolution = False
+            
+            if ko_leg:
+                celta_goals = get_team_goals(match['score'], match['local'], celta_name, match['visitante'])
+                rival_goals = get_team_goals(match['score'], match['local'], rival_name, match['visitante'])
+                
+                if ko_leg == 'ida':
+                    ko_title_suffix = f" (Ida)"
+                    ko_desc = f"➡️ <b>Ida de {round_tag}</b>\n"
+                elif ko_leg == 'vuelta':
+                    ko_title_suffix = f" (Vuelta)"
+                    ko_desc = f"⬅️ <b>Vuelta de {round_tag}</b>\n"
+                    # Buscar la ida
+                    ida_match = None
+                    for m in matches:
+                        m_comp, _ = get_competition_details(m['competicion'])
+                        m_round, m_leg = get_round_details(m['competicion'])
+                        if m_comp == comp_name and m_round == round_tag and m_leg == 'ida':
+                            if m['local'] == match['visitante'] and m['visitante'] == match['local']:
+                                ida_match = m; break
+                    
+                    if ida_match and is_finished:
+                        c_ida = get_team_goals(ida_match['score'], ida_match['local'], celta_name, ida_match['visitante'])
+                        r_ida = get_team_goals(ida_match['score'], ida_match['local'], rival_name, ida_match['visitante'])
+                        c_glo = celta_goals + c_ida
+                        r_glo = rival_goals + r_ida
+                        ko_desc += f"⏪ <b>Resultado Ida:</b> {ida_match['local']} {ida_match.get('score', '')} {ida_match['visitante']}\n"
+                        ko_desc += f"📊 <b>Global:</b> {celta_name} {c_glo} - {r_glo} {rival_name}\n"
+                        
+                        if c_glo > r_glo: ko_desc += f"🎉 ¡Pasamos a la siguiente ronda!\n"
+                        elif r_glo > c_glo: ko_desc += f"💔 Quedamos eliminados en {round_tag}...\n"
+                        else:
+                            pen_c, pen_r = extract_penalties((match['score'] or "") + " " + match['status'])
+                            if pen_c is not None:
+                                c_pen = pen_c if is_celta_local else pen_r
+                                r_pen = pen_r if is_celta_local else pen_c
+                                ko_desc += f"🎯 <b>Penaltis:</b> {celta_name} {c_pen} - {r_pen} {rival_name}\n"
+                                if c_pen > r_pen: ko_desc += f"🎉 ¡Pasamos de ronda en Penaltis!\n"
+                                else: ko_desc += f"💔 Eliminados en {round_tag} por Penaltis...\n"
+                            else:
+                                ko_title_suffix = f" (Resolución Pendiente)"
+                                ko_desc += "⚖️ Empate global (Pendiente de resolución oficial)\n"
+                                is_pending_resolution = True
+                                
+                elif ko_leg == 'unico':
+                    ko_title_suffix = ""
+                    ko_desc = f"⚔️ <b>Partido Único de {round_tag}</b>\n"
+                    if is_finished:
+                        if celta_goals > rival_goals:
+                            if round_tag == "Final": ko_desc += "🏆 ¡SOMOS CAMPEONES! 🏆\n"
+                            else: ko_desc += f"🎉 ¡Pasamos a la siguiente ronda!\n"
+                        elif rival_goals > celta_goals:
+                            if round_tag == "Final": ko_desc += "🥈 Subcampeones...\n"
+                            else: ko_desc += f"💔 Quedamos eliminados en {round_tag}...\n"
+                        else:
+                            pen_c, pen_r = extract_penalties((match['score'] or "") + " " + match['status'])
+                            if pen_c is not None:
+                                c_pen = pen_c if is_celta_local else pen_r
+                                r_pen = pen_r if is_celta_local else pen_c
+                                ko_desc += f"🎯 <b>Penaltis:</b> {celta_name} {c_pen} - {r_pen} {rival_name}\n"
+                                if c_pen > r_pen:
+                                    if round_tag == "Final": ko_desc += "🏆 ¡SOMOS CAMPEONES en Penaltis! 🏆\n"
+                                    else: ko_desc += f"🎉 ¡Pasamos de ronda en Penaltis!\n"
+                                else: ko_desc += f"💔 Eliminados en {round_tag} por Penaltis...\n"
+                            else:
+                                ko_title_suffix = f" (Resolución Pendiente)"
+                                ko_desc += "⚖️ Empate (Pendiente de penaltis/prórroga)\n"
+                                is_pending_resolution = True
+
             full_title_suffix = f" |{icon}{comp_name}"
             if round_tag and 'amistoso' not in comp_name.lower() and 'pretemporada' not in comp_name.lower():
-                full_title_suffix += f" | {round_tag}"
+                full_title_suffix += f" | {round_tag}{ko_title_suffix}"
             if tv_info_short and not is_finished: full_title_suffix += f" | {tv_info_short}"
             
             full_title = f"{base_title}{full_title_suffix}"
@@ -772,22 +874,24 @@ def run_sync():
             log_suffix = format_log_date(match['inicio'], display_tbd)
             
             round_str = round_tag
-            if round_str.startswith("J") and round_str[1:].isdigit(): 
+            if round_str and round_str.startswith("J") and round_str[1:].isdigit(): 
                 round_num = round_str[1:]
                 round_str = f"Jornada {round_num}"
                 total_rounds = get_euro_max_rounds(comp_name, match['season'])
                 if total_rounds: round_str = f"Jornada {round_num} de {total_rounds}"
             season_display = match.get('season', '')
 
-            desc_text = f"{icon} {comp_name}\n"
+            desc_text = ""
+            if ko_desc: desc_text += f"{ko_desc}---\n"
+            desc_text += f"{icon} {comp_name}\n"
             desc_text += f"📅 Temporada {season_display}\n"
-            if round_str: desc_text += f"▶️ {round_str}\n"
+            if round_str and not ko_leg: desc_text += f"▶️ {round_str}\n"
             if tv_info_full and not is_finished: desc_text += f"📺 Dónde ver: {tv_info_full}\n"
             
             loc_final = full_address if full_address else match['lugar'] 
             if stadium_name: desc_text += f"🏟️ Estadio: {stadium_name}\n"
             else: desc_text += f"📍 {match['lugar']}\n"
-            desc_text += f"🔗 Más Info: {match.get('link', '')}" 
+            desc_text += f"🔗 Más Info: {match.get('link', '')}"  
             if display_tbd: desc_text = "⚠️ Fecha y hora por confirmar (TBC)\n" + desc_text
 
             custom_reminders = [
@@ -828,10 +932,21 @@ def run_sync():
                 
                 old_title_norm = normalize_text(ev.get('summary', ''))
                 new_title_norm = normalize_text(full_title)
-                if old_title_norm != new_title_norm:
+                
+                # Check description changes for knockout verdicts
+                new_desc_norm = normalize_text(desc_text)
+                old_desc_norm = normalize_text(ev.get('description', ''))
+                
+                if old_title_norm != new_title_norm or new_desc_norm != old_desc_norm:
                     needs_update = True
-                    if ("TBC" in old_title_norm) != ("TBC" in new_title_norm): notify_telegram = True
-                    if match['score'] and match['score'] not in old_title_norm: notify_telegram = True
+                    if old_title_norm != new_title_norm:
+                        if ("TBC" in old_title_norm) != ("TBC" in new_title_norm): notify_telegram = True
+                        if match['score'] and match['score'] not in old_title_norm: notify_telegram = True
+                    
+                    if ko_desc and normalize_text(ko_desc) not in old_desc_norm: notify_telegram = True
+                    
+                    # Silence if unresolved tie
+                    if is_pending_resolution: notify_telegram = False 
                     change_details.append(f"📝 Título: '{ev.get('summary')}' -> '{full_title}'")
 
                 if not needs_update:
@@ -894,6 +1009,9 @@ def main():
         run_sync()
         logging.info("🎉 Fin.")
     except Exception as e:
+        error_msg = f"⚠️ <b>[ERROR EN BOT CELTACALENDAR]</b>\n❌ Fallo al procesar: {str(e)[:200]}\n🛠️ <i>Pista:</i> Revisa los logs de GitHub Actions."
+        try: send_telegram(error_msg)
+        except: pass
         logging.error(f"❌ Error fatal: {e}")
         traceback.print_exc()
 
