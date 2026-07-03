@@ -249,6 +249,73 @@ def get_competition_details(comp_text):
     if 'europa' in text or 'uefa' in text: return 'Europa League', '🌍', '6'
     return 'Amistoso', '🤝', '8'
 
+def scrape_live_classification(match_url):
+    class_url = match_url.rstrip('/') + '/clasificacion'
+    headers = {
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+    }
+    try:
+        r = cffi_requests.get(class_url, headers=headers, impersonate="chrome110")
+        if r.status_code != 200:
+            return None
+        soup = BeautifulSoup(r.text, 'html.parser')
+        
+        tables = soup.find_all('table')
+        celta_pos = None
+        celta_color = None
+        for t in tables:
+            for row in t.find_all('tr'):
+                tds = row.find_all(['td', 'th'])
+                row_text = " ".join([td.text.strip() for td in tds])
+                if 'celta' in row_text.lower():
+                    if tds:
+                        num_td = tds[0]
+                        celta_pos = num_td.text.strip() + "º"
+                        div = num_td.find('div')
+                        if div and div.get('data-color'):
+                            celta_color = div.get('data-color').upper()
+                    break
+            if celta_pos: break
+            
+        if not celta_pos: return None
+        
+        leyenda_text = ""
+        for leg in soup.find_all(class_='legend-item'):
+            box = leg.find(class_='box')
+            if box and box.get('data-color') and celta_color:
+                if box.get('data-color').upper() == celta_color:
+                    text_span = leg.find('span')
+                    if text_span:
+                        leyenda_text = f" ({text_span.text.strip()})"
+                        break
+                        
+        return celta_pos + leyenda_text
+    except Exception as e:
+        logging.error(f"Error scraping live class: {e}")
+        return None
+
+def format_liga_balance(liga_balance, season):
+    # season is like "2024/2025"
+    try:
+        parts = season.split('/')
+        next_season = f"{int(parts[0])+1}/{int(parts[1])+1}"
+    except:
+        next_season = "Siguiente"
+    
+    lower_bal = liga_balance.lower()
+    
+    if '(ascenso' in lower_bal:
+        return re.sub(r'\(.*?\)', '(🎉 ¡SOMOS DE PRIMERA DIVISIÓN! 🎉)', liga_balance)
+    elif '(descenso' in lower_bal:
+        return re.sub(r'\(.*?\)', '(🫧 ¡somos de segunda división...! 🫧)', liga_balance)
+    elif 'uefa' in lower_bal or 'europa league' in lower_bal:
+        return re.sub(r'\(.*?\)', f'(🎆 CLASIFICADOS A LA EUROPA LEAGUE {next_season} 🎆)', liga_balance)
+    elif 'champions' in lower_bal:
+        return re.sub(r'\(.*?\)', f'(🎆 CLASIFICADOS A LA CHAMPIONS LEAGUE {next_season} 🎆)', liga_balance)
+        
+    return liga_balance
+
 def get_round_details(comp_raw):
     if not comp_raw or 'amistoso' in comp_raw.lower(): return "", None
     text = comp_raw.lower()
@@ -715,8 +782,52 @@ def run_sync():
             page_token = events_result.get('nextPageToken')
             if not page_token: break
 
-        telegram_msgs = []
+        # --- LÓGICA DE CIERRE DE TEMPORADA ---
+        last_league_match_idx = -1
+        for j in range(len(matches)-1, -1, -1):
+            comp = matches[j]['competicion'].lower()
+            if ('liga' in comp or 'división' in comp) and 'play-off' not in comp and 'promoción' not in comp:
+                last_league_match_idx = j
+                break
+                
+        absolute_last_match_idx = len(matches) - 1 if matches else -1
         now_utc = datetime.datetime.now(datetime.timezone.utc)
+        
+        season_is_over = False
+        balance_text = ""
+        if absolute_last_match_idx != -1:
+            last_m = matches[absolute_last_match_idx]
+            is_fin = 'fin' in last_m['status'].lower()
+            if is_fin and last_m.get('score') and now_utc > last_m['inicio'] + datetime.timedelta(days=3):
+                season_is_over = True
+                
+        if season_is_over:
+            logging.info("🏁 ¡Temporada concluida! Calculando Balance Final...")
+            copa_round = "No clasificado"
+            europa_round = "No clasificado"
+            for m in matches:
+                comp = m['competicion'].lower()
+                r_tag = get_round_details(m['competicion'])[1]
+                if 'copa' in comp: copa_round = r_tag or "Consultar"
+                elif 'europa' in comp or 'champions' in comp or 'uefa' in comp: europa_round = r_tag or "Consultar"
+                
+            liga_balance = "Consultar"
+            match_link = matches[absolute_last_match_idx].get('link')
+            if match_link:
+                pos = scrape_live_classification(match_link)
+                if pos:
+                    div_str = "1ª División"
+                    if last_league_match_idx != -1 and 'segunda' in matches[last_league_match_idx]['competicion'].lower(): div_str = "2ª División"
+                    liga_balance = f"{div_str} - {pos}"
+            liga_balance = format_liga_balance(liga_balance, matches[absolute_last_match_idx].get('season', ''))
+            
+            season_str = matches[absolute_last_match_idx].get('season', '')
+            balance_text = f"\n---\n📊 BALANCE FINAL DE TEMPORADA {season_str}:\n"
+            balance_text += f"⚽ Liga: {liga_balance}\n"
+            if copa_round != "No clasificado": balance_text += f"🏆 Copa del Rey: {copa_round}\n"
+            if europa_round != "No clasificado": balance_text += f"🌍 Europa: {europa_round}\n"
+
+        telegram_msgs = []
         next_match_processed = False 
         
         for i, match in enumerate(matches):
@@ -905,6 +1016,11 @@ def run_sync():
             else: desc_text += f"📍 {match['lugar']}\n"
             desc_text += f"🔗 Más Info: {match.get('link', '')}"  
             if display_tbd: desc_text = "⚠️ Fecha y hora por confirmar (TBC)\n" + desc_text
+
+            if i == last_league_match_idx:
+                desc_text += "\n\n💀 ÚLTIMO PARTIDO DE LIGA 💀"
+            if i == absolute_last_match_idx and season_is_over:
+                desc_text += "\n" + balance_text
 
             custom_reminders = [
                 {'method': 'popup', 'minutes': 60},    

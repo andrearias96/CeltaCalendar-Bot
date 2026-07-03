@@ -7,3 +7,4 @@ lxml
 selenium
 webdriver-manager
 python-dotenv
+curl_cffi
