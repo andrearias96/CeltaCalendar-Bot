@@ -305,14 +305,34 @@ def format_liga_balance(liga_balance, season):
     
     lower_bal = liga_balance.lower()
     
-    if '(ascenso' in lower_bal:
-        return re.sub(r'\(.*?\)', '(🎉 ¡SOMOS DE PRIMERA DIVISIÓN! 🎉)', liga_balance)
-    elif '(descenso' in lower_bal:
-        return re.sub(r'\(.*?\)', '(🫧 ¡somos de segunda división...! 🫧)', liga_balance)
+    if '(ascenso' in lower_bal or '(asciende' in lower_bal:
+        if '3ª' in lower_bal:
+            msg = '¡SOMOS DE SEGUNDA DIVISIÓN B!'
+        elif '2ª división b' in lower_bal or 'federación' in lower_bal:
+            msg = '¡SOMOS DE SEGUNDA DIVISIÓN!'
+        elif '2ª' in lower_bal:
+            msg = '¡SOMOS DE PRIMERA DIVISIÓN!'
+        else:
+            msg = '¡ASCENSO!'
+        return re.sub(r'\((ascenso|asciende).*?\)', f'(🎉 {msg} 🎉)', liga_balance, flags=re.IGNORECASE)
+        
+    elif '(descenso' in lower_bal or '(desciende' in lower_bal:
+        if '1ª' in lower_bal:
+            msg = '¡somos de segunda división...!'
+        elif '2ª división b' in lower_bal or 'federación' in lower_bal:
+            msg = '¡descenso a tercera...!'
+        elif '2ª' in lower_bal:
+            msg = '¡somos de segunda división B...!'
+        else:
+            msg = '¡descenso...!'
+        return re.sub(r'\((descenso|desciende).*?\)', f'(🫧 {msg} 🫧)', liga_balance, flags=re.IGNORECASE)
+        
     elif 'uefa' in lower_bal or 'europa league' in lower_bal:
         return re.sub(r'\(.*?\)', f'(🎆 CLASIFICADOS A LA EUROPA LEAGUE {next_season} 🎆)', liga_balance)
     elif 'champions' in lower_bal:
         return re.sub(r'\(.*?\)', f'(🎆 CLASIFICADOS A LA CHAMPIONS LEAGUE {next_season} 🎆)', liga_balance)
+    elif 'conference' in lower_bal:
+        return re.sub(r'\(.*?\)', f'(🎆 CLASIFICADOS A LA CONFERENCE LEAGUE {next_season} 🎆)', liga_balance)
         
     return liga_balance
 
@@ -429,7 +449,7 @@ def fetch_tv_summary_from_url(driver):
                     if btn.is_displayed():
                         driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", btn)
                         time.sleep(0.5)
-                        btn.click()
+                        driver.execute_script("arguments[0].click();", btn)
                         logging.info(f"🖱️ Click en '{btn.get_attribute('id')}' para cargar más partidos...")
                         clicked_any = True
                         time.sleep(3) 
@@ -476,7 +496,7 @@ def force_kill_chrome():
             subprocess.run(['pkill', '-f', 'chromedriver'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             time.sleep(2) 
         elif os.name == 'nt':
-            subprocess.run(['taskkill', '/F', '/IM', 'chrome.exe'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            # Solo matamos chromedriver.exe en Windows para no cerrarle el navegador al usuario
             subprocess.run(['taskkill', '/F', '/IM', 'chromedriver.exe'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             time.sleep(2)
     except Exception: pass
@@ -786,7 +806,7 @@ def run_sync():
         last_league_match_idx = -1
         for j in range(len(matches)-1, -1, -1):
             comp = matches[j]['competicion'].lower()
-            if ('liga' in comp or 'división' in comp) and 'play-off' not in comp and 'promoción' not in comp:
+            if ('liga' in comp or 'división' in comp or 'division' in comp or 'segunda' in comp or 'primera' in comp) and 'play-off' not in comp and 'promoción' not in comp:
                 last_league_match_idx = j
                 break
                 
@@ -807,7 +827,7 @@ def run_sync():
             europa_round = "No clasificado"
             for m in matches:
                 comp = m['competicion'].lower()
-                r_tag = get_round_details(m['competicion'])[1]
+                r_tag = get_round_details(m['competicion'])[0]
                 if 'copa' in comp: copa_round = r_tag or "Consultar"
                 elif 'europa' in comp or 'champions' in comp or 'uefa' in comp: europa_round = r_tag or "Consultar"
                 
@@ -817,15 +837,27 @@ def run_sync():
                 pos = scrape_live_classification(match_link)
                 if pos:
                     div_str = "1ª División"
-                    if last_league_match_idx != -1 and 'segunda' in matches[last_league_match_idx]['competicion'].lower(): div_str = "2ª División"
+                    if last_league_match_idx != -1:
+                        c_name = matches[last_league_match_idx]['competicion'].lower()
+                        if 'segunda' in c_name:
+                            if 'b' in c_name: div_str = "2ª División B"
+                            else: div_str = "2ª División"
+                        elif 'tercera' in c_name: div_str = "3ª División"
+                        elif 'primera federación' in c_name or 'primera rfe' in c_name: div_str = "1ª Federación"
                     liga_balance = f"{div_str} - {pos}"
             liga_balance = format_liga_balance(liga_balance, matches[absolute_last_match_idx].get('season', ''))
             
             season_str = matches[absolute_last_match_idx].get('season', '')
             balance_text = f"\n---\n📊 BALANCE FINAL DE TEMPORADA {season_str}:\n"
             balance_text += f"⚽ Liga: {liga_balance}\n"
-            if copa_round != "No clasificado": balance_text += f"🏆 Copa del Rey: {copa_round}\n"
-            if europa_round != "No clasificado": balance_text += f"🌍 Europa: {europa_round}\n"
+            if copa_round != "No clasificado":
+                if '/' in copa_round and 'final' not in copa_round.lower():
+                    copa_round += " de final"
+                balance_text += f"🏆 Copa del Rey: {copa_round}\n"
+            if europa_round != "No clasificado":
+                if '/' in europa_round and 'final' not in europa_round.lower():
+                    europa_round += " de final"
+                balance_text += f"🌍 Europa: {europa_round}\n"
 
         telegram_msgs = []
         next_match_processed = False 

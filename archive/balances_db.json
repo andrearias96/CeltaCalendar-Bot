@@ -1,71 +1,366 @@
 {
-    "1985-86": {
-        "liga": "2ª División - 1º (Ascenso a 1ª)",
+    "1923-24": {
+        "liga": "Camp. Galicia - Campeón",
+        "copa": "Cuartos de final",
+        "europa": "Consultar"
+    },
+    "1924-25": {
+        "liga": "Camp. Galicia - Campeón",
+        "copa": "Semifinales",
+        "europa": "Consultar"
+    },
+    "1925-26": {
+        "liga": "Camp. Galicia - Campeón",
+        "copa": "Semifinales",
+        "europa": "Consultar"
+    },
+    "1926-27": {
+        "liga": "Camp. Galicia - Subcampeón",
+        "copa": "Cuartos de final",
+        "europa": "Consultar"
+    },
+    "1927-28": {
+        "liga": "Camp. Galicia - Subcampeón",
+        "copa": "Cuartos de final",
+        "europa": "Consultar"
+    },
+    "1928-29": {
+        "liga": "2ª División - 9º (Desciende)",
+        "copa": "1/16 de final",
+        "europa": "Consultar"
+    },
+    "1929-30": {
+        "liga": "No participa en Liga (Camp. Galicia - Campeón)",
+        "copa": "1/16 de final",
+        "europa": "Consultar"
+    },
+    "1930-31": {
+        "liga": "3ª División - 1º (Asciende)",
+        "copa": "1/16 de final",
+        "europa": "Consultar"
+    },
+    "1931-32": {
+        "liga": "2ª División - 9º",
+        "copa": "Semifinales",
+        "europa": "Consultar"
+    },
+    "1932-33": {
+        "liga": "2ª División - 7º",
+        "copa": "1/16 de final",
+        "europa": "Consultar"
+    },
+    "1933-34": {
+        "liga": "2ª División - 4º",
         "copa": "1/8 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
+    },
+    "1934-35": {
+        "liga": "2ª División - 3º",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1935-36": {
+        "liga": "2ª División - 1º (Asciende)",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1939-40": {
+        "liga": "1ª División - 10º",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1940-41": {
+        "liga": "1ª División - 10º",
+        "copa": "Semifinales",
+        "europa": "Consultar"
+    },
+    "1941-42": {
+        "liga": "1ª División - 5º",
+        "copa": "1/16 de final",
+        "europa": "Consultar"
+    },
+    "1942-43": {
+        "liga": "1ª División - 5º",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1943-44": {
+        "liga": "1ª División - 14º (Desciende)",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1944-45": {
+        "liga": "2ª División - 3º (Asciende)",
+        "copa": "1/16 de final",
+        "europa": "Consultar"
+    },
+    "1945-46": {
+        "liga": "1ª División - 10º",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1946-47": {
+        "liga": "1ª División - 9º",
+        "copa": "Cuartos de final",
+        "europa": "Consultar"
+    },
+    "1947-48": {
+        "liga": "1ª División - 4º",
+        "copa": "Subcampeón",
+        "europa": "Consultar"
+    },
+    "1948-49": {
+        "liga": "1ª División - 11º",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1949-50": {
+        "liga": "1ª División - 7º",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1950-51": {
+        "liga": "1ª División - 8º",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1951-52": {
+        "liga": "1ª División - 9º",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1952-53": {
+        "liga": "1ª División - 13º",
+        "copa": "No participa",
+        "europa": "Consultar"
+    },
+    "1953-54": {
+        "liga": "1ª División - 10º",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1954-55": {
+        "liga": "1ª División - 11º",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1955-56": {
+        "liga": "1ª División - 10º",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1956-57": {
+        "liga": "1ª División - 13º",
+        "copa": "Cuartos de final",
+        "europa": "Consultar"
+    },
+    "1957-58": {
+        "liga": "1ª División - 7º",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1958-59": {
+        "liga": "1ª División - 16º (Desciende)",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1959-60": {
+        "liga": "2ª División - 2º",
+        "copa": "1/32 de final",
+        "europa": "Consultar"
+    },
+    "1960-61": {
+        "liga": "2ª División - 2º",
+        "copa": "1/16 de final",
+        "europa": "Consultar"
+    },
+    "1961-62": {
+        "liga": "2ª División - 6º",
+        "copa": "1/16 de final",
+        "europa": "Consultar"
+    },
+    "1962-63": {
+        "liga": "2ª División - 6º",
+        "copa": "1/32 de final",
+        "europa": "Consultar"
+    },
+    "1963-64": {
+        "liga": "2ª División - 9º",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1964-65": {
+        "liga": "2ª División - 5º",
+        "copa": "1/16 de final",
+        "europa": "Consultar"
+    },
+    "1965-66": {
+        "liga": "2ª División - 2º",
+        "copa": "1/16 de final",
+        "europa": "Consultar"
+    },
+    "1966-67": {
+        "liga": "2ª División - 3º",
+        "copa": "1/32 de final",
+        "europa": "Consultar"
+    },
+    "1967-68": {
+        "liga": "2ª División - 3º",
+        "copa": "Semifinales",
+        "europa": "Consultar"
+    },
+    "1968-69": {
+        "liga": "2ª División - 2º (Asciende)",
+        "copa": "No participa",
+        "europa": "Consultar"
+    },
+    "1969-70": {
+        "liga": "1ª División - 10º",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1970-71": {
+        "liga": "1ª División - 6º",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1971-72": {
+        "liga": "1ª División - 10º",
+        "copa": "Cuartos de final",
+        "europa": "Copa de la UEFA - 1ª Ronda"
+    },
+    "1972-73": {
+        "liga": "1ª División - 15º",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1973-74": {
+        "liga": "1ª División - 12º",
+        "copa": "1/16 de final",
+        "europa": "Consultar"
+    },
+    "1974-75": {
+        "liga": "1ª División - 17º (Desciende)",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1975-76": {
+        "liga": "2ª División - 2º (Asciende)",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1976-77": {
+        "liga": "1ª División - 17º (Desciende)",
+        "copa": "Cuartos de final",
+        "europa": "Consultar"
+    },
+    "1977-78": {
+        "liga": "2ª División - 3º (Asciende)",
+        "copa": "1/32 de final",
+        "europa": "Consultar"
+    },
+    "1978-79": {
+        "liga": "1ª División - 16º (Desciende)",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1979-80": {
+        "liga": "2ª División - 17º (Desciende a 2ªB)",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1980-81": {
+        "liga": "2ª División B - 1º (Asciende)",
+        "copa": "1/32 de final",
+        "europa": "Consultar"
+    },
+    "1981-82": {
+        "liga": "2ª División - 1º (Asciende)",
+        "copa": "1/32 de final",
+        "europa": "Consultar"
+    },
+    "1982-83": {
+        "liga": "1ª División - 17º (Desciende)",
+        "copa": "1/8 de final",
+        "europa": "Consultar"
+    },
+    "1983-84": {
+        "liga": "2ª División - 6º",
+        "copa": "1ª Ronda",
+        "europa": "Consultar"
+    },
+    "1984-85": {
+        "liga": "2ª División - 3º (Asciende)",
+        "copa": "1/32 de final",
+        "europa": "Consultar"
+    },
+    "1985-86": {
+        "liga": "1ª División - 18º (Desciende)",
+        "copa": "Cuartos de final",
+        "europa": "Consultar"
     },
     "1986-87": {
-        "liga": "1ª División - 8º",
-        "copa": "Cuartos de final",
-        "europa": "No clasificado"
+        "liga": "2ª División - 4º (Asciende)",
+        "copa": "1/32 de final",
+        "europa": "Consultar"
     },
     "1987-88": {
         "liga": "1ª División - 7º",
         "copa": "1/8 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "1988-89": {
         "liga": "1ª División - 8º",
         "copa": "Cuartos de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "1989-90": {
-        "liga": "1ª División - 19º (Descenso a 2ª)",
+        "liga": "1ª División - 19º (Desciende)",
         "copa": "1/8 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "1990-91": {
         "liga": "2ª División - 14º",
-        "copa": "5ª Ronda",
-        "europa": "No clasificado"
+        "copa": "1/32 de final",
+        "europa": "Consultar"
     },
     "1991-92": {
-        "liga": "2ª División - 1º (Ascenso a 1ª)",
-        "copa": "4ª Ronda",
-        "europa": "No clasificado"
+        "liga": "2ª División - 1º (Asciende)",
+        "copa": "1/64 de final",
+        "europa": "Consultar"
     },
     "1992-93": {
         "liga": "1ª División - 11º",
         "copa": "3ª Ronda",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "1993-94": {
         "liga": "1ª División - 15º",
         "copa": "Subcampeón",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "1994-95": {
         "liga": "1ª División - 13º",
         "copa": "4ª Ronda",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "1995-96": {
         "liga": "1ª División - 11º",
         "copa": "1/8 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "1996-97": {
         "liga": "1ª División - 16º",
         "copa": "Semifinales",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "1997-98": {
-        "liga": "1ª División - 6º (Clasificación UEFA)",
+        "liga": "1ª División - 6º",
         "copa": "1/8 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "1998-99": {
-        "liga": "1ª División - 5º (Clasificación UEFA)",
+        "liga": "1ª División - 5º",
         "copa": "1/8 de final",
         "europa": "Copa de la UEFA - Cuartos de final"
     },
@@ -75,84 +370,84 @@
         "europa": "Copa de la UEFA - Cuartos de final"
     },
     "2000-01": {
-        "liga": "1ª División - 6º (Clasificación UEFA)",
+        "liga": "1ª División - 6º",
         "copa": "Subcampeón",
         "europa": "Intertoto (Campeón) / UEFA (Cuartos)"
     },
     "2001-02": {
-        "liga": "1ª División - 5º (Clasificación UEFA)",
+        "liga": "1ª División - 5º",
         "copa": "1/16 de final",
         "europa": "Copa de la UEFA - 2ª Ronda"
     },
     "2002-03": {
-        "liga": "1ª División - 4º (Clasif. Champions)",
+        "liga": "1ª División - 4º",
         "copa": "1/16 de final",
         "europa": "Copa de la UEFA - 3ª Ronda"
     },
     "2003-04": {
-        "liga": "1ª División - 19º (Descenso a 2ª)",
+        "liga": "1ª División - 19º (Desciende)",
         "copa": "Cuartos de final",
         "europa": "Champions League - 1/8 de final"
     },
     "2004-05": {
-        "liga": "2ª División - 2º (Ascenso a 1ª)",
+        "liga": "2ª División - 2º (Asciende)",
         "copa": "1/32 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2005-06": {
-        "liga": "1ª División - 6º (Clasificación UEFA)",
+        "liga": "1ª División - 6º",
         "copa": "1/8 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2006-07": {
-        "liga": "1ª División - 18º (Descenso a 2ª)",
+        "liga": "1ª División - 18º (Desciende)",
         "copa": "1/16 de final",
         "europa": "Copa de la UEFA - 1/8 de final"
     },
     "2007-08": {
         "liga": "2ª División - 16º",
         "copa": "2ª Ronda",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2008-09": {
         "liga": "2ª División - 17º",
         "copa": "1/16 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2009-10": {
         "liga": "2ª División - 12º",
         "copa": "Cuartos de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2010-11": {
-        "liga": "2ª División - 6º (Elim. Playoff)",
+        "liga": "2ª División - 6º",
         "copa": "1/32 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2011-12": {
-        "liga": "2ª División - 2º (Ascenso a 1ª)",
+        "liga": "2ª División - 2º (Asciende)",
         "copa": "1/16 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2012-13": {
         "liga": "1ª División - 17º",
         "copa": "1/8 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2013-14": {
         "liga": "1ª División - 9º",
         "copa": "1/16 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2014-15": {
         "liga": "1ª División - 8º",
         "copa": "1/8 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2015-16": {
-        "liga": "1ª División - 6º (Clasif. Europa League)",
+        "liga": "1ª División - 6º",
         "copa": "Semifinales",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2016-17": {
         "liga": "1ª División - 13º",
@@ -162,45 +457,45 @@
     "2017-18": {
         "liga": "1ª División - 13º",
         "copa": "1/8 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2018-19": {
         "liga": "1ª División - 17º",
         "copa": "1/16 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2019-20": {
         "liga": "1ª División - 17º",
         "copa": "1/16 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2020-21": {
         "liga": "1ª División - 8º",
         "copa": "2ª Ronda",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2021-22": {
         "liga": "1ª División - 11º",
         "copa": "1/16 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2022-23": {
         "liga": "1ª División - 13º",
         "copa": "1/16 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2023-24": {
         "liga": "1ª División - 13º",
         "copa": "Cuartos de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2024-25": {
-        "liga": "1ª División - 7º (Clasif. Europa League)",
+        "liga": "1ª División - 7º",
         "copa": "1/8 de final",
-        "europa": "No clasificado"
+        "europa": "Consultar"
     },
     "2025-26": {
-        "liga": "1ª División - 6º (Clasif. Europa League)",
+        "liga": "1ª División - 6º",
         "copa": "1/16 de final",
         "europa": "Europa League - Cuartos de final"
     }

@@ -3,7 +3,7 @@ import logging
 import datetime
 import os
 import argparse
-from main_scraper import get_calendar_service, CONFIG, parse_google_iso, execute_with_retry
+from main_scraper import get_calendar_service, CONFIG, parse_google_iso, execute_with_retry, format_liga_balance
 from googleapiclient.discovery import build
 import re
 from curl_cffi import requests
@@ -71,23 +71,6 @@ def extract_besoccer_url(desc):
     if match: return match.group(1)
     return None
 
-def format_liga_balance(liga_balance, season):
-    # season is like "2024/2025"
-    parts = season.split('/')
-    next_season = f"{int(parts[0])+1}/{int(parts[1])+1}"
-    
-    lower_bal = liga_balance.lower()
-    
-    if '(ascenso' in lower_bal:
-        return re.sub(r'\(.*?\)', '(🎉 ¡SOMOS DE PRIMERA DIVISIÓN! 🎉)', liga_balance)
-    elif '(descenso' in lower_bal:
-        return re.sub(r'\(.*?\)', '(🫧 ¡somos de segunda división...! 🫧)', liga_balance)
-    elif 'uefa' in lower_bal or 'europa league' in lower_bal:
-        return re.sub(r'\(.*?\)', f'(🎆 CLASIFICADOS A LA EUROPA LEAGUE {next_season} 🎆)', liga_balance)
-    elif 'champions' in lower_bal:
-        return re.sub(r'\(.*?\)', f'(🎆 CLASIFICADOS A LA CHAMPIONS LEAGUE {next_season} 🎆)', liga_balance)
-        
-    return liga_balance
 
 def main(dry_run=False):
     # Cargar Base de Datos
@@ -149,12 +132,32 @@ def main(dry_run=False):
         last_match = ev_list[-1]
         ev = last_match['event']
         
+        # Limpiar tags erróneos previos en toda la temporada
+        for e in ev_list:
+            e_desc = e['event'].get('description', '')
+            if "💀 ÚLTIMO PARTIDO DE LIGA 💀" in e_desc:
+                # Quitamos la etiqueta para empezar de cero
+                clean_desc = e_desc.replace("💀 ÚLTIMO PARTIDO DE LIGA 💀", "").strip()
+                # También quitamos cualquier línea en blanco extra que haya quedado
+                clean_desc = '\n'.join([line for line in clean_desc.split('\n') if line.strip() != ''])
+                e['event']['description'] = clean_desc
+                if not dry_run:
+                    try:
+                        execute_with_retry(service.events().update(
+                            calendarId=CONFIG["CALENDAR_ID"],
+                            eventId=e['event']['id'],
+                            body=e['event']
+                        ))
+                    except Exception as exc:
+                        pass
+                        
         # Identificar el último partido EXCLUSIVAMENTE DE LIGA
         league_matches = []
         for e in ev_list:
             e_title = e['event'].get('summary', '').lower()
-            e_desc = e['event'].get('description', '').lower()
-            if ('⚽ liga' in e_desc or 'segunda división' in e_desc or 'primera división' in e_desc) and 'play-off' not in e_title and 'promoción' not in e_title:
+            # Coger solo la primera línea de la descripción para evitar que el balance antiguo confunda al bot
+            e_desc_first_line = e['event'].get('description', '').split('\n')[0].lower()
+            if ('⚽ liga' in e_desc_first_line or 'segunda división' in e_desc_first_line or 'primera división' in e_desc_first_line or 'división b' in e_desc_first_line or 'tercera' in e_desc_first_line) and 'play-off' not in e_title and 'promoción' not in e_title:
                 league_matches.append(e)
                 
         if league_matches:
@@ -201,28 +204,78 @@ def main(dry_run=False):
             liga_balance = balance_data['liga']
             copa_balance = balance_data['copa']
             europa_balance = balance_data['europa']
+            
+            # Deducir si se clasificaron a Europa basándonos en la temporada siguiente
+            try:
+                y1, y2 = season.split('/')
+                y1_int, y2_int = int(y1), int(y2)
+                next_db_season = f"{y1_int+1}-{str(y2_int+1)[-2:].zfill(2)}"
+                if next_db_season in balances_db:
+                    next_euro = balances_db[next_db_season]['europa'].lower()
+                    if next_euro not in ["consultar", "-", "no clasificado", ""]:
+                        if 'champions' in next_euro:
+                            liga_balance += " (champions)"
+                        elif 'uefa' in next_euro or 'europa league' in next_euro:
+                            liga_balance += " (uefa)"
+                        elif 'conference' in next_euro:
+                            liga_balance += " (conference)"
+            except Exception as e:
+                pass
+
         else:
-            # Intento de scrape en vivo (solo para nuevas temporadas no en DB)
-            # Y SOLO lo hacemos para la actual (o una en la que estemos corriendo el bot sin json)
+            # Intento de extraer información a partir de los eventos del calendario para el pasado
             if not ev_league:
                 continue
                 
-            logging.info(f"Temporada {season} no en DB. Scrapeando en vivo desde Besoccer...")
-            match_url = extract_besoccer_url(ev_league.get('description', ''))
-            if not match_url:
-                logging.info(f" -> No se encontró URL en el evento: {ev_league.get('summary')}")
-                continue
+            logging.info(f"Temporada {season} no en DB. Deduciendo desde Google Calendar...")
+            
+            # Extraer división del evento de liga
+            division = "1ª División"
+            import re
+            m_desc = ev_league.get('description', '')
+            match = re.search(r'🚨 (.*?) \|', m_desc)
+            if match:
+                c_name = match.group(1).lower().strip()
+                if 'segunda' in c_name:
+                    if 'b' in c_name: division = "2ª División B"
+                    else: division = "2ª División"
+                elif 'tercera' in c_name: division = "3ª División"
+                elif 'primera federación' in c_name or 'primera rfe' in c_name: division = "1ª Federación"
+            else:
+                if 'primera' in m_desc.lower() or '⚽ liga' in m_desc.lower():
+                    division = "1ª División"
+                elif 'segunda' in m_desc.lower():
+                    division = "2ª División"
+            
+            scraped_pos = "1º"
+            match_url = extract_besoccer_url(m_desc)
+            if match_url:
+                try:
+                    pos = scrape_live_classification(match_url)
+                    if pos: scraped_pos = pos
+                except: pass
                 
-            scraped_pos = scrape_live_classification(match_url)
-            if not scraped_pos:
-                logging.info(" -> No se pudo extraer la clasificación en vivo.")
-                continue
-                
-            division = "1ª División" if 'primera' in ev_league.get('description', '').lower() or '⚽ liga' in ev_league.get('description', '').lower() else "2ª División"
             liga_balance = f"{division} - {scraped_pos}"
-            copa_balance = "Consultar" # Omitido en scrape en vivo automático
-            europa_balance = "Consultar"
+            copa_balance = "No clasificado"
+            europa_balance = "No clasificado"
+            
+            # Extraer rondas de otras competiciones buscando en los eventos de la temporada
+            for e_dict in ev_list:
+                e_sum = e_dict['event'].get('summary', '')
+                if 'Copa del Rey' in e_sum:
+                    parts = e_sum.split('|')
+                    if len(parts) >= 3:
+                        copa_balance = parts[2].replace('Ronda', '').strip()
+                elif 'Europa League' in e_sum or 'Champions' in e_sum or 'UEFA' in e_sum:
+                    parts = e_sum.split('|')
+                    if len(parts) >= 3:
+                        europa_balance = parts[2].replace('Ronda', '').strip()
 
+        # Asegurar que el string termine en " de final" si tiene fracciones
+        if '/' in copa_balance and 'final' not in copa_balance.lower():
+            copa_balance = copa_balance + " de final"
+
+        # liga_balance format (this might add emojis)
         liga_balance = format_liga_balance(liga_balance, season)
 
         balance_text = f"\n---\n📊 BALANCE FINAL DE TEMPORADA {season}:\n"
