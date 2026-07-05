@@ -3,9 +3,10 @@ name: Celta Calendar Bot Scheduler
 on:
   schedule:
     # Cron configurado en UTC.
-    # '0 9-23 * * *' = Ejecutar en el minuto 0 de las horas 9 a la 23 (UTC).
-    # Equivalencia España (CET/Invierno): 10:00 AM a 00:00 AM.
-    - cron: '0 9-23 * * *'
+    # '0 0-1,8-23 * * *' = Ejecutar a las 00:00, 01:00, y de 08:00 a 23:00 (UTC).
+    # Equivalencia España (CET/Invierno): 01:00 AM, 02:00 AM, y de 09:00 AM a 00:00 AM.
+    # ¡Cubre perfectamente partidos nocturnos con prórroga/penaltis!
+    - cron: '0 0-1,8-23 * * *'
   workflow_dispatch:
 
 permissions:
