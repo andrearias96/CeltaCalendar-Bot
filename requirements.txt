@@ -8,3 +8,4 @@ selenium
 webdriver-manager
 python-dotenv
 curl_cffi
+undetected-chromedriver
