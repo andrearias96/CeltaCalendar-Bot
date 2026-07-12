@@ -529,11 +529,13 @@ def setup_driver():
     chrome_options.add_argument("--accept-lang=es-ES")
 
     try:
-        driver = uc.Chrome(options=chrome_options, headless=True, use_subprocess=True)
+        driver_path = ChromeDriverManager().install()
+        driver = uc.Chrome(options=chrome_options, headless=True, use_subprocess=True, driver_executable_path=driver_path)
     except Exception as e:
         logging.warning(f"⚠️ Error iniciando undetected_chromedriver optimizado: {e}. Reintentando básico.")
         force_kill_chrome()
-        driver = uc.Chrome(headless=True, use_subprocess=True)
+        driver_path = ChromeDriverManager().install()
+        driver = uc.Chrome(headless=True, use_subprocess=True, driver_executable_path=driver_path)
     
     driver.set_page_load_timeout(30) 
     driver.set_script_timeout(30)
