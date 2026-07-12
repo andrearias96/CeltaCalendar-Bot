@@ -621,37 +621,28 @@ def format_log_date(dt_obj, is_tbd):
     
 # --- MAIN LOGIC ---
 
-def fetch_matches(driver=None):
+def fetch_matches(driver):
     logging.info(f"🚀 [Fase A] Obteniendo lista de partidos desde Besoccer...")
     try:
         url_final = f"{CONFIG['URL_BASE']}{CONFIG['TEAM_NAME']}"
-        headers = {
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-        }
-        r = cffi_requests.get(url_final, headers=headers, impersonate="safari15_3")
-        if r.status_code != 200:
-            logging.warning(f"⚠️ Error HTTP {r.status_code} al obtener partidos.")
-            return []
+        driver.get(url_final)
+        wait = WebDriverWait(driver, 20)
+        try: 
+            driver.find_element(By.ID, SELECTORS["COOKIE_BTN"]).click()
+            time.sleep(1)
+        except: pass
 
         matches = []
-        soup = BeautifulSoup(r.text, 'lxml')
-        match_elements = soup.select(SELECTORS["MATCH_LINK"])
-        
-        if not match_elements and driver:
-            logging.warning("⚠️ No se encontraron partidos con curl_cffi. Intentando fallback con Selenium...")
-            try:
-                driver.get(url_final)
-                time.sleep(4)
-                soup = BeautifulSoup(driver.page_source, 'lxml')
-                match_elements = soup.select(SELECTORS["MATCH_LINK"])
-            except Exception as e:
-                logging.error(f"Error en fallback Selenium: {e}")
-
-        if not match_elements:
-            snippet = r.text[:500].replace('\n', ' ')
-            logging.warning(f"⚠️ No se encontraron partidos en el HTML de Besoccer. HTML: {snippet}")
+        try: 
+            wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, SELECTORS["MATCH_LINK"])))
+        except Exception as e:
+            logging.warning(f"⚠️ Timeout o no se encontraron partidos en Besoccer: {e}")
+            snippet = driver.page_source[:500].replace('\n', ' ')
+            logging.warning(f"⚠️ HTML recibido: {snippet}")
             return []
+
+        soup = BeautifulSoup(driver.page_source, 'lxml')
+        match_elements = soup.select(SELECTORS["MATCH_LINK"])
         
         for m in match_elements:
             try:
