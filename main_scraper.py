@@ -18,7 +18,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 from dotenv import load_dotenv 
-
+from curl_cffi import requests as cffi_requests
 # --- IMPORTACIONES EXTRA PARA MANEJO DE ERRORES SELENIUM ---
 from selenium.common.exceptions import TimeoutException, WebDriverException
 
