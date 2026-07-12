@@ -611,15 +611,15 @@ def format_log_date(dt_obj, is_tbd):
     
 # --- MAIN LOGIC ---
 
-def fetch_matches():
+def fetch_matches(driver=None):
     logging.info(f"🚀 [Fase A] Obteniendo lista de partidos desde Besoccer...")
     try:
         url_final = f"{CONFIG['URL_BASE']}{CONFIG['TEAM_NAME']}"
         headers = {
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         }
-        r = cffi_requests.get(url_final, headers=headers, impersonate="chrome110")
+        r = cffi_requests.get(url_final, headers=headers, impersonate="chrome120")
         if r.status_code != 200:
             logging.warning(f"⚠️ Error HTTP {r.status_code} al obtener partidos.")
             return []
@@ -628,8 +628,19 @@ def fetch_matches():
         soup = BeautifulSoup(r.text, 'lxml')
         match_elements = soup.select(SELECTORS["MATCH_LINK"])
         
+        if not match_elements and driver:
+            logging.warning("⚠️ No se encontraron partidos con curl_cffi. Intentando fallback con Selenium...")
+            try:
+                driver.get(url_final)
+                time.sleep(4)
+                soup = BeautifulSoup(driver.page_source, 'lxml')
+                match_elements = soup.select(SELECTORS["MATCH_LINK"])
+            except Exception as e:
+                logging.error(f"Error en fallback Selenium: {e}")
+
         if not match_elements:
-            logging.warning("⚠️ No se encontraron partidos en el HTML de Besoccer.")
+            snippet = r.text[:500].replace('\n', ' ')
+            logging.warning(f"⚠️ No se encontraron partidos en el HTML de Besoccer. HTML: {snippet}")
             return []
         
         for m in match_elements:
@@ -791,7 +802,7 @@ def run_sync():
         force_kill_chrome()
         driver = setup_driver()
         
-        matches = fetch_matches()
+        matches = fetch_matches(driver=driver)
         if not matches: return
 
         logging.info("☁️ Sincronizando con Google Calendar...")
