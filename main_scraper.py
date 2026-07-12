@@ -19,6 +19,7 @@ from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 from dotenv import load_dotenv 
 from curl_cffi import requests as cffi_requests
+import undetected_chromedriver as uc
 # --- IMPORTACIONES EXTRA PARA MANEJO DE ERRORES SELENIUM ---
 from selenium.common.exceptions import TimeoutException, WebDriverException
 
@@ -511,7 +512,7 @@ def force_kill_chrome():
 
 def setup_driver():
     force_kill_chrome()
-    chrome_options = Options()
+    chrome_options = uc.ChromeOptions()
     chrome_options.page_load_strategy = 'eager' 
     chrome_options.add_argument("--headless=new") 
     chrome_options.add_argument("--log-level=3")
@@ -523,30 +524,19 @@ def setup_driver():
     chrome_options.add_argument("--disable-infobars")
     chrome_options.add_argument("--disable-blink-features=AutomationControlled")
     chrome_options.add_argument("--ignore-certificate-errors")
-    chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
+    chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
     chrome_options.add_argument("--lang=es-ES") 
     chrome_options.add_argument("--accept-lang=es-ES")
 
     try:
-        service = Service(ChromeDriverManager().install())
-        driver = webdriver.Chrome(service=service, options=chrome_options)
-        
-        # Ocultar rastro de automatización (Stealth)
-        driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
-            "source": """
-                Object.defineProperty(navigator, 'webdriver', {get: () => undefined});
-                window.navigator.chrome = { runtime: {} };
-                Object.defineProperty(navigator, 'plugins', {get: () => [1, 2, 3]});
-                Object.defineProperty(navigator, 'languages', {get: () => ['es-ES', 'es', 'en']});
-            """
-        })
+        driver = uc.Chrome(options=chrome_options, headless=True, use_subprocess=True)
     except Exception as e:
-        logging.warning(f"⚠️ Error iniciando driver optimizado: {e}. Reintentando básico.")
+        logging.warning(f"⚠️ Error iniciando undetected_chromedriver optimizado: {e}. Reintentando básico.")
         force_kill_chrome()
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+        driver = uc.Chrome(headless=True, use_subprocess=True)
     
-    driver.set_page_load_timeout(20) 
-    driver.set_script_timeout(20)
+    driver.set_page_load_timeout(30) 
+    driver.set_script_timeout(30)
     return driver
 
 def scrape_besoccer_info(driver, match_link):
