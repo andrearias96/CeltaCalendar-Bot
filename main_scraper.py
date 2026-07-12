@@ -530,6 +530,16 @@ def setup_driver():
     try:
         service = Service(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=chrome_options)
+        
+        # Ocultar rastro de automatización (Stealth)
+        driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
+            "source": """
+                Object.defineProperty(navigator, 'webdriver', {get: () => undefined});
+                window.navigator.chrome = { runtime: {} };
+                Object.defineProperty(navigator, 'plugins', {get: () => [1, 2, 3]});
+                Object.defineProperty(navigator, 'languages', {get: () => ['es-ES', 'es', 'en']});
+            """
+        })
     except Exception as e:
         logging.warning(f"⚠️ Error iniciando driver optimizado: {e}. Reintentando básico.")
         force_kill_chrome()
@@ -619,7 +629,7 @@ def fetch_matches(driver=None):
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         }
-        r = cffi_requests.get(url_final, headers=headers, impersonate="chrome120")
+        r = cffi_requests.get(url_final, headers=headers, impersonate="safari15_3")
         if r.status_code != 200:
             logging.warning(f"⚠️ Error HTTP {r.status_code} al obtener partidos.")
             return []
