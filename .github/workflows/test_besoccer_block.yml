@@ -1,0 +1,26 @@
+name: Test Besoccer Block
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-connection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prueba 1 - Intentar conectar con curl (Basic Request)
+        run: |
+          echo "Intentando conectar a Besoccer con curl desde GitHub Actions (IP de Azure)..."
+          curl -v -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)" https://es.besoccer.com/equipo/partidos/celta || true
+          
+      - name: Prueba 2 - Intentar conectar usando Python puro
+        run: |
+          python -c "
+          import urllib.request
+          try:
+              req = urllib.request.Request('https://es.besoccer.com/equipo/partidos/celta', headers={'User-Agent': 'Mozilla/5.0'})
+              response = urllib.request.urlopen(req)
+              print('Status Code:', response.getcode())
+              print('HTML Recibido:', response.read().decode('utf-8')[:500])
+          except Exception as e:
+              print('Error de conexión absoluto (Bloqueo de IP activo):', str(e))
+          "
