@@ -437,11 +437,15 @@ def parse_tv_channels(ul_element):
 
 def fetch_tv_summary_from_url(driver):
     tv_data = {}
-    logging.info(f"📺 Obteniendo guía TV completa desde {CONFIG['URL_TV_CELTA']}...")
+    logging.info(f"📺 Obteniendo guía TV completa desde {CONFIG['URL_TV_CELTA']}") # Sin puntos suspensivos para evitar confusión
     try:
         driver.get(CONFIG['URL_TV_CELTA'])
         time.sleep(2) 
-        while True:
+        
+        max_clicks = 10
+        click_count = 0
+        
+        while click_count < max_clicks:
             try:
                 buttons = driver.find_elements(By.CSS_SELECTOR, "a[id^='btnMoreThan'].btnPrincipal")
                 clicked_any = False
@@ -450,7 +454,8 @@ def fetch_tv_summary_from_url(driver):
                         driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", btn)
                         time.sleep(0.5)
                         driver.execute_script("arguments[0].click();", btn)
-                        logging.info(f"🖱️ Click en '{btn.get_attribute('id')}' para cargar más partidos...")
+                        click_count += 1
+                        logging.info(f"🖱️ Click en '{btn.get_attribute('id')}' para cargar más partidos... ({click_count}/{max_clicks})")
                         clicked_any = True
                         time.sleep(3) 
                         break 
@@ -460,6 +465,9 @@ def fetch_tv_summary_from_url(driver):
             except Exception as e:
                 logging.warning(f"⚠️ Error iterando botones 'Más días': {e}. Deteniendo carga.")
                 break
+                
+        if click_count >= max_clicks:
+            logging.warning("⚠️ Límite de clicks alcanzado. Evitando bucle infinito en la web de TV.")
 
         soup = BeautifulSoup(driver.page_source, 'lxml')
         tables = soup.find_all('table', class_='tablaPrincipal')
@@ -603,25 +611,26 @@ def format_log_date(dt_obj, is_tbd):
     
 # --- MAIN LOGIC ---
 
-def fetch_matches(driver):
+def fetch_matches():
     logging.info(f"🚀 [Fase A] Obteniendo lista de partidos desde Besoccer...")
     try:
         url_final = f"{CONFIG['URL_BASE']}{CONFIG['TEAM_NAME']}"
-        driver.get(url_final)
-        wait = WebDriverWait(driver, 20)
-        try: 
-            driver.find_element(By.ID, SELECTORS["COOKIE_BTN"]).click()
-            time.sleep(1)
-        except: pass
-
-        matches = []
-        try: wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, SELECTORS["MATCH_LINK"])))
-        except Exception as e:
-            logging.warning(f"⚠️ Timeout o no se encontraron partidos en Besoccer: {e}")
+        headers = {
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+        }
+        r = cffi_requests.get(url_final, headers=headers, impersonate="chrome110")
+        if r.status_code != 200:
+            logging.warning(f"⚠️ Error HTTP {r.status_code} al obtener partidos.")
             return []
 
-        soup = BeautifulSoup(driver.page_source, 'lxml')
+        matches = []
+        soup = BeautifulSoup(r.text, 'lxml')
         match_elements = soup.select(SELECTORS["MATCH_LINK"])
+        
+        if not match_elements:
+            logging.warning("⚠️ No se encontraron partidos en el HTML de Besoccer.")
+            return []
         
         for m in match_elements:
             try:
@@ -782,7 +791,7 @@ def run_sync():
         force_kill_chrome()
         driver = setup_driver()
         
-        matches = fetch_matches(driver)
+        matches = fetch_matches()
         if not matches: return
 
         logging.info("☁️ Sincronizando con Google Calendar...")
