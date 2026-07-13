@@ -12,6 +12,7 @@ import json
 import difflib 
 import unicodedata 
 import base64
+import zoneinfo
 import subprocess # Hardening: Gestión de procesos
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -514,10 +515,9 @@ def setup_driver():
     force_kill_chrome()
     chrome_options = uc.ChromeOptions()
     chrome_options.page_load_strategy = 'eager' 
-    chrome_options.add_argument("--headless=new") 
-    chrome_options.add_argument("--log-level=3")
     chrome_options.add_argument("--window-size=1920,1080")
-    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--window-position=-32000,-32000") # Truco para ocultar la ventana
+    # chrome_options.add_argument("--headless=new") # Comentado para evitar bloqueos de Cloudflare
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--disable-extensions")
@@ -535,7 +535,7 @@ def setup_driver():
         logging.warning(f"⚠️ Error iniciando undetected_chromedriver optimizado: {e}. Reintentando básico.")
         force_kill_chrome()
         driver_path = ChromeDriverManager().install()
-        driver = uc.Chrome(headless=True, use_subprocess=True, driver_executable_path=driver_path)
+        driver = uc.Chrome(options=chrome_options, headless=True, use_subprocess=True, driver_executable_path=driver_path)
     
     driver.set_page_load_timeout(30) 
     driver.set_script_timeout(30)
@@ -1077,12 +1077,21 @@ def run_sync():
                 custom_reminders = [{'method': 'popup', 'minutes': 60}]
             custom_reminders.sort(key=lambda x: x['minutes'])
 
+            madrid_tz = zoneinfo.ZoneInfo("Europe/Madrid")
+            local_dt = match['inicio'].astimezone(madrid_tz)
+            
+            if match['is_tbd']:
+                local_dt = local_dt.replace(hour=9, minute=0, second=0, microsecond=0)
+
+            start_iso = local_dt.isoformat()
+            end_iso = (local_dt + datetime.timedelta(hours=2)).isoformat()
+
             event_body = {
                 'summary': full_title,
                 'location': loc_final, 
                 'description': desc_text,
-                'start': {'dateTime': match['inicio'].isoformat(), 'timeZone': 'UTC'},
-                'end': {'dateTime': (match['inicio'] + datetime.timedelta(hours=2)).isoformat(), 'timeZone': 'UTC'},
+                'start': {'dateTime': start_iso, 'timeZone': 'Europe/Madrid'},
+                'end': {'dateTime': end_iso, 'timeZone': 'Europe/Madrid'},
                 'colorId': color,
                 'extendedProperties': {'shared': {'match_id': match['id']}},
                 'reminders': {'useDefault': False, 'overrides': custom_reminders}
@@ -1097,11 +1106,15 @@ def run_sync():
 
                 old_dt = parse_google_iso(ev['start'].get('dateTime'))
                 if old_dt:
-                    diff = abs(old_dt.timestamp() - match['inicio'].timestamp())
+                    diff = abs(old_dt.timestamp() - local_dt.timestamp())
                     if diff > 60: 
                         needs_update = True
                         notify_telegram = True
-                        change_details.append(f"⏰ Hora: {old_dt.strftime('%H:%M')} -> {match['inicio'].strftime('%H:%M')}")
+                        change_details.append(f"⏰ Hora: {old_dt.astimezone(madrid_tz).strftime('%H:%M')} -> {local_dt.strftime('%H:%M')}")
+                elif ev['start'].get('date'):
+                    needs_update = True
+                    notify_telegram = True
+                    change_details.append(f"⏰ Hora: Todo el día -> {local_dt.strftime('%H:%M')}")
                 
                 old_title_norm = normalize_text(ev.get('summary', ''))
                 new_title_norm = normalize_text(full_title)
@@ -1182,7 +1195,7 @@ def main():
         run_sync()
         logging.info("🎉 Fin.")
     except Exception as e:
-        error_msg = f"⚠️ <b>[ERROR EN BOT CELTACALENDAR]</b>\n❌ Fallo al procesar: {str(e)[:200]}\n🛠️ <i>Pista:</i> Revisa los logs de GitHub Actions."
+        error_msg = f"⚠️ <b>[ERROR EN BOT CELTACALENDAR]</b>\n❌ Fallo al procesar: {str(e)[:200]}\n🛠️ <i>Pista:</i> Ejecuta el archivo run_bot.bat en tu PC para ver el error detallado."
         try: send_telegram(error_msg)
         except: pass
         logging.error(f"❌ Error fatal: {e}")
